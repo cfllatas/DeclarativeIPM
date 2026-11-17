@@ -1,0 +1,876 @@
+{
+ "log": "hospital_billing",
+ "lang": "en",
+ "cases": 100000,
+ "version": "v2",
+ "note": "orders only; no clarification items; one wording per item",
+ "filters": [
+  {
+   "id": "hospital_billing-F01",
+   "family": "exists",
+   "cls": "act",
+   "text": "Limit the cases to: cases in which 'DELETE' occurs",
+   "expr": "'DELETE'",
+   "count": 8221,
+   "pct": 8.2,
+   "case_hash": "09c441d34b430333",
+   "texts": [
+    "Limit the cases to: cases in which 'DELETE' occurs",
+    "Filter the cases to only those where delete occurs.",
+    "Could you limit the cases to the ones in which a delete takes place?",
+    "Filter the cases to those with a deletion."
+   ],
+   "ambiguity": "The word deletion is a loose, shortened name that could refer to a different activity than delete."
+  },
+  {
+   "id": "hospital_billing-F02",
+   "family": "exists",
+   "cls": "act",
+   "text": "Limit the cases to: cases that went through 'CHANGE DIAGN'",
+   "expr": "'CHANGE DIAGN'",
+   "count": 42314,
+   "pct": 42.3,
+   "case_hash": "78f053f5930abcb6",
+   "texts": [
+    "Limit the cases to: cases that went through 'CHANGE DIAGN'",
+    "Limit the cases to those that went through change diagnosis.",
+    "I would like you to filter the cases to only those that passed through change diagnosis.",
+    "Filter the cases to those with a diagnosis change."
+   ],
+   "ambiguity": "Diagnosis change is a rearranged name that could be mistaken for a different activity than change diagnosis."
+  },
+  {
+   "id": "hospital_billing-F33",
+   "family": "var_cat",
+   "cls": "var",
+   "text": "Limit the cases to: cases with speciality equal to 'L'",
+   "expr": "[speciality == 'L']",
+   "count": 9477,
+   "pct": 9.5,
+   "case_hash": "316f04dce859cb4d",
+   "texts": [
+    "Limit the cases to: cases with speciality equal to 'L'",
+    "Limit the cases to those where the speciality is L.",
+    "Could you filter the cases to only those whose speciality is L?",
+    "Filter the cases to those in the L department."
+   ],
+   "ambiguity": "Department is used instead of speciality, which could refer to a different variable or attribute."
+  },
+  {
+   "id": "hospital_billing-F34",
+   "family": "var_or",
+   "cls": "var",
+   "text": "Limit the cases to: cases with speciality equal to 'K' or 'L'",
+   "expr": "[speciality == 'K' | speciality == 'L']",
+   "count": 32086,
+   "pct": 32.1,
+   "case_hash": "d69320d1a7ff5f73",
+   "texts": [
+    "Limit the cases to: cases with speciality equal to 'K' or 'L'",
+    "Limit the cases to those where the speciality is K or L.",
+    "I would like you to filter the cases to those whose speciality is either K or L.",
+    "Filter the cases to those in speciality K or L."
+   ],
+   "ambiguity": "The phrasing could be read as a range from K to L rather than two discrete values."
+  },
+  {
+   "id": "hospital_billing-F35",
+   "family": "time_lt",
+   "cls": "time",
+   "text": "Limit the cases to: cases with 'FIN' and, later, 'BILLED' in less than 14 days",
+   "expr": "('FIN' >> 'BILLED')[-14d]",
+   "count": 31311,
+   "pct": 31.3,
+   "case_hash": "31520c1f8a629f0b",
+   "texts": [
+    "Limit the cases to: cases with 'FIN' and, later, 'BILLED' in less than 14 days",
+    "Limit the cases to those where fin is followed by billed in less than 14 days.",
+    "Could you filter the cases to only those where billed comes after fin within 14 days?",
+    "Filter the cases to those where fin and billed are less than 14 days apart."
+   ],
+   "ambiguity": "The order of the two activities is not stated, so it is unclear which one comes first."
+  },
+  {
+   "id": "hospital_billing-F36",
+   "family": "time_gt",
+   "cls": "time",
+   "text": "Limit the cases to: cases with 'NEW' and, later, 'BILLED' more than 30 days apart",
+   "expr": "('NEW' >> 'BILLED')[30d-]",
+   "count": 62475,
+   "pct": 62.5,
+   "case_hash": "7c1b5d19e6936cd4",
+   "texts": [
+    "Limit the cases to: cases with 'NEW' and, later, 'BILLED' more than 30 days apart",
+    "Limit the cases to those where new is followed by billed more than 30 days later.",
+    "I would like you to filter the cases to those where billed happens more than 30 days after new.",
+    "Filter the cases to those where new and billed are more than 30 days apart."
+   ],
+   "ambiguity": "The sequence is not specified, leaving open whether new precedes billed or the other way around."
+  },
+  {
+   "id": "hospital_billing-F37",
+   "family": "time_range",
+   "cls": "time",
+   "text": "Limit the cases to: cases with 'NEW' and, later, 'CHANGE DIAGN' between 1 minute and 20 hours after",
+   "expr": "('NEW' >> 'CHANGE DIAGN')[1m-20h]",
+   "count": 8104,
+   "pct": 8.1,
+   "case_hash": "f86e9d45bbf126e2",
+   "texts": [
+    "Limit the cases to: cases with 'NEW' and, later, 'CHANGE DIAGN' between 1 minute and 20 hours after",
+    "Limit the cases to those where change diagnosis happens between 1 minute and 20 hours after new.",
+    "Could you filter the cases to those where change diagnosis occurs between 1 minute and 20 hours after new?",
+    "Filter the cases to those where the diagnosis change is between 1 minute and 20 hours after new."
+   ],
+   "ambiguity": "Diagnosis change is a rearranged name that could be confused with a different activity than change diagnosis."
+  },
+  {
+   "id": "hospital_billing-F03",
+   "family": "exists",
+   "cls": "act",
+   "text": "Limit the cases to: i want the cases where 'BILLED' appears",
+   "expr": "'BILLED'",
+   "count": 64854,
+   "pct": 64.9,
+   "case_hash": "400f7e10f9490d77",
+   "texts": [
+    "Limit the cases to: i want the cases where 'BILLED' appears",
+    "Filter the cases to only those where billed appears.",
+    "I would like you to limit the cases to those in which billed is present.",
+    "Filter the cases to those with billing."
+   ],
+   "ambiguity": "Billing is a loose, generic term that could refer to a different activity than billed."
+  }
+ ],
+ "circuits": [
+  {
+   "id": "hospital_billing-C01",
+   "text": "Create circuits for this: separate the billing packages by how they end: billed, just created, deleted or finalised",
+   "cls": "act",
+   "circuits": [
+    {
+     "name": "ends_0",
+     "expr": "'BILLED'$"
+    },
+    {
+     "name": "ends_1",
+     "expr": "'NEW'$"
+    },
+    {
+     "name": "ends_2",
+     "expr": "'DELETE'$"
+    },
+    {
+     "name": "ends_3",
+     "expr": "'FIN'$"
+    }
+   ],
+   "gold_counts": {
+    "ends_0": 63498,
+    "ends_2": 8215,
+    "ends_1": 22407,
+    "ends_3": 3611,
+    "UNK": 2269
+   },
+   "texts": [
+    "Create circuits for this: separate the billing packages by how they end: billed, just created, deleted or finalised",
+    "Create circuits that separate the billing packages by how they end: billed, just created, deleted, or finalised.",
+    "Could you create circuits splitting the billing packages into four groups by their ending state, namely billed, just created, deleted, and finalised?",
+    "Create circuits separating the packages by their final state: billed, new, deleted, or closed."
+   ],
+   "ambiguity": "The word closed is a loose name for finalised that could also be read as referring to deleted."
+  },
+  {
+   "id": "hospital_billing-C02",
+   "text": "Create circuits for this: classify the packages by whether they were deleted, had a diagnosis change or were billed (first match wins)",
+   "cls": "act",
+   "circuits": [
+    {
+     "name": "with_0",
+     "expr": "'DELETE'"
+    },
+    {
+     "name": "with_1",
+     "expr": "'CHANGE DIAGN'"
+    },
+    {
+     "name": "with_2",
+     "expr": "'BILLED'"
+    }
+   ],
+   "gold_counts": {
+    "with_2": 24738,
+    "with_0": 8221,
+    "with_1": 40151,
+    "UNK": 26890
+   },
+   "texts": [
+    "Create circuits for this: classify the packages by whether they were deleted, had a diagnosis change or were billed (first match wins)",
+    "Create circuits classifying the packages by whether they were deleted, had a diagnosis change, or were billed, with the first matching group taking priority.",
+    "I would like you to create circuits that sort the packages into three priority groups: deleted, diagnosis change, and billed, where the first match wins.",
+    "Create circuits to sort the packages: deleted, the diagnosis was changed, or billed, first match wins."
+   ],
+   "ambiguity": "The phrase the diagnosis was changed is a descriptive clause rather than a clear activity name, making it slightly unclear whether it names the specific activity or a general condition."
+  },
+  {
+   "id": "hospital_billing-C03",
+   "text": "Create circuits for this: separate the packages whose diagnosis was changed and that were later finalised, those with only the diagnosis change, and the rest",
+   "cls": "act",
+   "circuits": [
+    {
+     "name": "a_then_b",
+     "expr": "('CHANGE DIAGN' >> 'FIN')"
+    },
+    {
+     "name": "has_a",
+     "expr": "'CHANGE DIAGN'"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "rest": 57686,
+    "a_then_b": 40644,
+    "has_a": 1670
+   },
+   "texts": [
+    "Create circuits for this: separate the packages whose diagnosis was changed and that were later finalised, those with only the diagnosis change, and the rest",
+    "Create circuits separating the packages into three groups: those where a diagnosis change was followed by finalisation, those with only the diagnosis change, and all the rest.",
+    "It would be great if you could create circuits that split the packages into: diagnosis change followed by finalisation, diagnosis change alone, and everything else.",
+    "Create circuits for the packages: the change then finalised, just the change, and the rest."
+   ],
+   "ambiguity": "The shortened word the change could refer to the diagnosis change or to some other change activity in the process."
+  },
+  {
+   "id": "hospital_billing-C04",
+   "text": "Create circuits for this: separate the cases by how they end: 'BILLED' or 'NEW'",
+   "cls": "act",
+   "circuits": [
+    {
+     "name": "ends_BILLED",
+     "expr": "'BILLED'$"
+    },
+    {
+     "name": "ends_NEW",
+     "expr": "'NEW'$"
+    }
+   ],
+   "gold_counts": {
+    "ends_BILLED": 63498,
+    "UNK": 14095,
+    "ends_NEW": 22407
+   },
+   "texts": [
+    "Create circuits for this: separate the cases by how they end: 'BILLED' or 'NEW'",
+    "Create circuits separating the cases by how they end: billed or new.",
+    "Could you create circuits that split the cases into two groups based on their ending, namely billed and new?",
+    "Create circuits for the cases: those ending in billed and those ending in created."
+   ],
+   "ambiguity": "The word created is a loose substitute for the activity new and could be confused with a different creation event in the process."
+  },
+  {
+   "id": "hospital_billing-C05",
+   "text": "Create one circuit for each value of speciality: 'K' or 'L'",
+   "cls": "var",
+   "circuits": [
+    {
+     "name": "speciality_K",
+     "expr": "[speciality == 'K']"
+    },
+    {
+     "name": "speciality_L",
+     "expr": "[speciality == 'L']"
+    }
+   ],
+   "gold_counts": {
+    "UNK": 67914,
+    "speciality_K": 22609,
+    "speciality_L": 9477
+   },
+   "texts": [
+    "Create one circuit for each value of speciality: 'K' or 'L'",
+    "Create one circuit for each speciality value: K and L.",
+    "I would like you to create circuits, one per speciality value, specifically for K and L.",
+    "Create circuits by speciality, K or L."
+   ],
+   "ambiguity": "The use of or instead of and could make it unclear whether K and L form two separate circuits or a single combined group."
+  },
+  {
+   "id": "hospital_billing-C06",
+   "text": "Create three circuits: 'CHANGE DIAGN' then 'CODE OK' in less than 30 days, the rest of those with 'CHANGE DIAGN' then 'CODE OK', and all the others",
+   "cls": "time",
+   "circuits": [
+    {
+     "name": "CHANGE_DIAGN_to_CODE_OK_fast",
+     "expr": "('CHANGE DIAGN' >> 'CODE OK')[-30d]"
+    },
+    {
+     "name": "CHANGE_DIAGN_to_CODE_OK_slow",
+     "expr": "('CHANGE DIAGN' >> 'CODE OK')"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "rest": 59811,
+    "CHANGE_DIAGN_to_CODE_OK_fast": 4338,
+    "CHANGE_DIAGN_to_CODE_OK_slow": 35851
+   },
+   "texts": [
+    "Create three circuits: 'CHANGE DIAGN' then 'CODE OK' in less than 30 days, the rest of those with 'CHANGE DIAGN' then 'CODE OK', and all the others",
+    "Create three circuits: diagnosis change followed by code approved in less than 30 days, the remaining cases with diagnosis change followed by code approved, and all the others.",
+    "Could you create three circuits: one for cases where a diagnosis change is followed by code approval within 30 days, another for the rest of those with that sequence, and a final one for everything else?",
+    "Create three circuits: diagnosis change then code ok under 30 days, the rest of that stretch, and all others."
+   ],
+   "ambiguity": "The phrase that stretch is a vague reference that could mean the time gap between the two activities or the sequence itself."
+  },
+  {
+   "id": "hospital_billing-C07",
+   "text": "Make three circuits by the time between 'RELEASE' and 'REOPEN': less than 14 days, longer, and those without that stretch",
+   "cls": "time",
+   "circuits": [
+    {
+     "name": "RELEASE_to_REOPEN_fast",
+     "expr": "('RELEASE' >> 'REOPEN')[-14d]"
+    },
+    {
+     "name": "RELEASE_to_REOPEN_slow",
+     "expr": "('RELEASE' >> 'REOPEN')"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "rest": 96197,
+    "RELEASE_to_REOPEN_fast": 1769,
+    "RELEASE_to_REOPEN_slow": 2034
+   },
+   "texts": [
+    "Make three circuits by the time between 'RELEASE' and 'REOPEN': less than 14 days, longer, and those without that stretch",
+    "Create three circuits based on the time between release and reopen: less than 14 days, longer than 14 days, and cases without that sequence.",
+    "I would like you to create three circuits splitting the cases by the duration between release and reopen: under 14 days, over 14 days, and those that do not have that pair at all.",
+    "Make three circuits by the gap between release and reopen: under 14 days, the rest of that gap, and the others."
+   ],
+   "ambiguity": "The phrase the rest of that gap is slightly unclear whether it means the remaining cases that have the pair but take longer, or something else."
+  },
+  {
+   "id": "hospital_billing-C08",
+   "text": "Create three circuits: cases with blocked equal to 'false' that go through 'CHANGE DIAGN', the rest of the cases with blocked equal to 'false', and all the others",
+   "cls": "mixed",
+   "circuits": [
+    {
+     "name": "blocked_false_CHANGE_DIAGN",
+     "expr": "'CHANGE DIAGN' & [blocked == 'false']"
+    },
+    {
+     "name": "blocked_false",
+     "expr": "[blocked == 'false']"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "blocked_false": 57676,
+    "blocked_false_CHANGE_DIAGN": 42306,
+    "rest": 18
+   },
+   "texts": [
+    "Create three circuits: cases with blocked equal to 'false' that go through 'CHANGE DIAGN', the rest of the cases with blocked equal to 'false', and all the others",
+    "Create three circuits: cases where blocked is false and a diagnosis change occurs, the remaining cases where blocked is false, and all the others.",
+    "Could you create three circuits: first, cases with blocked set to false that go through a diagnosis change; second, the rest of the cases with blocked set to false; and third, everything else?",
+    "Create three circuits: blocked false with the diagnosis change, the rest of blocked false, and all others."
+   ],
+   "ambiguity": "The definite article in the diagnosis change makes it sound like a specific known instance rather than naming the activity, and blocked false without set to is informal enough to be misread as a state rather than a variable value."
+  },
+  {
+   "id": "hospital_billing-C09",
+   "text": "Create three circuits: 'NEW' then 'CODE NOK' in less than 30 days, the rest of those with 'NEW' then 'CODE NOK', and all the others",
+   "cls": "time",
+   "circuits": [
+    {
+     "name": "NEW_to_CODE_NOK_fast",
+     "expr": "('NEW' >> 'CODE NOK')[-30d]"
+    },
+    {
+     "name": "NEW_to_CODE_NOK_slow",
+     "expr": "('NEW' >> 'CODE NOK')"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "rest": 96946,
+    "NEW_to_CODE_NOK_slow": 1633,
+    "NEW_to_CODE_NOK_fast": 1421
+   },
+   "texts": [
+    "Create three circuits: 'NEW' then 'CODE NOK' in less than 30 days, the rest of those with 'NEW' then 'CODE NOK', and all the others",
+    "Create three circuits: cases where new is followed by code nok in less than 30 days, the remaining cases where new is followed by code nok, and all the others.",
+    "Could you create three circuits for me: one for cases where new is followed by code nok within 30 days, one for the rest of those with new then code nok, and one for everything else?",
+    "Make three circuits: new then code nok in under 30 days, new then code nok the rest, and the others."
+   ],
+   "ambiguity": "The phrase 'the rest' could mean the rest of the cases that have new then code nok, or simply the rest of all cases."
+  },
+  {
+   "id": "hospital_billing-C10",
+   "text": "Make three circuits by the time between 'NEW' and 'BILLED': less than 30 days, longer, and those without that stretch",
+   "cls": "time",
+   "circuits": [
+    {
+     "name": "NEW_to_BILLED_fast",
+     "expr": "('NEW' >> 'BILLED')[-30d]"
+    },
+    {
+     "name": "NEW_to_BILLED_slow",
+     "expr": "('NEW' >> 'BILLED')"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "NEW_to_BILLED_slow": 62376,
+    "rest": 35146,
+    "NEW_to_BILLED_fast": 2478
+   },
+   "texts": [
+    "Make three circuits by the time between 'NEW' and 'BILLED': less than 30 days, longer, and those without that stretch",
+    "Create three circuits based on the time between new and billed: less than 30 days, longer than that, and cases without that stretch.",
+    "It would be great if you could make three circuits by the time between new and billed: one for under 30 days, one for longer, and one for those without that stretch.",
+    "Make three circuits: new to billed in under 30 days, new to billed after, and the rest."
+   ],
+   "ambiguity": "The word 'after' does not clearly specify that it means 30 days or more, leaving the threshold implicit."
+  },
+  {
+   "id": "hospital_billing-C11",
+   "text": "Create three circuits: 'RELEASE' then 'CODE NOK' in less than 4 days, the rest of those with 'RELEASE' then 'CODE NOK', and all the others",
+   "cls": "time",
+   "circuits": [
+    {
+     "name": "RELEASE_to_CODE_NOK_fast",
+     "expr": "('RELEASE' >> 'CODE NOK')[-4d]"
+    },
+    {
+     "name": "RELEASE_to_CODE_NOK_slow",
+     "expr": "('RELEASE' >> 'CODE NOK')"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "rest": 96948,
+    "RELEASE_to_CODE_NOK_slow": 1596,
+    "RELEASE_to_CODE_NOK_fast": 1456
+   },
+   "texts": [
+    "Create three circuits: 'RELEASE' then 'CODE NOK' in less than 4 days, the rest of those with 'RELEASE' then 'CODE NOK', and all the others",
+    "Create three circuits: cases where release is followed by code nok in less than 4 days, the remaining cases with release then code nok, and all the others.",
+    "I would like you to create three circuits: one for cases where release is followed by code nok within 4 days, one for the rest of those with release then code nok, and one for everything else.",
+    "Make three circuits: release then code nok fast, release then code nok slow, and the rest."
+   ],
+   "ambiguity": "The words 'fast' and 'slow' do not specify the 4-day threshold that separates the two circuits."
+  },
+  {
+   "id": "hospital_billing-C12",
+   "text": "Make three circuits by the time between 'RELEASE' and 'CODE OK': less than 4 days, longer, and those without that stretch",
+   "cls": "time",
+   "circuits": [
+    {
+     "name": "RELEASE_to_CODE_OK_fast",
+     "expr": "('RELEASE' >> 'CODE OK')[-4d]"
+    },
+    {
+     "name": "RELEASE_to_CODE_OK_slow",
+     "expr": "('RELEASE' >> 'CODE OK')"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "RELEASE_to_CODE_OK_fast": 27403,
+    "rest": 36182,
+    "RELEASE_to_CODE_OK_slow": 36415
+   },
+   "texts": [
+    "Make three circuits by the time between 'RELEASE' and 'CODE OK': less than 4 days, longer, and those without that stretch",
+    "Create three circuits based on the time between release and code ok: less than 4 days, longer, and cases without that stretch.",
+    "Could you make three circuits by the time between release and code ok: one for under 4 days, one for longer, and one for those without that stretch?",
+    "Make three circuits: release to code ok in under 4 days, release to code ok after, and the rest."
+   ],
+   "ambiguity": "The word 'after' is vague about whether it means 4 days or more or simply the remaining cases."
+  }
+ ],
+ "regions": [
+  {
+   "id": "hospital_billing-R01",
+   "text": "Define a region from 'CHANGE DIAGN' to 'FIN'",
+   "cls": "act",
+   "regions": [
+    {
+     "name": "CHANGE_DIAGN_to_FIN",
+     "expr": "('CHANGE DIAGN' >> 'FIN')",
+     "traces": 40644
+    }
+   ],
+   "texts": [
+    "Define a region from 'CHANGE DIAGN' to 'FIN'",
+    "Define a region from change diagn to fin.",
+    "It would be helpful if you could define a region from change diagn to fin.",
+    "Define a region from change to fin."
+   ],
+   "ambiguity": "The shortened name 'change' could refer to change diagn or to another activity that starts with change."
+  },
+  {
+   "id": "hospital_billing-R02",
+   "text": "Define a critical section from 'NEW' to 'BILLED'",
+   "cls": "act",
+   "regions": [
+    {
+     "name": "NEW_to_BILLED",
+     "expr": "('NEW' >> 'BILLED')",
+     "traces": 64854
+    }
+   ],
+   "texts": [
+    "Define a critical section from 'NEW' to 'BILLED'",
+    "Define a critical section from new to billed.",
+    "I would like you to define a critical section from new to billed.",
+    "Define a region from new to the billing step."
+   ],
+   "ambiguity": "The phrase 'the billing step' could refer to billed or to another billing-related activity."
+  },
+  {
+   "id": "hospital_billing-R03",
+   "text": "Define a region from 'NEW' to 'REOPEN'",
+   "cls": "act",
+   "regions": [
+    {
+     "name": "NEW_to_REOPEN",
+     "expr": "('NEW' >> 'REOPEN')",
+     "traces": 4084
+    }
+   ],
+   "texts": [
+    "Define a region from 'NEW' to 'REOPEN'",
+    "Define a region from new to reopen.",
+    "Could you define a critical section from new to reopen?",
+    "Define a region from new to the re-opening."
+   ],
+   "ambiguity": "The phrase 'the re-opening' could refer to reopen or to another activity involving re-opening."
+  },
+  {
+   "id": "hospital_billing-R04",
+   "text": "Define two critical sections: from 'RELEASE' to 'CODE OK' and from 'NEW' to 'DELETE'",
+   "cls": "act",
+   "regions": [
+    {
+     "name": "RELEASE_to_CODE_OK",
+     "expr": "('RELEASE' >> 'CODE OK')",
+     "traces": 63818
+    },
+    {
+     "name": "NEW_to_DELETE",
+     "expr": "('NEW' >> 'DELETE')",
+     "traces": 8221
+    }
+   ],
+   "texts": [
+    "Define two critical sections: from 'RELEASE' to 'CODE OK' and from 'NEW' to 'DELETE'",
+    "Define two critical sections: from release to code ok and from new to delete.",
+    "I would like you to define two critical sections: one from release to code ok and another from new to delete.",
+    "Define two regions: from release to code ok and from new to the removal."
+   ],
+   "ambiguity": "The phrase 'the removal' could refer to delete or to another activity involving removal."
+  },
+  {
+   "id": "hospital_billing-R05",
+   "text": "Define two regions: from 'CHANGE DIAGN' to 'FIN' and from 'NEW' to 'REOPEN'",
+   "cls": "act",
+   "regions": [
+    {
+     "name": "CHANGE_DIAGN_to_FIN",
+     "expr": "('CHANGE DIAGN' >> 'FIN')",
+     "traces": 40644
+    },
+    {
+     "name": "NEW_to_REOPEN",
+     "expr": "('NEW' >> 'REOPEN')",
+     "traces": 4084
+    }
+   ],
+   "texts": [
+    "Define two regions: from 'CHANGE DIAGN' to 'FIN' and from 'NEW' to 'REOPEN'",
+    "Define two regions: one from change diagnosis to finish, and another from new to reopen.",
+    "Could you please define two regions for me, one going from change diagnosis to finish and the other from new to reopen?",
+    "Set up two regions, one from the diagnosis change to the end, and another from new to reopen."
+   ],
+   "ambiguity": "The phrase 'the end' is a loose reference that could match finish or another terminal activity."
+  },
+  {
+   "id": "hospital_billing-R06",
+   "text": "Define a region from 'CHANGE DIAGN' to 'CODE OK' when less than 30 days pass between them",
+   "cls": "time",
+   "regions": [
+    {
+     "name": "CHANGE_DIAGN_to_CODE_OK_fast",
+     "expr": "('CHANGE DIAGN' >> 'CODE OK')[-30d]",
+     "traces": 4338
+    }
+   ],
+   "texts": [
+    "Define a region from 'CHANGE DIAGN' to 'CODE OK' when less than 30 days pass between them",
+    "Define a region from change diagnosis to code OK that only applies when less than 30 days pass between them.",
+    "I would like you to define a region from change diagnosis to code OK, but only when the time between the two is less than 30 days.",
+    "Create a region between the diagnosis change and the code approval when it takes under 30 days."
+   ],
+   "ambiguity": "The term 'code approval' is a loose paraphrase that could refer to code OK or a different code-related activity."
+  },
+  {
+   "id": "hospital_billing-R07",
+   "text": "Define a critical section from 'RELEASE' to 'REOPEN' when more than 20 days elapse",
+   "cls": "time",
+   "regions": [
+    {
+     "name": "RELEASE_to_REOPEN_slow",
+     "expr": "('RELEASE' >> 'REOPEN')[20d-]",
+     "traces": 2004
+    }
+   ],
+   "texts": [
+    "Define a critical section from 'RELEASE' to 'REOPEN' when more than 20 days elapse",
+    "Define a critical section from release to reopen when more than 20 days elapse between them.",
+    "It would be interesting if you could define a critical section from release to reopen, but only when more than 20 days pass between the two activities.",
+    "Set up a critical section from release to reopen if it takes over 20 days."
+   ],
+   "ambiguity": "The pronoun 'it' does not clearly refer to the time gap between the two activities, making the condition slightly vague."
+  },
+  {
+   "id": "hospital_billing-R08",
+   "text": "Define a region from 'NEW' to 'CODE NOK' when less than 30 days pass between them",
+   "cls": "time",
+   "regions": [
+    {
+     "name": "NEW_to_CODE_NOK_fast",
+     "expr": "('NEW' >> 'CODE NOK')[-30d]",
+     "traces": 1421
+    }
+   ],
+   "texts": [
+    "Define a region from 'NEW' to 'CODE NOK' when less than 30 days pass between them",
+    "Define a region from new to code NOK when less than 30 days pass between them.",
+    "Could you please define a region from new to code NOK, limited to cases where less than 30 days elapse between the two activities?",
+    "Create a region from new to the code rejection when it happens within 30 days."
+   ],
+   "ambiguity": "The phrase 'code rejection' is a loose name that could fit code NOK or another negative-code activity, and 'within 30 days' is slightly less precise than 'less than 30 days'."
+  },
+  {
+   "id": "hospital_billing-R09",
+   "text": "Define a region from 'CHANGE DIAGN' to 'FIN' in the cases with blocked equal to 'false'",
+   "cls": "mixed",
+   "regions": [
+    {
+     "name": "CHANGE_DIAGN_to_FIN_blocked_false",
+     "expr": "('CHANGE DIAGN' >> 'FIN')[blocked == 'false']",
+     "traces": 40636
+    }
+   ],
+   "texts": [
+    "Define a region from 'CHANGE DIAGN' to 'FIN' in the cases with blocked equal to 'false'",
+    "Define a region from change diagnosis to finish, but only in the cases where blocked is false.",
+    "I would like you to define a region from change diagnosis to finish, restricted to the cases where the blocked variable is set to false.",
+    "Set up a region from the diagnosis change to the end for the unblocked cases."
+   ],
+   "ambiguity": "The phrase 'the end' is a vague reference that could match finish or another closing activity, and 'unblocked' is a loose paraphrase of the variable condition."
+  },
+  {
+   "id": "hospital_billing-R10",
+   "text": "Define a critical section from 'NEW' to 'BILLED' when more than 30 days elapse",
+   "cls": "time",
+   "regions": [
+    {
+     "name": "NEW_to_BILLED_slow",
+     "expr": "('NEW' >> 'BILLED')[30d-]",
+     "traces": 62475
+    }
+   ],
+   "texts": [
+    "Define a critical section from 'NEW' to 'BILLED' when more than 30 days elapse",
+    "Define a critical section from new to billed when more than 30 days elapse between them.",
+    "You should define a critical section from new to billed, but only when more than 30 days pass between the two.",
+    "Mark a critical section from new to billing if it takes over 30 days."
+   ],
+   "ambiguity": "The word 'billing' is a shortened, generic term that could refer to billed or another billing-related activity, and 'it' is an unclear referent."
+  }
+ ],
+ "milestones": [
+  {
+   "id": "hospital_billing-M01",
+   "text": "Define 'DELETE' as a milestone",
+   "nodes": [
+    "DELETE"
+   ],
+   "texts": [
+    "Define 'DELETE' as a milestone",
+    "Define delete as a milestone.",
+    "Could you mark delete as a milestone, please?",
+    "Make the removal step a milestone."
+   ],
+   "ambiguity": "The phrase 'removal step' is a loose paraphrase that could refer to delete or to another activity involving removal."
+  },
+  {
+   "id": "hospital_billing-M02",
+   "text": "Mark 'FIN' and 'BILLED' as milestones",
+   "nodes": [
+    "FIN",
+    "BILLED"
+   ],
+   "texts": [
+    "Mark 'FIN' and 'BILLED' as milestones",
+    "Mark finish and billed as milestones.",
+    "I would like you to mark both finish and billed as milestones.",
+    "Set the end and the billing as milestones."
+   ],
+   "ambiguity": "The phrases 'the end' and 'the billing' are generic references that could match finish/billed or other terminal or billing-related activities."
+  },
+  {
+   "id": "hospital_billing-M03",
+   "text": "Use 'CODE NOK' as a milestone",
+   "nodes": [
+    "CODE NOK"
+   ],
+   "texts": [
+    "Use 'CODE NOK' as a milestone",
+    "Set code nok as a milestone.",
+    "I would like you to mark code nok as a milestone.",
+    "Set the code as a milestone."
+   ],
+   "ambiguity": "the code could refer to either code nok or code ok."
+  },
+  {
+   "id": "hospital_billing-M04",
+   "text": "Define 'REOPEN' as a milestone",
+   "nodes": [
+    "REOPEN"
+   ],
+   "texts": [
+    "Define 'REOPEN' as a milestone",
+    "Set reopen as a milestone.",
+    "Could you please define reopen as a milestone?",
+    "Mark it as a milestone."
+   ],
+   "ambiguity": "it has no clear referent and could point to any activity in the model."
+  },
+  {
+   "id": "hospital_billing-M05",
+   "text": "Define 'BILLED' and 'DELETE' as milestones",
+   "nodes": [
+    "BILLED",
+    "DELETE"
+   ],
+   "texts": [
+    "Define 'BILLED' and 'DELETE' as milestones",
+    "Set billed and delete as milestones.",
+    "I would like you to mark billed and delete as milestones.",
+    "Define billed and the removal as milestones."
+   ],
+   "ambiguity": "the removal could refer to delete or to another removal-related activity."
+  },
+  {
+   "id": "hospital_billing-M06",
+   "text": "Mark 'REOPEN', 'CHANGE DIAGN' and 'DELETE' as milestones",
+   "nodes": [
+    "REOPEN",
+    "CHANGE DIAGN",
+    "DELETE"
+   ],
+   "texts": [
+    "Mark 'REOPEN', 'CHANGE DIAGN' and 'DELETE' as milestones",
+    "Set reopen, change diagn and delete as milestones.",
+    "Could you please define reopen, change diagn and delete as milestones?",
+    "Mark the reopen, the change and the delete as milestones."
+   ],
+   "ambiguity": "the change is unspecific and could refer to change diagn or another change-related activity."
+  },
+  {
+   "id": "hospital_billing-M07",
+   "text": "Define 'RELEASE' as a milestone",
+   "nodes": [
+    "RELEASE"
+   ],
+   "texts": [
+    "Define 'RELEASE' as a milestone",
+    "Set release as a milestone.",
+    "I would like you to mark release as a milestone.",
+    "Set it as a milestone."
+   ],
+   "ambiguity": "it has no clear referent and could point to any activity in the model."
+  },
+  {
+   "id": "hospital_billing-M08",
+   "text": "Mark 'RELEASE' and 'CHANGE DIAGN' as milestones",
+   "nodes": [
+    "RELEASE",
+    "CHANGE DIAGN"
+   ],
+   "texts": [
+    "Mark 'RELEASE' and 'CHANGE DIAGN' as milestones",
+    "Set release and change diagn as milestones.",
+    "Could you please define release and change diagn as milestones?",
+    "Mark the release and the change as milestones."
+   ],
+   "ambiguity": "the change is unspecific and could refer to change diagn or another change-related activity."
+  },
+  {
+   "id": "hospital_billing-M09",
+   "text": "Define 'CODE OK', 'DELETE' and 'CODE NOK' as milestones",
+   "nodes": [
+    "CODE OK",
+    "DELETE",
+    "CODE NOK"
+   ],
+   "texts": [
+    "Define 'CODE OK', 'DELETE' and 'CODE NOK' as milestones",
+    "Set code ok, delete and code nok as milestones.",
+    "I would like you to mark code ok, delete and code nok as milestones.",
+    "Define the ok code, the removal and the nok code as milestones."
+   ],
+   "ambiguity": "the removal could refer to delete or to another removal-related activity."
+  },
+  {
+   "id": "hospital_billing-M10",
+   "text": "Define 'STORNO' as a milestone",
+   "nodes": [
+    "STORNO"
+   ],
+   "texts": [
+    "Define 'STORNO' as a milestone",
+    "Set storno as a milestone.",
+    "Could you please define storno as a milestone?",
+    "Mark the cancellation as a milestone."
+   ],
+   "ambiguity": "cancellation could refer to storno, delete, or another cancellation-related activity."
+  }
+ ],
+ "asks": [],
+ "levels": [
+  "order (robotic, exact names)",
+  "natural",
+  "polite",
+  "ambiguous"
+ ]
+}

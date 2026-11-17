@@ -1,0 +1,362 @@
+{
+ "bpic2020_travel_permit-F01": {
+  "texts": [
+   "Limit the cases to: cases in which 'Declaration REJECTED by ADMINISTRATION' occurs",
+   "Filter the cases to only those where the declaration is rejected by the administration.",
+   "Could you please limit the cases to those in which the declaration gets rejected by the administration?",
+   "Filter the cases to those where the declaration is rejected."
+  ],
+  "ambiguity": "It is unclear which entity rejects the declaration, as it could be the administration or the supervisor."
+ },
+ "bpic2020_travel_permit-F02": {
+  "texts": [
+   "Limit the cases to: cases that went through 'Request For Payment FINAL_APPROVED by SUPERVISOR'",
+   "Filter the cases to only those that went through the final approval of the request for payment by the supervisor.",
+   "I would like you to limit the cases to those where the request for payment was finally approved by the supervisor.",
+   "Filter the cases to those where the payment request was finally approved."
+  ],
+  "ambiguity": "It is unclear who performs the final approval, as it could be the supervisor or the budget owner."
+ },
+ "bpic2020_travel_permit-F34": {
+  "texts": [
+   "Limit the cases to: cases with RequestedBudget between 533.7 and 1421.9",
+   "Filter the cases to those where the requested budget is between 533.7 and 1421.9.",
+   "It would be helpful if you could limit the cases to those with a requested budget between 533.7 and 1421.9.",
+   "Filter the cases to those where the budget is between 533.7 and 1421.9."
+  ],
+  "ambiguity": "The word budget is too generic and could refer to a different budget-related variable in the process."
+ },
+ "bpic2020_travel_permit-F35": {
+  "texts": [
+   "Limit the cases to: cases with Overspent equal to 'true'",
+   "Filter the cases to only those where the overspent flag is set to true.",
+   "Could you please limit the cases to those in which the overspent indicator is true?",
+   "Filter the cases to those where the spending condition is met."
+  ],
+  "ambiguity": "The phrase spending condition is vague and does not clearly identify the overspent variable or its exact value."
+ },
+ "bpic2020_travel_permit-F40": {
+  "texts": [
+   "Limit the cases to: cases with 'Permit APPROVED by BUDGET OWNER' and, later, 'Declaration SUBMITTED by EMPLOYEE' in less than 30 days",
+   "Filter the cases to those where the permit is approved by the budget owner and then the declaration is submitted by the employee in less than 30 days.",
+   "I would like you to limit the cases to those in which the permit is approved by the budget owner followed by the employee submitting the declaration in under 30 days.",
+   "Filter the cases to those where the permit is approved and then the declaration is submitted in less than 30 days."
+  ],
+  "ambiguity": "It is unclear who approves the permit and who submits the declaration, as the actors are omitted."
+ },
+ "bpic2020_travel_permit-F41": {
+  "texts": [
+   "Limit the cases to: cases with 'Permit FINAL_APPROVED by SUPERVISOR' and, later, 'Send Reminder' more than 30 days apart",
+   "Filter the cases to those where the permit is finally approved by the supervisor and then a reminder is sent more than 30 days later.",
+   "Could you limit the cases to those in which the permit is finally approved by the supervisor and a reminder is sent more than 30 days after that?",
+   "Filter the cases to those where the permit is finally approved and then a reminder goes out after 30 days."
+  ],
+  "ambiguity": "It is unclear who approves the permit, and after 30 days could be read as at least 30 days rather than strictly more than 30 days."
+ },
+ "bpic2020_travel_permit-F38": {
+  "texts": [
+   "Limit the cases to: cases with 'Declaration REJECTED by ADMINISTRATION' and RequestedBudget greater than 823.4",
+   "Filter the cases to those where the declaration is rejected by the administration and the requested budget is greater than 823.4.",
+   "I would like you to limit the cases to those in which the declaration is rejected by the administration and the requested budget exceeds 823.4.",
+   "Filter the cases to those where the declaration is rejected and the budget is over 823.4."
+  ],
+  "ambiguity": "It is unclear which entity rejects the declaration and which specific budget variable is being referenced."
+ },
+ "bpic2020_travel_permit-F39": {
+  "texts": [
+   "Limit the cases to: cases with 'Request For Payment FINAL_APPROVED by SUPERVISOR' and, later, 'Declaration SUBMITTED by EMPLOYEE', where Overspent is 'true'",
+   "Filter the cases to those where the request for payment is finally approved by the supervisor and then the declaration is submitted by the employee, with the overspent flag set to true.",
+   "Could you please limit the cases to those in which the request for payment is finally approved by the supervisor followed by the employee submitting the declaration, where the overspent indicator is true?",
+   "Filter the cases to those where the payment request is finally approved and then the declaration is submitted, with overspent being true."
+  ],
+  "ambiguity": "It is unclear who approves the payment request and who submits the declaration, as the actors are not specified."
+ },
+ "bpic2020_travel_permit-C01": {
+  "texts": [
+   "Create circuits for this: separate the trips by how they end: payment handled, a reminder, end of the trip or a permit rejected by an unknown role",
+   "Create circuits that separate the trips by how they end: payment handled, send reminder, end of trip, or permit rejected by an unknown role.",
+   "I would like you to create circuits splitting the trips according to their final activity — payment handled, send reminder, end of trip, or a permit rejected by an unknown role.",
+   "Create circuits to group the trips by their ending: payment, a reminder, the trip finishing, or a rejection by someone unknown."
+  ],
+  "ambiguity": "Payment could refer to either payment handled or request for payment, and a reminder is less specific than the activity send reminder."
+ },
+ "bpic2020_travel_permit-C02": {
+  "texts": [
+   "Create circuits for this: classify the trips by whether the administration rejected the declaration, a request for payment got final supervisor approval or a reminder was sent (first match wins)",
+   "Create circuits that classify the trips by whether the administration rejected the declaration, a request for payment received final supervisor approval, or a reminder was sent, with first match winning.",
+   "Could you create circuits to group the trips based on whether the declaration was rejected by the administration, the payment request got final approval from the supervisor, or a reminder was sent, keeping the priority order?",
+   "Create circuits to split the trips by whether the declaration was rejected, the payment request was approved, or a reminder went out, first match wins."
+  ],
+  "ambiguity": "Rejected does not specify by the administration, and approved does not specify final approval by the supervisor."
+ },
+ "bpic2020_travel_permit-C03": {
+  "texts": [
+   "Create circuits for this: separate the trips where a request got final supervisor approval and a declaration followed, those with only the final approval, and the rest",
+   "Create circuits that separate the trips into three groups: those where a request for payment got final supervisor approval followed by a declaration submitted by the employee, those with only the final approval, and the rest.",
+   "I would like you to create circuits splitting the trips into cases where the payment request received final supervisor approval and then a declaration was submitted by the employee, cases with only the final approval, and all remaining cases.",
+   "Create circuits to group the trips: those where the approval was followed by a declaration, those with just the approval, and the rest."
+  ],
+  "ambiguity": "The approval does not specify it is the final supervisor approval of the payment request, and a declaration does not specify it was submitted by the employee."
+ },
+ "bpic2020_travel_permit-C04": {
+  "texts": [
+   "Create circuits for this: separate the cases by how they end: 'Payment Handled' or 'Send Reminder'",
+   "Create circuits that separate the cases by how they end: payment handled or send reminder.",
+   "Could you create circuits to split the cases by their ending activity, either payment handled or send reminder?",
+   "Create circuits to group the cases by their final step: payment or a reminder."
+  ],
+  "ambiguity": "Payment could refer to payment handled or request for payment, and a reminder is less specific than the activity send reminder."
+ },
+ "bpic2020_travel_permit-C05": {
+  "texts": [
+   "Create circuits for this: group the cases by Overspent: 'false' or 'true'",
+   "Create circuits that group the cases by the overspent variable: false or true.",
+   "I would like you to create circuits splitting the cases by the overspent flag, false or true.",
+   "Create circuits to separate the cases by whether they are overspent or not."
+  ],
+  "ambiguity": "The wording does not explicitly name the overspent variable or its two values, so it could be read as a simple filter rather than a two-group circuit."
+ },
+ "bpic2020_travel_permit-C06": {
+  "texts": [
+   "Create one circuit for each value of TaskNumber: 'task 427' or 'UNKNOWN'",
+   "Create circuits for each value of the task number variable: task 427 or unknown.",
+   "Could you create one circuit for each value of the task number, namely task 427 and unknown?",
+   "Create circuits to split the cases by task number: 427 or unknown."
+  ],
+  "ambiguity": "Dropping the word task before 427 makes it look like a numeric value rather than the string task 427."
+ },
+ "bpic2020_travel_permit-C07": {
+  "texts": [
+   "Create circuits for this: separate the cases by RequestedBudget: up to 823.4 and above 823.4",
+   "Create circuits that separate the cases by the requested budget: up to 823.4 and above 823.4.",
+   "I would like you to create circuits splitting the cases by requested budget, those at or below 823.4 and those above.",
+   "Create circuits to group the cases by budget: low and high, with the cutoff at 823.4."
+  ],
+  "ambiguity": "Budget does not specify it is the requested budget variable, and low and high are vague labels that do not state the comparison direction."
+ },
+ "bpic2020_travel_permit-C08": {
+  "texts": [
+   "Create circuits for this: split the cases in two groups by TotalDeclared: up to 533.0 and more than 533.0",
+   "Create circuits that split the cases into two groups by the total declared amount: up to 533.0 and more than 533.0.",
+   "Could you create circuits to divide the cases by total declared, those at or below 533.0 and those exceeding it?",
+   "Create circuits to separate the cases by the declared total: low and high, with 533.0 as the boundary."
+  ],
+  "ambiguity": "Declared total could be confused with a different variable, and low and high do not make the comparison direction explicit."
+ },
+ "bpic2020_travel_permit-C09": {
+  "texts": [
+   "Create three circuits: 'Permit SUBMITTED by EMPLOYEE' then 'Declaration REJECTED by EMPLOYEE' in less than 30 days, the rest of those with 'Permit SUBMITTED by EMPLOYEE' then 'Declaration REJECTED by EMPLOYEE', and all the others",
+   "Create three circuits: first, cases where the permit is submitted by the employee and then the declaration is rejected by the employee within 30 days; second, the remaining cases where the permit is submitted by the employee followed by the declaration being rejected by the employee; and third, all the other cases.",
+   "Could you create three circuits for me? I would like the first to capture cases where the permit is submitted by the employee and then the declaration is rejected by the employee in less than 30 days, the second to cover the rest of those same sequences, and the third to include everything else.",
+   "Make three circuits: one for when the permit is submitted by the employee and the declaration is rejected by the employee in under 30 days, another for the rest of those with that same pair, and a catch-all for the others."
+  ],
+  "ambiguity": "The phrase 'that same pair' is a vague pronoun reference that does not explicitly restate the two activities involved."
+ },
+ "bpic2020_travel_permit-C10": {
+  "texts": [
+   "Make three circuits by the time between 'Permit APPROVED by SUPERVISOR' and 'Declaration APPROVED by ADMINISTRATION': less than 30 days, longer, and those without that stretch",
+   "Create three circuits based on the time between the permit being approved by the supervisor and the declaration being approved by the administration: one for less than 30 days, one for longer, and one for cases without that stretch.",
+   "I would like you to make three circuits splitting cases by the duration between the permit approval by the supervisor and the declaration approval by the administration: under 30 days, over 30 days, and those that do not have that pair at all.",
+   "Make three circuits by how long it takes from the supervisor approving the permit to the administration approving the declaration: fast, slow, and missing."
+  ],
+  "ambiguity": "The words 'fast' and 'slow' do not specify the 30-day threshold that separates the two time-based groups."
+ },
+ "bpic2020_travel_permit-C11": {
+  "texts": [
+   "Create three circuits: cases with Overspent equal to 'false' that go through 'Send Reminder', the rest of the cases with Overspent equal to 'false', and all the others",
+   "Create three circuits: first, cases where Overspent is false and the process goes through Send Reminder; second, the remaining cases where Overspent is false; and third, all the other cases.",
+   "Could you set up three circuits for me? I would like one for cases where Overspent is false and Send Reminder occurs, another for the rest of the cases with Overspent false, and a final one for everything else.",
+   "Make three circuits: one for the false-overspent cases that hit the reminder, another for the other false-overspent cases, and a catch-all for the rest."
+  ],
+  "ambiguity": "The word 'reminder' is a shortened, loose name that does not clearly identify the activity Send Reminder."
+ },
+ "bpic2020_travel_permit-R01": {
+  "texts": [
+   "Define a region from 'Request For Payment FINAL_APPROVED by SUPERVISOR' to 'Declaration SUBMITTED by EMPLOYEE'",
+   "Define a region from the request for payment being finally approved by the supervisor to the declaration being submitted by the employee.",
+   "Could you define a critical section starting at the final approval of the request for payment by the supervisor and ending at the submission of the declaration by the employee?",
+   "Define a region from the final approval of the request for payment by the supervisor to the declaration being submitted."
+  ],
+  "ambiguity": "The ending activity 'the declaration being submitted' omits 'by the employee', leaving it unclear which declaration-submission activity is meant."
+ },
+ "bpic2020_travel_permit-R02": {
+  "texts": [
+   "Define a critical section from 'Declaration APPROVED by ADMINISTRATION' to 'Declaration FINAL_APPROVED by SUPERVISOR'",
+   "Define a critical section from the declaration being approved by the administration to the declaration being finally approved by the supervisor.",
+   "I would like you to define a region from the approval of the declaration by the administration to the final approval of the declaration by the supervisor.",
+   "Define a critical section from the declaration approval by the administration to the final declaration approval."
+  ],
+  "ambiguity": "The ending 'the final declaration approval' does not specify 'by the supervisor', so it is unclear which final-approval activity is intended."
+ },
+ "bpic2020_travel_permit-R03": {
+  "texts": [
+   "Define a region from 'Permit FINAL_APPROVED by DIRECTOR' to 'Payment Handled'",
+   "Define a region from the permit being finally approved by the director to the payment being handled.",
+   "Could you define a critical section that starts when the permit is finally approved by the director and ends when the payment is handled?",
+   "Define a region from the permit being finally approved by the director to the payment."
+  ],
+  "ambiguity": "The ending 'the payment' is a shortened, generic noun that does not clearly identify the activity Payment Handled."
+ },
+ "bpic2020_travel_permit-R04": {
+  "texts": [
+   "Define two critical sections: from 'Request For Payment APPROVED by ADMINISTRATION' to 'End trip' and from 'Permit APPROVED by ADMINISTRATION' to 'Declaration APPROVED by BUDGET OWNER'",
+   "Define two critical sections: one from the request for payment being approved by the administration to the end trip, and another from the permit being approved by the administration to the declaration being approved by the budget owner.",
+   "I would like you to define two regions: the first from the approval of the request for payment by the administration to the end trip, and the second from the approval of the permit by the administration to the approval of the declaration by the budget owner.",
+   "Define two critical sections: one from the request for payment being approved by the administration to the end of the trip, and another from the permit being approved by the administration to the declaration being approved by the budget owner."
+  ],
+  "ambiguity": "The phrase 'the end of the trip' reads as a general description rather than the specific activity name End trip, making it slightly unclear whether it refers to that exact activity."
+ },
+ "bpic2020_travel_permit-C12": {
+  "texts": [
+   "Make three circuits: TaskNumber equal to 'task 427' and 'Payment Handled', only TaskNumber equal to 'task 427', and the rest",
+   "Make three circuits: the first where the task number is task 427 and payment handled, the second where the task number is only task 427, and the third for everything else.",
+   "Could you create three circuits for me: one for cases where the task number is task 427 and payment handled, another for cases where the task number is just task 427, and a final one for the rest?",
+   "Make three circuits: one for task 427 with payment handled, one for task 427, and the rest."
+  ],
+  "ambiguity": "task 427 could be read as an activity name rather than a value of the task number variable."
+ },
+ "bpic2020_travel_permit-R05": {
+  "texts": [
+   "Define two regions: from 'Permit FINAL_APPROVED by DIRECTOR' to 'Payment Handled' and from 'Request For Payment FINAL_APPROVED by SUPERVISOR' to 'Declaration APPROVED by BUDGET OWNER'",
+   "Define two regions: one from permit final approved by director to payment handled, and another from request for payment final approved by supervisor to declaration approved by budget owner.",
+   "Could you please define two regions for me: the first from permit final approved by director to payment handled, and the second from request for payment final approved by supervisor to declaration approved by budget owner?",
+   "Define two regions: from permit final approved by director to payment handled, and from the final approval by supervisor to declaration approved by budget owner."
+  ],
+  "ambiguity": "The phrase 'the final approval by supervisor' is a shortened name that could refer to different supervisor-approval activities in the process."
+ },
+ "bpic2020_travel_permit-R06": {
+  "texts": [
+   "Define a region from 'Permit SUBMITTED by EMPLOYEE' to 'Declaration REJECTED by EMPLOYEE' when less than 30 days pass between them",
+   "Define a region from permit submitted by employee to declaration rejected by employee when less than 30 days pass between them.",
+   "I would like you to define a region from permit submitted by employee to declaration rejected by employee, but only when less than 30 days pass between the two activities.",
+   "Define a region from the permit submission to declaration rejected by employee when less than 30 days pass."
+  ],
+  "ambiguity": "The phrase 'the permit submission' is a shortened name that could refer to different submission-related activities in the process."
+ },
+ "bpic2020_travel_permit-R07": {
+  "texts": [
+   "Define a critical section from 'Permit APPROVED by SUPERVISOR' to 'Declaration APPROVED by ADMINISTRATION' when more than 30 days elapse",
+   "Define a critical section from permit approved by supervisor to declaration approved by administration when more than 30 days elapse.",
+   "It would be interesting if you could define a critical section from permit approved by supervisor to declaration approved by administration, specifically when more than 30 days elapse between them.",
+   "Define a critical section from the permit approval to declaration approved by administration when more than 30 days elapse."
+  ],
+  "ambiguity": "The phrase 'the permit approval' is a shortened name that could refer to different approval levels of the permit."
+ },
+ "bpic2020_travel_permit-R08": {
+  "texts": [
+   "Define a region from 'Declaration APPROVED by BUDGET OWNER' to 'Declaration FINAL_APPROVED by SUPERVISOR' when less than 2 days pass between them",
+   "Define a region from declaration approved by budget owner to declaration final approved by supervisor when less than 2 days pass between them.",
+   "Could you define a region from declaration approved by budget owner to declaration final approved by supervisor, limited to cases where less than 2 days pass between the two?",
+   "Define a region from declaration approved by budget owner to the final approval by supervisor when less than 2 days pass."
+  ],
+  "ambiguity": "The phrase 'the final approval by supervisor' is a shortened name that could refer to different final-approval activities involving a supervisor."
+ },
+ "bpic2020_travel_permit-R09": {
+  "texts": [
+   "Define a region from 'Permit FINAL_APPROVED by DIRECTOR' to 'Payment Handled' in the cases with Overspent equal to 'false'",
+   "Define a region from permit final approved by director to payment handled in the cases where overspent is false.",
+   "I would like you to define a region from permit final approved by director to payment handled, but only in the cases where overspent is false.",
+   "Define a region from the final approval by director to payment handled for the non-overspent cases."
+  ],
+  "ambiguity": "The phrase 'the final approval by director' is a shortened name that could refer to different director-approval activities in the process."
+ },
+ "bpic2020_travel_permit-R10": {
+  "texts": [
+   "Define a critical section from 'Request For Payment FINAL_APPROVED by SUPERVISOR' to 'Declaration APPROVED by BUDGET OWNER' only in the cases with TaskNumber equal to 'task 427'",
+   "Define a critical section from request for payment final approved by supervisor to declaration approved by budget owner only in the cases where task number is task 427.",
+   "Could you define a critical section from request for payment final approved by supervisor to declaration approved by budget owner, restricted to the cases where task number is task 427?",
+   "Define a critical section from the final approval by supervisor to declaration approved by budget owner for task 427."
+  ],
+  "ambiguity": "The phrase 'the final approval by supervisor' is a shortened name that could refer to different supervisor-approval activities in the process."
+ },
+ "bpic2020_travel_permit-M01": {
+  "texts": [
+   "Define 'Permit APPROVED by SUPERVISOR' as a milestone",
+   "Define permit approved by supervisor as a milestone.",
+   "I would like you to mark permit approved by supervisor as a milestone.",
+   "Define the permit approval by supervisor as a milestone."
+  ],
+  "ambiguity": "The phrase 'the permit approval by supervisor' is a slightly shortened name that could be confused with other supervisor-approval activities."
+ },
+ "bpic2020_travel_permit-M02": {
+  "texts": [
+   "Mark 'Request For Payment REJECTED by ADMINISTRATION' and 'Declaration APPROVED by ADMINISTRATION' as milestones",
+   "Mark request for payment rejected by administration and declaration approved by administration as milestones.",
+   "Could you please mark both request for payment rejected by administration and declaration approved by administration as milestones?",
+   "Mark the rejection by administration and the declaration approval by administration as milestones."
+  ],
+  "ambiguity": "The phrase 'the rejection by administration' is a shortened name that could refer to different rejection activities performed by administration."
+ },
+ "bpic2020_travel_permit-M03": {
+  "texts": [
+   "Use 'Permit FINAL_APPROVED by SUPERVISOR' as a milestone",
+   "Set the permit final approval by supervisor as a milestone.",
+   "Could you please mark the permit final approval by supervisor as a milestone?",
+   "Make the final approval by supervisor a milestone."
+  ],
+  "ambiguity": "It is unclear whether the final approval by supervisor refers to the permit or to the declaration."
+ },
+ "bpic2020_travel_permit-M04": {
+  "texts": [
+   "Define 'Request For Payment SUBMITTED by EMPLOYEE' as a milestone",
+   "Define the request for payment submitted by employee as a milestone.",
+   "I would like you to set the request for payment submitted by employee as a milestone.",
+   "Mark the payment request submission as a milestone."
+  ],
+  "ambiguity": "The role that performs the submission is not specified, so it could be by employee or by another actor."
+ },
+ "bpic2020_travel_permit-M05": {
+  "texts": [
+   "Define 'Permit FINAL_APPROVED by SUPERVISOR' and 'Permit APPROVED by BUDGET OWNER' as milestones",
+   "Set the permit final approval by supervisor and the permit approval by budget owner as milestones.",
+   "It would be great if you could define the permit final approval by supervisor and the permit approval by budget owner as milestones.",
+   "Mark the final approval by supervisor and the approval by budget owner as milestones."
+  ],
+  "ambiguity": "Without naming the document, it is unclear whether both approvals refer to the permit or could involve the declaration or the request for payment."
+ },
+ "bpic2020_travel_permit-M06": {
+  "texts": [
+   "Mark 'Declaration FINAL_APPROVED by DIRECTOR', 'Declaration APPROVED by ADMINISTRATION' and 'Request For Payment APPROVED by BUDGET OWNER' as milestones",
+   "Mark the declaration final approval by director, the declaration approval by administration, and the request for payment approval by budget owner as milestones.",
+   "Would you mind setting the declaration final approval by director, the declaration approval by administration, and the request for payment approval by budget owner as milestones?",
+   "Set the final approval by director, the approval by administration, and the payment approval by budget owner as milestones."
+  ],
+  "ambiguity": "The first two approvals do not specify whether they concern the declaration or the permit, and the third could refer to the request for payment or the permit."
+ },
+ "bpic2020_travel_permit-M07": {
+  "texts": [
+   "Define 'Permit APPROVED by ADMINISTRATION' as a milestone",
+   "Define the permit approval by administration as a milestone.",
+   "I would like you to mark the permit approval by administration as a milestone.",
+   "Set the approval by administration as a milestone."
+  ],
+  "ambiguity": "The document that is approved by administration is not stated, so it could be the permit, the declaration, or the request for payment."
+ },
+ "bpic2020_travel_permit-M08": {
+  "texts": [
+   "Mark 'Permit APPROVED by BUDGET OWNER' and 'Declaration FINAL_APPROVED by SUPERVISOR' as milestones",
+   "Mark the permit approval by budget owner and the declaration final approval by supervisor as milestones.",
+   "Could you please set the permit approval by budget owner and the declaration final approval by supervisor as milestones?",
+   "Set the approval by budget owner and the final approval by supervisor as milestones."
+  ],
+  "ambiguity": "The approval by budget owner could refer to the permit or the request for payment, and the final approval by supervisor could refer to the permit or the declaration."
+ },
+ "bpic2020_travel_permit-M09": {
+  "texts": [
+   "Define 'Declaration REJECTED by ADMINISTRATION', 'Request For Payment REJECTED by EMPLOYEE' and 'Declaration APPROVED by PRE_APPROVER' as milestones",
+   "Define the declaration rejection by administration, the request for payment rejection by employee, and the declaration approval by pre-approver as milestones.",
+   "Could you please define the declaration rejection by administration, the request for payment rejection by employee, and the declaration approval by pre-approver as milestones?",
+   "Mark the rejection by administration, the rejection by employee, and the approval by pre-approver as milestones."
+  ],
+  "ambiguity": "The documents involved in each rejection and approval are not named, so it is unclear whether they refer to the declaration, the permit, or the request for payment."
+ },
+ "bpic2020_travel_permit-M10": {
+  "texts": [
+   "Define 'Request For Payment APPROVED by ADMINISTRATION' as a milestone",
+   "Define the request for payment approval by administration as a milestone.",
+   "I would like you to set the request for payment approval by administration as a milestone.",
+   "Mark the payment approval by administration as a milestone."
+  ],
+  "ambiguity": "The shortened phrase payment approval by administration could refer to the request for payment or to the permit."
+ }
+}

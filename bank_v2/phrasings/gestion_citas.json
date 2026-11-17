@@ -1,0 +1,362 @@
+{
+ "gestion_citas-F01": {
+  "texts": [
+   "Limita los casos a: casos en los que ocurre «CitaPreferente»",
+   "Filtra los casos a aquellos en los que se produce una cita preferente.",
+   "¿Podrías limitar los casos a los que incluyen una cita preferente?",
+   "Limita los casos a los que tienen una cita."
+  ],
+  "ambiguity": "una cita is too generic and could refer to any type of appointment, not specifically a preferential one."
+ },
+ "gestion_citas-F02": {
+  "texts": [
+   "Limita los casos a: pacientes/casos que pasaron por «RecordatorioCita»",
+   "Limita los casos a los pacientes que pasaron por un recordatorio de cita.",
+   "Me gustaría que filtraras los casos a aquellos en los que se envió un recordatorio de cita.",
+   "Filtra los casos a los que recibieron un recordatorio."
+  ],
+  "ambiguity": "un recordatorio is unspecific and could refer to any kind of reminder, not necessarily one about an appointment."
+ },
+ "gestion_citas-F33": {
+  "texts": [
+   "Limita los casos a: casos con Edad mayor que 44",
+   "Filtra los casos a aquellos con edad mayor que 44.",
+   "¿Podrías limitar los casos a los que tengan una edad superior a 44?",
+   "Limita los casos a los de edad 44."
+  ],
+  "ambiguity": "de edad 44 is unclear whether it means exactly 44, 44 or more, or approximately 44."
+ },
+ "gestion_citas-F40": {
+  "texts": [
+   "Limita los casos a: casos con «TriajeAdministrativo» y, más tarde, «NoPresentado» en menos de 5 días",
+   "Limita los casos a aquellos en los que hay un triaje administrativo seguido de un no presentado en menos de 5 días.",
+   "¿Podrías filtrar los casos a los que incluyen un triaje administrativo y después un no presentado, con un intervalo inferior a 5 días?",
+   "Filtra los casos a los que tienen un triaje y luego un no presentado en menos de 5 días."
+  ],
+  "ambiguity": "un triaje is not qualified as administrative, so it could match any triage activity in the process."
+ },
+ "gestion_citas-F41": {
+  "texts": [
+   "Limita los casos a: casos con «SolicitudCita» y, más tarde, «ConsultaTramite» con más de 7 días entre ambos",
+   "Limita los casos a aquellos con una solicitud de cita y, más tarde, una consulta de trámite, con más de 7 días entre ambas.",
+   "Me gustaría que limitaras los casos a los que tengan una solicitud de cita seguida de una consulta de trámite, separadas por más de 7 días.",
+   "Filtra los casos a los que hay una solicitud y después una consulta con más de 7 días de diferencia."
+  ],
+  "ambiguity": "una solicitud and una consulta are too generic and could refer to any request or consultation in the process."
+ },
+ "gestion_citas-F39": {
+  "texts": [
+   "Limita los casos a: casos con «TriajeAdministrativo» y, más tarde, «SolicitudReconsulta», con CosteTramo igual a «medio»",
+   "Limita los casos a aquellos con un triaje administrativo y, más tarde, una solicitud de reconsulta, con el coste de tramo igual a medio.",
+   "¿Podrías filtrar los casos a los que incluyen un triaje administrativo seguido de una solicitud de reconsulta, donde el coste de tramo sea medio?",
+   "Filtra los casos a los que hay un triaje y luego una reconsulta, con el tramo en medio."
+  ],
+  "ambiguity": "en medio could be read as a spatial or temporal position rather than the value medio for the cost variable, and un triaje lacks the administrative qualifier."
+ },
+ "gestion_citas-F34": {
+  "texts": [
+   "Limita los casos a: casos con Edad entre 44 y 61",
+   "Filtra los casos a los que tengan una edad entre 44 y 61 años.",
+   "¿Podrías limitarme los casos a aquellos cuya edad esté entre 44 y 61 años, por favor?",
+   "Limita los casos a los de 44 a 61."
+  ],
+  "ambiguity": "It is not explicit that 44 and 61 refer to the age variable; they could be read as case identifiers or another numeric field."
+ },
+ "gestion_citas-F43": {
+  "texts": [
+   "Limita los casos a: casos con Edad mayor que 47 y «ConsultaTramite» en menos de 6 días desde «TriajeAdministrativo»",
+   "Filtra los casos a los que tengan edad mayor que 47 y donde la consulta de trámite se realice en menos de 6 días desde el triaje administrativo.",
+   "Me gustaría que limitaras los casos a los de edad superior a 47 y en los que la consulta de trámite ocurra en menos de 6 días desde el triaje administrativo, si te parece bien.",
+   "Filtra los casos a los de más de 47 con la consulta en menos de 6 días desde el triaje."
+  ],
+  "ambiguity": "The shortened 'la consulta' and 'el triaje' could refer to different activities in the process, making it unclear which specific pair is intended."
+ },
+ "gestion_citas-C02": {
+  "texts": [
+   "Crea circuitos para esto: clasifica a los pacientes según hayan tenido cita preferente, recordatorio o trámite resuelto en administración (el primero que cumpla)",
+   "Crea circuitos que clasifiquen a los pacientes según hayan tenido cita preferente, recordatorio de cita o trámite resuelto en administración, tomando el primero que cumpla.",
+   "¿Podrías crear circuitos para clasificar a los pacientes según si han tenido cita preferente, recordatorio de cita o trámite resuelto en administración, priorizando el primero que se cumpla?",
+   "Crea circuitos que separen a los pacientes según hayan tenido cita preferente, un recordatorio o un trámite resuelto, el primero que cumpla."
+  ],
+  "ambiguity": "'Un recordatorio' is a shortened form of 'recordatorio de cita' and could refer to any type of reminder in the process."
+ },
+ "gestion_citas-C03": {
+  "texts": [
+   "Crea circuitos para esto: separa los pacientes que pasaron del triaje administrativo a una reconsulta, los que solo pasaron por el triaje y el resto",
+   "Crea circuitos que separen a los pacientes que pasaron del triaje administrativo a una solicitud de reconsulta, los que solo pasaron por el triaje administrativo y el resto.",
+   "¿Podrías crear circuitos para separar a los pacientes que fueron del triaje administrativo a una solicitud de reconsulta, los que únicamente pasaron por el triaje y el resto?",
+   "Crea circuitos que separen a los pacientes que pasaron del triaje a una solicitud de reconsulta, los que solo pasaron por el triaje y el resto."
+  ],
+  "ambiguity": "'Triaje' without the qualifier 'administrativo' could refer to other types of triage in the process."
+ },
+ "gestion_citas-C04": {
+  "texts": [
+   "Crea circuitos para esto: separa los casos según cómo terminan: «CierreResuelto» o «AbandonoSolicitud»",
+   "Crea circuitos que separen los casos según cómo terminan: con cierre resuelto o con abandono de solicitud.",
+   "¿Podrías crear circuitos para separar los casos según su finalización: cierre resuelto o abandono de solicitud?",
+   "Crea circuitos que separen los casos según cómo acaban: resueltos o con abandono de solicitud."
+  ],
+  "ambiguity": "'Resueltos' is a generic adjective that could refer to other resolution activities beyond 'cierre resuelto'."
+ },
+ "gestion_citas-C05": {
+  "texts": [
+   "Crea circuitos para esto: separa los casos según AccesoDigital: «si» o «no»",
+   "Crea circuitos que separen los casos según el acceso digital: si o no.",
+   "¿Podrías crear circuitos para agrupar los casos según el acceso digital, en dos grupos: si y no?",
+   "Crea circuitos que separen los casos según el acceso: si o no."
+  ],
+  "ambiguity": "'Acceso' is a shortened form of 'acceso digital' and could refer to other access-related variables in the process."
+ },
+ "gestion_citas-C06": {
+  "texts": [
+   "Crea circuitos para esto: agrupa los casos por BurnoutMedico: «bajo» o «alto»",
+   "Crea circuitos que agrupen los casos según el burnout médico: bajo o alto.",
+   "¿Podrías crear circuitos para agrupar los casos según el burnout médico, en dos grupos: bajo y alto?",
+   "Crea circuitos que agrupen los casos según el burnout: bajo o alto."
+  ],
+  "ambiguity": "'Burnout' without the qualifier 'médico' could refer to other burnout-related variables in the process."
+ },
+ "gestion_citas-C07": {
+  "texts": [
+   "Crea un circuito por cada valor de CosteTramo: «bajo» o «medio»",
+   "Crea un circuito por cada valor del coste del tramo: bajo o medio.",
+   "¿Podrías crear un circuito para cada valor del coste del tramo, es decir, bajo y medio?",
+   "Crea un circuito por cada valor del coste: bajo o medio."
+  ],
+  "ambiguity": "'Coste' without 'del tramo' could refer to other cost variables in the process."
+ },
+ "gestion_citas-C08": {
+  "texts": [
+   "Crea circuitos para esto: separa los casos según Cupo: «CupoB» o «CupoA»",
+   "Crea circuitos que separen los casos según el cupo: cupo B o cupo A.",
+   "¿Podrías crear circuitos para separar los casos según el cupo, en dos grupos: cupo B y cupo A?",
+   "Crea circuitos que separen los casos según el cupo: B o A."
+  ],
+  "ambiguity": "'B' and 'A' without the 'cupo' prefix could refer to other B/A classifications in the process."
+ },
+ "gestion_citas-C01": {
+  "texts": [
+   "Crea circuitos para esto: separa las solicitudes según cómo terminan: resueltas, abandonadas, derivadas o con urgencias no urgentes",
+   "Crea circuitos que separen las solicitudes según cómo terminan: cierre resuelto, abandono de solicitud, cierre derivado o atención de urgencias no urgente.",
+   "¿Podrías crear circuitos que separen las solicitudes según su final: cierre resuelto, abandono de solicitud, cierre derivado o atención de urgencias no urgente?",
+   "Crea circuitos que separen las solicitudes según cómo terminan: cierre resuelto, abandono, derivado o atención de urgencias no urgente."
+  ],
+  "ambiguity": "The shortened 'derivado' without the preceding 'cierre' could refer to a different activity or simply mean 'derived' in a general sense."
+ },
+ "gestion_citas-C09": {
+  "texts": [
+   "Crea tres circuitos: «NoPresentado» y luego «RecordatorioCita» en menos de 10 días, el resto de los que tienen «NoPresentado» y luego «RecordatorioCita», y los demás",
+   "Crea tres circuitos: el primero para los casos donde no presentado va seguido de recordatorio de cita en menos de diez días, el segundo para los que tienen esa secuencia pero tardan más, y el tercero para el resto.",
+   "¿Podrías crear tres circuitos, por favor? Uno para los casos en que no presentado se sigue de recordatorio de cita en menos de diez días, otro para los que sí tienen esa secuencia pero con más tiempo, y un último para los demás.",
+   "Haz tres circuitos: no presentado y luego recordatorio en menos de diez días, los que tienen esa secuencia pero más lentos, y el resto."
+  ],
+  "ambiguity": "recordatorio is a shortened name that could refer to a different reminder activity."
+ },
+ "gestion_citas-C12": {
+  "texts": [
+   "Haz tres circuitos: BurnoutMedico igual a «bajo» y «DerivacionEspecialista», solo BurnoutMedico igual a «bajo», y el resto",
+   "Crea tres circuitos: los casos con burnout médico bajo que tienen derivación a especialista, los que solo tienen burnout médico bajo, y el resto.",
+   "¿Podrías crear tres circuitos, por favor? Uno para los casos donde burnout médico es bajo y hay derivación a especialista, otro para los que solo tienen burnout médico bajo, y un último para el resto.",
+   "Haz tres circuitos: burnout médico bajo con derivación, solo burnout médico bajo, y el resto."
+  ],
+  "ambiguity": "derivación is a shortened name that could refer to a different referral activity."
+ },
+ "gestion_citas-R01": {
+  "texts": [
+   "Define una región desde «TriajeAdministrativo» hasta «SolicitudReconsulta»",
+   "Define una región desde triaje administrativo hasta solicitud de reconsulta.",
+   "¿Podrías definir una región, por favor, que vaya desde triaje administrativo hasta solicitud de reconsulta?",
+   "Define una región desde triaje hasta solicitud de reconsulta."
+  ],
+  "ambiguity": "triaje is a shortened name that could refer to a different triage activity."
+ },
+ "gestion_citas-R04": {
+  "texts": [
+   "Define dos secciones críticas: de «CitaProgramada» a «RecordatorioCita» y de «SolicitudCita» a «TramiteResueltoAdministrativo»",
+   "Define dos secciones críticas: una de cita programada a recordatorio de cita y otra de solicitud de cita a trámite resuelto administrativo.",
+   "¿Podrías definir dos secciones críticas, por favor? Una que vaya desde cita programada hasta recordatorio de cita, y otra desde solicitud de cita hasta trámite resuelto administrativo.",
+   "Define dos secciones críticas: de cita programada a recordatorio y de solicitud de cita a trámite resuelto."
+  ],
+  "ambiguity": "recordatorio is a shortened name that could refer to a different reminder activity."
+ },
+ "gestion_citas-C10": {
+  "texts": [
+   "Haz tres circuitos según el tiempo entre «ConsultaMedica» y «CierreResuelto»: menos de 14 minutoes, más tiempo, y los que no tienen ese tramo",
+   "Haz tres circuitos según el tiempo entre la consulta médica y el cierre resuelto: los de menos de catorce minutos, los de más tiempo y los que no tienen ese tramo.",
+   "¿Podrías crear tres circuitos según el tiempo entre la consulta médica y el cierre resuelto, separando los de menos de catorce minutos, los de más tiempo y los que no tienen ese tramo?",
+   "Haz tres circuitos según el tiempo entre la consulta y el cierre: menos de catorce minutos, más, y el resto."
+  ],
+  "ambiguity": "la consulta and el cierre are shortened names that could match different activities in the model."
+ },
+ "gestion_citas-C11": {
+  "texts": [
+   "Crea tres circuitos: casos con AccesoDigital igual a «si» que pasan por «TramiteResueltoAdministrativo», el resto de casos con AccesoDigital igual a «si», y los demás",
+   "Crea tres circuitos: los casos con acceso digital igual a sí que pasan por el trámite resuelto administrativo, el resto con acceso digital igual a sí, y los demás.",
+   "Me gustaría que crearas tres circuitos: los casos con acceso digital igual a sí que pasan por el trámite resuelto administrativo, el resto con acceso digital igual a sí, y los demás.",
+   "Crea tres circuitos: los que tienen acceso digital en sí y pasan por el trámite resuelto, el resto con acceso digital en sí, y los demás."
+  ],
+  "ambiguity": "el trámite resuelto is a shortened name that could fit multiple activities in the model."
+ },
+ "gestion_citas-R03": {
+  "texts": [
+   "Define una región desde «TriajeAdministrativo» hasta «ConsultaMedica»",
+   "Define una región desde el triaje administrativo hasta la consulta médica.",
+   "¿Podrías definir una región desde el triaje administrativo hasta la consulta médica?",
+   "Define una región desde el triaje hasta la consulta."
+  ],
+  "ambiguity": "el triaje and la consulta are shortened names that could match different activities in the model."
+ },
+ "gestion_citas-R02": {
+  "texts": [
+   "Define una sección crítica desde «CitaDemorada» hasta «ConsultaMedica»",
+   "Define una región desde la cita demorada hasta la consulta médica.",
+   "¿Podrías definir una sección crítica que abarque desde la cita demorada hasta la consulta médica?",
+   "Define una región desde la demora hasta la consulta médica."
+  ],
+  "ambiguity": "La demora is a loose shortened name that could refer to any delay-related activity, not specifically CitaDemorada."
+ },
+ "gestion_citas-R05": {
+  "texts": [
+   "Define dos regiones: de «TriajeAdministrativo» a «ConsultaMedica» y de «SolicitudCita» a «AbandonoSolicitud»",
+   "Define dos regiones: una que vaya del triaje administrativo a la consulta médica y otra de la solicitud de cita al abandono de solicitud.",
+   "¿Podrías definir dos regiones, una del triaje administrativo hasta la consulta médica y otra de la solicitud de cita hasta el abandono de solicitud?",
+   "Define dos regiones: de triaje a consulta médica y de solicitud a abandono."
+  ],
+  "ambiguity": "The activity names are shortened (triaje, solicitud, abandono) and could match other activities in the model."
+ },
+ "gestion_citas-R06": {
+  "texts": [
+   "Define una región desde «NoPresentado» hasta «RecordatorioCita» cuando pasan menos de 10 días entre ambos",
+   "Define una región desde no presentado hasta recordatorio de cita cuando pasan menos de diez días entre ambos.",
+   "Sería interesante que definieras una región que vaya de no presentado al recordatorio de cita, siempre que el intervalo entre ambos sea inferior a diez días.",
+   "Define una región desde no presentado hasta el recordatorio cuando pasan menos de diez días."
+  ],
+  "ambiguity": "Recordatorio without 'de cita' could refer to a different reminder activity in the model."
+ },
+ "gestion_citas-R07": {
+  "texts": [
+   "Define una sección crítica desde «ConsultaMedica» hasta «CierreResuelto» cuando transcurren más de 14 minutoes",
+   "Define una sección crítica desde consulta médica hasta cierre resuelto cuando transcurren más de catorce minutos.",
+   "¿Podrías marcar una sección crítica que vaya de la consulta médica al cierre resuelto, únicamente cuando el tiempo superé los catorce minutos?",
+   "Define una sección crítica desde consulta hasta cierre cuando pasan más de catorce minutos."
+  ],
+  "ambiguity": "Consulta and cierre are shortened and could match other activities in the model."
+ },
+ "gestion_citas-R08": {
+  "texts": [
+   "Define una región desde «CitaProgramada» hasta «NoPresentado» cuando pasan menos de 5 días entre ambos",
+   "Define una región desde cita programada hasta no presentado cuando pasan menos de cinco días entre ambos.",
+   "Me gustaría que definieras una región de la cita programada al no presentado, pero solo cuando el tiempo entre ambas actividades sea inferior a cinco días.",
+   "Define una región desde la cita hasta no presentado cuando pasan menos de cinco días."
+  ],
+  "ambiguity": "Cita without 'programada' could refer to a different appointment-related activity."
+ },
+ "gestion_citas-R09": {
+  "texts": [
+   "Define una región desde «TriajeAdministrativo» hasta «ConsultaMedica» en los casos con AccesoDigital igual a «si»",
+   "Define una región desde triaje administrativo hasta consulta médica en los casos con acceso digital igual a sí.",
+   "¿Podrías definir una región del triaje administrativo a la consulta médica, pero únicamente en los casos donde el acceso digital sea sí?",
+   "Define una región desde triaje hasta consulta médica solo en los casos con acceso digital en sí."
+  ],
+  "ambiguity": "Triaje is shortened and the phrasing 'en sí' could be misread as a different value or a different condition."
+ },
+ "gestion_citas-M01": {
+  "texts": [
+   "Define «CierreResuelto» como hito",
+   "Define cierre resuelto como hito.",
+   "¿Podrías marcar cierre resuelto como hito en el modelo?",
+   "Define cierre como hito."
+  ],
+  "ambiguity": "Cierre is shortened and could refer to a different closing activity in the model."
+ },
+ "gestion_citas-M02": {
+  "texts": [
+   "Marca «CitaProgramada» y «ConsultaTramite» como hitos",
+   "Marca cita programada y consulta de trámite como hitos.",
+   "Me gustaría que marcaras cita programada y consulta de trámite como hitos del proceso.",
+   "Marca cita y consulta como hitos."
+  ],
+  "ambiguity": "Cita and consulta are shortened and could match other activities in the model."
+ },
+ "gestion_citas-R10": {
+  "texts": [
+   "Define una sección crítica desde «SolicitudCita» hasta «AbandonoSolicitud» solo en los casos con BurnoutMedico igual a «bajo»",
+   "Define una región desde solicitud de cita hasta abandono de solicitud, solo en los casos donde el burnout médico es bajo.",
+   "¿Podrías definir una sección crítica que vaya desde la solicitud de cita hasta el abandono de solicitud, limitándola únicamente a los casos con burnout médico bajo?",
+   "Define una región desde la solicitud hasta el abandono de solicitud, solo para los casos con burnout bajo."
+  ],
+  "ambiguity": "solicitud without de cita could refer to a different solicitud activity."
+ },
+ "gestion_citas-M03": {
+  "texts": [
+   "Usa «TramiteResueltoAdministrativo» como hito",
+   "Marca el trámite resuelto administrativo como hito.",
+   "¿Podrías definir el trámite resuelto administrativo como hito, por favor?",
+   "Usa el trámite resuelto como hito."
+  ],
+  "ambiguity": "The qualifier 'administrativo' is dropped, so it could refer to any resolved procedure."
+ },
+ "gestion_citas-M04": {
+  "texts": [
+   "Define «ConsultaResultados» como hito",
+   "Define la consulta de resultados como hito.",
+   "Me gustaría que marcaras la consulta de resultados como hito.",
+   "Define la consulta como hito."
+  ],
+  "ambiguity": "The qualifier 'de resultados' is omitted, so it could refer to any consultation activity."
+ },
+ "gestion_citas-M06": {
+  "texts": [
+   "Marca «PruebaComplementaria», «RecordatorioCita» y «AtencionUrgenciasNoUrgente» como hitos",
+   "Marca la prueba complementaria, el recordatorio de cita y la atención de urgencias no urgente como hitos.",
+   "¿Podrías definir la prueba complementaria, el recordatorio de cita y la atención de urgencias no urgente como hitos?",
+   "Marca la prueba, el recordatorio y la atención de urgencias como hitos."
+  ],
+  "ambiguity": "The qualifiers 'complementaria', 'de cita' and 'no urgente' are all omitted, making each activity name generic."
+ },
+ "gestion_citas-M07": {
+  "texts": [
+   "Define «CitaDemorada» como hito",
+   "Define la cita demorada como hito.",
+   "Me gustaría que marcaras la cita demorada como hito.",
+   "Define la cita como hito."
+  ],
+  "ambiguity": "The qualifier 'demorada' is dropped, so it could refer to any appointment-related activity."
+ },
+ "gestion_citas-M08": {
+  "texts": [
+   "Marca «CierreDerivado» y «ConsultaTramite» como hitos",
+   "Marca el cierre derivado y la consulta de trámite como hitos.",
+   "¿Podrías definir el cierre derivado y la consulta de trámite como hitos?",
+   "Marca el cierre y la consulta como hitos."
+  ],
+  "ambiguity": "The qualifiers 'derivado' and 'de trámite' are omitted, so both names could match other closing or consultation activities."
+ },
+ "gestion_citas-M10": {
+  "texts": [
+   "Define «AbandonoSolicitud» como hito",
+   "Define el abandono de solicitud como hito.",
+   "¿Podrías marcar el abandono de solicitud como hito?",
+   "Define el abandono como hito."
+  ],
+  "ambiguity": "The qualifier 'de solicitud' is omitted, so it could refer to the abandonment of any process element."
+ },
+ "gestion_citas-M05": {
+  "texts": [
+   "Define «RecordatorioCita» y «ConsultaMedica» como hitos",
+   "Marca recordatorio de cita y consulta médica como hitos del proceso.",
+   "Me gustaría que definieras recordatorio de cita y consulta médica como hitos del modelo.",
+   "Define recordatorio y consulta como hitos."
+  ],
+  "ambiguity": "The activities are shortened to 'recordatorio' and 'consulta', which could refer to other activities in the process."
+ },
+ "gestion_citas-M09": {
+  "texts": [
+   "Define «ConsultaTramite», «CitaProgramada» y «DerivacionEspecialista» como hitos",
+   "Establece consulta de trámite, cita programada y derivación a especialista como hitos.",
+   "¿Podrías marcar consulta de trámite, cita programada y derivación a especialista como hitos del proceso, por favor?",
+   "Define consulta, cita y derivación como hitos."
+  ],
+  "ambiguity": "The activities are shortened to 'consulta', 'cita' and 'derivación', which could match other activities in the model."
+ }
+}

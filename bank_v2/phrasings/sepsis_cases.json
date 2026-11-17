@@ -1,0 +1,362 @@
+{
+ "sepsis_cases-F01": {
+  "texts": [
+   "Limit the cases to: cases in which 'Return ER' occurs",
+   "Filter the cases to only those where a return to the ER takes place.",
+   "Could you please limit the cases to those in which a return to the ER occurs?",
+   "Limit the cases to those with an ER return."
+  ],
+  "ambiguity": "The shortened phrase 'ER return' is a loose name that could refer to different activities involving the emergency room."
+ },
+ "sepsis_cases-F02": {
+  "texts": [
+   "Limit the cases to: cases that went through 'Release A'",
+   "Filter the cases to only those that went through release A.",
+   "I would like you to limit the cases to those that passed through release A.",
+   "Limit the cases to those that had a release."
+  ],
+  "ambiguity": "The unspecific 'a release' could refer to release A, release B, or any other release activity in the process."
+ },
+ "sepsis_cases-F33": {
+  "texts": [
+   "Limit the cases to: cases with Age greater than 65",
+   "Filter the cases to those where the age is greater than 65.",
+   "Could you limit the cases to patients whose age is above 65?",
+   "Limit the cases to those over 65."
+  ],
+  "ambiguity": "The phrase 'over 65' is unclear whether it strictly excludes 65 or includes it as a boundary value."
+ },
+ "sepsis_cases-F34": {
+  "texts": [
+   "Limit the cases to: cases with Age between 65 and 80",
+   "Filter the cases to those where the age is between 65 and 80, including both endpoints.",
+   "I would like you to limit the cases to patients aged from 65 to 80, both values included.",
+   "Limit the cases to those with age between 65 and 80."
+  ],
+  "ambiguity": "The word 'between' does not specify whether the boundary values 65 and 80 are included or excluded."
+ },
+ "sepsis_cases-F40": {
+  "texts": [
+   "Limit the cases to: cases with 'IV Liquid' and, later, 'Release A' in less than 5 days",
+   "Filter the cases to those where IV liquid is followed by release A in less than 5 days.",
+   "Could you limit the cases to those in which IV liquid happens and then release A follows, with less than 5 days between them?",
+   "Limit the cases to those where IV liquid and release A are less than 5 days apart."
+  ],
+  "ambiguity": "The temporal order of the two activities is not stated, so it is unclear whether IV liquid must come before release A or vice versa."
+ },
+ "sepsis_cases-F41": {
+  "texts": [
+   "Limit the cases to: cases with 'IV Antibiotics' and, later, 'Release A' more than 6 days apart",
+   "Filter the cases to those where IV antibiotics is followed by release A with more than 6 days in between.",
+   "I would like you to limit the cases to those in which IV antibiotics occurs first and release A comes later, separated by more than 6 days.",
+   "Limit the cases to those where IV antibiotics and release A are more than 6 days apart."
+  ],
+  "ambiguity": "The sequence is not specified, leaving it unclear which of the two activities must occur first."
+ },
+ "sepsis_cases-F38": {
+  "texts": [
+   "Limit the cases to: cases with 'Return ER' and Age greater than 75",
+   "Filter the cases to those where a return to the ER occurs and the age is greater than 75.",
+   "Could you please limit the cases to those in which a return to the ER happens and the patient is older than 75?",
+   "Limit the cases to those with an ER return and age above 75."
+  ],
+  "ambiguity": "The expression 'above 75' is ambiguous about whether the value 75 itself is included or strictly excluded."
+ },
+ "sepsis_cases-F39": {
+  "texts": [
+   "Limit the cases to: cases with 'IV Antibiotics' and, later, 'LacticAcid', where DiagnosticUrinarySediment is 'true'",
+   "Filter the cases to those where IV antibiotics is followed by lactic acid, and the diagnostic urinary sediment is true.",
+   "I would like you to limit the cases to those in which IV antibiotics occurs before lactic acid, with the diagnostic urinary sediment being true.",
+   "Limit the cases to those where IV antibiotics and lactic acid happen, and the diagnostic urinary sediment is true."
+  ],
+  "ambiguity": "The order between IV antibiotics and lactic acid is not stated, so it is unclear which one must precede the other."
+ },
+ "sepsis_cases-C01": {
+  "texts": [
+   "Create circuits for this: separate the patients by how their pathway ends: release A, return to the ER, IV antibiotics or release B",
+   "Create circuits that split the patients into four groups based on how their pathway ends: release A, return to the ER, IV antibiotics, or release B.",
+   "Could you create circuits that separate the patients by their final activity, giving one group for release A, one for return to the ER, one for IV antibiotics, and one for release B?",
+   "Create circuits that group the patients by how they end: release A, back to the ER, antibiotics, or release B."
+  ],
+  "ambiguity": "The word antibiotics without the IV qualifier could refer to a different antibiotic-related activity in the model."
+ },
+ "sepsis_cases-C02": {
+  "texts": [
+   "Create circuits for this: classify the patients by whether they returned to the ER, were released with type A or were admitted to the ICU (first match wins)",
+   "Create circuits that classify the patients in priority order: first those who returned to the ER, then those released with type A, and finally those admitted to the ICU.",
+   "I would like you to create circuits that sort the patients by priority, with the first match going to return to the ER, then release A, and then admission to the ICU.",
+   "Create circuits that group the patients: those who went back to the ER, those who got released, and those who ended up in the ICU, with the first group taking priority."
+  ],
+  "ambiguity": "The phrase got released could refer to either release A or release B, making it unclear which activity is meant."
+ },
+ "sepsis_cases-C03": {
+  "texts": [
+   "Create circuits for this: separate the patients who got antibiotics followed by a lactic acid measurement, those with only antibiotics, and the rest",
+   "Create circuits that separate the patients into three groups: those who received IV antibiotics followed by a lactic acid measurement, those who only had IV antibiotics, and everyone else.",
+   "It would be helpful if you could create circuits splitting the patients into three groups: first those with IV antibiotics followed by a lactic acid measurement, then those with only IV antibiotics, and finally the rest.",
+   "Create circuits that group the patients: those who had antibiotics then a lactic acid test, those with just antibiotics, and the remaining cases."
+  ],
+  "ambiguity": "The word antibiotics without the IV qualifier could match a different antibiotic activity in the process."
+ },
+ "sepsis_cases-C04": {
+  "texts": [
+   "Create circuits for this: separate the cases by how they end: 'Release A' or 'Return ER'",
+   "Create circuits that split the cases into two groups based on their ending: release A or return to the ER.",
+   "Could you please create circuits that separate the cases by their final activity, one group for release A and another for return to the ER?",
+   "Create circuits that divide the cases by how they finish: a release or a return to the ER."
+  ],
+  "ambiguity": "The phrase a release without specifying which type could mean release A or release B."
+ },
+ "sepsis_cases-C05": {
+  "texts": [
+   "Create circuits for this: separate the cases by DiagnosticArtAstrup: 'false' or 'true'",
+   "Create circuits that separate the cases by the diagnostic art astrup result: one group for false and one for true.",
+   "I would like you to create circuits that group the cases according to the diagnostic art astrup variable, with one circuit for false and one for true.",
+   "Create circuits that split the cases by the art astrup result: false or true."
+  ],
+  "ambiguity": "The shortened name art astrup result could be confused with another diagnostic variable in the model."
+ },
+ "sepsis_cases-C06": {
+  "texts": [
+   "Create circuits for this: group the cases by DiagnosticBlood: 'true' or 'false'",
+   "Create circuits that group the cases by the diagnostic blood result: one for true and one for false.",
+   "Could you create circuits that separate the cases according to the diagnostic blood variable, with one group for true and one for false?",
+   "Create circuits that split the cases by the blood diagnostic: true or false."
+  ],
+  "ambiguity": "The shortened name blood diagnostic could be confused with another blood-related diagnostic variable."
+ },
+ "sepsis_cases-C07": {
+  "texts": [
+   "Create one circuit for each value of DiagnosticECG: 'true' or 'false'",
+   "Create circuits, one for each value of the diagnostic ECG: true and false.",
+   "It would be great if you could create one circuit for each value of the diagnostic ECG variable, namely true and false.",
+   "Create circuits for the ECG diagnostic: one for true and one for false."
+  ],
+  "ambiguity": "The shortened name ECG diagnostic could be confused with another ECG-related variable in the model."
+ },
+ "sepsis_cases-C08": {
+  "texts": [
+   "Create circuits for this: separate the cases by DiagnosticIC: 'true' or 'false'",
+   "Create circuits that separate the cases by the diagnostic IC result: true or false.",
+   "I would like you to create circuits that group the cases by the diagnostic IC variable, one for true and one for false.",
+   "Create circuits that split the cases by the IC diagnostic: true or false."
+  ],
+  "ambiguity": "The shortened name IC diagnostic could be confused with another IC-related variable in the model."
+ },
+ "sepsis_cases-C09": {
+  "texts": [
+   "Create three circuits: 'IV Antibiotics' then 'IV Liquid' in less than 14 minutes, the rest of those with 'IV Antibiotics' then 'IV Liquid', and all the others",
+   "Create three circuits: first, cases where IV antibiotics is followed by IV liquid in under 14 minutes; second, the remaining cases where IV antibiotics is followed by IV liquid; and third, all the other cases.",
+   "Could you create three circuits for me: one for cases where IV antibiotics is followed by IV liquid within 14 minutes, another for the rest of those with IV antibiotics followed by IV liquid, and a final one for everything else?",
+   "Make three circuits: the fast ones with antibiotics then liquid in under 14 minutes, the slower ones with antibiotics then liquid, and the rest."
+  ],
+  "ambiguity": "The shortened names antibiotics and liquid could refer to other activities in the model, not specifically IV antibiotics and IV liquid."
+ },
+ "sepsis_cases-C10": {
+  "texts": [
+   "Make three circuits by the time between 'Admission IC' and 'CRP': less than 3 hours, longer, and those without that stretch",
+   "Make three circuits based on the time between admission to the ICU and the CRP test: under 3 hours, over 3 hours, and cases that do not have that sequence at all.",
+   "I would like you to create three circuits splitting cases by the time between admission to the ICU and the CRP test: those under 3 hours, those taking longer, and those without that stretch.",
+   "Create three circuits by the gap from admission to CRP: under 3 hours, over, and those without it."
+  ],
+  "ambiguity": "The word admission is unspecific and could refer to ER admission or another admission activity rather than admission to the ICU."
+ },
+ "sepsis_cases-C11": {
+  "texts": [
+   "Create three circuits: cases with DiagnosticArtAstrup equal to 'false' that go through 'Return ER', the rest of the cases with DiagnosticArtAstrup equal to 'false', and all the others",
+   "Create three circuits: first, cases where diagnostic art astrup is false and the patient goes through return to the ER; second, the remaining cases where diagnostic art astrup is false; and third, all the other cases.",
+   "Could you set up three circuits: one for cases with diagnostic art astrup set to false that also go through return to the ER, another for the rest of the false diagnostic art astrup cases, and a catch-all for everything else?",
+   "Make three circuits: the false ones that go through the ER return, the other false ones, and the rest."
+  ],
+  "ambiguity": "The phrase the false ones does not name which variable is false, and the ER return is a shortened form that could fit other return activities."
+ },
+ "sepsis_cases-C12": {
+  "texts": [
+   "Make three circuits: DiagnosticBlood equal to 'true' and 'IV Antibiotics', only DiagnosticBlood equal to 'true', and the rest",
+   "Make three circuits: first, cases where diagnostic blood is true and IV antibiotics is performed; second, the remaining cases where diagnostic blood is true; and third, all the others.",
+   "I would like you to create three circuits: one for cases with diagnostic blood set to true that also have IV antibiotics, another for the rest of the true diagnostic blood cases, and a final one for everything else.",
+   "Create three circuits: the true blood ones with antibiotics, the other true blood ones, and the rest."
+  ],
+  "ambiguity": "The phrase true blood ones is a loose shorthand for the diagnostic blood variable, and antibiotics could refer to a different antibiotic activity."
+ },
+ "sepsis_cases-R01": {
+  "texts": [
+   "Define a region from 'IV Antibiotics' to 'LacticAcid'",
+   "Define a region from IV antibiotics to lactic acid.",
+   "Could you define a region starting at IV antibiotics and ending at lactic acid?",
+   "Set up a region from antibiotics to the acid test."
+  ],
+  "ambiguity": "The word antibiotics is shortened and could refer to a different antibiotic activity, and the acid test is a loose name that could match other lab tests."
+ },
+ "sepsis_cases-R02": {
+  "texts": [
+   "Define a critical section from 'Leucocytes' to 'ER Sepsis Triage'",
+   "Define a critical section from leucocytes to ER sepsis triage.",
+   "I would like you to define a critical section from leucocytes to ER sepsis triage.",
+   "Set up a region from the white blood cell test to the sepsis triage."
+  ],
+  "ambiguity": "The white blood cell test is a loose description for leucocytes, and the sepsis triage drops the ER qualifier so it could match another triage activity."
+ },
+ "sepsis_cases-R03": {
+  "texts": [
+   "Define a region from 'CRP' to 'Leucocytes'",
+   "Define a region from CRP to leucocytes.",
+   "Could you define a region from CRP to leucocytes?",
+   "Set up a critical section from the CRP test to the blood cells."
+  ],
+  "ambiguity": "The phrase the blood cells is a vague description for leucocytes and could be confused with other blood-cell-related activities."
+ },
+ "sepsis_cases-R04": {
+  "texts": [
+   "Define two critical sections: from 'Admission IC' to 'CRP' and from 'ER Triage' to 'Release A'",
+   "Define two critical sections: one from admission to the ICU to CRP, and another from ER triage to release A.",
+   "I would like you to define two critical sections: from admission to the ICU to CRP, and from ER triage to release A.",
+   "Set up two regions: from the ICU admission to CRP and from triage to release."
+  ],
+  "ambiguity": "The word triage drops the ER qualifier and could match another triage activity, and release drops the A so it could refer to a different release activity."
+ },
+ "sepsis_cases-R05": {
+  "texts": [
+   "Define two regions: from 'CRP' to 'Leucocytes' and from 'LacticAcid' to 'ER Sepsis Triage'",
+   "Set up two regions: one from CRP to Leucocytes and another from Lactic Acid to ER Sepsis Triage.",
+   "Could you please define two regions for me, one going from CRP to Leucocytes and the other from Lactic Acid to ER Sepsis Triage?",
+   "Define two regions: from CRP to Leucocytes and from Lactic Acid to Sepsis Triage."
+  ],
+  "ambiguity": "Sepsis Triage without the ER qualifier could refer to a different triage activity in the model."
+ },
+ "sepsis_cases-R06": {
+  "texts": [
+   "Define a region from 'IV Antibiotics' to 'IV Liquid' when less than 14 minutes pass between them",
+   "Create a region from IV Antibiotics to IV Liquid where less than 14 minutes pass between the two.",
+   "I would like you to define a region from IV Antibiotics to IV Liquid, limited to cases where less than 14 minutes elapse between them.",
+   "Set up a region from IV Antibiotics to IV Liquid when less than 14 minutes pass."
+  ],
+  "ambiguity": "Without the explicit reference to the gap between the two activities, the 14-minute threshold could be misread as a constraint on something else."
+ },
+ "sepsis_cases-R07": {
+  "texts": [
+   "Define a critical section from 'Admission IC' to 'CRP' when more than 7 hours elapse",
+   "Define a critical section from Admission IC to CRP for cases where more than 7 hours elapse.",
+   "It would be helpful if you could define a critical section from Admission IC to CRP, restricted to cases where more than 7 hours pass.",
+   "Define a critical section from Admission to CRP when more than 7 hours elapse."
+  ],
+  "ambiguity": "Admission without the IC qualifier could refer to either Admission IC or Admission NC."
+ },
+ "sepsis_cases-R08": {
+  "texts": [
+   "Define a region from 'CRP' to 'Admission IC' when less than 2 hours pass between them",
+   "Create a region from CRP to Admission IC where less than 2 hours pass between the two.",
+   "Could you please define a region from CRP to Admission IC, limited to cases where less than 2 hours elapse?",
+   "Define a region from CRP to Admission when less than 2 hours pass between them."
+  ],
+  "ambiguity": "Admission without the IC qualifier could refer to either Admission IC or Admission NC."
+ },
+ "sepsis_cases-R09": {
+  "texts": [
+   "Define a region from 'CRP' to 'Leucocytes' in the cases with DiagnosticArtAstrup equal to 'false'",
+   "Define a region from CRP to Leucocytes, but only for cases where diagnostic art astrup is false.",
+   "I would like you to set up a region from CRP to Leucocytes, restricted to the cases where diagnostic art astrup equals false.",
+   "Define a region from CRP to Leucocytes in the cases where the diagnostic is false."
+  ],
+  "ambiguity": "The shortened reference the diagnostic could point to either diagnostic art astrup or diagnostic blood."
+ },
+ "sepsis_cases-R10": {
+  "texts": [
+   "Define a critical section from 'LacticAcid' to 'ER Sepsis Triage' only in the cases with DiagnosticBlood equal to 'true'",
+   "Define a critical section from Lactic Acid to ER Sepsis Triage, only for cases where diagnostic blood is true.",
+   "Would you mind defining a critical section from Lactic Acid to ER Sepsis Triage, limited to the cases where diagnostic blood equals true?",
+   "Define a critical section from Lactic Acid to ER Sepsis Triage only in the cases where the diagnostic is true."
+  ],
+  "ambiguity": "The shortened reference the diagnostic could point to either diagnostic blood or diagnostic art astrup."
+ },
+ "sepsis_cases-M01": {
+  "texts": [
+   "Define 'Release B' as a milestone",
+   "Mark Release B as a milestone.",
+   "Could you please mark Release B as a milestone?",
+   "Define Release as a milestone."
+  ],
+  "ambiguity": "Release without the B qualifier could refer to a different release activity in the model."
+ },
+ "sepsis_cases-M02": {
+  "texts": [
+   "Mark 'LacticAcid' and 'Admission NC' as milestones",
+   "Mark Lactic Acid and Admission NC as milestones.",
+   "I would like you to mark both Lactic Acid and Admission NC as milestones.",
+   "Mark Lactic Acid and Admission as milestones."
+  ],
+  "ambiguity": "Admission without the NC qualifier could refer to either Admission NC or Admission IC."
+ },
+ "sepsis_cases-M03": {
+  "texts": [
+   "Use 'Admission IC' as a milestone",
+   "Make admission to intensive care a milestone.",
+   "Could you please set admission to intensive care as a milestone?",
+   "Mark the admission as a milestone."
+  ],
+  "ambiguity": "The word 'the admission' does not specify whether it refers to admission to intensive care or admission to normal care."
+ },
+ "sepsis_cases-M04": {
+  "texts": [
+   "Define 'Release A' as a milestone",
+   "Set release A as a milestone.",
+   "I would like you to define release A as a milestone.",
+   "Make the release a milestone."
+  ],
+  "ambiguity": "The phrase 'the release' does not indicate which release is meant, as there are releases A, C, and D."
+ },
+ "sepsis_cases-M05": {
+  "texts": [
+   "Define 'Return ER' and 'LacticAcid' as milestones",
+   "Define return to the emergency room and lactic acid as milestones.",
+   "It would be great if you could mark return to the emergency room and lactic acid as milestones.",
+   "Set the return and lactic acid as milestones."
+  ],
+  "ambiguity": "The word 'the return' does not specify that it is the return to the emergency room, leaving open the possibility of another return activity."
+ },
+ "sepsis_cases-M06": {
+  "texts": [
+   "Mark 'IV Liquid', 'Return ER' and 'LacticAcid' as milestones",
+   "Mark IV liquid, return to the emergency room, and lactic acid as milestones.",
+   "Could you please define IV liquid, return to the emergency room, and lactic acid as milestones?",
+   "Set the liquid, the return, and lactic acid as milestones."
+  ],
+  "ambiguity": "The word 'the liquid' does not clarify that it is specifically IV liquid, as other liquid-related activities could exist."
+ },
+ "sepsis_cases-M07": {
+  "texts": [
+   "Define 'Release D' as a milestone",
+   "Define release D as a milestone.",
+   "I would like you to mark release D as a milestone.",
+   "Make the release a milestone."
+  ],
+  "ambiguity": "The phrase 'the release' is unspecific and could refer to release A, release C, or release D."
+ },
+ "sepsis_cases-M08": {
+  "texts": [
+   "Mark 'Release D' and 'IV Liquid' as milestones",
+   "Mark release D and IV liquid as milestones.",
+   "Would you mind setting release D and IV liquid as milestones?",
+   "Define release D and the liquid as milestones."
+  ],
+  "ambiguity": "The word 'the liquid' does not explicitly say IV liquid, so it could be confused with another liquid administration activity."
+ },
+ "sepsis_cases-M09": {
+  "texts": [
+   "Define 'Return ER', 'Admission NC' and 'Release D' as milestones",
+   "Define return to the emergency room, admission to normal care, and release D as milestones.",
+   "It would be interesting if you could mark return to the emergency room, admission to normal care, and release D as milestones.",
+   "Set the return, the admission, and release D as milestones."
+  ],
+  "ambiguity": "The word 'the admission' does not specify whether it is admission to normal care or admission to intensive care."
+ },
+ "sepsis_cases-M10": {
+  "texts": [
+   "Define 'Release C' as a milestone",
+   "Set release C as a milestone.",
+   "Would you mind defining release C as a milestone?",
+   "Make the release a milestone."
+  ],
+  "ambiguity": "The phrase 'the release' does not indicate which release is intended, since releases A, C, and D all exist."
+ }
+}

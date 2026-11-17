@@ -1,0 +1,362 @@
+{
+ "bpic2012-F01": {
+  "texts": [
+   "Limit the cases to: cases in which 'W_Nabellen incomplete dossiers' occurs",
+   "Filter the cases to only those where nabellen incomplete dossiers takes place.",
+   "Could you limit the cases to those in which the activity of nabellen incomplete dossiers occurs?",
+   "Filter the cases to those where the incomplete dossiers are called back."
+  ],
+  "ambiguity": "Called back is a loose paraphrase that could refer to a phone call or a follow-up action rather than the specific activity."
+ },
+ "bpic2012-F02": {
+  "texts": [
+   "Limit the cases to: cases that went through 'W_Afhandelen leads'",
+   "Limit the cases to those that went through afhandelen leads.",
+   "I would like you to filter the cases to only those that passed through the handling of leads.",
+   "Filter the cases to those that went through leads handling."
+  ],
+  "ambiguity": "Leads handling could be read as a single compound activity or as two separate concepts."
+ },
+ "bpic2012-F33": {
+  "texts": [
+   "Limit the cases to: cases with AMOUNT_REQ greater than 6500",
+   "Filter the cases to those where the requested amount is greater than 6500.",
+   "Could you limit the cases to those with a requested amount above 6500?",
+   "Limit the cases to those where the amount is over 6500."
+  ],
+  "ambiguity": "The amount does not specify which variable is meant."
+ },
+ "bpic2012-F34": {
+  "texts": [
+   "Limit the cases to: cases with AMOUNT_REQ between 6500 and 15000",
+   "Filter the cases to those where the requested amount is at least 6500 and at most 15000.",
+   "I would like you to limit the cases to those with a requested amount between 6500 and 15000, inclusive.",
+   "Limit the cases to those where the amount falls between 6500 and 15000."
+  ],
+  "ambiguity": "Between is ambiguous about whether the endpoints are included, and the amount does not name the specific variable."
+ },
+ "bpic2012-F36": {
+  "texts": [
+   "Limit the cases to: cases with 'O_SELECTED' and, later, 'W_Completeren aanvraag' in less than 1 minute",
+   "Filter the cases to those where selected is followed by completieren aanvraag in less than 1 minute.",
+   "Could you limit the cases to those in which the selection is followed by completieren aanvraag within less than a minute?",
+   "Filter the cases to those where the application is completed less than a minute after the selection."
+  ],
+  "ambiguity": "The selection and the application is completed are loose paraphrases that do not clearly name the specific activities."
+ },
+ "bpic2012-F37": {
+  "texts": [
+   "Limit the cases to: cases with 'O_SELECTED' and, later, 'W_Nabellen incomplete dossiers' more than 10 days apart",
+   "Filter the cases to those where selected is followed by nabellen incomplete dossiers more than 10 days later.",
+   "I would like you to limit the cases to those in which the selection is followed by nabellen incomplete dossiers at least 10 days apart.",
+   "Limit the cases to those where the callback for incomplete dossiers happens more than 10 days after the selection."
+  ],
+  "ambiguity": "The callback is a loose paraphrase of the activity name, and the selection does not clearly identify the specific activity."
+ },
+ "bpic2012-F35": {
+  "texts": [
+   "Limit the cases to: cases with 'W_Nabellen incomplete dossiers' and AMOUNT_REQ greater than 10000",
+   "Filter the cases to those where nabellen incomplete dossiers occurs and the requested amount is greater than 10000.",
+   "Could you limit the cases to those that include nabellen incomplete dossiers and have a requested amount above 10000?",
+   "Limit the cases to those with the incomplete dossiers callback and an amount over 10000."
+  ],
+  "ambiguity": "The incomplete dossiers callback is a shortened paraphrase, and an amount does not specify which variable is meant."
+ },
+ "bpic2012-F39": {
+  "texts": [
+   "Limit the cases to: cases with AMOUNT_REQ greater than 7500 and 'O_CANCELLED' less than 7 days after 'O_SELECTED'",
+   "Filter the cases to those where the requested amount is greater than 7500 and cancelled occurs less than 7 days after selected.",
+   "I would like you to limit the cases to those with a requested amount above 7500 in which the cancellation happens less than 7 days after the selection.",
+   "Limit the cases to those where the amount is over 7500 and the cancellation comes within a week of the selection."
+  ],
+  "ambiguity": "The amount does not name the variable, a week is a loose substitute for 7 days, and the selection and the cancellation are vague references."
+ },
+ "bpic2012-C01": {
+  "texts": [
+   "Create circuits for this: separate the applications by how they end: declined, validated, lead handling or application completion",
+   "Create circuits that separate the applications by how they end: declined, validate application, handle leads, or complete application.",
+   "I would like you to create circuits splitting the applications by their final outcome: declined, validate application, handle leads, or complete application.",
+   "Create circuits to separate the applications by how they end: declined, validate application, handle leads, or completion."
+  ],
+  "ambiguity": "Completion could refer to complete application or to the overall process completion."
+ },
+ "bpic2012-C02": {
+  "texts": [
+   "Create circuits for this: classify the applications by whether they had an incomplete-file callback, lead handling or a declined offer (first match wins)",
+   "Create circuits that classify the applications by whether they had a call back for incomplete files, lead handling, or a declined offer, with first match winning.",
+   "Could you create circuits that group the applications based on whether they went through a call back for incomplete files, lead handling, or a declined offer, keeping the priority order?",
+   "Create circuits to classify the applications by whether they had a callback, lead handling, or a declined offer, first match wins."
+  ],
+  "ambiguity": "Callback is vague and could refer to the call back for incomplete files or to any other callback activity in the process."
+ },
+ "bpic2012-C03": {
+  "texts": [
+   "Create circuits for this: separate the applications that went from partly submitted to offer sent, those that were only partly submitted, and the rest",
+   "Create circuits that separate the applications that went from partly submitted to offer sent, those that were only partly submitted, and the rest.",
+   "It would be interesting if you could create circuits splitting the applications into those that went from partly submitted to offer sent, those that were only partly submitted, and everything else.",
+   "Create circuits to separate the ones that went from partly submitted to sent, the ones that were only partly submitted, and the rest."
+  ],
+  "ambiguity": "Sent is shortened and could refer to offer sent, offer sent back, or another sending activity."
+ },
+ "bpic2012-C04": {
+  "texts": [
+   "Create circuits for this: separate the cases by how they end: 'A_DECLINED' or 'W_Valideren aanvraag'",
+   "Create circuits that separate the cases by how they end: declined or validate application.",
+   "Could you create circuits that split the cases by their ending: declined or validate application?",
+   "Create circuits to separate the cases by how they end: declined or validated."
+  ],
+  "ambiguity": "Validated is a shortened form that could refer to validate application or to some other validation step in the process."
+ },
+ "bpic2012-C05": {
+  "texts": [
+   "Create circuits for this: split the cases in two groups by AMOUNT_REQ: up to 10000 and more than 10000",
+   "Create circuits that split the cases into two groups by the requested amount: up to 10000 and more than 10000.",
+   "I would like you to create circuits dividing the cases by the requested amount into two groups: up to 10000 and more than 10000.",
+   "Create circuits to split the cases by amount: up to 10000 and the rest."
+  ],
+  "ambiguity": "Amount is unspecific and could refer to the requested amount, the approved amount, or another monetary variable."
+ },
+ "bpic2012-C06": {
+  "texts": [
+   "Create three circuits: 'O_SELECTED' then 'W_Valideren aanvraag' in less than 10 days, the rest of those with 'O_SELECTED' then 'W_Valideren aanvraag', and all the others",
+   "Create three circuits: selected offer then validate application in less than 10 days, the rest of those with selected offer then validate application, and all the others.",
+   "Could you create three circuits: one for selected offer followed by validate application in less than 10 days, one for the rest of those with that sequence, and one for all the others?",
+   "Create three circuits: selected then validate in less than 10 days, the rest of those with selected then validate, and all the others."
+  ],
+  "ambiguity": "Selected is shortened and could refer to selected offer or to another selection-related activity in the process."
+ },
+ "bpic2012-C07": {
+  "texts": [
+   "Make three circuits by the time between 'A_PREACCEPTED' and 'W_Nabellen incomplete dossiers': less than 10 days, longer, and those without that stretch",
+   "Create three circuits by the time between pre-accepted and call back incomplete files: less than 10 days, longer, and those without that stretch.",
+   "I would like you to create three circuits based on the time between pre-accepted and call back incomplete files: less than 10 days, longer, and those without that sequence.",
+   "Create three circuits by the time between pre-accepted and the callback: less than 10 days, longer, and those without it."
+  ],
+  "ambiguity": "The callback is unspecific and could refer to call back incomplete files or to another callback activity in the process."
+ },
+ "bpic2012-C08": {
+  "texts": [
+   "Create three circuits: 'O_CREATED' then 'O_SENT_BACK' in less than 7 days, the rest of those with 'O_CREATED' then 'O_SENT_BACK', and all the others",
+   "Create three circuits: offer created then offer sent back in less than 7 days, the rest of those with offer created then offer sent back, and all the others.",
+   "Could you create three circuits: one for offer created followed by offer sent back in less than 7 days, one for the rest of those with that sequence, and one for all the others?",
+   "Create three circuits: created then sent back in less than 7 days, the rest of those with created then sent back, and all the others."
+  ],
+  "ambiguity": "Created is shortened and could refer to offer created or to another creation activity such as application created."
+ },
+ "bpic2012-C09": {
+  "texts": [
+   "Make three circuits by the time between 'A_FINALIZED' and 'O_SENT_BACK': less than 7 days, longer, and those without that stretch",
+   "Split the cases into three circuits by the time between finalizing the application and sending it back: under seven days, over seven days, and cases where that sequence never happens.",
+   "I would like you to create three circuits that group the cases by the duration from finalizing the application to sending it back — less than seven days, more than seven days, and those without that stretch at all.",
+   "Make three circuits by the time between finalizing and sending back: less than seven days, longer, and the rest."
+  ],
+  "ambiguity": "Finalizing and sending back are shortened names that could each match more than one activity in the model."
+ },
+ "bpic2012-C10": {
+  "texts": [
+   "Create three circuits: 'A_FINALIZED' then 'O_ACCEPTED' in less than 10 days, the rest of those with 'A_FINALIZED' then 'O_ACCEPTED', and all the others",
+   "Create three circuits: cases where the application is finalized and then accepted in under ten days, the remaining cases where it is finalized and then accepted, and all the others.",
+   "Could you set up three circuits separating cases where finalizing the application is followed by acceptance in less than ten days, those where it is followed by acceptance but takes longer, and everything else?",
+   "Make three circuits: finalized then accepted in less than ten days, the rest of finalized then accepted, and all others."
+  ],
+  "ambiguity": "Finalized and accepted are shortened names that could each fit multiple activities with similar names in the model."
+ },
+ "bpic2012-C11": {
+  "texts": [
+   "Make three circuits by the time between 'O_SENT' and 'O_SENT_BACK': less than 7 days, longer, and those without that stretch",
+   "Split the cases into three circuits by the time between sending and sending back: under seven days, over seven days, and cases where that sequence does not occur.",
+   "It would be great if you could create three circuits grouping the cases by how long it takes from sending to sending back — less than seven days, more than seven days, and those without that stretch.",
+   "Make three circuits by the time between sending and sending back: less than seven days, longer, and the rest."
+  ],
+  "ambiguity": "Sending could refer to different sending activities, and sending back could be confused with other return or rejection steps."
+ },
+ "bpic2012-C12": {
+  "texts": [
+   "Create circuits for this: classify the cases by their last step: 'A_DECLINED', 'W_Valideren aanvraag' or 'W_Afhandelen leads'",
+   "Create three circuits that classify the cases by their last step: those ending with declining, those ending with validating the application, and those ending with handling leads.",
+   "I would like you to create three circuits that group the cases according to their final activity — the ones ending with declining, the ones ending with validating the application, and the ones ending with handling leads.",
+   "Make three circuits by the last step: declined, validating, or handling leads."
+  ],
+  "ambiguity": "Validating is a shortened name that could fit multiple validation activities, and handling leads could be confused with other processing steps."
+ },
+ "bpic2012-R01": {
+  "texts": [
+   "Define a region from 'A_PARTLYSUBMITTED' to 'O_SENT'",
+   "Define a region from partial submission to sending.",
+   "Could you define a critical section that goes from partial submission to sending?",
+   "Define a region from submission to sending."
+  ],
+  "ambiguity": "Submission is a shortened name that could refer to partial submission or a full submission activity."
+ },
+ "bpic2012-R02": {
+  "texts": [
+   "Define a critical section from 'A_PREACCEPTED' to 'O_CREATED'",
+   "Define a critical section from pre-acceptance to creation.",
+   "I would like you to define a region from pre-acceptance to creation.",
+   "Define a region from acceptance to creation."
+  ],
+  "ambiguity": "Acceptance could refer to pre-acceptance or the regular acceptance activity."
+ },
+ "bpic2012-R03": {
+  "texts": [
+   "Define a region from 'A_ACCEPTED' to 'O_ACCEPTED'",
+   "Define a region from the acceptance step to the accepted outcome.",
+   "Could you define a critical section from accepting the application to the accepted outcome?",
+   "Define a region from acceptance to acceptance."
+  ],
+  "ambiguity": "Both endpoints are called acceptance, making it unclear which refers to the action and which to the outcome."
+ },
+ "bpic2012-R04": {
+  "texts": [
+   "Define two critical sections: from 'A_ACCEPTED' to 'A_DECLINED' and from 'A_APPROVED' to 'A_REGISTERED'",
+   "Define two critical sections: one from accepting to declining, and another from approving to registering.",
+   "I would like you to define two regions — one from accepting to declining, and one from approving to registering.",
+   "Define two critical sections: from acceptance to declining and from approval to registration."
+  ],
+  "ambiguity": "Acceptance could refer to the acceptance action or the accepted outcome, and approval could match more than one approval activity."
+ },
+ "bpic2012-R05": {
+  "texts": [
+   "Define two regions: from 'A_ACCEPTED' to 'O_ACCEPTED' and from 'A_DECLINED' to 'W_Afhandelen leads'",
+   "Define two regions: one from application accepted to order accepted, and another from application declined to handling leads.",
+   "Could you define two regions for me: the first from application accepted to order accepted, and the second from application declined to handling leads?",
+   "Define two regions: from accepted to order accepted, and from declined to handling leads."
+  ],
+  "ambiguity": "The word accepted without the application prefix could refer to either application accepted or order accepted."
+ },
+ "bpic2012-R06": {
+  "texts": [
+   "Define a region from 'O_SELECTED' to 'W_Valideren aanvraag' when less than 10 days pass between them",
+   "Define a region from order selected to validate application when less than 10 days pass between them.",
+   "I would like you to define a region from order selected to validate application, but only when less than 10 days pass between them.",
+   "Define a region from selected to validate application when less than 10 days pass between them."
+  ],
+  "ambiguity": "The shortened name selected does not specify whether it refers to order selected or another selected activity."
+ },
+ "bpic2012-R07": {
+  "texts": [
+   "Define a critical section from 'A_PREACCEPTED' to 'W_Nabellen incomplete dossiers' when more than 14 days elapse",
+   "Define a critical section from application pre-accepted to call back incomplete files when more than 14 days elapse.",
+   "It would be interesting if you could define a critical section from application pre-accepted to call back incomplete files, specifically when more than 14 days elapse.",
+   "Define a critical section from pre-accepted to call back incomplete files when more than 14 days elapse."
+  ],
+  "ambiguity": "The shortened name pre-accepted does not make clear whether it refers to application pre-accepted or another pre-accepted step."
+ },
+ "bpic2012-R08": {
+  "texts": [
+   "Define a region from 'O_CREATED' to 'O_SENT_BACK' when less than 7 days pass between them",
+   "Define a region from order created to order sent back when less than 7 days pass between them.",
+   "You should define a region from order created to order sent back, limited to cases where less than 7 days pass between them.",
+   "Define a region from created to order sent back when less than 7 days pass between them."
+  ],
+  "ambiguity": "The word created without the order prefix could match several activities that involve creation."
+ },
+ "bpic2012-R09": {
+  "texts": [
+   "Define a critical section from 'A_FINALIZED' to 'O_SENT_BACK' when more than 10 days elapse",
+   "Define a critical section from application finalized to order sent back when more than 10 days elapse.",
+   "I would like you to define a critical section from application finalized to order sent back, but only when more than 10 days elapse.",
+   "Define a critical section from finalized to order sent back when more than 10 days elapse."
+  ],
+  "ambiguity": "The shortened name finalized does not specify whether it refers to application finalized or another finalized activity."
+ },
+ "bpic2012-R10": {
+  "texts": [
+   "Define a region from 'A_FINALIZED' to 'O_ACCEPTED' when less than 10 days pass between them",
+   "Define a region from application finalized to order accepted when less than 10 days pass between them.",
+   "Could you define a region from application finalized to order accepted, only when less than 10 days pass between them?",
+   "Define a region from finalized to order accepted when less than 10 days pass between them."
+  ],
+  "ambiguity": "The word finalized without the application prefix could refer to a different finalized step in the process."
+ },
+ "bpic2012-M01": {
+  "texts": [
+   "Define 'A_CANCELLED' as a milestone",
+   "Define application cancelled as a milestone.",
+   "Could you mark application cancelled as a milestone for me?",
+   "Define cancelled as a milestone."
+  ],
+  "ambiguity": "The shortened name cancelled does not make clear whether it refers to application cancelled or another cancellation activity."
+ },
+ "bpic2012-M02": {
+  "texts": [
+   "Mark 'O_SELECTED' and 'O_SENT_BACK' as milestones",
+   "Mark order selected and order sent back as milestones.",
+   "I would like you to mark order selected and order sent back as milestones.",
+   "Mark order selected and sent back as milestones."
+  ],
+  "ambiguity": "The shortened name sent back without the order prefix could match a different sent-back activity in the model."
+ },
+ "bpic2012-M03": {
+  "texts": [
+   "Use 'O_ACCEPTED' as a milestone",
+   "Set o accepted as a milestone.",
+   "Could you please mark o accepted as a milestone?",
+   "Make the accepted one a milestone."
+  ],
+  "ambiguity": "The activity is shortened to just 'the accepted one', which could refer to o accepted or a preaccepted."
+ },
+ "bpic2012-M04": {
+  "texts": [
+   "Define 'A_APPROVED' as a milestone",
+   "Define a approved as a milestone.",
+   "I would like you to set a approved as a milestone.",
+   "Mark the approved step as a milestone."
+  ],
+  "ambiguity": "The activity is referred to as 'the approved step', which could match a approved or another approval-related activity."
+ },
+ "bpic2012-M05": {
+  "texts": [
+   "Define 'A_ACTIVATED' and 'W_Completeren aanvraag' as milestones",
+   "Set a activated and w completeren aanvraag as milestones.",
+   "It would be great if you could define a activated and w completeren aanvraag as milestones.",
+   "Make the activated one and the completing application step into milestones."
+  ],
+  "ambiguity": "The activities are described loosely as 'the activated one' and 'the completing application step', which could be confused with other similar activities."
+ },
+ "bpic2012-M06": {
+  "texts": [
+   "Mark 'A_CANCELLED', 'W_Afhandelen leads' and 'A_PREACCEPTED' as milestones",
+   "Mark a cancelled, w afhandelen leads and a preaccepted as milestones.",
+   "Would you mind setting a cancelled, w afhandelen leads and a preaccepted as milestones?",
+   "Set the cancelled one, the leads handling step and the preaccepted one as milestones."
+  ],
+  "ambiguity": "The activities are referred to by loose descriptions like 'the cancelled one' and 'the preaccepted one', which could match other similar activities."
+ },
+ "bpic2012-M07": {
+  "texts": [
+   "Define 'W_Nabellen offertes' as a milestone",
+   "Define w nabellen offertes as a milestone.",
+   "I would like you to mark w nabellen offertes as a milestone.",
+   "Make the calling back quotes step a milestone."
+  ],
+  "ambiguity": "The activity is described as 'the calling back quotes step', which could be confused with other communication-related activities in the process."
+ },
+ "bpic2012-M08": {
+  "texts": [
+   "Mark 'W_Afhandelen leads' and 'A_FINALIZED' as milestones",
+   "Mark w afhandelen leads and a finalized as milestones.",
+   "It would be interesting if you could set w afhandelen leads and a finalized as milestones.",
+   "Set the leads handling and the finalized step as milestones."
+  ],
+  "ambiguity": "The activities are shortened to 'the leads handling' and 'the finalized step', which could refer to other similar activities in the model."
+ },
+ "bpic2012-M09": {
+  "texts": [
+   "Define 'W_Valideren aanvraag', 'A_PREACCEPTED' and 'O_SENT' as milestones",
+   "Define w valideren aanvraag, a preaccepted and o sent as milestones.",
+   "Could you please set w valideren aanvraag, a preaccepted and o sent as milestones?",
+   "Make the validating application, the preaccepted one and the sent one into milestones."
+  ],
+  "ambiguity": "The activities are referred to loosely as 'the preaccepted one' and 'the sent one', which could match other similar activities."
+ },
+ "bpic2012-M10": {
+  "texts": [
+   "Define 'O_CREATED' as a milestone",
+   "Set o created as a milestone.",
+   "Would you mind defining o created as a milestone?",
+   "Make the created one a milestone."
+  ],
+  "ambiguity": "The activity is shortened to 'the created one', which could refer to o created or another creation-related activity."
+ }
+}

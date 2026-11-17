@@ -1,0 +1,362 @@
+{
+ "bpic2020_domestic_declarations-F01": {
+  "texts": [
+   "Limit the cases to: cases in which 'Declaration REJECTED by EMPLOYEE' occurs",
+   "Filter the cases to only those where the declaration was rejected by the employee.",
+   "Could you limit the cases to those in which the declaration was rejected by the employee?",
+   "Filter the cases to those where the declaration was rejected."
+  ],
+  "ambiguity": "The actor performing the rejection is not specified, so it is unclear whether it was the employee or another role."
+ },
+ "bpic2020_domestic_declarations-F02": {
+  "texts": [
+   "Limit the cases to: cases that went through 'Declaration APPROVED by PRE_APPROVER'",
+   "Filter the cases to only those that went through the declaration approval by the pre-approver.",
+   "I would like you to limit the cases to those that passed through the declaration approval by the pre-approver.",
+   "Filter the cases to those where the declaration was approved by the approver."
+  ],
+  "ambiguity": "The term 'approver' is vague and could refer to the pre-approver or any other approver in the process."
+ },
+ "bpic2020_domestic_declarations-F29": {
+  "texts": [
+   "Limit the cases to: cases with Amount greater than 29.2",
+   "Filter the cases to those where the amount is greater than 29.2.",
+   "Could you limit the cases to those with an amount greater than 29.2?",
+   "Filter the cases to those where the value is greater than 29.2."
+  ],
+  "ambiguity": "The word 'value' does not clearly identify which variable is meant, as it could refer to the amount or another numeric attribute."
+ },
+ "bpic2020_domestic_declarations-F30": {
+  "texts": [
+   "Limit the cases to: cases with Amount between 29.2 and 71.5",
+   "Filter the cases to those where the amount is between 29.2 and 71.5, inclusive.",
+   "I would like you to limit the cases to those with an amount between 29.2 and 71.5.",
+   "Filter the cases to those where the amount falls between 29.2 and 71.5."
+  ],
+  "ambiguity": "It is unclear whether the boundary values 29.2 and 71.5 are included or excluded from the range."
+ },
+ "bpic2020_domestic_declarations-F32": {
+  "texts": [
+   "Limit the cases to: cases with 'Declaration APPROVED by BUDGET OWNER' and, later, 'Payment Handled' in less than 7 days",
+   "Filter the cases to those where the declaration was approved by the budget owner and the payment was handled in less than 7 days after that.",
+   "Could you limit the cases to those in which the declaration was approved by the budget owner and the payment was handled within less than 7 days afterwards?",
+   "Filter the cases to those where the budget owner approved the declaration and the payment was handled in under 7 days."
+  ],
+  "ambiguity": "It is not explicit that the 7-day window starts from the approval event; it could be misread as a general duration unrelated to the approval."
+ },
+ "bpic2020_domestic_declarations-F33": {
+  "texts": [
+   "Limit the cases to: cases with 'Declaration APPROVED by BUDGET OWNER' and, later, 'Declaration FINAL_APPROVED by SUPERVISOR' more than 2 days apart",
+   "Filter the cases to those where the declaration was approved by the budget owner and the final approval by the supervisor came more than 2 days later.",
+   "I would like you to limit the cases to those in which the declaration was approved by the budget owner and the final approval by the supervisor happened more than 2 days after.",
+   "Filter the cases to those where the budget owner approved the declaration and the supervisor gave final approval more than 2 days later."
+  ],
+  "ambiguity": "The phrase 'the supervisor' is generic and does not make clear that this refers to the specific final-approval-by-supervisor activity rather than any supervisory action."
+ },
+ "bpic2020_domestic_declarations-F31": {
+  "texts": [
+   "Limit the cases to: cases with 'Declaration REJECTED by EMPLOYEE' and Amount greater than 41.5",
+   "Filter the cases to those where the declaration was rejected by the employee and the amount is greater than 41.5.",
+   "Could you limit the cases to those in which the declaration was rejected by the employee and the amount exceeds 41.5?",
+   "Filter the cases to those where the declaration was rejected and the amount is over 41.5."
+  ],
+  "ambiguity": "The actor performing the rejection is omitted, so it is unclear whether it was the employee or another role who rejected the declaration."
+ },
+ "bpic2020_domestic_declarations-F35": {
+  "texts": [
+   "Limit the cases to: cases with Amount greater than 32.7 and 'Request Payment' less than 6 days after 'Declaration APPROVED by BUDGET OWNER'",
+   "Filter the cases to those where the amount is greater than 32.7 and the payment request came less than 6 days after the declaration was approved by the budget owner.",
+   "I would like you to limit the cases to those with an amount greater than 32.7 and where the payment request was made in less than 6 days after the budget owner approved the declaration.",
+   "Filter the cases to those where the amount is over 32.7 and the payment was requested in under 6 days after the approval."
+  ],
+  "ambiguity": "The word 'the approval' does not specify which approval step is meant, as there are multiple approval activities in the process."
+ },
+ "bpic2020_domestic_declarations-C01": {
+  "texts": [
+   "Create circuits for this: separate the declarations by how they end: payment handled, rejected by the employee, saved by the employee or rejected by an unknown role",
+   "Create circuits that separate the declarations by how they end: payment handled, declaration rejected by the employee, declaration saved by the employee, or declaration rejected by an unknown role.",
+   "Could you create circuits that group the declarations according to their ending: payment handled, rejected by the employee, saved by the employee, or rejected by an unknown role?",
+   "Create circuits to split the declarations by how they finish: payment handled, rejected by the employee, saved by the employee, or rejected by someone unknown."
+  ],
+  "ambiguity": "Someone unknown could refer to a specific unidentified person rather than a missing or undefined role."
+ },
+ "bpic2020_domestic_declarations-C02": {
+  "texts": [
+   "Create circuits for this: classify the declarations by whether the employee rejected, the pre-approver approved or the budget owner approved (first match wins)",
+   "Create circuits that classify the declarations by whether they contain a rejection by the employee, an approval by the pre-approver, or an approval by the budget owner, with first match winning.",
+   "I would like you to create circuits that group the declarations based on whether the employee rejected, the pre-approver approved, or the budget owner approved, keeping the priority order.",
+   "Create circuits to sort the declarations by whether the employee rejected, the pre-approver approved, or the budget owner approved."
+  ],
+  "ambiguity": "The employee rejected and the pre-approver approved do not specify what was rejected or approved, leaving open whether it refers to the declaration or something else."
+ },
+ "bpic2020_domestic_declarations-C03": {
+  "texts": [
+   "Create circuits for this: separate the declarations rejected by the administration and later approved by it, those only rejected by the administration, and the rest",
+   "Create circuits that separate the declarations where the administration rejected and then approved, those where the administration only rejected, and all the rest.",
+   "Could you create circuits to distinguish declarations where the administration first rejected and later approved, those where the administration rejected without a subsequent approval, and the remaining cases?",
+   "Create circuits to split the declarations into those rejected and then approved by the administration, those rejected by the administration, and the rest."
+  ],
+  "ambiguity": "Those rejected by the administration could include the ones that were also approved, making it unclear whether the second group excludes the first."
+ },
+ "bpic2020_domestic_declarations-C04": {
+  "texts": [
+   "Create circuits for this: classify the cases by whether they go through 'Declaration APPROVED by BUDGET OWNER', 'Declaration APPROVED by PRE_APPROVER' or 'Declaration REJECTED by ADMINISTRATION' (first match wins)",
+   "Create circuits that classify the cases by whether they pass through an approval by the budget owner, an approval by the pre-approver, or a rejection by the administration, with first match winning.",
+   "I would like you to create circuits that group the cases based on whether they include an approval by the budget owner, an approval by the pre-approver, or a rejection by the administration, keeping the priority order.",
+   "Create circuits to sort the cases by whether they go through the budget owner's approval, the pre-approver's approval, or the administration's rejection."
+  ],
+  "ambiguity": "The budget owner's approval and the pre-approver's approval could refer to any approval action by those roles rather than specifically the declaration being approved."
+ },
+ "bpic2020_domestic_declarations-C05": {
+  "texts": [
+   "Create circuits for this: separate the cases by Amount: up to 41.5 and above 41.5",
+   "Create circuits that separate the cases by amount: up to 41.5 and above 41.5.",
+   "Could you create circuits to split the cases based on the amount, with one group for amounts up to 41.5 and another for amounts above 41.5?",
+   "Create circuits to divide the cases by amount: below 41.5 and the rest."
+  ],
+  "ambiguity": "Below 41.5 is unclear whether it includes exactly 41.5 or is strictly less than 41.5."
+ },
+ "bpic2020_domestic_declarations-C06": {
+  "texts": [
+   "Create three circuits: 'Declaration REJECTED by EMPLOYEE' then 'Request Payment' in less than 5 days, the rest of those with 'Declaration REJECTED by EMPLOYEE' then 'Request Payment', and all the others",
+   "Create three circuits: declarations rejected by the employee followed by a payment request in less than 5 days, the remaining ones with a rejection by the employee followed by a payment request, and all the others.",
+   "I would like you to create three circuits: one for cases where the employee rejected the declaration and a payment was requested within 5 days, another for the rest of those with a rejection by the employee followed by a payment request, and a final one for all remaining cases.",
+   "Create three circuits: rejection by the employee then payment request in under 5 days, the rest with rejection then payment request, and everything else."
+  ],
+  "ambiguity": "Rejection in the second group does not specify by whom, and payment request is a shortened name that could fit multiple activities."
+ },
+ "bpic2020_domestic_declarations-C07": {
+  "texts": [
+   "Make three circuits by the time between 'Declaration SUBMITTED by EMPLOYEE' and 'Declaration REJECTED by EMPLOYEE': less than 1 day, longer, and those without that stretch",
+   "Make three circuits based on the time between the employee submitting the declaration and the employee rejecting it: less than 1 day, longer than that, and cases without that sequence.",
+   "Could you make three circuits based on the duration between the declaration being submitted by the employee and the declaration being rejected by the employee: one for less than 1 day, one for longer durations, and one for cases where that sequence does not occur?",
+   "Make three circuits by the time between submission and rejection by the employee: under a day, over a day, and the rest."
+  ],
+  "ambiguity": "Submission does not specify by whom, and rejection by the employee could refer to rejecting something other than the declaration."
+ },
+ "bpic2020_domestic_declarations-C08": {
+  "texts": [
+   "Create three circuits: 'Declaration REJECTED by EMPLOYEE' then 'Declaration FINAL_APPROVED by SUPERVISOR' in less than 2 days, the rest of those with 'Declaration REJECTED by EMPLOYEE' then 'Declaration FINAL_APPROVED by SUPERVISOR', and all the others",
+   "Create three circuits: declarations rejected by the employee followed by final approval by the supervisor in less than 2 days, the remaining ones with a rejection by the employee followed by final approval by the supervisor, and all the others.",
+   "I would like you to create three circuits: one for cases where the employee rejected the declaration and the supervisor gave final approval within 2 days, another for the rest of those with a rejection by the employee followed by final approval by the supervisor, and a final one for all remaining cases.",
+   "Create three circuits: rejection by the employee then final approval by the supervisor in under 2 days, the rest with rejection then final approval, and everything else."
+  ],
+  "ambiguity": "Rejection in the second group does not specify by whom, and final approval does not specify by whom."
+ },
+ "bpic2020_domestic_declarations-C09": {
+  "texts": [
+   "Make three circuits by the time between 'Declaration REJECTED by EMPLOYEE' and 'Declaration SUBMITTED by EMPLOYEE': less than 3 hours, longer, and those without that stretch",
+   "Make three circuits based on the time between declaration rejected by employee and declaration submitted by employee: under three hours, over three hours, and cases where that sequence is absent.",
+   "Could you create three circuits splitting the cases by the elapsed time between declaration rejected by employee and declaration submitted by employee, with a three-hour threshold, and a third group for cases without that pair?",
+   "Make three circuits by the time between a rejection and a submission by the employee: less than three hours, more, and the rest."
+  ],
+  "ambiguity": "The phrase 'a rejection' does not specify whether it refers to declaration rejected by employee or to another rejection activity in the model."
+ },
+ "bpic2020_domestic_declarations-C10": {
+  "texts": [
+   "Create three circuits: 'Declaration REJECTED by EMPLOYEE' then 'Payment Handled' in less than 7 days, the rest of those with 'Declaration REJECTED by EMPLOYEE' then 'Payment Handled', and all the others",
+   "Create three circuits: cases where declaration rejected by employee is followed by payment handled in under seven days, cases where that same pair takes longer, and all remaining cases.",
+   "I would like you to set up three circuits separating cases where declaration rejected by employee leads to payment handled within seven days, those where it takes more than seven days, and the rest.",
+   "Make three circuits by the time between a rejection and payment handled: less than seven days, more, and the rest."
+  ],
+  "ambiguity": "'A rejection' does not specify whether it refers to declaration rejected by employee or declaration rejected by administration."
+ },
+ "bpic2020_domestic_declarations-C11": {
+  "texts": [
+   "Make three circuits by the time between 'Declaration REJECTED by ADMINISTRATION' and 'Request Payment': less than 7 days, longer, and those without that stretch",
+   "Make three circuits based on the time between declaration rejected by administration and request payment: under seven days, over seven days, and cases without that sequence.",
+   "Would you mind creating three circuits that split the cases by the duration between declaration rejected by administration and request payment, with a seven-day threshold, plus a group for cases lacking that pair?",
+   "Create three circuits by the time between the rejection and request payment: under seven days, over, and those without it."
+  ],
+  "ambiguity": "'The rejection' does not specify whether it is by the administration or by the employee."
+ },
+ "bpic2020_domestic_declarations-C12": {
+  "texts": [
+   "Create circuits for this: separate the cases by whether they went through 'Declaration REJECTED by ADMINISTRATION', 'Declaration APPROVED by ADMINISTRATION' or 'Declaration REJECTED by EMPLOYEE', in this order of priority",
+   "Create three circuits separating cases that went through declaration rejected by administration, declaration approved by administration, or declaration rejected by employee, in that priority order.",
+   "Could you set up three circuits for cases containing declaration rejected by administration, declaration approved by administration, or declaration rejected by employee, keeping that order of priority?",
+   "Make three circuits for cases with a rejection by the administration, an approval, or a rejection by the employee, in that order."
+  ],
+  "ambiguity": "'An approval' does not specify by whom, and could refer to approval by administration, by pre-approver, or by budget owner."
+ },
+ "bpic2020_domestic_declarations-R01": {
+  "texts": [
+   "Define a region from 'Declaration REJECTED by ADMINISTRATION' to 'Declaration APPROVED by ADMINISTRATION'",
+   "Define a region from declaration rejected by administration to declaration approved by administration.",
+   "I would like you to define a critical section starting at declaration rejected by administration and ending at declaration approved by administration.",
+   "Define a region from a rejection by the administration to an approval."
+  ],
+  "ambiguity": "'An approval' does not specify by administration, by pre-approver, or by budget owner."
+ },
+ "bpic2020_domestic_declarations-R02": {
+  "texts": [
+   "Define a critical section from 'Declaration REJECTED by EMPLOYEE' to 'Request Payment'",
+   "Define a critical section from declaration rejected by employee to request payment.",
+   "Could you define a region from declaration rejected by employee through to request payment?",
+   "Define a critical section from the rejection by the employee to the payment request."
+  ],
+  "ambiguity": "'The payment request' is a loose name that could be confused with other payment-related activities in the model."
+ },
+ "bpic2020_domestic_declarations-R03": {
+  "texts": [
+   "Define a region from 'Declaration APPROVED by ADMINISTRATION' to 'Request Payment'",
+   "Define a region from declaration approved by administration to request payment.",
+   "It would be useful if you could define a critical section from declaration approved by administration to request payment.",
+   "Define a region from the approval to request payment."
+  ],
+  "ambiguity": "'The approval' does not specify by administration, by pre-approver, or by budget owner."
+ },
+ "bpic2020_domestic_declarations-R04": {
+  "texts": [
+   "Define two critical sections: from 'Declaration SUBMITTED by EMPLOYEE' to 'Declaration APPROVED by PRE_APPROVER' and from 'Declaration APPROVED by BUDGET OWNER' to 'Payment Handled'",
+   "Define two critical sections: one from declaration submitted by employee to declaration approved by pre-approver, and another from declaration approved by budget owner to payment handled.",
+   "Would you be so kind as to define two critical sections, the first from declaration submitted by employee to declaration approved by pre-approver and the second from declaration approved by budget owner to payment handled?",
+   "Define two critical sections: from the submission to the pre-approval, and from the budget approval to payment handled."
+  ],
+  "ambiguity": "'The submission' and 'the pre-approval' are shortened names that could in principle match other activities in the model."
+ },
+ "bpic2020_domestic_declarations-R05": {
+  "texts": [
+   "Define two regions: from 'Declaration REJECTED by EMPLOYEE' to 'Request Payment' and from 'Declaration APPROVED by ADMINISTRATION' to 'Request Payment'",
+   "Define two regions: one from declaration rejected by employee to request payment, and another from declaration approved by administration to request payment.",
+   "Could you please define two regions for me, one going from declaration rejected by employee to request payment and the other from declaration approved by administration to request payment?",
+   "Set up two regions that both end at request payment, one starting from the rejected declaration and the other from the approved declaration."
+  ],
+  "ambiguity": "It is unclear which rejection (by employee or by administration) and which approval (by administration or by supervisor) are meant."
+ },
+ "bpic2020_domestic_declarations-R06": {
+  "texts": [
+   "Define a region from 'Declaration REJECTED by EMPLOYEE' to 'Request Payment' when less than 5 days pass between them",
+   "Define a region from declaration rejected by employee to request payment, but only when less than 5 days pass between them.",
+   "I would like you to define a region from declaration rejected by employee to request payment, limited to cases where less than 5 days elapse between the two activities.",
+   "Create a region between the rejection and the payment request if it takes under five days."
+  ],
+  "ambiguity": "The word rejection does not specify whether it is the rejection by the employee or by the administration."
+ },
+ "bpic2020_domestic_declarations-R07": {
+  "texts": [
+   "Define a critical section from 'Declaration SUBMITTED by EMPLOYEE' to 'Declaration REJECTED by EMPLOYEE' when more than 2 days elapse",
+   "Define a critical section from declaration submitted by employee to declaration rejected by employee, triggered when more than 2 days elapse.",
+   "It would be helpful if you could define a critical section from declaration submitted by employee to declaration rejected by employee, for cases where more than 2 days pass between them.",
+   "Mark a critical section between the submission and the rejection if it takes over two days."
+  ],
+  "ambiguity": "The terms submission and rejection are not qualified, so it is not immediately clear which submission or which rejection is intended."
+ },
+ "bpic2020_domestic_declarations-R08": {
+  "texts": [
+   "Define a region from 'Declaration REJECTED by EMPLOYEE' to 'Declaration FINAL_APPROVED by SUPERVISOR' when less than 2 days pass between them",
+   "Define a region from declaration rejected by employee to declaration final approved by supervisor, when less than 2 days pass between them.",
+   "Would you mind defining a region from declaration rejected by employee to declaration final approved by supervisor, only for cases where less than 2 days elapse?",
+   "Set up a region from the employee rejection to the supervisor approval if it happens within two days."
+  ],
+  "ambiguity": "The phrase supervisor approval could refer to the final approval or to another approval step, and within two days is slightly less precise than less than 2 days."
+ },
+ "bpic2020_domestic_declarations-R10": {
+  "texts": [
+   "Define a region from 'Declaration REJECTED by EMPLOYEE' to 'Payment Handled' when less than 7 days pass between them",
+   "Define a region from declaration rejected by employee to payment handled, when less than 7 days pass between them.",
+   "Could you please define a region from declaration rejected by employee to payment handled, limited to cases where less than 7 days elapse between the two?",
+   "Create a region from the rejection to the payment step if it takes under a week."
+  ],
+  "ambiguity": "The payment step could refer to payment handled or to request payment, and the rejection is not attributed to a specific actor."
+ },
+ "bpic2020_domestic_declarations-M01": {
+  "texts": [
+   "Define 'Declaration REJECTED by ADMINISTRATION' as a milestone",
+   "Define declaration rejected by administration as a milestone.",
+   "Could you mark declaration rejected by administration as a milestone, please?",
+   "Set the administration rejection as a milestone."
+  ],
+  "ambiguity": "The shortened phrase administration rejection could be mistaken for a different rejection activity or for a rejection handled by a different role."
+ },
+ "bpic2020_domestic_declarations-M02": {
+  "texts": [
+   "Mark 'Declaration APPROVED by ADMINISTRATION' and 'Declaration REJECTED by EMPLOYEE' as milestones",
+   "Mark declaration approved by administration and declaration rejected by employee as milestones.",
+   "I would like you to mark both declaration approved by administration and declaration rejected by employee as milestones.",
+   "Set the administration approval and the employee rejection as milestones."
+  ],
+  "ambiguity": "The administration approval could be confused with a final approval step, since the word final is omitted."
+ },
+ "bpic2020_domestic_declarations-R09": {
+  "texts": [
+   "Define a critical section from 'Declaration REJECTED by EMPLOYEE' to 'Declaration SUBMITTED by EMPLOYEE' when more than 14 hours elapse",
+   "Define a critical section from declaration rejected by employee to declaration submitted by employee when more than 14 hours elapse.",
+   "Could you please define a critical section from declaration rejected by employee to declaration submitted by employee when more than 14 hours elapse?",
+   "Define a critical section from the rejected declaration to the submitted declaration when more than 14 hours elapse."
+  ],
+  "ambiguity": "The shortened names 'the rejected declaration' and 'the submitted declaration' could refer to activities involving different roles, not just the employee."
+ },
+ "bpic2020_domestic_declarations-M03": {
+  "texts": [
+   "Use 'Declaration REJECTED by SUPERVISOR' as a milestone",
+   "Set the declaration rejected by supervisor as a milestone.",
+   "Could you please mark the declaration rejected by supervisor as a milestone?",
+   "Make the rejected declaration a milestone."
+  ],
+  "ambiguity": "The rejected declaration does not specify by whom it was rejected, so it could refer to rejection by supervisor, employee, or administration."
+ },
+ "bpic2020_domestic_declarations-M04": {
+  "texts": [
+   "Define 'Declaration APPROVED by BUDGET OWNER' as a milestone",
+   "Set the declaration approved by budget owner as a milestone.",
+   "I would like you to define the declaration approved by budget owner as a milestone.",
+   "Mark the approved declaration as a milestone."
+  ],
+  "ambiguity": "The approved declaration does not specify by whom it was approved, so it could refer to approval by budget owner, pre-approver, or administration."
+ },
+ "bpic2020_domestic_declarations-M05": {
+  "texts": [
+   "Define 'Declaration REJECTED by EMPLOYEE' and 'Declaration APPROVED by PRE_APPROVER' as milestones",
+   "Set the declaration rejected by employee and the declaration approved by pre-approver as milestones.",
+   "It would be helpful if you could define the declaration rejected by employee and the declaration approved by pre-approver as milestones.",
+   "Mark the rejected declaration and the pre-approver approval as milestones."
+  ],
+  "ambiguity": "The rejected declaration does not specify by whom it was rejected, so it could refer to rejection by employee, supervisor, or administration."
+ },
+ "bpic2020_domestic_declarations-M06": {
+  "texts": [
+   "Mark 'Declaration APPROVED by PRE_APPROVER', 'Declaration APPROVED by ADMINISTRATION' and 'Declaration REJECTED by ADMINISTRATION' as milestones",
+   "Set the declaration approved by pre-approver, the declaration approved by administration, and the declaration rejected by administration as milestones.",
+   "Could you please mark the declaration approved by pre-approver, the declaration approved by administration, and the declaration rejected by administration as milestones?",
+   "Define the pre-approver approval, the administration approval, and the rejected one as milestones."
+  ],
+  "ambiguity": "The rejected one at the end does not specify by whom the declaration was rejected, so it could refer to rejection by administration, employee, or supervisor."
+ },
+ "bpic2020_domestic_declarations-M07": {
+  "texts": [
+   "Define 'Declaration APPROVED by PRE_APPROVER' and 'Declaration REJECTED by EMPLOYEE' as milestones",
+   "Set the declaration approved by pre-approver and the declaration rejected by employee as milestones.",
+   "I would like you to define the declaration approved by pre-approver and the declaration rejected by employee as milestones.",
+   "Define the approved declaration and the employee rejection as milestones."
+  ],
+  "ambiguity": "The approved declaration does not specify by whom it was approved, so it could refer to approval by pre-approver, administration, or budget owner."
+ },
+ "bpic2020_domestic_declarations-M08": {
+  "texts": [
+   "Mark 'Declaration REJECTED by EMPLOYEE', 'Declaration REJECTED by ADMINISTRATION' and 'Declaration APPROVED by PRE_APPROVER' as milestones",
+   "Set the declaration rejected by employee, the declaration rejected by administration, and the declaration approved by pre-approver as milestones.",
+   "Could you please mark the declaration rejected by employee, the declaration rejected by administration, and the declaration approved by pre-approver as milestones?",
+   "Define the two rejections and the pre-approver approval as milestones."
+  ],
+  "ambiguity": "The two rejections do not specify which two, so they could be employee and administration, employee and supervisor, or supervisor and administration."
+ },
+ "bpic2020_domestic_declarations-M09": {
+  "texts": [
+   "Define 'Declaration REJECTED by ADMINISTRATION' and 'Declaration APPROVED by ADMINISTRATION' as milestones",
+   "Set the declaration rejected by administration and the declaration approved by administration as milestones.",
+   "I would like you to define the declaration rejected by administration and the declaration approved by administration as milestones.",
+   "Mark the two administration outcomes as milestones."
+  ],
+  "ambiguity": "The two administration outcomes is vague and does not explicitly name the approved and rejected activities, so a reader might wonder whether other administration steps are included."
+ },
+ "bpic2020_domestic_declarations-M10": {
+  "texts": [
+   "Mark 'Declaration APPROVED by BUDGET OWNER', 'Declaration REJECTED by ADMINISTRATION' and 'Declaration REJECTED by SUPERVISOR' as milestones",
+   "Set the declaration approved by budget owner, the declaration rejected by administration, and the declaration rejected by supervisor as milestones.",
+   "Could you please mark the declaration approved by budget owner, the declaration rejected by administration, and the declaration rejected by supervisor as milestones?",
+   "Define the budget owner approval and the two rejections as milestones."
+  ],
+  "ambiguity": "The two rejections do not specify which two, so they could be administration and supervisor, administration and employee, or supervisor and employee."
+ }
+}

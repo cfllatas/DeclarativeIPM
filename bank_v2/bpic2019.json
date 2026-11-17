@@ -1,0 +1,875 @@
+{
+ "log": "bpic2019",
+ "lang": "en",
+ "cases": 251734,
+ "version": "v2",
+ "note": "orders only; no clarification items; one wording per item",
+ "filters": [
+  {
+   "id": "bpic2019-F01",
+   "family": "exists",
+   "cls": "act",
+   "text": "Limit the cases to: cases in which 'Remove Payment Block' occurs",
+   "expr": "'Remove Payment Block'",
+   "count": 55839,
+   "pct": 22.2,
+   "case_hash": "8e507cf01c68c9a1",
+   "texts": [
+    "Limit the cases to: cases in which 'Remove Payment Block' occurs",
+    "Filter the cases to only those where the payment block removal occurs.",
+    "Could you limit the cases to those in which the payment block removal takes place?",
+    "Filter the cases to those where the block removal happens."
+   ],
+   "ambiguity": "Block removal is a shortened name that could refer to Remove Payment Block or another block-related activity."
+  },
+  {
+   "id": "bpic2019-F02",
+   "family": "exists",
+   "cls": "act",
+   "text": "Limit the cases to: cases that went through 'Create Purchase Requisition Item'",
+   "expr": "'Create Purchase Requisition Item'",
+   "count": 46592,
+   "pct": 18.5,
+   "case_hash": "c86c5c6328f93f66",
+   "texts": [
+    "Limit the cases to: cases that went through 'Create Purchase Requisition Item'",
+    "Limit the cases to those that went through creating a purchase requisition item.",
+    "I would like you to filter the cases to only those that include the creation of a purchase requisition item.",
+    "Filter the cases to those that went through creating a requisition item."
+   ],
+   "ambiguity": "Requisition item is a shortened name that could refer to purchase requisition item or a generic requisition item."
+  },
+  {
+   "id": "bpic2019-F34",
+   "family": "var_cat",
+   "cls": "var",
+   "text": "Limit the cases to: cases with GR-Based Inv. Verif. equal to 'true'",
+   "expr": "['GR-Based Inv. Verif.' == 'true']",
+   "count": 15182,
+   "pct": 6.0,
+   "case_hash": "1c03e519c3af0edc",
+   "texts": [
+    "Limit the cases to: cases with GR-Based Inv. Verif. equal to 'true'",
+    "Limit the cases to those where the goods receipt based invoice verification is true.",
+    "It would be helpful if you could filter the cases to only those where the goods receipt based invoice verification is set to true.",
+    "Filter the cases to those where the invoice verification is true."
+   ],
+   "ambiguity": "Invoice verification is a shortened name that could refer to the goods receipt based invoice verification or another invoice verification variable."
+  },
+  {
+   "id": "bpic2019-F35",
+   "family": "var_cat",
+   "cls": "var",
+   "text": "Limit the cases to: cases with Spend classification text equal to 'NPR'",
+   "expr": "['Spend classification text' == 'NPR']",
+   "count": 81057,
+   "pct": 32.2,
+   "case_hash": "128d519e697d13ce",
+   "texts": [
+    "Limit the cases to: cases with Spend classification text equal to 'NPR'",
+    "Limit the cases to those where the spend classification text is NPR.",
+    "Could you please filter the cases to only those with the spend classification text set to NPR?",
+    "Filter the cases to those where the spend classification is NPR."
+   ],
+   "ambiguity": "Spend classification drops the word text, so it could refer to a different classification field rather than the text variable."
+  },
+  {
+   "id": "bpic2019-F39",
+   "family": "time_lt",
+   "cls": "time",
+   "text": "Limit the cases to: cases with 'Vendor creates invoice' and, later, 'Remove Payment Block' in less than 20 days",
+   "expr": "('Vendor creates invoice' >> 'Remove Payment Block')[-20d]",
+   "count": 26890,
+   "pct": 10.7,
+   "case_hash": "bba10fcfd1590e05",
+   "texts": [
+    "Limit the cases to: cases with 'Vendor creates invoice' and, later, 'Remove Payment Block' in less than 20 days",
+    "Limit the cases to those where the vendor creates the invoice and then the payment block is removed within less than 20 days.",
+    "I would like you to filter the cases to those in which the vendor creates the invoice followed by the payment block removal in under 20 days.",
+    "Filter the cases to those where the vendor creates the invoice and the payment block is removed in less than 20 days."
+   ],
+   "ambiguity": "The word and without then or later makes the temporal ordering between the two activities slightly ambiguous."
+  },
+  {
+   "id": "bpic2019-F40",
+   "family": "time_gt",
+   "cls": "time",
+   "text": "Limit the cases to: cases with 'Receive Order Confirmation' and, later, 'Vendor creates invoice' more than 7 days apart",
+   "expr": "('Receive Order Confirmation' >> 'Vendor creates invoice')[7d-]",
+   "count": 14370,
+   "pct": 5.7,
+   "case_hash": "5c5c1218d018899d",
+   "texts": [
+    "Limit the cases to: cases with 'Receive Order Confirmation' and, later, 'Vendor creates invoice' more than 7 days apart",
+    "Limit the cases to those where the order confirmation is received and then the vendor creates the invoice, with more than 7 days between the two.",
+    "Could you filter the cases to those in which the order confirmation is received followed by the vendor creating the invoice, with a gap of more than 7 days?",
+    "Filter the cases to those where the order confirmation and the vendor invoice creation are more than 7 days apart."
+   ],
+   "ambiguity": "Vendor invoice creation is a loose shortened name, and order confirmation drops the receive verb making the exact activity slightly unclear."
+  },
+  {
+   "id": "bpic2019-F38",
+   "family": "var_seq",
+   "cls": "mixed",
+   "text": "Limit the cases to: cases with 'Receive Order Confirmation' and, later, 'Record Invoice Receipt', where Spend area text is 'Packaging'",
+   "expr": "('Receive Order Confirmation' >> 'Record Invoice Receipt')['Spend area text' == 'Packaging']",
+   "count": 23515,
+   "pct": 9.3,
+   "case_hash": "90e00d6dda43fc84",
+   "texts": [
+    "Limit the cases to: cases with 'Receive Order Confirmation' and, later, 'Record Invoice Receipt', where Spend area text is 'Packaging'",
+    "Limit the cases to those where the order confirmation is received and then the invoice receipt is recorded, with the spend area text being Packaging.",
+    "I would like you to filter the cases to those in which the order confirmation is received followed by recording the invoice receipt, where the spend area text is Packaging.",
+    "Filter the cases to those where the order confirmation is received and the invoice receipt is recorded, with the spend area being Packaging."
+   ],
+   "ambiguity": "Spend area drops the word text, and the conjunction and without then makes the temporal order between the two activities slightly ambiguous."
+  },
+  {
+   "id": "bpic2019-F36",
+   "family": "var_two",
+   "cls": "var",
+   "text": "Limit the cases to: cases with Item Category equal to 'Consignment' and Item Type equal to 'Consignment'",
+   "expr": "['Item Category' == 'Consignment', 'Item Type' == 'Consignment']",
+   "count": 14498,
+   "pct": 5.8,
+   "case_hash": "1581985a7c70b9f6",
+   "texts": [
+    "Limit the cases to: cases with Item Category equal to 'Consignment' and Item Type equal to 'Consignment'",
+    "Limit the cases to those where the item category is Consignment and the item type is also Consignment.",
+    "Could you please filter the cases to only those where both the item category and the item type are set to Consignment?",
+    "Filter the cases to those where the item category and type are Consignment."
+   ],
+   "ambiguity": "Item category and type is a shortened form that could be read as a single combined field rather than two separate variables."
+  }
+ ],
+ "circuits": [
+  {
+   "id": "bpic2019-C01",
+   "text": "Create circuits for this: separate the items by how they end: invoice cleared, invoice recorded, goods received or order item deleted",
+   "cls": "act",
+   "circuits": [
+    {
+     "name": "ends_0",
+     "expr": "'Clear Invoice'$"
+    },
+    {
+     "name": "ends_1",
+     "expr": "'Record Invoice Receipt'$"
+    },
+    {
+     "name": "ends_2",
+     "expr": "'Record Goods Receipt'$"
+    },
+    {
+     "name": "ends_3",
+     "expr": "'Delete Purchase Order Item'$"
+    }
+   ],
+   "gold_counts": {
+    "ends_0": 181328,
+    "UNK": 16416,
+    "ends_1": 23091,
+    "ends_2": 22776,
+    "ends_3": 8123
+   },
+   "texts": [
+    "Create circuits for this: separate the items by how they end: invoice cleared, invoice recorded, goods received or order item deleted",
+    "Create circuits that separate the items by their ending activity: one for those ending with clearing the invoice, one for recording the invoice receipt, one for recording the goods receipt, and one for deleting the purchase order item.",
+    "Could you create circuits that split the items according to how they end? I would like one circuit for items ending with clearing the invoice, one for recording the invoice receipt, one for recording the goods receipt, and one for deleting the purchase order item.",
+    "Create circuits separating the items by how they end: invoice cleared, invoice recorded, goods received, or the item deleted."
+   ],
+   "ambiguity": "The shortened phrases like 'invoice recorded' and 'the item deleted' do not clearly identify which specific activity is meant, and 'goods received' could be confused with a different receipt-related activity."
+  },
+  {
+   "id": "bpic2019-C02",
+   "text": "Create circuits for this: classify the items by whether they had a payment block removal, started from a requisition or had a quantity change (first match wins)",
+   "cls": "act",
+   "circuits": [
+    {
+     "name": "with_0",
+     "expr": "'Remove Payment Block'"
+    },
+    {
+     "name": "with_1",
+     "expr": "'Create Purchase Requisition Item'"
+    },
+    {
+     "name": "with_2",
+     "expr": "'Change Quantity'"
+    }
+   ],
+   "gold_counts": {
+    "UNK": 148924,
+    "with_0": 55839,
+    "with_2": 10323,
+    "with_1": 36648
+   },
+   "texts": [
+    "Create circuits for this: classify the items by whether they had a payment block removal, started from a requisition or had a quantity change (first match wins)",
+    "Create circuits that classify the items by whether they include a payment block removal, a purchase requisition item creation, or a quantity change, with the first matching group taking priority.",
+    "I would like you to create circuits that group the items based on whether they had a payment block removed, started from a purchase requisition item, or had a quantity change, keeping the first match as the priority.",
+    "Create circuits classifying items by whether they had a block removal, started from a requisition, or had a quantity change, first match wins."
+   ],
+   "ambiguity": "The shortened terms 'block removal' and 'requisition' are vague and could refer to different activities or objects in the process."
+  },
+  {
+   "id": "bpic2019-C03",
+   "text": "Create circuits for this: separate the items with an order confirmation followed by an invoice receipt, those with only an order confirmation, and the rest",
+   "cls": "act",
+   "circuits": [
+    {
+     "name": "a_then_b",
+     "expr": "('Receive Order Confirmation' >> 'Record Invoice Receipt')"
+    },
+    {
+     "name": "has_a",
+     "expr": "'Receive Order Confirmation'"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "rest": 219673,
+    "a_then_b": 29267,
+    "has_a": 2794
+   },
+   "texts": [
+    "Create circuits for this: separate the items with an order confirmation followed by an invoice receipt, those with only an order confirmation, and the rest",
+    "Create circuits separating the items into three groups: those where receiving the order confirmation is followed by recording the invoice receipt, those with only the order confirmation, and everything else.",
+    "Could you create circuits that split the items into three groups: first, those where the order confirmation is received and then the invoice receipt is recorded; second, those with only the order confirmation; and third, the rest?",
+    "Create circuits: items with a confirmation followed by an invoice, those with only a confirmation, and the rest."
+   ],
+   "ambiguity": "The word 'confirmation' is not specified as an order confirmation, and 'an invoice' is too generic to clearly identify the invoice receipt activity."
+  },
+  {
+   "id": "bpic2019-C04",
+   "text": "Create circuits for this: separate the cases by how they end: 'Clear Invoice' or 'Record Invoice Receipt'",
+   "cls": "act",
+   "circuits": [
+    {
+     "name": "ends_Clear_Invoice",
+     "expr": "'Clear Invoice'$"
+    },
+    {
+     "name": "ends_Record_Invoice_Receipt",
+     "expr": "'Record Invoice Receipt'$"
+    }
+   ],
+   "gold_counts": {
+    "ends_Clear_Invoice": 181328,
+    "UNK": 47315,
+    "ends_Record_Invoice_Receipt": 23091
+   },
+   "texts": [
+    "Create circuits for this: separate the cases by how they end: 'Clear Invoice' or 'Record Invoice Receipt'",
+    "Create circuits that separate the cases by their ending: one for cases ending with clearing the invoice and one for cases ending with recording the invoice receipt.",
+    "It would be helpful if you could create circuits splitting the cases by how they end, with one circuit for those ending in clearing the invoice and another for those ending in recording the invoice receipt.",
+    "Create circuits separating cases by how they end: invoice cleared or invoice receipt recorded."
+   ],
+   "ambiguity": "The phrase 'invoice receipt recorded' is ambiguous because it could be read as recording a receipt of an invoice rather than the specific activity of recording the invoice receipt."
+  },
+  {
+   "id": "bpic2019-C05",
+   "text": "Create circuits for this: group the cases by GR-Based Inv. Verif.: 'false' or 'true'",
+   "cls": "var",
+   "circuits": [
+    {
+     "name": "GR_Based_Inv_Verif__false",
+     "expr": "['GR-Based Inv. Verif.' == 'false']"
+    },
+    {
+     "name": "GR_Based_Inv_Verif__true",
+     "expr": "['GR-Based Inv. Verif.' == 'true']"
+    }
+   ],
+   "gold_counts": {
+    "GR_Based_Inv_Verif__false": 236552,
+    "GR_Based_Inv_Verif__true": 15182
+   },
+   "texts": [
+    "Create circuits for this: group the cases by GR-Based Inv. Verif.: 'false' or 'true'",
+    "Create circuits grouping the cases by the GR-based invoice verification value: one for cases where it is false and one for cases where it is true.",
+    "Could you create circuits that group the cases according to the GR-based invoice verification field, with one circuit for the false value and one for the true value?",
+    "Create circuits splitting cases by the GR verification flag: false or true."
+   ],
+   "ambiguity": "The shortened name 'GR verification flag' does not clearly identify the full variable name and could be confused with other GR-related fields."
+  },
+  {
+   "id": "bpic2019-C06",
+   "text": "Create three circuits: 'Receive Order Confirmation' then 'Clear Invoice' in less than 30 days, the rest of those with 'Receive Order Confirmation' then 'Clear Invoice', and all the others",
+   "cls": "time",
+   "circuits": [
+    {
+     "name": "Receive_Order_Confirmation_to_Clear_Invoice_fast",
+     "expr": "('Receive Order Confirmation' >> 'Clear Invoice')[-30d]"
+    },
+    {
+     "name": "Receive_Order_Confirmation_to_Clear_Invoice_slow",
+     "expr": "('Receive Order Confirmation' >> 'Clear Invoice')"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "rest": 229083,
+    "Receive_Order_Confirmation_to_Clear_Invoice_slow": 22498,
+    "Receive_Order_Confirmation_to_Clear_Invoice_fast": 153
+   },
+   "texts": [
+    "Create three circuits: 'Receive Order Confirmation' then 'Clear Invoice' in less than 30 days, the rest of those with 'Receive Order Confirmation' then 'Clear Invoice', and all the others",
+    "Create three circuits: one for cases where receiving the order confirmation is followed by clearing the invoice in less than 30 days, one for the remaining cases with that same sequence, and one for all other cases.",
+    "I would like you to create three circuits: first, cases where the order confirmation is received and then the invoice is cleared within 30 days; second, the rest of the cases that have that same sequence; and third, all the others.",
+    "Create three circuits: cases with a confirmation then invoice clearing in under 30 days, the rest with that sequence, and all others."
+   ],
+   "ambiguity": "The word 'confirmation' is not specified as an order confirmation, and 'invoice clearing' is an informal shorthand that could be confused with other invoice-related activities."
+  },
+  {
+   "id": "bpic2019-C07",
+   "text": "Make three circuits by the time between 'Create Purchase Requisition Item' and 'Clear Invoice': less than 30 days, longer, and those without that stretch",
+   "cls": "time",
+   "circuits": [
+    {
+     "name": "Create_Purchase_Requisition_Item_to_Clear_Invoice_fast",
+     "expr": "('Create Purchase Requisition Item' >> 'Clear Invoice')[-30d]"
+    },
+    {
+     "name": "Create_Purchase_Requisition_Item_to_Clear_Invoice_slow",
+     "expr": "('Create Purchase Requisition Item' >> 'Clear Invoice')"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "rest": 229607,
+    "Create_Purchase_Requisition_Item_to_Clear_Invoice_slow": 19640,
+    "Create_Purchase_Requisition_Item_to_Clear_Invoice_fast": 2487
+   },
+   "texts": [
+    "Make three circuits by the time between 'Create Purchase Requisition Item' and 'Clear Invoice': less than 30 days, longer, and those without that stretch",
+    "Create three circuits based on the time between creating the purchase requisition item and clearing the invoice: one for less than 30 days, one for longer than 30 days, and one for cases without that sequence.",
+    "Could you create three circuits by the duration between creating the purchase requisition item and clearing the invoice? I would like one for under 30 days, one for over 30 days, and one for cases that do not have that stretch.",
+    "Make three circuits by the time between the requisition item and clearing the invoice: under 30 days, over 30 days, and those without it."
+   ],
+   "ambiguity": "The shortened phrase 'the requisition item' does not clearly specify that it is a purchase requisition item, and 'clearing the invoice' is informal enough to be confused with other invoice activities."
+  },
+  {
+   "id": "bpic2019-C08",
+   "text": "Create three circuits: cases with Company equal to 'companyID_0000' that go through 'Clear Invoice', the rest of the cases with Company equal to 'companyID_0000', and all the others",
+   "cls": "mixed",
+   "circuits": [
+    {
+     "name": "Company_companyID_0000_Clear_Invoice",
+     "expr": "'Clear Invoice' & [Company == 'companyID_0000']"
+    },
+    {
+     "name": "Company_companyID_0000",
+     "expr": "[Company == 'companyID_0000']"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "Company_companyID_0000_Clear_Invoice": 183373,
+    "Company_companyID_0000": 67313,
+    "rest": 1048
+   },
+   "texts": [
+    "Create three circuits: cases with Company equal to 'companyID_0000' that go through 'Clear Invoice', the rest of the cases with Company equal to 'companyID_0000', and all the others",
+    "Create three circuits: first, the cases where the company is company ID 0000 that go through clear invoice; second, the remaining cases where the company is company ID 0000; and third, all the other cases.",
+    "Could you set up three circuits, please? I would like the first to include cases where the company is company ID 0000 and they go through clear invoice, the second to cover the rest of the cases for company ID 0000, and the third to cover all remaining cases.",
+    "Create three circuits: cases for company 0000 that go through clear invoice, the rest of company 0000, and everything else."
+   ],
+   "ambiguity": "The shortened name 'company 0000' could refer to the company ID value or to a company simply named 0000."
+  },
+  {
+   "id": "bpic2019-C09",
+   "text": "Make three circuits: Document Type equal to 'Standard PO' and 'Change Quantity', only Document Type equal to 'Standard PO', and the rest",
+   "cls": "mixed",
+   "circuits": [
+    {
+     "name": "Document_Type_Standard_PO_Change_Quantity",
+     "expr": "'Change Quantity' & ['Document Type' == 'Standard PO']"
+    },
+    {
+     "name": "Document_Type_Standard_PO",
+     "expr": "['Document Type' == 'Standard PO']"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "rest": 2979,
+    "Document_Type_Standard_PO": 231168,
+    "Document_Type_Standard_PO_Change_Quantity": 17587
+   },
+   "texts": [
+    "Make three circuits: Document Type equal to 'Standard PO' and 'Change Quantity', only Document Type equal to 'Standard PO', and the rest",
+    "Make three circuits: the first for cases where the document type is standard PO and change quantity occurs, the second for the remaining standard PO cases, and the third for everything else.",
+    "Could you create three circuits where the first picks up standard PO cases that also include change quantity, the second takes the other standard PO cases, and the third covers all the rest?",
+    "Make three circuits: one for standard PO with change quantity, one for standard PO only, and the rest."
+   ],
+   "ambiguity": "Standard PO with change quantity could be read as a single combined activity name rather than two separate conditions (a variable value and an activity)."
+  },
+  {
+   "id": "bpic2019-C10",
+   "text": "Create three circuits: 'Record Goods Receipt' then 'Remove Payment Block' in less than 20 days, the rest of those with 'Record Goods Receipt' then 'Remove Payment Block', and all the others",
+   "cls": "time",
+   "circuits": [
+    {
+     "name": "Record_Goods_Receipt_to_Remove_Payment_Block_fast",
+     "expr": "('Record Goods Receipt' >> 'Remove Payment Block')[-20d]"
+    },
+    {
+     "name": "Record_Goods_Receipt_to_Remove_Payment_Block_slow",
+     "expr": "('Record Goods Receipt' >> 'Remove Payment Block')"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "rest": 196432,
+    "Record_Goods_Receipt_to_Remove_Payment_Block_fast": 27058,
+    "Record_Goods_Receipt_to_Remove_Payment_Block_slow": 28244
+   },
+   "texts": [
+    "Create three circuits: 'Record Goods Receipt' then 'Remove Payment Block' in less than 20 days, the rest of those with 'Record Goods Receipt' then 'Remove Payment Block', and all the others",
+    "Create three circuits: the first for cases where record goods receipt is followed by remove payment block in under twenty days, the second for the remaining cases with that same sequence, and the third for all others.",
+    "I would like you to set up three circuits where the first captures record goods receipt followed by remove payment block within twenty days, the second takes the rest of that sequence, and the third covers everything else.",
+    "Create three circuits: one for the fast path from goods receipt to payment block removal in under twenty days, one for the slow path of the same pair, and the rest."
+   ],
+   "ambiguity": "Goods receipt and payment block removal are shortened or rephrased names that could each match a different activity in the model."
+  },
+  {
+   "id": "bpic2019-C11",
+   "text": "Make three circuits by the time between 'Change Quantity' and 'Record Goods Receipt': less than 3 days, longer, and those without that stretch",
+   "cls": "time",
+   "circuits": [
+    {
+     "name": "Change_Quantity_to_Record_Goods_Receipt_fast",
+     "expr": "('Change Quantity' >> 'Record Goods Receipt')[-3d]"
+    },
+    {
+     "name": "Change_Quantity_to_Record_Goods_Receipt_slow",
+     "expr": "('Change Quantity' >> 'Record Goods Receipt')"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "rest": 235893,
+    "Change_Quantity_to_Record_Goods_Receipt_slow": 8582,
+    "Change_Quantity_to_Record_Goods_Receipt_fast": 7259
+   },
+   "texts": [
+    "Make three circuits by the time between 'Change Quantity' and 'Record Goods Receipt': less than 3 days, longer, and those without that stretch",
+    "Make three circuits based on the time between change quantity and record goods receipt: the first for under three days, the second for three days or more, and the third for cases without that sequence.",
+    "It would be great if you could create three circuits splitting cases by the gap between change quantity and record goods receipt: less than three days, three days or more, and those where the sequence simply does not appear.",
+    "Make three circuits by the gap between quantity change and goods receipt: under three days, over three days, and the rest."
+   ],
+   "ambiguity": "Quantity change is a loose reordering of change quantity and goods receipt drops the word record, so both could be confused with other activities."
+  },
+  {
+   "id": "bpic2019-C12",
+   "text": "Create three circuits: 'Record Goods Receipt' then 'Clear Invoice' in less than 30 days, the rest of those with 'Record Goods Receipt' then 'Clear Invoice', and all the others",
+   "cls": "time",
+   "circuits": [
+    {
+     "name": "Record_Goods_Receipt_to_Clear_Invoice_fast",
+     "expr": "('Record Goods Receipt' >> 'Clear Invoice')[-30d]"
+    },
+    {
+     "name": "Record_Goods_Receipt_to_Clear_Invoice_slow",
+     "expr": "('Record Goods Receipt' >> 'Clear Invoice')"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "Record_Goods_Receipt_to_Clear_Invoice_fast": 22435,
+    "Record_Goods_Receipt_to_Clear_Invoice_slow": 160355,
+    "rest": 68944
+   },
+   "texts": [
+    "Create three circuits: 'Record Goods Receipt' then 'Clear Invoice' in less than 30 days, the rest of those with 'Record Goods Receipt' then 'Clear Invoice', and all the others",
+    "Create three circuits: the first for cases where record goods receipt is followed by clear invoice in under thirty days, the second for the remaining cases with that sequence, and the third for all others.",
+    "Could you please set up three circuits where the first captures record goods receipt followed by clear invoice within thirty days, the second takes the rest of that sequence, and the third covers everything else?",
+    "Create three circuits: one for goods receipt to invoice clearing in under thirty days, one for the rest of that pair, and the rest."
+   ],
+   "ambiguity": "Goods receipt drops the word record and invoice clearing is a loose rephrasing of clear invoice, so either could match a different activity."
+  }
+ ],
+ "regions": [
+  {
+   "id": "bpic2019-R01",
+   "text": "Define a region from 'Receive Order Confirmation' to 'Record Invoice Receipt'",
+   "cls": "act",
+   "regions": [
+    {
+     "name": "Receive_Order_Confirmation_to_Record_Invoice_Receipt",
+     "expr": "('Receive Order Confirmation' >> 'Record Invoice Receipt')",
+     "traces": 29267
+    }
+   ],
+   "texts": [
+    "Define a region from 'Receive Order Confirmation' to 'Record Invoice Receipt'",
+    "Define a region from receive order confirmation to record invoice receipt.",
+    "Could you define a region that starts at receive order confirmation and ends at record invoice receipt?",
+    "Define a region from order confirmation to invoice receipt."
+   ],
+   "ambiguity": "Order confirmation drops the word receive and invoice receipt drops the word record, so each could refer to a different activity in the model."
+  },
+  {
+   "id": "bpic2019-R02",
+   "text": "Define a critical section from 'Remove Payment Block' to 'Clear Invoice'",
+   "cls": "act",
+   "regions": [
+    {
+     "name": "Remove_Payment_Block_to_Clear_Invoice",
+     "expr": "('Remove Payment Block' >> 'Clear Invoice')",
+     "traces": 50471
+    }
+   ],
+   "texts": [
+    "Define a critical section from 'Remove Payment Block' to 'Clear Invoice'",
+    "Define a critical section from remove payment block to clear invoice.",
+    "I would like you to define a critical section starting at remove payment block and ending at clear invoice.",
+    "Define a critical section from payment block removal to invoice clearing."
+   ],
+   "ambiguity": "Payment block removal and invoice clearing are noun-phrase rephrasings that could each be confused with a different activity name."
+  },
+  {
+   "id": "bpic2019-R03",
+   "text": "Define a region from 'Create Purchase Requisition Item' to 'Remove Payment Block'",
+   "cls": "act",
+   "regions": [
+    {
+     "name": "Create_Purchase_Requisition_Item_to_Remove_Payment_Block",
+     "expr": "('Create Purchase Requisition Item' >> 'Remove Payment Block')",
+     "traces": 9944
+    }
+   ],
+   "texts": [
+    "Define a region from 'Create Purchase Requisition Item' to 'Remove Payment Block'",
+    "Define a region from create purchase requisition item to remove payment block.",
+    "Could you please define a region that goes from create purchase requisition item to remove payment block?",
+    "Define a region from the purchase requisition item creation to payment block removal."
+   ],
+   "ambiguity": "Purchase requisition item creation is a loose noun-phrase rephrasing and payment block removal drops the verb remove, so both could match different activities."
+  },
+  {
+   "id": "bpic2019-R04",
+   "text": "Define two critical sections: from 'Vendor creates invoice' to 'Record Goods Receipt' and from 'Create Purchase Order Item' to 'Change Quantity'",
+   "cls": "act",
+   "regions": [
+    {
+     "name": "Vendor_creates_invoice_to_Record_Goods_Receipt",
+     "expr": "('Vendor creates invoice' >> 'Record Goods Receipt')",
+     "traces": 129573
+    },
+    {
+     "name": "Create_Purchase_Order_Item_to_Change_Quantity",
+     "expr": "('Create Purchase Order Item' >> 'Change Quantity')",
+     "traces": 17590
+    }
+   ],
+   "texts": [
+    "Define two critical sections: from 'Vendor creates invoice' to 'Record Goods Receipt' and from 'Create Purchase Order Item' to 'Change Quantity'",
+    "Define two critical sections: one from vendor creates invoice to record goods receipt, and another from create purchase order item to change quantity.",
+    "I would like you to define two critical sections: the first from vendor creates invoice to record goods receipt, and the second from create purchase order item to change quantity.",
+    "Define two critical sections: one from the vendor invoice to goods receipt, and another from the purchase order item to quantity change."
+   ],
+   "ambiguity": "Vendor invoice drops the verb creates and could be a different activity, goods receipt drops record, and quantity change reorders change quantity, making all three potentially ambiguous."
+  },
+  {
+   "id": "bpic2019-R05",
+   "text": "Define two regions: from 'Create Purchase Requisition Item' to 'Remove Payment Block' and from 'Record Invoice Receipt' to 'Remove Payment Block'",
+   "cls": "act",
+   "regions": [
+    {
+     "name": "Create_Purchase_Requisition_Item_to_Remove_Payment_Block",
+     "expr": "('Create Purchase Requisition Item' >> 'Remove Payment Block')",
+     "traces": 9944
+    },
+    {
+     "name": "Record_Invoice_Receipt_to_Remove_Payment_Block",
+     "expr": "('Record Invoice Receipt' >> 'Remove Payment Block')",
+     "traces": 55791
+    }
+   ],
+   "texts": [
+    "Define two regions: from 'Create Purchase Requisition Item' to 'Remove Payment Block' and from 'Record Invoice Receipt' to 'Remove Payment Block'",
+    "Define two regions: one from create purchase requisition item to remove payment block, and another from record invoice receipt to remove payment block.",
+    "Could you define two regions for me, the first going from create purchase requisition item to remove payment block and the second from record invoice receipt to remove payment block?",
+    "Define two regions from create purchase requisition item and record invoice receipt, both ending at remove payment block."
+   ],
+   "ambiguity": "The phrasing 'from A and B, both ending at C' could be misread as a single region with two starting points rather than two separate regions."
+  },
+  {
+   "id": "bpic2019-R06",
+   "text": "Define a region from 'Receive Order Confirmation' to 'Clear Invoice' when less than 30 days pass between them",
+   "cls": "time",
+   "regions": [
+    {
+     "name": "Receive_Order_Confirmation_to_Clear_Invoice_fast",
+     "expr": "('Receive Order Confirmation' >> 'Clear Invoice')[-30d]",
+     "traces": 153
+    }
+   ],
+   "texts": [
+    "Define a region from 'Receive Order Confirmation' to 'Clear Invoice' when less than 30 days pass between them",
+    "Define a region from receive order confirmation to clear invoice for cases where less than 30 days pass between the two activities.",
+    "I would like you to define a region from receive order confirmation to clear invoice, limited to cases where less than 30 days elapse between them.",
+    "Define a region from order confirmation to clear invoice when the gap is under 30 days."
+   ],
+   "ambiguity": "The shortened name 'order confirmation' could refer to receive order confirmation or to another confirmation-related activity in the model."
+  },
+  {
+   "id": "bpic2019-R07",
+   "text": "Define a critical section from 'Create Purchase Requisition Item' to 'Clear Invoice' when more than 30 days elapse",
+   "cls": "time",
+   "regions": [
+    {
+     "name": "Create_Purchase_Requisition_Item_to_Clear_Invoice_slow",
+     "expr": "('Create Purchase Requisition Item' >> 'Clear Invoice')[30d-]",
+     "traces": 19715
+    }
+   ],
+   "texts": [
+    "Define a critical section from 'Create Purchase Requisition Item' to 'Clear Invoice' when more than 30 days elapse",
+    "Define a critical section from create purchase requisition item to clear invoice for cases where more than 30 days elapse between them.",
+    "It would be interesting if you could define a critical section from create purchase requisition item to clear invoice, applying it only when more than 30 days pass between the two.",
+    "Define a critical section from the requisition item creation to clear invoice when over 30 days go by."
+   ],
+   "ambiguity": "The loosely named 'the requisition item creation' could be confused with a different creation-related activity in the process."
+  },
+  {
+   "id": "bpic2019-R08",
+   "text": "Define a region from 'Record Goods Receipt' to 'Remove Payment Block' when less than 20 days pass between them",
+   "cls": "time",
+   "regions": [
+    {
+     "name": "Record_Goods_Receipt_to_Remove_Payment_Block_fast",
+     "expr": "('Record Goods Receipt' >> 'Remove Payment Block')[-20d]",
+     "traces": 27058
+    }
+   ],
+   "texts": [
+    "Define a region from 'Record Goods Receipt' to 'Remove Payment Block' when less than 20 days pass between them",
+    "Define a region from record goods receipt to remove payment block for cases where less than 20 days pass between them.",
+    "Could you define a region from record goods receipt to remove payment block, restricted to cases where less than 20 days elapse?",
+    "Define a region from goods receipt to remove payment block when under 20 days pass."
+   ],
+   "ambiguity": "The shortened name 'goods receipt' could fit record goods receipt or another goods-related activity in the model."
+  },
+  {
+   "id": "bpic2019-R09",
+   "text": "Define a region from 'Create Purchase Requisition Item' to 'Remove Payment Block' in the cases with Company equal to 'companyID_0000'",
+   "cls": "mixed",
+   "regions": [
+    {
+     "name": "Create_Purchase_Requisition_Item_to_Remove_Payment_Block_Company_companyID_0000",
+     "expr": "('Create Purchase Requisition Item' >> 'Remove Payment Block')[Company == 'companyID_0000']",
+     "traces": 9944
+    }
+   ],
+   "texts": [
+    "Define a region from 'Create Purchase Requisition Item' to 'Remove Payment Block' in the cases with Company equal to 'companyID_0000'",
+    "Define a region from create purchase requisition item to remove payment block, but only in the cases where the company is company ID 0000.",
+    "I would like you to define a region from create purchase requisition item to remove payment block, limited to cases where the company equals company ID 0000.",
+    "Define a region from create purchase requisition item to remove payment block in the company ID 0000 cases."
+   ],
+   "ambiguity": "The phrase 'the company ID 0000 cases' is a loose reference that does not explicitly name the Company variable as the filter condition."
+  },
+  {
+   "id": "bpic2019-R10",
+   "text": "Define a critical section from 'Record Invoice Receipt' to 'Remove Payment Block' only in the cases with Document Type equal to 'Standard PO'",
+   "cls": "mixed",
+   "regions": [
+    {
+     "name": "Record_Invoice_Receipt_to_Remove_Payment_Block_Document_Type_Standard_PO",
+     "expr": "('Record Invoice Receipt' >> 'Remove Payment Block')['Document Type' == 'Standard PO']",
+     "traces": 55599
+    }
+   ],
+   "texts": [
+    "Define a critical section from 'Record Invoice Receipt' to 'Remove Payment Block' only in the cases with Document Type equal to 'Standard PO'",
+    "Define a critical section from record invoice receipt to remove payment block, only for cases where the document type is standard PO.",
+    "You should define a critical section from record invoice receipt to remove payment block, applying it solely to cases with document type set to standard PO.",
+    "Define a critical section from record invoice receipt to remove payment block for the standard PO cases."
+   ],
+   "ambiguity": "The phrase 'the standard PO cases' is a vague reference that does not clearly state it is a filter on the Document Type variable."
+  }
+ ],
+ "milestones": [
+  {
+   "id": "bpic2019-M01",
+   "text": "Define 'Create Purchase Requisition Item' as a milestone",
+   "nodes": [
+    "Create Purchase Requisition Item"
+   ],
+   "texts": [
+    "Define 'Create Purchase Requisition Item' as a milestone",
+    "Define create purchase requisition item as a milestone.",
+    "Could you mark create purchase requisition item as a milestone?",
+    "Define the purchase requisition item creation as a milestone."
+   ],
+   "ambiguity": "The loosely named 'the purchase requisition item creation' could be confused with another creation-related activity in the process."
+  },
+  {
+   "id": "bpic2019-M02",
+   "text": "Mark 'Clear Invoice' and 'Vendor creates debit memo' as milestones",
+   "nodes": [
+    "Clear Invoice",
+    "Vendor creates debit memo"
+   ],
+   "texts": [
+    "Mark 'Clear Invoice' and 'Vendor creates debit memo' as milestones",
+    "Mark clear invoice and vendor creates debit memo as milestones.",
+    "I would like you to define clear invoice and vendor creates debit memo as milestones.",
+    "Mark the invoice clearing and the debit memo creation as milestones."
+   ],
+   "ambiguity": "The loosely named 'the invoice clearing' and 'the debit memo creation' could each refer to different activities in the model."
+  },
+  {
+   "id": "bpic2019-M03",
+   "text": "Use 'Cancel Invoice Receipt' as a milestone",
+   "nodes": [
+    "Cancel Invoice Receipt"
+   ],
+   "texts": [
+    "Use 'Cancel Invoice Receipt' as a milestone",
+    "Make cancel invoice receipt a milestone.",
+    "Could you please define cancel invoice receipt as a milestone?",
+    "Set cancel receipt as a milestone."
+   ],
+   "ambiguity": "The shortened name cancel receipt could refer to cancel invoice receipt or to another cancellation activity."
+  },
+  {
+   "id": "bpic2019-M04",
+   "text": "Define 'Delete Purchase Order Item' as a milestone",
+   "nodes": [
+    "Delete Purchase Order Item"
+   ],
+   "texts": [
+    "Define 'Delete Purchase Order Item' as a milestone",
+    "Set delete purchase order item as a milestone.",
+    "I would like you to mark delete purchase order item as a milestone.",
+    "Make delete order item a milestone."
+   ],
+   "ambiguity": "The shortened name delete order item could fit delete purchase order item or a different deletion activity."
+  },
+  {
+   "id": "bpic2019-M05",
+   "text": "Define 'Record Invoice Receipt' and 'Vendor creates debit memo' as milestones",
+   "nodes": [
+    "Record Invoice Receipt",
+    "Vendor creates debit memo"
+   ],
+   "texts": [
+    "Define 'Record Invoice Receipt' and 'Vendor creates debit memo' as milestones",
+    "Define record invoice receipt and vendor creates debit memo as milestones.",
+    "It would be great if you could set record invoice receipt and vendor creates debit memo as milestones.",
+    "Mark record receipt and vendor creates debit memo as milestones."
+   ],
+   "ambiguity": "The shortened name record receipt could refer to record invoice receipt or to another recording activity."
+  },
+  {
+   "id": "bpic2019-M06",
+   "text": "Mark 'Record Service Entry Sheet', 'Receive Order Confirmation' and 'Create Purchase Requisition Item' as milestones",
+   "nodes": [
+    "Record Service Entry Sheet",
+    "Receive Order Confirmation",
+    "Create Purchase Requisition Item"
+   ],
+   "texts": [
+    "Mark 'Record Service Entry Sheet', 'Receive Order Confirmation' and 'Create Purchase Requisition Item' as milestones",
+    "Mark record service entry sheet, receive order confirmation and create purchase requisition item as milestones.",
+    "Could you please define record service entry sheet, receive order confirmation and create purchase requisition item as milestones?",
+    "Set record service entry, receive confirmation and create requisition item as milestones."
+   ],
+   "ambiguity": "The shortened names record service entry and receive confirmation could each fit more than one activity in the model."
+  },
+  {
+   "id": "bpic2019-M07",
+   "text": "Define 'Change Price' as a milestone",
+   "nodes": [
+    "Change Price"
+   ],
+   "texts": [
+    "Define 'Change Price' as a milestone",
+    "Make change price a milestone.",
+    "I would like you to define change price as a milestone.",
+    "Set change as a milestone."
+   ],
+   "ambiguity": "The bare word change could refer to change price or to change quantity."
+  },
+  {
+   "id": "bpic2019-M08",
+   "text": "Mark 'Clear Invoice' and 'Record Invoice Receipt' as milestones",
+   "nodes": [
+    "Clear Invoice",
+    "Record Invoice Receipt"
+   ],
+   "texts": [
+    "Mark 'Clear Invoice' and 'Record Invoice Receipt' as milestones",
+    "Mark clear invoice and record invoice receipt as milestones.",
+    "Would you mind defining clear invoice and record invoice receipt as milestones?",
+    "Make clear invoice and record receipt milestones."
+   ],
+   "ambiguity": "The shortened name record receipt could refer to record invoice receipt or to another recording activity."
+  },
+  {
+   "id": "bpic2019-M09",
+   "text": "Define 'Create Purchase Requisition Item', 'Clear Invoice' and 'Record Invoice Receipt' as milestones",
+   "nodes": [
+    "Create Purchase Requisition Item",
+    "Clear Invoice",
+    "Record Invoice Receipt"
+   ],
+   "texts": [
+    "Define 'Create Purchase Requisition Item', 'Clear Invoice' and 'Record Invoice Receipt' as milestones",
+    "Define create purchase requisition item, clear invoice and record invoice receipt as milestones.",
+    "It would be interesting if you could mark create purchase requisition item, clear invoice and record invoice receipt as milestones.",
+    "Set create requisition item, clear invoice and record receipt as milestones."
+   ],
+   "ambiguity": "The shortened names create requisition item and record receipt could each fit more than one activity in the model."
+  },
+  {
+   "id": "bpic2019-M10",
+   "text": "Define 'Change Quantity' as a milestone",
+   "nodes": [
+    "Change Quantity"
+   ],
+   "texts": [
+    "Define 'Change Quantity' as a milestone",
+    "Make change quantity a milestone.",
+    "Could you please set change quantity as a milestone?",
+    "Define change as a milestone."
+   ],
+   "ambiguity": "The bare word change could refer to change quantity or to change price."
+  }
+ ],
+ "asks": [],
+ "levels": [
+  "order (robotic, exact names)",
+  "natural",
+  "polite",
+  "ambiguous"
+ ]
+}

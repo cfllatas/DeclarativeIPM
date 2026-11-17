@@ -1,0 +1,861 @@
+{
+ "log": "sepsis_hospital_complejo",
+ "lang": "es",
+ "cases": 2000,
+ "version": "v2",
+ "note": "orders only; no clarification items; one wording per item",
+ "filters": [
+  {
+   "id": "sepsis_hospital_complejo-F01",
+   "family": "exists",
+   "cls": "act",
+   "text": "Limita los casos a: casos en los que ocurre «ControlFoco»",
+   "expr": "'ControlFoco'",
+   "count": 188,
+   "pct": 9.4,
+   "case_hash": "225c813a0dcc71f4",
+   "texts": [
+    "Limita los casos a: casos en los que ocurre «ControlFoco»",
+    "Filtra los casos a aquellos en los que se realiza el control del foco.",
+    "¿Podrías limitar los casos a los que incluyen el control del foco?",
+    "Limita los casos a los que tienen un control."
+   ],
+   "ambiguity": "The generic term 'un control' could refer to any control activity in the process, not specifically the focus control."
+  },
+  {
+   "id": "sepsis_hospital_complejo-F02",
+   "family": "exists",
+   "cls": "act",
+   "text": "Limita los casos a: pacientes/casos que pasaron por «Reingreso30d»",
+   "expr": "'Reingreso30d'",
+   "count": 193,
+   "pct": 9.7,
+   "case_hash": "f9f3d3383126b8e7",
+   "texts": [
+    "Limita los casos a: pacientes/casos que pasaron por «Reingreso30d»",
+    "Filtra los casos a los pacientes que pasaron por un reingreso a los 30 días.",
+    "Me gustaría que limitaras los casos a aquellos pacientes que tuvieron un reingreso a los 30 días.",
+    "Limita los casos a los que tuvieron un reingreso."
+   ],
+   "ambiguity": "The 30-day timeframe is omitted, so it could refer to any reingreso activity in the model."
+  },
+  {
+   "id": "sepsis_hospital_complejo-F32",
+   "family": "var_num",
+   "cls": "var",
+   "text": "Limita los casos a: casos con Edad mayor que 61",
+   "expr": "[Edad > 61]",
+   "count": 1296,
+   "pct": 64.8,
+   "case_hash": "3e7bd362afb362d8",
+   "texts": [
+    "Limita los casos a: casos con Edad mayor que 61",
+    "Filtra los casos a aquellos con edad mayor que 61.",
+    "¿Podrías limitar los casos a los que tengan una edad superior a 61?",
+    "Limita los casos a los que tienen 61 años o más."
+   ],
+   "ambiguity": "'61 años o más' suggests 61 is included (>= 61), whereas the original strictly requires greater than 61."
+  },
+  {
+   "id": "sepsis_hospital_complejo-F33",
+   "family": "var_range",
+   "cls": "var",
+   "text": "Limita los casos a: casos con Edad entre 61 y 76",
+   "expr": "[Edad >= 61, Edad <= 76]",
+   "count": 745,
+   "pct": 37.2,
+   "case_hash": "52e2e30ac8226e07",
+   "texts": [
+    "Limita los casos a: casos con Edad entre 61 y 76",
+    "Filtra los casos a aquellos con edad entre 61 y 76 años, ambos inclusive.",
+    "Sería interesante que limitaras los casos a los que tengan una edad comprendida entre 61 y 76.",
+    "Limita los casos a los de entre 61 y 76."
+   ],
+   "ambiguity": "'de entre 61 y 76' could be read as exclusive of the boundary values, unlike the original inclusive range."
+  },
+  {
+   "id": "sepsis_hospital_complejo-F39",
+   "family": "time_lt",
+   "cls": "time",
+   "text": "Limita los casos a: casos con «Liquidos» y, más tarde, «ValoracionInicialPlanta» en menos de 10 horas",
+   "expr": "('Liquidos' >> 'ValoracionInicialPlanta')[-10h]",
+   "count": 143,
+   "pct": 7.2,
+   "case_hash": "431aa24e4a5f443b",
+   "texts": [
+    "Limita los casos a: casos con «Liquidos» y, más tarde, «ValoracionInicialPlanta» en menos de 10 horas",
+    "Filtra los casos a aquellos en los que se administran líquidos y, después, se realiza la valoración inicial en planta en menos de 10 horas.",
+    "¿Podrías limitar los casos a los que incluyen la administración de líquidos seguida de la valoración inicial en planta, con un intervalo inferior a 10 horas?",
+    "Limita los casos a los que tienen líquidos y una valoración en menos de 10 horas."
+   ],
+   "ambiguity": "'una valoración' is too generic and could refer to any valuation activity, not specifically the initial ward valuation."
+  },
+  {
+   "id": "sepsis_hospital_complejo-F40",
+   "family": "time_gt",
+   "cls": "time",
+   "text": "Limita los casos a: casos con «AlertaSepsis» y, más tarde, «OxigenoTerapia» con más de 4 horas entre ambos",
+   "expr": "('AlertaSepsis' >> 'OxigenoTerapia')[4h-]",
+   "count": 117,
+   "pct": 5.8,
+   "case_hash": "538c00cf5d8886c1",
+   "texts": [
+    "Limita los casos a: casos con «AlertaSepsis» y, más tarde, «OxigenoTerapia» con más de 4 horas entre ambos",
+    "Filtra los casos a aquellos con alerta de sepsis y, más tarde, oxigenoterapia, con más de 4 horas entre ambas.",
+    "Me gustaría que limitaras los casos a los que tengan una alerta de sepsis seguida de oxigenoterapia, con un intervalo superior a 4 horas.",
+    "Limita los casos a los que tienen una alerta y oxígeno, con más de 4 horas de diferencia."
+   ],
+   "ambiguity": "'oxígeno' is a shortened form that could match different oxygen-related activities, and 'una alerta' is vague."
+  },
+  {
+   "id": "sepsis_hospital_complejo-F37",
+   "family": "var_act",
+   "cls": "mixed",
+   "text": "Limita los casos a: casos con «ControlFoco» y Edad mayor que 68",
+   "expr": "'ControlFoco' & [Edad > 68]",
+   "count": 121,
+   "pct": 6.0,
+   "case_hash": "4117041e34e39bfb",
+   "texts": [
+    "Limita los casos a: casos con «ControlFoco» y Edad mayor que 68",
+    "Filtra los casos a aquellos con control del foco y edad mayor que 68.",
+    "¿Podrías limitar los casos a los que incluyen el control del foco y tengan una edad superior a 68?",
+    "Limita los casos a los que tienen un control y son mayores de 68."
+   ],
+   "ambiguity": "'un control' is a generic term that could match any control activity, and 'mayores de 68' could be read as >= 68."
+  },
+  {
+   "id": "sepsis_hospital_complejo-F38",
+   "family": "var_seq",
+   "cls": "mixed",
+   "text": "Limita los casos a: casos con «Reevaluacion» y, más tarde, «ReevaluacionPostVasopresores», con IngresoHospital igual a «si»",
+   "expr": "('Reevaluacion' >> 'ReevaluacionPostVasopresores')[IngresoHospital == 'si']",
+   "count": 142,
+   "pct": 7.1,
+   "case_hash": "983407ac86e2fa59",
+   "texts": [
+    "Limita los casos a: casos con «Reevaluacion» y, más tarde, «ReevaluacionPostVasopresores», con IngresoHospital igual a «si»",
+    "Filtra los casos a aquellos con reevaluación y, después, reevaluación post-vasopresores, donde el ingreso hospitalario es sí.",
+    "¿Podrías limitar los casos a los que tengan una reevaluación seguida de la reevaluación post-vasopresores, con ingreso hospitalario marcado como sí?",
+    "Limita los casos a los que tienen una reevaluación y otra después, con ingreso hospitalario."
+   ],
+   "ambiguity": "'otra después' does not specify which reevaluation follows, and 'con ingreso hospitalario' omits the required value 'sí'."
+  }
+ ],
+ "circuits": [
+  {
+   "id": "sepsis_hospital_complejo-C01",
+   "text": "Crea circuitos para esto: separa a los pacientes según cómo terminan: fin de seguimiento, reingreso, fallecimiento en UCI o fallecimiento en planta",
+   "cls": "act",
+   "circuits": [
+    {
+     "name": "ends_0",
+     "expr": "'FinSeguimiento'$"
+    },
+    {
+     "name": "ends_1",
+     "expr": "'Reingreso30d'$"
+    },
+    {
+     "name": "ends_2",
+     "expr": "'ExitusUCI'$"
+    },
+    {
+     "name": "ends_3",
+     "expr": "'ExitusPlanta'$"
+    }
+   ],
+   "gold_counts": {
+    "ends_0": 1711,
+    "ends_2": 49,
+    "ends_1": 193,
+    "ends_3": 45,
+    "UNK": 2
+   },
+   "texts": [
+    "Crea circuitos para esto: separa a los pacientes según cómo terminan: fin de seguimiento, reingreso, fallecimiento en UCI o fallecimiento en planta",
+    "Crea circuitos que separen a los pacientes según cómo termina su proceso: fin de seguimiento, reingreso a los 30 días, fallecimiento en UCI o fallecimiento en planta.",
+    "¿Podrías crear circuitos para clasificar a los pacientes según el desenlace: fin de seguimiento, reingreso a los 30 días, fallecimiento en UCI o fallecimiento en planta?",
+    "Crea circuitos que separen a los pacientes según cómo terminan: fin de seguimiento, reingreso, fallecimiento en UCI o fallecimiento en planta."
+   ],
+   "ambiguity": "reingreso without the qualifier a los 30 días could refer to any readmission event, not specifically the 30-day one."
+  },
+  {
+   "id": "sepsis_hospital_complejo-C02",
+   "text": "Crea circuitos para esto: clasifica a los pacientes según hayan tenido control del foco, reingreso o valoración inicial en planta (el primero que cumpla)",
+   "cls": "act",
+   "circuits": [
+    {
+     "name": "with_0",
+     "expr": "'ControlFoco'"
+    },
+    {
+     "name": "with_1",
+     "expr": "'Reingreso30d'"
+    },
+    {
+     "name": "with_2",
+     "expr": "'ValoracionInicialPlanta'"
+    }
+   ],
+   "gold_counts": {
+    "UNK": 1134,
+    "with_2": 502,
+    "with_0": 188,
+    "with_1": 176
+   },
+   "texts": [
+    "Crea circuitos para esto: clasifica a los pacientes según hayan tenido control del foco, reingreso o valoración inicial en planta (el primero que cumpla)",
+    "Crea circuitos que clasifiquen a los pacientes según hayan tenido control del foco, reingreso a los 30 días o valoración inicial en planta, dando prioridad al primer criterio que se cumpla.",
+    "Sería interesante que crearas circuitos para agrupar a los pacientes según hayan pasado por control del foco, reingreso a los 30 días o valoración inicial en planta, respetando ese orden de prioridad.",
+    "Crea circuitos que separen a los pacientes según hayan tenido control del foco, reingreso o valoración inicial en planta, el primero que cumpla gana."
+   ],
+   "ambiguity": "reingreso is a shortened name that could fit any readmission activity, not just the 30-day one."
+  },
+  {
+   "id": "sepsis_hospital_complejo-C03",
+   "text": "Crea circuitos para esto: separa los pacientes con una reevaluación seguida de reevaluación tras vasopresores, los que solo se reevaluaron y el resto",
+   "cls": "act",
+   "circuits": [
+    {
+     "name": "a_then_b",
+     "expr": "('Reevaluacion' >> 'ReevaluacionPostVasopresores')"
+    },
+    {
+     "name": "has_a",
+     "expr": "'Reevaluacion'"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "rest": 1123,
+    "has_a": 735,
+    "a_then_b": 142
+   },
+   "texts": [
+    "Crea circuitos para esto: separa los pacientes con una reevaluación seguida de reevaluación tras vasopresores, los que solo se reevaluaron y el resto",
+    "Crea circuitos que separen a los pacientes en tres grupos: los que tuvieron una reevaluación seguida de una reevaluación tras vasopresores, los que solo se reevaluaron, y el resto.",
+    "¿Podrías crear circuitos para distinguir tres grupos de pacientes: quienes pasaron por reevaluación y después por reevaluación tras vasopresores, quienes solo tuvieron reevaluación, y todos los demás?",
+    "Crea circuitos que separen a los pacientes: los que pasaron por reevaluación y luego por la de tras vasopresores, los que solo se reevaluaron, y el resto."
+   ],
+   "ambiguity": "la de tras vasopresores is a loosely named, shortened reference that makes it slightly unclear which specific activity is meant."
+  },
+  {
+   "id": "sepsis_hospital_complejo-C04",
+   "text": "Crea circuitos para esto: separa los casos según cómo terminan: «FinSeguimiento» o «Reingreso30d»",
+   "cls": "act",
+   "circuits": [
+    {
+     "name": "ends_FinSeguimiento",
+     "expr": "'FinSeguimiento'$"
+    },
+    {
+     "name": "ends_Reingreso30d",
+     "expr": "'Reingreso30d'$"
+    }
+   ],
+   "gold_counts": {
+    "ends_FinSeguimiento": 1711,
+    "UNK": 96,
+    "ends_Reingreso30d": 193
+   },
+   "texts": [
+    "Crea circuitos para esto: separa los casos según cómo terminan: «FinSeguimiento» o «Reingreso30d»",
+    "Crea circuitos que separen los casos según cómo terminan: fin de seguimiento o reingreso a los 30 días.",
+    "¿Podrías crear circuitos para dividir los casos según su desenlace: fin de seguimiento o reingreso a los 30 días?",
+    "Crea circuitos que separen los casos según cómo terminan: fin de seguimiento o reingreso."
+   ],
+   "ambiguity": "reingreso without a los 30 días could refer to any readmission, not specifically the 30-day one."
+  },
+  {
+   "id": "sepsis_hospital_complejo-C05",
+   "text": "Crea circuitos para esto: agrupa los casos por AntibioticoPrevio: «no» o «si»",
+   "cls": "var",
+   "circuits": [
+    {
+     "name": "AntibioticoPrevio_no",
+     "expr": "[AntibioticoPrevio == 'no']"
+    },
+    {
+     "name": "AntibioticoPrevio_si",
+     "expr": "[AntibioticoPrevio == 'si']"
+    }
+   ],
+   "gold_counts": {
+    "AntibioticoPrevio_no": 1680,
+    "AntibioticoPrevio_si": 320
+   },
+   "texts": [
+    "Crea circuitos para esto: agrupa los casos por AntibioticoPrevio: «no» o «si»",
+    "Crea circuitos que agrupen los casos según el antibiótico previo: no o sí.",
+    "¿Podrías crear circuitos para clasificar los casos por antibiótico previo, en dos grupos: los que no lo tuvieron y los que sí?",
+    "Crea circuitos que agrupen los casos según el antibiótico: no o sí."
+   ],
+   "ambiguity": "antibiótico without previo could refer to a different variable or activity related to antibiotics."
+  },
+  {
+   "id": "sepsis_hospital_complejo-C06",
+   "text": "Crea un circuito por cada valor de CodigoSepsis: «no» o «si»",
+   "cls": "var",
+   "circuits": [
+    {
+     "name": "CodigoSepsis_no",
+     "expr": "[CodigoSepsis == 'no']"
+    },
+    {
+     "name": "CodigoSepsis_si",
+     "expr": "[CodigoSepsis == 'si']"
+    }
+   ],
+   "gold_counts": {
+    "CodigoSepsis_no": 1123,
+    "CodigoSepsis_si": 877
+   },
+   "texts": [
+    "Crea un circuito por cada valor de CodigoSepsis: «no» o «si»",
+    "Crea un circuito por cada valor del código de sepsis: no o sí.",
+    "¿Podrías crear un circuito para cada valor del código de sepsis, es decir, uno para los que no y otro para los que sí?",
+    "Crea un circuito por cada valor de sepsis: no o sí."
+   ],
+   "ambiguity": "sepsis without código de could refer to the medical condition itself rather than the coded variable."
+  },
+  {
+   "id": "sepsis_hospital_complejo-C07",
+   "text": "Crea circuitos para esto: separa los casos según ControlFoco: «no» o «si»",
+   "cls": "var",
+   "circuits": [
+    {
+     "name": "ControlFoco_no",
+     "expr": "[ControlFoco == 'no']"
+    },
+    {
+     "name": "ControlFoco_si",
+     "expr": "[ControlFoco == 'si']"
+    }
+   ],
+   "gold_counts": {
+    "ControlFoco_no": 1812,
+    "ControlFoco_si": 188
+   },
+   "texts": [
+    "Crea circuitos para esto: separa los casos según ControlFoco: «no» o «si»",
+    "Crea circuitos que separen los casos según el control del foco: no o sí.",
+    "¿Podrías crear circuitos para dividir los casos según el control del foco, en dos grupos: los que no y los que sí?",
+    "Crea circuitos que separen los casos según el control: no o sí."
+   ],
+   "ambiguity": "control without del foco could refer to a different type of control or monitoring activity."
+  },
+  {
+   "id": "sepsis_hospital_complejo-C08",
+   "text": "Crea circuitos para esto: agrupa los casos por Destino: «Alta» o «Reingreso30d»",
+   "cls": "var",
+   "circuits": [
+    {
+     "name": "Destino_Alta",
+     "expr": "[Destino == 'Alta']"
+    },
+    {
+     "name": "Destino_Reingreso30d",
+     "expr": "[Destino == 'Reingreso30d']"
+    }
+   ],
+   "gold_counts": {
+    "Destino_Alta": 1711,
+    "UNK": 96,
+    "Destino_Reingreso30d": 193
+   },
+   "texts": [
+    "Crea circuitos para esto: agrupa los casos por Destino: «Alta» o «Reingreso30d»",
+    "Crea circuitos que agrupen los casos según el destino: alta o reingreso a los 30 días.",
+    "¿Podrías crear circuitos para clasificar los casos por destino, en dos grupos: alta y reingreso a los 30 días?",
+    "Crea circuitos que agrupen los casos por destino: alta o reingreso."
+   ],
+   "ambiguity": "reingreso without a los 30 días could refer to any readmission, not specifically the 30-day one."
+  },
+  {
+   "id": "sepsis_hospital_complejo-C09",
+   "text": "Crea tres circuitos: «AnaliticaObservacion» y luego «ReevaluacionPostVasopresores» en menos de 10 horas, el resto de los que tienen «AnaliticaObservacion» y luego «ReevaluacionPostVasopresores», y los demás",
+   "cls": "time",
+   "circuits": [
+    {
+     "name": "AnaliticaObservacion_to_ReevaluacionPostVasopresores_fast",
+     "expr": "('AnaliticaObservacion' >> 'ReevaluacionPostVasopresores')[-10h]"
+    },
+    {
+     "name": "AnaliticaObservacion_to_ReevaluacionPostVasopresores_slow",
+     "expr": "('AnaliticaObservacion' >> 'ReevaluacionPostVasopresores')"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "rest": 1910,
+    "AnaliticaObservacion_to_ReevaluacionPostVasopresores_fast": 43,
+    "AnaliticaObservacion_to_ReevaluacionPostVasopresores_slow": 47
+   },
+   "texts": [
+    "Crea tres circuitos: «AnaliticaObservacion» y luego «ReevaluacionPostVasopresores» en menos de 10 horas, el resto de los que tienen «AnaliticaObservacion» y luego «ReevaluacionPostVasopresores», y los demás",
+    "Crea tres circuitos: uno para los casos donde la analítica de observación va seguida de la reevaluación post vasopresores en menos de diez horas, otro para el resto de casos con ese mismo tramo, y un tercero para los que no lo tienen.",
+    "¿Podrías crear tres circuitos? El primero para los casos en que la analítica de observación se sigue de la reevaluación post vasopresores en menos de diez horas, el segundo para el resto de casos con ese tramo, y el tercero para los que no pasan por él.",
+    "Haz tres circuitos: los que van de analítica a reevaluación en menos de diez horas, los que van de analítica a reevaluación sin límite, y el resto."
+   ],
+   "ambiguity": "Both 'analítica' and 'reevaluación' are shortened and could match several analytics or reevaluation activities in the model."
+  },
+  {
+   "id": "sepsis_hospital_complejo-C10",
+   "text": "Haz tres circuitos según el tiempo entre «AnaliticaObservacion» y «Liquidos»: menos de 1 hora, más tiempo, y los que no tienen ese tramo",
+   "cls": "time",
+   "circuits": [
+    {
+     "name": "AnaliticaObservacion_to_Liquidos_fast",
+     "expr": "('AnaliticaObservacion' >> 'Liquidos')[-1h]"
+    },
+    {
+     "name": "AnaliticaObservacion_to_Liquidos_slow",
+     "expr": "('AnaliticaObservacion' >> 'Liquidos')"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "rest": 1435,
+    "AnaliticaObservacion_to_Liquidos_slow": 497,
+    "AnaliticaObservacion_to_Liquidos_fast": 68
+   },
+   "texts": [
+    "Haz tres circuitos según el tiempo entre «AnaliticaObservacion» y «Liquidos»: menos de 1 hora, más tiempo, y los que no tienen ese tramo",
+    "Crea tres circuitos según el tiempo entre la analítica de observación y los líquidos: menos de una hora, más de una hora, y los casos que no tienen ese tramo.",
+    "Me gustaría que crearas tres circuitos basados en el tiempo transcurrido entre la analítica de observación y la administración de líquidos: uno para menos de una hora, otro para más tiempo, y un último para los que no pasan por ese tramo.",
+    "Haz tres circuitos según cuánto tarda de analítica a líquidos: menos de una hora, más, y los que no."
+   ],
+   "ambiguity": "'Analítica' is a shortened form that could refer to different analytics activities in the process."
+  },
+  {
+   "id": "sepsis_hospital_complejo-C11",
+   "text": "Crea tres circuitos: casos con AntibioticoPrevio igual a «no» que pasan por «ReevaluacionPostControl», el resto de casos con AntibioticoPrevio igual a «no», y los demás",
+   "cls": "mixed",
+   "circuits": [
+    {
+     "name": "AntibioticoPrevio_no_ReevaluacionPostControl",
+     "expr": "'ReevaluacionPostControl' & [AntibioticoPrevio == 'no']"
+    },
+    {
+     "name": "AntibioticoPrevio_no",
+     "expr": "[AntibioticoPrevio == 'no']"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "AntibioticoPrevio_no": 1531,
+    "rest": 320,
+    "AntibioticoPrevio_no_ReevaluacionPostControl": 149
+   },
+   "texts": [
+    "Crea tres circuitos: casos con AntibioticoPrevio igual a «no» que pasan por «ReevaluacionPostControl», el resto de casos con AntibioticoPrevio igual a «no», y los demás",
+    "Crea tres circuitos: primero los casos con antibiotico previo igual a no que pasan por la reevaluación post control, luego el resto de casos con antibiotico previo igual a no, y por último los demás.",
+    "¿Podrías crear tres circuitos, por favor? Primero los casos con antibiotico previo igual a no que pasan por la reevaluación post control, después el resto de casos con antibiotico previo igual a no, y al final los demás.",
+    "Crea tres circuitos: los casos con antibiotico previo no que pasan por reevaluación, el resto con antibiotico previo no, y los demás."
+   ],
+   "ambiguity": "The shortened name 'reevaluación' could refer to different reevaluation activities in the process."
+  },
+  {
+   "id": "sepsis_hospital_complejo-C12",
+   "text": "Haz tres circuitos: CodigoSepsis igual a «no» y «SoporteRenal», solo CodigoSepsis igual a «no», y el resto",
+   "cls": "mixed",
+   "circuits": [
+    {
+     "name": "CodigoSepsis_no_SoporteRenal",
+     "expr": "'SoporteRenal' & [CodigoSepsis == 'no']"
+    },
+    {
+     "name": "CodigoSepsis_no",
+     "expr": "[CodigoSepsis == 'no']"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "CodigoSepsis_no": 1116,
+    "rest": 877,
+    "CodigoSepsis_no_SoporteRenal": 7
+   },
+   "texts": [
+    "Haz tres circuitos: CodigoSepsis igual a «no» y «SoporteRenal», solo CodigoSepsis igual a «no», y el resto",
+    "Crea tres circuitos: los casos con código sepsis igual a no que tienen soporte renal, los que solo tienen código sepsis igual a no, y el resto.",
+    "¿Podrías definir tres circuitos? Uno para los casos donde el código sepsis es no y hay soporte renal, otro para los que solo tienen código sepsis no, y un último para los que no cumplen ninguna de esas condiciones.",
+    "Haz tres circuitos: los de código sepsis no con soporte, los de código sepsis no, y el resto."
+   ],
+   "ambiguity": "'Soporte' is a shortened form that could refer to different support-related activities in the model."
+  }
+ ],
+ "regions": [
+  {
+   "id": "sepsis_hospital_complejo-R01",
+   "text": "Define una región desde «Reevaluacion» hasta «ReevaluacionPostVasopresores»",
+   "cls": "act",
+   "regions": [
+    {
+     "name": "Reevaluacion_to_ReevaluacionPostVasopresores",
+     "expr": "('Reevaluacion' >> 'ReevaluacionPostVasopresores')",
+     "traces": 142
+    }
+   ],
+   "texts": [
+    "Define una región desde «Reevaluacion» hasta «ReevaluacionPostVasopresores»",
+    "Define una región desde la reevaluación hasta la reevaluación post vasopresores.",
+    "¿Podrías definir una región que vaya desde la reevaluación hasta la reevaluación post vasopresores?",
+    "Define una región de reevaluación a reevaluación."
+   ],
+   "ambiguity": "Both endpoints are simply called 'reevaluación', making it unclear which specific reevaluation activity is the start and which is the end."
+  },
+  {
+   "id": "sepsis_hospital_complejo-R02",
+   "text": "Define una sección crítica desde «AnaliticaObservacion» hasta «ControlFoco»",
+   "cls": "act",
+   "regions": [
+    {
+     "name": "AnaliticaObservacion_to_ControlFoco",
+     "expr": "('AnaliticaObservacion' >> 'ControlFoco')",
+     "traces": 141
+    }
+   ],
+   "texts": [
+    "Define una sección crítica desde «AnaliticaObservacion» hasta «ControlFoco»",
+    "Define una sección crítica desde la analítica de observación hasta el control de foco.",
+    "Me gustaría que definieras una sección crítica que abarque desde la analítica de observación hasta el control de foco.",
+    "Define una sección crítica de analítica a control."
+   ],
+   "ambiguity": "Both 'analítica' and 'control' are generic shortened names that could match several activities in the model."
+  },
+  {
+   "id": "sepsis_hospital_complejo-R03",
+   "text": "Define una región desde «IngresoPlanta» hasta «ValoracionInicialPlanta»",
+   "cls": "act",
+   "regions": [
+    {
+     "name": "IngresoPlanta_to_ValoracionInicialPlanta",
+     "expr": "('IngresoPlanta' >> 'ValoracionInicialPlanta')",
+     "traces": 607
+    }
+   ],
+   "texts": [
+    "Define una región desde «IngresoPlanta» hasta «ValoracionInicialPlanta»",
+    "Define una región desde el ingreso en planta hasta la valoración inicial en planta.",
+    "¿Podrías definir una región que vaya desde el ingreso en planta hasta la valoración inicial en planta?",
+    "Define una región de ingreso a valoración inicial."
+   ],
+   "ambiguity": "'Ingreso' and 'valoración inicial' are shortened and could refer to different admission or assessment activities in the process."
+  },
+  {
+   "id": "sepsis_hospital_complejo-R04",
+   "text": "Define dos secciones críticas: de «ImagenFoco» a «ValoracionInicialPlanta» y de «AlertaSepsis» a «AltaUrgencias»",
+   "cls": "act",
+   "regions": [
+    {
+     "name": "ImagenFoco_to_ValoracionInicialPlanta",
+     "expr": "('ImagenFoco' >> 'ValoracionInicialPlanta')",
+     "traces": 300
+    },
+    {
+     "name": "AlertaSepsis_to_AltaUrgencias",
+     "expr": "('AlertaSepsis' >> 'AltaUrgencias')",
+     "traces": 280
+    }
+   ],
+   "texts": [
+    "Define dos secciones críticas: de «ImagenFoco» a «ValoracionInicialPlanta» y de «AlertaSepsis» a «AltaUrgencias»",
+    "Define dos secciones críticas: una de imagen de foco a valoración inicial en planta y otra de alerta de sepsis a alta de urgencias.",
+    "¿Me podrías definir dos secciones críticas, por favor? Una de imagen de foco a valoración inicial en planta y otra de alerta de sepsis a alta de urgencias.",
+    "Define dos secciones críticas: una de imagen a valoración inicial y otra de alerta a alta de urgencias."
+   ],
+   "ambiguity": "The shortened names 'imagen' and 'valoración inicial' could match multiple activities in the process."
+  },
+  {
+   "id": "sepsis_hospital_complejo-R05",
+   "text": "Define dos regiones: de «IngresoPlanta» a «ValoracionInicialPlanta» y de «SoporteRenal» a «ValoracionDiariaPlanta»",
+   "cls": "act",
+   "regions": [
+    {
+     "name": "IngresoPlanta_to_ValoracionInicialPlanta",
+     "expr": "('IngresoPlanta' >> 'ValoracionInicialPlanta')",
+     "traces": 607
+    },
+    {
+     "name": "SoporteRenal_to_ValoracionDiariaPlanta",
+     "expr": "('SoporteRenal' >> 'ValoracionDiariaPlanta')",
+     "traces": 111
+    }
+   ],
+   "texts": [
+    "Define dos regiones: de «IngresoPlanta» a «ValoracionInicialPlanta» y de «SoporteRenal» a «ValoracionDiariaPlanta»",
+    "Define dos regiones: una desde el ingreso en planta hasta la valoración inicial en planta, y otra desde el soporte renal hasta la valoración diaria en planta.",
+    "¿Podrías definir dos regiones, una que vaya del ingreso en planta a la valoración inicial en planta y otra del soporte renal a la valoración diaria en planta?",
+    "Define dos regiones: una desde el ingreso hasta la valoración inicial en planta, y otra desde el soporte renal hasta la valoración diaria en planta."
+   ],
+   "ambiguity": "The word 'ingreso' without 'en planta' could refer to a different admission or intake activity in the process."
+  },
+  {
+   "id": "sepsis_hospital_complejo-R06",
+   "text": "Define una región desde «AnaliticaObservacion» hasta «ReevaluacionPostVasopresores» cuando pasan menos de 10 horas entre ambos",
+   "cls": "time",
+   "regions": [
+    {
+     "name": "AnaliticaObservacion_to_ReevaluacionPostVasopresores_fast",
+     "expr": "('AnaliticaObservacion' >> 'ReevaluacionPostVasopresores')[-10h]",
+     "traces": 43
+    }
+   ],
+   "texts": [
+    "Define una región desde «AnaliticaObservacion» hasta «ReevaluacionPostVasopresores» cuando pasan menos de 10 horas entre ambos",
+    "Define una región desde la analítica de observación hasta la reevaluación post vasopresores cuando pasan menos de 10 horas entre ambas.",
+    "Me gustaría que definieras una región que vaya de la analítica de observación a la reevaluación post vasopresores, siempre que el tiempo entre ambas sea inferior a 10 horas.",
+    "Define una región desde la analítica hasta la reevaluación post vasopresores cuando no pasan más de 10 horas."
+   ],
+   "ambiguity": "'Analítica' is a shortened name that could match multiple analytics-related activities in the model."
+  },
+  {
+   "id": "sepsis_hospital_complejo-R07",
+   "text": "Define una sección crítica desde «AnaliticaObservacion» hasta «Liquidos» cuando transcurren más de 1 hora",
+   "cls": "time",
+   "regions": [
+    {
+     "name": "AnaliticaObservacion_to_Liquidos_slow",
+     "expr": "('AnaliticaObservacion' >> 'Liquidos')[1h-]",
+     "traces": 497
+    }
+   ],
+   "texts": [
+    "Define una sección crítica desde «AnaliticaObservacion» hasta «Liquidos» cuando transcurren más de 1 hora",
+    "Define una región desde analítica de observación hasta líquidos cuando transcurran más de una hora.",
+    "¿Podrías definir una sección crítica desde analítica de observación hasta líquidos para cuando el tiempo supere la hora?",
+    "Define una sección crítica desde analítica hasta líquidos si pasan más de una hora."
+   ],
+   "ambiguity": "The activity name is shortened to just 'analítica', which could refer to several analytics-related activities."
+  },
+  {
+   "id": "sepsis_hospital_complejo-R08",
+   "text": "Define una sección crítica desde «ControlFoco» hasta «DescensoAPlanta» cuando transcurren más de 4 días",
+   "cls": "time",
+   "regions": [
+    {
+     "name": "ControlFoco_to_DescensoAPlanta_slow",
+     "expr": "('ControlFoco' >> 'DescensoAPlanta')[4d-]",
+     "traces": 87
+    }
+   ],
+   "texts": [
+    "Define una sección crítica desde «ControlFoco» hasta «DescensoAPlanta» cuando transcurren más de 4 días",
+    "Define una región desde control de foco hasta descenso a planta cuando transcurran más de cuatro días.",
+    "Me gustaría que establecieras una sección crítica desde control de foco hasta descenso a planta para cuando el tiempo supere los cuatro días.",
+    "Define una sección crítica desde control hasta descenso a planta si tardan más de cuatro días."
+   ],
+   "ambiguity": "The activity name is shortened to just 'control', which could refer to several control-related activities."
+  },
+  {
+   "id": "sepsis_hospital_complejo-R09",
+   "text": "Define una región desde «IngresoPlanta» hasta «ValoracionInicialPlanta» en los casos con AntibioticoPrevio igual a «no»",
+   "cls": "mixed",
+   "regions": [
+    {
+     "name": "IngresoPlanta_to_ValoracionInicialPlanta_AntibioticoPrevio_no",
+     "expr": "('IngresoPlanta' >> 'ValoracionInicialPlanta')[AntibioticoPrevio == 'no']",
+     "traces": 497
+    }
+   ],
+   "texts": [
+    "Define una región desde «IngresoPlanta» hasta «ValoracionInicialPlanta» en los casos con AntibioticoPrevio igual a «no»",
+    "Define una región desde el ingreso en planta hasta la valoración inicial en planta, solo en los casos donde el antibiótico previo es no.",
+    "¿Podrías definir una región que vaya del ingreso en planta a la valoración inicial en planta, limitándola a los casos en los que no hay antibiótico previo?",
+    "Define una región desde el ingreso hasta la valoración inicial en planta en los casos sin antibiótico previo."
+   ],
+   "ambiguity": "'Ingreso' without 'en planta' could match a different admission or intake activity in the model."
+  },
+  {
+   "id": "sepsis_hospital_complejo-R10",
+   "text": "Define una región desde «Triaje» hasta «IngresoPlanta» en los casos con ControlFoco igual a «no»",
+   "cls": "mixed",
+   "regions": [
+    {
+     "name": "Triaje_to_IngresoPlanta_ControlFoco_no",
+     "expr": "('Triaje' >> 'IngresoPlanta')[ControlFoco == 'no']",
+     "traces": 566
+    }
+   ],
+   "texts": [
+    "Define una región desde «Triaje» hasta «IngresoPlanta» en los casos con ControlFoco igual a «no»",
+    "Define una región desde el triaje hasta el ingreso en planta, solo en los casos donde el control del foco es no.",
+    "Me gustaría que definieras una región que vaya del triaje al ingreso en planta, restringida a los casos en los que no se ha realizado control del foco.",
+    "Define una región desde el triaje hasta el ingreso en planta en los casos sin control."
+   ],
+   "ambiguity": "'Sin control' is vague and could refer to different control or monitoring activities in the process."
+  }
+ ],
+ "milestones": [
+  {
+   "id": "sepsis_hospital_complejo-M01",
+   "text": "Define «FinSeguimiento» como hito",
+   "nodes": [
+    "FinSeguimiento"
+   ],
+   "texts": [
+    "Define «FinSeguimiento» como hito",
+    "Define el fin del seguimiento como hito.",
+    "¿Podrías marcar el fin del seguimiento como hito?",
+    "Define el fin como hito."
+   ],
+   "ambiguity": "'El fin' is very vague and could refer to different ending or closing activities in the process."
+  },
+  {
+   "id": "sepsis_hospital_complejo-M02",
+   "text": "Marca «ExitusUCI» y «ValoracionInicialPlanta» como hitos",
+   "nodes": [
+    "ExitusUCI",
+    "ValoracionInicialPlanta"
+   ],
+   "texts": [
+    "Marca «ExitusUCI» y «ValoracionInicialPlanta» como hitos",
+    "Marca el exitus en UCI y la valoración inicial en planta como hitos.",
+    "Me gustaría que marcaras el exitus en UCI y la valoración inicial en planta como hitos.",
+    "Marca el exitus y la valoración inicial en planta como hitos."
+   ],
+   "ambiguity": "'Exitus' without 'en UCI' could refer to a different death or exit event in the process."
+  },
+  {
+   "id": "sepsis_hospital_complejo-M03",
+   "text": "Usa «AlertaSepsis» como hito",
+   "nodes": [
+    "AlertaSepsis"
+   ],
+   "texts": [
+    "Usa «AlertaSepsis» como hito",
+    "Marca la alerta de sepsis como hito.",
+    "¿Podrías definir la alerta de sepsis como hito del proceso?",
+    "Usa la alerta como hito."
+   ],
+   "ambiguity": "The activity is referred to simply as 'la alerta' without specifying it is the sepsis alert."
+  },
+  {
+   "id": "sepsis_hospital_complejo-M04",
+   "text": "Define «DeterioroPlanta» como hito",
+   "nodes": [
+    "DeterioroPlanta"
+   ],
+   "texts": [
+    "Define «DeterioroPlanta» como hito",
+    "Define el deterioro en planta como hito.",
+    "Sería interesante que marcaras el deterioro en planta como hito.",
+    "Marca el deterioro como hito."
+   ],
+   "ambiguity": "The activity is shortened to 'el deterioro' without specifying it is in planta."
+  },
+  {
+   "id": "sepsis_hospital_complejo-M05",
+   "text": "Define «Antibiotico» y «ValoracionInicialPlanta» como hitos",
+   "nodes": [
+    "Antibiotico",
+    "ValoracionInicialPlanta"
+   ],
+   "texts": [
+    "Define «Antibiotico» y «ValoracionInicialPlanta» como hitos",
+    "Define el antibiótico y la valoración inicial en planta como hitos.",
+    "¿Podrías marcar el antibiótico y la valoración inicial en planta como hitos del proceso?",
+    "Define el antibiótico y la valoración inicial como hitos."
+   ],
+   "ambiguity": "The activity 'valoración inicial' omits 'en planta', which could refer to an initial assessment in another unit."
+  },
+  {
+   "id": "sepsis_hospital_complejo-M06",
+   "text": "Marca «ReevaluacionPostControl», «ImagenFoco» y «ValoracionDiariaPlanta» como hitos",
+   "nodes": [
+    "ReevaluacionPostControl",
+    "ImagenFoco",
+    "ValoracionDiariaPlanta"
+   ],
+   "texts": [
+    "Marca «ReevaluacionPostControl», «ImagenFoco» y «ValoracionDiariaPlanta» como hitos",
+    "Marca reevaluación post control, imagen de foco y valoración diaria de planta como hitos.",
+    "Me gustaría que marcaras reevaluación post control, imagen de foco y valoración diaria de planta como hitos, si te parece bien.",
+    "Marca reevaluación, imagen de foco y valoración diaria como hitos."
+   ],
+   "ambiguity": "The activity 'reevaluación' is shortened and could refer to other reevaluation activities in the model."
+  },
+  {
+   "id": "sepsis_hospital_complejo-M07",
+   "text": "Define «ReevaluacionPostVasopresores» como hito",
+   "nodes": [
+    "ReevaluacionPostVasopresores"
+   ],
+   "texts": [
+    "Define «ReevaluacionPostVasopresores» como hito",
+    "Define la reevaluación post vasopresores como hito.",
+    "¿Podrías marcar la reevaluación post vasopresores como hito del proceso?",
+    "Define la reevaluación post como hito."
+   ],
+   "ambiguity": "The activity is shortened to 'la reevaluación post' without specifying whether it is post-vasopressors or post-control."
+  },
+  {
+   "id": "sepsis_hospital_complejo-M08",
+   "text": "Marca «ExitusPlanta» y «IngresoUCI» como hitos",
+   "nodes": [
+    "ExitusPlanta",
+    "IngresoUCI"
+   ],
+   "texts": [
+    "Marca «ExitusPlanta» y «IngresoUCI» como hitos",
+    "Marca el fallecimiento en planta y el ingreso en UCI como hitos.",
+    "¿Podrías definir el fallecimiento en planta y el ingreso en UCI como hitos?",
+    "Marca el fallecimiento y el ingreso en UCI como hitos."
+   ],
+   "ambiguity": "The activity 'el fallecimiento' omits 'en planta', which could also refer to a death in the ICU."
+  },
+  {
+   "id": "sepsis_hospital_complejo-M09",
+   "text": "Define «DeterioroPlanta», «ExitusPlanta» y «ControlFoco» como hitos",
+   "nodes": [
+    "DeterioroPlanta",
+    "ExitusPlanta",
+    "ControlFoco"
+   ],
+   "texts": [
+    "Define «DeterioroPlanta», «ExitusPlanta» y «ControlFoco» como hitos",
+    "Define deterioro de planta, exitus de planta y control de foco como hitos.",
+    "¿Podrías definir deterioro de planta, exitus de planta y control de foco como hitos, por favor?",
+    "Define deterioro, exitus y control de foco como hitos."
+   ],
+   "ambiguity": "The activities 'deterioro' and 'exitus' lack the 'de planta' qualifier, so they could match other deterioration or death events in the model."
+  },
+  {
+   "id": "sepsis_hospital_complejo-M10",
+   "text": "Define «AltaPlanta» como hito",
+   "nodes": [
+    "AltaPlanta"
+   ],
+   "texts": [
+    "Define «AltaPlanta» como hito",
+    "Define el alta en planta como hito.",
+    "¿Podrías marcar el alta en planta como hito del proceso?",
+    "Define el alta como hito."
+   ],
+   "ambiguity": "The activity is shortened to 'el alta' without specifying 'en planta', which could also refer to discharge from the ICU."
+  }
+ ],
+ "asks": [],
+ "levels": [
+  "order (robotic, exact names)",
+  "natural",
+  "polite",
+  "ambiguous"
+ ]
+}

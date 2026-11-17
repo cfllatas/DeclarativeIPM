@@ -1,0 +1,362 @@
+{
+ "helpdesk-F01": {
+  "texts": [
+   "Limit the cases to: cases in which 'Wait' occurs",
+   "Filter the cases to only those where wait occurs.",
+   "Could you limit the cases to those in which wait takes place?",
+   "Filter the cases to those with a wait."
+  ],
+  "ambiguity": "A wait could refer to a single occurrence of the activity or to a different wait-related activity in the model."
+ },
+ "helpdesk-F02": {
+  "texts": [
+   "Limit the cases to: cases in which 'Take in charge ticket' never occurs",
+   "Limit the cases to those where take in charge ticket never happens.",
+   "I would like you to filter the cases to exclude any in which take in charge ticket occurs.",
+   "Filter the cases to those without taking charge of the ticket."
+  ],
+  "ambiguity": "Taking charge of the ticket is a paraphrase that could match a different activity or be read as a general action rather than the specific activity name."
+ },
+ "helpdesk-F25": {
+  "texts": [
+   "Limit the cases to: cases with 'Wait' and, later, 'Resolve ticket' in less than 7 days",
+   "Filter the cases to those where wait is followed by resolve ticket in less than 7 days.",
+   "Could you limit the cases to those in which wait occurs and then resolve ticket happens within 7 days?",
+   "Filter the cases where wait leads to resolving the ticket in under 7 days."
+  ],
+  "ambiguity": "Resolving the ticket is a shortened paraphrase that could be confused with a different activity, and leads to is vaguer than a strict sequence."
+ },
+ "helpdesk-F26": {
+  "texts": [
+   "Limit the cases to: cases with 'Wait' and, later, 'Take in charge ticket' more than 6 days apart",
+   "Limit the cases to those where wait is followed by take in charge ticket with more than 6 days between them.",
+   "It would be helpful if you could filter the cases to those in which wait and take in charge ticket are more than 6 days apart.",
+   "Filter the cases where wait and taking charge of the ticket are separated by over 6 days."
+  ],
+  "ambiguity": "Taking charge of the ticket is a paraphrase of the activity name that could fit a different activity in the model."
+ },
+ "helpdesk-F27": {
+  "texts": [
+   "Limit the cases to: cases with 'Assign seriousness' and, later, 'Wait' between 1 day and 14 days after",
+   "Filter the cases to those where assign seriousness is followed by wait between 1 and 14 days later.",
+   "Could you limit the cases to those in which assign seriousness occurs and then wait happens between 1 day and 14 days after?",
+   "Filter the cases where assigning seriousness is followed by a wait of 1 to 14 days."
+  ],
+  "ambiguity": "A wait of 1 to 14 days could be misread as the wait activity lasting 1 to 14 days rather than the gap between the two activities being 1 to 14 days."
+ },
+ "helpdesk-F03": {
+  "texts": [
+   "Limit the cases to: cases with 'Closed' and also 'Wait'",
+   "Limit the cases to those that have both closed and wait.",
+   "I would like you to filter the cases to those containing both closed and wait.",
+   "Filter the cases with a closed status and a wait."
+  ],
+  "ambiguity": "A closed status could be interpreted as a variable or state rather than the activity named closed."
+ },
+ "helpdesk-F04": {
+  "texts": [
+   "Limit the cases to: cases with 'Wait' but without 'Resolve SW anomaly'",
+   "Limit the cases to those that have wait but not resolve SW anomaly.",
+   "Could you filter the cases to those where wait occurs but resolve SW anomaly does not?",
+   "Filter the cases with wait but without resolving the software anomaly."
+  ],
+  "ambiguity": "Resolving the software anomaly expands the abbreviation SW and uses a gerund, which could be confused with a different activity name."
+ },
+ "helpdesk-F05": {
+  "texts": [
+   "Limit the cases to: cases with 'Schedule intervention' or 'Wait'",
+   "Limit the cases to those that have either schedule intervention or wait.",
+   "I would like you to filter the cases to those containing schedule intervention or wait.",
+   "Filter the cases where there is a scheduled intervention or a wait."
+  ],
+  "ambiguity": "A scheduled intervention uses a different grammatical form than the activity name and could be confused with a different activity."
+ },
+ "helpdesk-C01": {
+  "texts": [
+   "Create circuits for this: separate the tickets by how they end: closed, resolved, waiting or requiring an upgrade",
+   "Create circuits to separate the tickets by how they end: closed, resolved, waiting, or requiring an upgrade.",
+   "Could you create circuits that split the tickets according to their final state — closed, resolved, waiting, or requiring an upgrade?",
+   "Create circuits to separate the tickets by how they end: closed, resolved, waiting, or escalated."
+  ],
+  "ambiguity": "Escalated is a loose shorthand for requiring an upgrade that could also match a different escalation activity in the model."
+ },
+ "helpdesk-C02": {
+  "texts": [
+   "Create circuits for this: separate the tickets taken in charge and later put on hold, those only taken in charge, and the rest",
+   "Create circuits to separate the tickets that were taken in charge and then put on hold, those that were only taken in charge, and everything else.",
+   "I would like you to create circuits splitting the tickets into those taken in charge and later put on hold, those merely taken in charge, and the remainder.",
+   "Create circuits to separate the tickets taken in charge and then held, those only taken in charge, and the rest."
+  ],
+  "ambiguity": "Held is a vague paraphrase of put on hold (Wait) that could also refer to a different suspension or parking activity."
+ },
+ "helpdesk-C03": {
+  "texts": [
+   "Create circuits for this: separate the cases with 'Wait' followed by 'Resolve ticket', those with only 'Wait' and the rest",
+   "Create circuits to separate the cases where waiting is followed by resolving the ticket, those with only waiting, and the rest.",
+   "Could you create circuits that split the cases into those where waiting leads to resolving the ticket, those with just waiting, and all the others?",
+   "Create circuits to separate the cases with waiting followed by resolution, those with only waiting, and the rest."
+  ],
+  "ambiguity": "Resolution is a generic term that could refer to resolving the ticket or to closing the case."
+ },
+ "helpdesk-C04": {
+  "texts": [
+   "Make three circuits: 'Wait' then 'Closed', only 'Wait', and all the others",
+   "Make three circuits: waiting followed by closing, just waiting, and everything else.",
+   "It would be great if you could make three circuits: one for waiting then closing, one for just waiting, and one for all the remaining cases.",
+   "Make three circuits: waiting then ending, only waiting, and the rest."
+  ],
+  "ambiguity": "Ending is unspecific and could refer to the closed state or to resolving the ticket, since both terminate the case."
+ },
+ "helpdesk-C05": {
+  "texts": [
+   "Create three circuits: 'Assign seriousness' then 'Wait' in less than 5 days, the rest of those with 'Assign seriousness' then 'Wait', and all the others",
+   "Create three circuits: cases where assigning seriousness is followed by waiting in less than five days, the remaining cases with that same sequence, and all the others.",
+   "Could you create three circuits separating the cases where assigning seriousness leads to waiting within five days, the rest of those with that sequence, and everything else?",
+   "Create three circuits: cases where seriousness is assigned and then there is a wait under five days, the rest with that pattern, and all the others."
+  ],
+  "ambiguity": "That pattern is vague and could be read as just the two activities without the time constraint, or as the full timed sequence."
+ },
+ "helpdesk-C06": {
+  "texts": [
+   "Make three circuits by the time between 'Wait' and 'Resolve ticket': less than 7 days, longer, and those without that stretch",
+   "Make three circuits based on the time between waiting and resolving the ticket: less than seven days, longer than that, and cases without that sequence.",
+   "I would like you to make three circuits splitting the cases by the time between waiting and resolving the ticket: under seven days, over seven days, and those that do not have that stretch at all.",
+   "Make three circuits by the time between waiting and resolution: less than seven days, more, and those without it."
+  ],
+  "ambiguity": "Resolution is a generic term that could refer to resolving the ticket or to closing the case."
+ },
+ "helpdesk-C07": {
+  "texts": [
+   "Create three circuits: cases with responsible_section equal to 'Value 1' that go through 'Wait', the rest of the cases with responsible_section equal to 'Value 1', and all the others",
+   "Create three circuits: cases where the responsible section is Value 1 and the ticket goes through waiting, the remaining cases with responsible section Value 1, and all the others.",
+   "Could you create three circuits separating the cases with responsible section set to Value 1 that include waiting, the rest of those with that responsible section, and everything else?",
+   "Create three circuits: cases with the responsible section at Value 1 that have a wait, the rest with that section, and all the others."
+  ],
+  "ambiguity": "That section is a pronoun-like reference that could point to the responsible section or to the support section."
+ },
+ "helpdesk-C08": {
+  "texts": [
+   "Make three circuits: support_section equal to 'Value 1' and 'Wait', only support_section equal to 'Value 1', and the rest",
+   "Make three circuits: cases where the support section is Value 1 and there is waiting, those with only the support section at Value 1, and the rest.",
+   "It would be helpful if you could make three circuits: one for support section Value 1 with waiting, one for just support section Value 1, and one for all the remaining cases.",
+   "Make three circuits: cases with the support section at Value 1 that include a wait, only those with that section, and the rest."
+  ],
+  "ambiguity": "That section is an unspecific reference that could mean the support section or the responsible section."
+ },
+ "helpdesk-C09": {
+  "texts": [
+   "Create three circuits: 'Wait' then 'Closed' in less than 30 days, the rest of those with 'Wait' then 'Closed', and all the others",
+   "Create three circuits: cases where wait is followed by closed in under 30 days, the remaining cases with wait followed by closed, and all the others.",
+   "I would like you to build three circuits, first for cases where wait leads to closed within 30 days, then for the rest of the wait-to-closed cases, and finally for everything else.",
+   "Create three circuits: wait then closed in under 30 days, the rest of those, and all the others."
+  ],
+  "ambiguity": "The phrase 'the rest of those' leaves it unclear whether 'those' refers to the 30-day subset or to the broader set of all wait-to-closed cases."
+ },
+ "helpdesk-C10": {
+  "texts": [
+   "Make three circuits by the time between 'Resolve ticket' and 'Take in charge ticket': less than 1 day, longer, and those without that stretch",
+   "Make three circuits based on the time between resolve ticket and take in charge ticket: less than 1 day, longer than that, and cases without that sequence.",
+   "It would be great if you could create three circuits splitting cases by the time from resolve ticket to take in charge ticket: under 1 day, over 1 day, and those that never go through that stretch.",
+   "Make three circuits by the time between resolve and take in charge: less than 1 day, longer, and the rest."
+  ],
+  "ambiguity": "Both 'resolve' and 'take in charge' are shortened and could each match a different activity in the model."
+ },
+ "helpdesk-C11": {
+  "texts": [
+   "Create three circuits: 'Wait' then 'Take in charge ticket' in less than 4 days, the rest of those with 'Wait' then 'Take in charge ticket', and all the others",
+   "Create three circuits: cases where wait is followed by take in charge ticket in under 4 days, the remaining wait-to-take-in-charge cases, and all the others.",
+   "Could you please set up three circuits, one for cases where wait leads to take in charge ticket within 4 days, one for the rest of those wait-to-take-in-charge cases, and one for everything else?",
+   "Create three circuits: wait then take in charge in less than 4 days, the rest of those, and all the others."
+  ],
+  "ambiguity": "'Take in charge' without the word 'ticket' is a shortened name that could fit a different activity in the process."
+ },
+ "helpdesk-R01": {
+  "texts": [
+   "Define a region from 'Take in charge ticket' to 'Wait'",
+   "Define a region from take in charge ticket to wait.",
+   "Could you define a critical section starting at take in charge ticket and ending at wait?",
+   "Define a region from take in charge to wait."
+  ],
+  "ambiguity": "'Take in charge' without 'ticket' is a shortened name that could match another activity in the model."
+ },
+ "helpdesk-R02": {
+  "texts": [
+   "Define a critical section from 'Wait' to 'Resolve ticket'",
+   "Define a critical section from wait to resolve ticket.",
+   "It would be helpful if you could set up a region from wait to resolve ticket.",
+   "Define a critical section from wait to resolve."
+  ],
+  "ambiguity": "'Resolve' without 'ticket' is a shortened name that could refer to a different activity in the process."
+ },
+ "helpdesk-R03": {
+  "texts": [
+   "Define a region from 'Resolve ticket' to 'Take in charge ticket'",
+   "Define a region from resolve ticket to take in charge ticket.",
+   "I would like you to create a critical section from resolve ticket to take in charge ticket.",
+   "Define a region from resolve to take in charge."
+  ],
+  "ambiguity": "Both 'resolve' and 'take in charge' are shortened and could each match a different activity in the model."
+ },
+ "helpdesk-R04": {
+  "texts": [
+   "Define two critical sections: from 'Wait' to 'Closed' and from 'Assign seriousness' to 'Wait'",
+   "Define two critical sections: one from wait to closed, and another from assign seriousness to wait.",
+   "Could you please set up two regions, the first from wait to closed and the second from assign seriousness to wait?",
+   "Define two critical sections: from wait to closed and from assign to wait."
+  ],
+  "ambiguity": "'Assign' without 'seriousness' is a shortened name that could refer to a different assign-related activity in the process."
+ },
+ "helpdesk-C12": {
+  "texts": [
+   "Make three circuits by the time between 'Take in charge ticket' and 'Wait': less than 20 hours, longer, and those without that stretch",
+   "Create three circuits based on the time between take in charge ticket and wait: one for less than 20 hours, one for longer, and one for cases where that stretch is absent.",
+   "I would like you to set up three circuits according to the time between take in charge ticket and wait, splitting them into under 20 hours, over 20 hours, and those without that interval.",
+   "Make three circuits by the time between take in charge ticket and wait: under 20 hours, over, and the rest."
+  ],
+  "ambiguity": "The phrase 'the rest' could refer either to cases longer than 20 hours or to cases where the stretch between the two activities is missing."
+ },
+ "helpdesk-R05": {
+  "texts": [
+   "Define two regions: from 'Resolve ticket' to 'Take in charge ticket' and from 'Wait' to 'Resolve ticket'",
+   "Create two regions: one from resolve ticket to take in charge ticket, and another from wait to resolve ticket.",
+   "Could you please define two regions for me, one going from resolve ticket to take in charge ticket and a second from wait to resolve ticket?",
+   "Set up two regions: from resolve ticket to take in charge, and from wait to resolve."
+  ],
+  "ambiguity": "The shortened names 'take in charge' and 'resolve' omit the word 'ticket' and could match different activities in the model."
+ },
+ "helpdesk-R06": {
+  "texts": [
+   "Define a region from 'Assign seriousness' to 'Wait' when less than 5 days pass between them",
+   "Create a region from assign seriousness to wait, but only when less than five days pass between the two activities.",
+   "I would like you to define a region from assign seriousness to wait, limited to cases where fewer than five days elapse between them.",
+   "Set up a region from assigning seriousness to the wait step when less than five days go by."
+  ],
+  "ambiguity": "The phrase 'the wait step' is a loose reference that could match any activity involving waiting."
+ },
+ "helpdesk-R07": {
+  "texts": [
+   "Define a critical section from 'Wait' to 'Resolve ticket' when more than 10 days elapse",
+   "Define a critical section from wait to resolve ticket for cases where more than ten days elapse between them.",
+   "It would be helpful if you could define a critical section from wait to resolve ticket, applying only when more than ten days pass.",
+   "Mark a critical section from wait to resolve when over ten days go by."
+  ],
+  "ambiguity": "The shortened name 'resolve' could refer to a different activity than 'resolve ticket'."
+ },
+ "helpdesk-R08": {
+  "texts": [
+   "Define a region from 'Wait' to 'Closed' when less than 30 days pass between them",
+   "Create a region from wait to closed, but only when less than thirty days pass between the two.",
+   "Could you please define a region from wait to closed, restricted to cases where fewer than thirty days elapse?",
+   "Set up a region from wait to the closed state if the duration is under thirty days."
+  ],
+  "ambiguity": "The phrase 'the closed state' is a vague reference that could match any activity related to closing."
+ },
+ "helpdesk-R09": {
+  "texts": [
+   "Define a region from 'Resolve ticket' to 'Take in charge ticket' in the cases with responsible_section equal to 'Value 1'",
+   "Define a region from resolve ticket to take in charge ticket, but only in the cases where the responsible section is set to Value 1.",
+   "I would like you to create a region from resolve ticket to take in charge ticket, limited to cases where the responsible section equals Value 1.",
+   "Set up a region from resolve ticket to take in charge for cases where the responsible section is Value 1."
+  ],
+  "ambiguity": "The shortened name 'take in charge' omits 'ticket' and could match a different activity."
+ },
+ "helpdesk-R10": {
+  "texts": [
+   "Define a critical section from 'Wait' to 'Resolve ticket' only in the cases with support_section equal to 'Value 1'",
+   "Define a critical section from wait to resolve ticket, applying only to cases where the support section is Value 1.",
+   "Could you define a critical section from wait to resolve ticket, but only for the cases in which the support section equals Value 1?",
+   "Mark a critical section from wait to resolve when the support section is Value 1."
+  ],
+  "ambiguity": "The shortened name 'resolve' could refer to a different activity than 'resolve ticket'."
+ },
+ "helpdesk-M01": {
+  "texts": [
+   "Define 'Require upgrade' as a milestone",
+   "Mark require upgrade as a milestone.",
+   "Could you please mark require upgrade as a milestone?",
+   "Set up the upgrade requirement as a milestone."
+  ],
+  "ambiguity": "The rephrased name 'the upgrade requirement' does not exactly match the activity name and could be confused with a different step."
+ },
+ "helpdesk-M02": {
+  "texts": [
+   "Mark 'Wait' and 'Insert ticket' as milestones",
+   "Mark wait and insert ticket as milestones.",
+   "I would like you to mark both wait and insert ticket as milestones, please.",
+   "Set the wait step and the ticket insertion as milestones."
+  ],
+  "ambiguity": "The rephrased names 'the wait step' and 'the ticket insertion' do not exactly match the activity names and could refer to different activities."
+ },
+ "helpdesk-M03": {
+  "texts": [
+   "Define 'Require upgrade' and 'Insert ticket' as milestones",
+   "Set require upgrade and insert ticket as milestones.",
+   "Could you please mark require upgrade and insert ticket as milestones?",
+   "Set the upgrade and insert ticket as milestones."
+  ],
+  "ambiguity": "The word upgrade is a shortened form that could refer to require upgrade or to a different activity simply called upgrade."
+ },
+ "helpdesk-M04": {
+  "texts": [
+   "Mark 'Insert ticket', 'Wait' and 'Require upgrade' as milestones",
+   "Mark insert ticket, wait, and require upgrade as milestones.",
+   "I would like you to mark insert ticket, wait, and require upgrade as milestones.",
+   "Mark the ticket, wait, and require upgrade as milestones."
+  ],
+  "ambiguity": "The word ticket is a shortened form that could refer to insert ticket or to another activity simply called ticket."
+ },
+ "helpdesk-M05": {
+  "texts": [
+   "Define 'Wait' and 'Require upgrade' as milestones",
+   "Define wait and require upgrade as milestones.",
+   "It would be interesting if you could define wait and require upgrade as milestones.",
+   "Define the wait and the upgrade as milestones."
+  ],
+  "ambiguity": "The word upgrade is a shortened form that could refer to require upgrade or to a different activity simply called upgrade."
+ },
+ "helpdesk-M06": {
+  "texts": [
+   "Mark 'Require upgrade', 'Wait' and 'Insert ticket' as milestones",
+   "Mark require upgrade, wait, and insert ticket as milestones.",
+   "You should mark require upgrade, wait, and insert ticket as milestones.",
+   "Mark the upgrade, wait, and the ticket as milestones."
+  ],
+  "ambiguity": "Both upgrade and ticket are shortened forms that could each refer to require upgrade / insert ticket or to other activities with similar names."
+ },
+ "helpdesk-M07": {
+  "texts": [
+   "Define 'Insert ticket' and 'Require upgrade' as milestones",
+   "Define insert ticket and require upgrade as milestones.",
+   "I would like you to define insert ticket and require upgrade as milestones.",
+   "Define the ticket and the upgrade as milestones."
+  ],
+  "ambiguity": "Both ticket and upgrade are shortened forms that could each refer to insert ticket / require upgrade or to other activities with similar names."
+ },
+ "helpdesk-M08": {
+  "texts": [
+   "Mark 'Require upgrade', 'Insert ticket' and 'Wait' as milestones",
+   "Mark require upgrade, insert ticket, and wait as milestones.",
+   "Could you mark require upgrade, insert ticket, and wait as milestones?",
+   "Mark the upgrade, the ticket, and wait as milestones."
+  ],
+  "ambiguity": "Both upgrade and ticket are shortened forms that could each refer to require upgrade / insert ticket or to other activities with similar names."
+ },
+ "helpdesk-M09": {
+  "texts": [
+   "Define 'Insert ticket' and 'Wait' as milestones",
+   "Define insert ticket and wait as milestones.",
+   "It would be nice if you could define insert ticket and wait as milestones.",
+   "Define the ticket and wait as milestones."
+  ],
+  "ambiguity": "The word ticket is a shortened form that could refer to insert ticket or to another activity simply called ticket."
+ },
+ "helpdesk-M10": {
+  "texts": [
+   "Mark 'Require upgrade' and 'Wait' as milestones",
+   "Mark require upgrade and wait as milestones.",
+   "I would like you to mark require upgrade and wait as milestones.",
+   "Mark the upgrade and wait as milestones."
+  ],
+  "ambiguity": "The word upgrade is a shortened form that could refer to require upgrade or to a different activity simply called upgrade."
+ }
+}

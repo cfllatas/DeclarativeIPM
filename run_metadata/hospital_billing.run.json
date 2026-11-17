@@ -1,0 +1,72 @@
+{
+  "stage": 2,
+  "log": "hospital_billing",
+  "language": "en",
+  "runId": "20261109-180121",
+  "startedAt": "2026-11-09T18:01:21.4445641+01:00",
+  "machine": "<machine>",
+  "command": "--stage1 <SVELTA>/DeclarativeIPM/bank_v2/hospital_billing.json <tmp>/logs/pub_hospital_billing/MetaInfo/__ModelInfo --stage 2 --phrasings 0,1,2,3 --models L2-qwen3.5-27b --ctx 16384",
+  "settings": {
+    "temperature": 0,
+    "seed": 1,
+    "numCtx": 16384,
+    "numPredict": 4096,
+    "phrasing": "phrasings 0,1,2,3 (0 = first), in the language of the log",
+    "retries": 0,
+    "poligptMinIntervalSeconds": 15,
+    "warmup": "one call per model with the first question (warmup=true, excluded from statistics) + one validation and two engine executions before measuring"
+  },
+  "cases": 100000,
+  "questions": 40,
+  "files": {
+    "bank": {
+      "path": "<SVELTA>/DeclarativeIPM/bank_v2/hospital_billing.json",
+      "sha256": "27c0a82d1282d31f097bf74ec54e4a1edcefd65e53bddc24613f0909e96d0e26"
+    },
+    "log": {
+      "path": "<tmp>/logs/pub_hospital_billing/Resources/log.jsonl",
+      "sha256": "4c9e079b9686cb4397bc77ee40eef1453ba4c76eca82f83d33d0536c3c5c8770"
+    },
+    "modelInfo": {
+      "path": "<tmp>/logs/pub_hospital_billing/MetaInfo/__ModelInfo",
+      "sha256": "b3b3d8ad398ff99f92b94cbb56f00c6307fa73ba536cabad0d61f52814f34a04"
+    },
+    "models": {
+      "path": "<SVELTA>\\tools\\declarative-ipm-eval\\models-stage1.json",
+      "sha256": "c7347dde0620c89b0b18379d5a0d3ad202f6e093a550bb3387338cacb90e772e"
+    }
+  },
+  "prompt": {
+    "sha256": "ef4e72874da2f0dadc249ff63508531ae60af611156e14290cebee8f99e0dc9f",
+    "characters": 26899
+  },
+  "models": [
+    {
+      "Id": "L2-qwen3.5-27b",
+      "Backend": "ollama",
+      "Model": "qwen3.5:27b",
+      "Think": "false"
+    }
+  ],
+  "git": {
+    "svelta": {
+      "commit": "7aced9e496738b1b3ae4f70d6650565004c128e8",
+      "dirty": true
+    },
+    "engine_pm4hResearch": {
+      "commit": "b01406ac9bd016e990d720eafbb3fdfbc6c40d78",
+      "dirty": true
+    }
+  },
+  "notes": "The Declare engine is compiled from source: the engine commit above plus the uncommitted fixes of 2026-11-07 (wildcard, numeric ==) define the semantics used to execute the answers.",
+  "ollama": {
+    "version": "0.32.0",
+    "models": {
+      "qwen3.5:27b": {
+        "digest": "7653528ba5cba4dd8e19da24aaddc7f4d0b5ecd93571c0825dfd4137958ec06e",
+        "sizeBytes": 17420432728,
+        "modifiedAt": "2026-07-16T19:23:25.627290342Z"
+      }
+    }
+  }
+}

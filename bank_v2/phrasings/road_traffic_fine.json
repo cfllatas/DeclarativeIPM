@@ -1,0 +1,362 @@
+{
+ "road_traffic_fine-F01": {
+  "texts": [
+   "Limit the cases to: cases in which 'Send for Credit Collection' occurs",
+   "Filter the cases to only those where send for credit collection occurs.",
+   "Could you limit the cases to those in which send for credit collection takes place?",
+   "Filter the cases to those with credit collection."
+  ],
+  "ambiguity": "Credit collection is a shortened name that could refer to different activities in the process."
+ },
+ "road_traffic_fine-F02": {
+  "texts": [
+   "Limit the cases to: cases that went through 'Insert Fine Notification'",
+   "Limit the cases to those that went through insert fine notification.",
+   "I would like you to filter the cases to only those that passed through insert fine notification.",
+   "Filter the cases to those with a fine notification."
+  ],
+  "ambiguity": "Fine notification is a shortened name that could match insert fine notification or another notification-related activity."
+ },
+ "road_traffic_fine-F33": {
+  "texts": [
+   "Limit the cases to: cases with lastSent equal to 'P'",
+   "Filter the cases to those where last sent is P.",
+   "Could you limit the cases to those where the last sent variable equals P?",
+   "Filter the cases to those where the last one is P."
+  ],
+  "ambiguity": "The last one is a vague reference that could mean last sent, the last activity, or the last event in the case."
+ },
+ "road_traffic_fine-F34": {
+  "texts": [
+   "Limit the cases to: cases with notificationType equal to 'P'",
+   "Limit the cases to those where notification type is P.",
+   "It would be helpful if you could filter the cases to those with notification type set to P.",
+   "Filter the cases to those with type P."
+  ],
+  "ambiguity": "Type is a shortened name that could refer to notification type or another type-related variable."
+ },
+ "road_traffic_fine-F38": {
+  "texts": [
+   "Limit the cases to: cases with 'Create Fine' and, later, 'Payment' in less than 7 days",
+   "Filter the cases to those where create fine happens and then payment happens within less than 7 days.",
+   "Could you limit the cases to those in which create fine is followed by payment in under 7 days?",
+   "Filter the cases to those with create fine and payment less than 7 days apart."
+  ],
+  "ambiguity": "Less than 7 days apart does not specify which activity comes first."
+ },
+ "road_traffic_fine-F39": {
+  "texts": [
+   "Limit the cases to: cases with 'Insert Fine Notification' and, later, 'Add penalty' more than 30 days apart",
+   "Limit the cases to those where insert fine notification happens and then add penalty happens more than 30 days later.",
+   "I would like you to filter the cases to those in which insert fine notification is followed by add penalty after more than 30 days.",
+   "Filter the cases to those with insert fine notification and add penalty more than 30 days apart."
+  ],
+  "ambiguity": "More than 30 days apart does not specify the order of the two activities."
+ },
+ "road_traffic_fine-F37": {
+  "texts": [
+   "Limit the cases to: cases with 'Add penalty' and, later, 'Payment', where notificationType is 'P'",
+   "Filter the cases to those where add penalty happens and then payment happens, with notification type set to P.",
+   "Could you limit the cases to those in which add penalty is followed by payment, and notification type is P?",
+   "Filter the cases to those with add penalty and payment, where the type is P."
+  ],
+  "ambiguity": "The type is a vague reference that could mean notification type or another type variable."
+ },
+ "road_traffic_fine-F35": {
+  "texts": [
+   "Limit the cases to: cases with lastSent equal to 'P' and notificationType equal to 'P'",
+   "Limit the cases to those where last sent is P and notification type is P.",
+   "It would be great if you could filter the cases to those with last sent equal to P and notification type equal to P.",
+   "Filter the cases to those where the sent flag and the type are both P."
+  ],
+  "ambiguity": "Sent flag is a loose name for last sent, and the type could refer to notification type or another type variable."
+ },
+ "road_traffic_fine-C01": {
+  "texts": [
+   "Create circuits for this: separate the fines by how they end: payment, credit collection, sent to the offender or appeal sent to the prefecture",
+   "Create circuits that separate the fines by how they end: payment, send for credit collection, send fine, or send appeal to prefecture.",
+   "I would like you to create circuits splitting the fines by their ending activity, namely payment, send for credit collection, send fine, or send appeal to prefecture.",
+   "Create circuits to separate the fines by their final step: payment, credit collection, the fine being sent, or the appeal to the prefecture."
+  ],
+  "ambiguity": "Credit collection drops the verb send for and could be mistaken for a different activity or just a general concept rather than the specific activity send for credit collection."
+ },
+ "road_traffic_fine-C02": {
+  "texts": [
+   "Create circuits for this: classify the fines by whether they were sent for credit collection, had a notification registered or got a penalty (first match wins)",
+   "Create circuits that classify the fines by whether they include send for credit collection, insert fine notification, or add penalty, with the first match winning.",
+   "Could you create circuits to classify the fines based on whether they contain send for credit collection, insert fine notification, or add penalty, keeping the first match as priority?",
+   "Create circuits to sort the fines by whether they went through credit collection, a notification, or a penalty, first match wins."
+  ],
+  "ambiguity": "A notification is vague and could refer to any notification-related activity rather than specifically insert fine notification."
+ },
+ "road_traffic_fine-C03": {
+  "texts": [
+   "Create circuits for this: separate the fines that got a penalty and were then paid, those with only a penalty, and the rest",
+   "Create circuits separating the fines into three groups: those where add penalty is followed by payment, those that have add penalty, and the rest.",
+   "It would be great if you could create circuits that split the fines into three groups: add penalty followed by payment, those with just add penalty, and everything else.",
+   "Create circuits to separate the fines: penalty then payment, only penalty, and the rest."
+  ],
+  "ambiguity": "Penalty is a shortened form that could refer to add penalty or potentially another penalty-related activity in the model."
+ },
+ "road_traffic_fine-C04": {
+  "texts": [
+   "Create circuits for this: separate the cases by how they end: 'Payment' or 'Send for Credit Collection'",
+   "Create circuits that separate the cases by how they end: payment or send for credit collection.",
+   "Could you create circuits splitting the cases by their ending, namely payment or send for credit collection?",
+   "Create circuits to separate the cases by their final step: payment or credit collection."
+  ],
+  "ambiguity": "Credit collection omits the verb send for and could be confused with a different activity or a general financial concept."
+ },
+ "road_traffic_fine-C05": {
+  "texts": [
+   "Create circuits for this: separate the fines by the kind of the last notice sent: P and N",
+   "Create circuits that separate the fines by the last sent value: P and N.",
+   "I would like you to create circuits splitting the fines according to the last sent value, P or N.",
+   "Create circuits to separate the fines by the last notice type: P and N."
+  ],
+  "ambiguity": "Last notice type is a loose paraphrase of the variable last sent and could be confused with a different attribute or activity."
+ },
+ "road_traffic_fine-C06": {
+  "texts": [
+   "Create circuits for this: split the cases in two groups by points: up to 0 and more than 0",
+   "Create circuits that split the cases into two groups by points: up to zero and more than zero.",
+   "I would like you to create circuits dividing the cases into two groups based on points: up to zero and above zero.",
+   "Create circuits to split the cases by points: zero and below, and the rest."
+  ],
+  "ambiguity": "The rest is unspecific and does not explicitly state more than zero, leaving a tiny interpretive gap about the boundary."
+ },
+ "road_traffic_fine-C07": {
+  "texts": [
+   "Make three circuits by the time between 'Send Fine' and 'Insert Fine Notification': less than 14 days, longer, and those without that stretch",
+   "Create three circuits based on the time between send fine and insert fine notification: less than 14 days, longer than that, and those without that sequence.",
+   "Could you create three circuits splitting the cases by the duration between send fine and insert fine notification: under 14 days, over 14 days, and those where that sequence does not occur?",
+   "Create three circuits by the gap between sending the fine and the notification: under 14 days, over, and the rest."
+  ],
+  "ambiguity": "The notification is a shortened reference that could refer to any notification activity rather than specifically insert fine notification."
+ },
+ "road_traffic_fine-C08": {
+  "texts": [
+   "Create three circuits: 'Create Fine' then 'Send Fine' in less than 30 days, the rest of those with 'Create Fine' then 'Send Fine', and all the others",
+   "Create three circuits: create fine followed by send fine in less than 30 days, the remaining cases with create fine then send fine, and all the others.",
+   "I would like you to create three circuits: create fine then send fine within 30 days, the rest of those with that same sequence, and everything else.",
+   "Create three circuits: creating the fine then sending it in under 30 days, the slower ones with that sequence, and the rest."
+  ],
+  "ambiguity": "Sending it uses a pronoun whose referent is not fully explicit, and the slower ones is a loose description rather than clearly stating the remaining cases with create fine then send fine."
+ },
+ "road_traffic_fine-C09": {
+  "texts": [
+   "Make three circuits: notificationType equal to 'P' and 'Send for Credit Collection', only notificationType equal to 'P', and the rest",
+   "Split the cases into three circuits: first, those where the notification type is P and the case goes through send for credit collection; second, the remaining ones where the notification type is P; and third, everything else.",
+   "Could you create three circuits for me: one for cases where the notification type is P and they pass through send for credit collection, another for the rest of the cases with notification type P, and a final one for all remaining cases?",
+   "Make three circuits: the P-type cases that reach send for credit collection, the other P-type cases, and the rest."
+  ],
+  "ambiguity": "The phrase 'the other P-type cases' uses a vague reference that could be misread as a distinct category of P-type cases rather than simply the remaining ones not captured by the first circuit."
+ },
+ "road_traffic_fine-C10": {
+  "texts": [
+   "Create three circuits: cases with vehicleClass equal to 'A' that go through 'Add penalty', the rest of the cases with vehicleClass equal to 'A', and all the others",
+   "Split the cases into three circuits: first, the class A vehicle cases that go through add penalty; second, the remaining class A cases; and third, all the other cases.",
+   "I would like you to create three circuits: one for class A vehicle cases that pass through add penalty, another for the remaining class A cases, and a last one for everything else.",
+   "Make three circuits: the A-class cases that hit add penalty, the other A-class cases, and the rest."
+  ],
+  "ambiguity": "'The other A-class cases' could be misread as referring to a different sub-category of A-class cases rather than simply the remaining ones not captured by the first circuit."
+ },
+ "road_traffic_fine-C11": {
+  "texts": [
+   "Create circuits for this: classify the cases by their last step: 'Payment', 'Send for Credit Collection' or 'Send Fine'",
+   "Create three circuits that classify the cases by their final step: payment, send for credit collection, or send fine.",
+   "Could you set up circuits that group the cases according to how they end: payment, send for credit collection, or send fine?",
+   "Make circuits by the last step: payment, credit collection, or send fine."
+  ],
+  "ambiguity": "'Credit collection' is a shortened name that could refer to send for credit collection or potentially another activity in the process."
+ },
+ "road_traffic_fine-C12": {
+  "texts": [
+   "Create circuits for this: separate the cases by how they end: 'Send for Credit Collection' or 'Send Fine'",
+   "Create two circuits that separate the cases by their ending: send for credit collection or send fine.",
+   "It would be useful if you could create circuits that split the cases based on how they finish: send for credit collection or send fine.",
+   "Make circuits by how the cases end: credit collection or send fine."
+  ],
+  "ambiguity": "'Credit collection' is a shortened form that could refer to send for credit collection or another activity in the model."
+ },
+ "road_traffic_fine-R01": {
+  "texts": [
+   "Define a region from 'Add penalty' to 'Payment'",
+   "Define a region from add penalty to payment.",
+   "Could you define a critical section from add penalty to payment?",
+   "Set up a region from penalty to payment."
+  ],
+  "ambiguity": "'Penalty' is a shortened name that could refer to add penalty or another penalty-related activity in the process."
+ },
+ "road_traffic_fine-R02": {
+  "texts": [
+   "Define a critical section from 'Create Fine' to 'Send for Credit Collection'",
+   "Define a critical section from create fine to send for credit collection.",
+   "I would like you to define a region from create fine to send for credit collection.",
+   "Define a critical section from create fine to credit collection."
+  ],
+  "ambiguity": "'Credit collection' is a shortened name that could refer to send for credit collection or another activity in the model."
+ },
+ "road_traffic_fine-R03": {
+  "texts": [
+   "Define a region from 'Create Fine' to 'Add penalty'",
+   "Define a region from create fine to add penalty.",
+   "Would you mind defining a critical section from create fine to add penalty?",
+   "Define a region from create fine to penalty."
+  ],
+  "ambiguity": "'Penalty' is a shortened name that could refer to add penalty or another penalty-related activity in the process."
+ },
+ "road_traffic_fine-R04": {
+  "texts": [
+   "Define two critical sections: from 'Send Fine' to 'Insert Fine Notification' and from 'Create Fine' to 'Insert Fine Notification'",
+   "Define two critical sections: one from send fine to insert fine notification, and another from create fine to insert fine notification.",
+   "Could you define two regions for me: from send fine to insert fine notification, and from create fine to insert fine notification?",
+   "Set up two critical sections: from send fine to the notification, and from create fine to the notification."
+  ],
+  "ambiguity": "'The notification' is a vague shortened reference to insert fine notification that could refer to a different notification activity in the process."
+ },
+ "road_traffic_fine-R05": {
+  "texts": [
+   "Define two regions: from 'Create Fine' to 'Add penalty' and from 'Create Fine' to 'Send for Credit Collection'",
+   "Set up two regions: one from create fine to add penalty, and another from create fine to send for credit collection.",
+   "Could you please define two regions for me, one going from create fine to add penalty and the other from create fine to send for credit collection?",
+   "Define two regions starting from create fine, one ending at add penalty and the other at credit collection."
+  ],
+  "ambiguity": "credit collection is a shortened name that could refer to send for credit collection or another activity."
+ },
+ "road_traffic_fine-R06": {
+  "texts": [
+   "Define a critical section from 'Send Fine' to 'Insert Fine Notification' when more than 14 days elapse",
+   "Create a critical section from send fine to insert fine notification for cases where more than 14 days elapse.",
+   "I would like you to define a critical section from send fine to insert fine notification, but only when more than 14 days pass between them.",
+   "Set up a critical section from send fine to the notification step when over two weeks go by."
+  ],
+  "ambiguity": "the notification step is a vague reference that could match insert fine notification or another notification-related activity."
+ },
+ "road_traffic_fine-R07": {
+  "texts": [
+   "Define a region from 'Create Fine' to 'Send Fine' when less than 30 days pass between them",
+   "Define a region from create fine to send fine for cases where less than 30 days pass between the two.",
+   "It would be helpful if you could set up a region from create fine to send fine, limited to cases where fewer than 30 days elapse.",
+   "Create a region from create fine to send fine when the gap is under a month."
+  ],
+  "ambiguity": "a month is an informal approximation that could be read as 30 days, 31 days, or a calendar month."
+ },
+ "road_traffic_fine-R08": {
+  "texts": [
+   "Define a critical section from 'Create Fine' to 'Add penalty' when more than 30 days elapse",
+   "Set up a critical section from create fine to add penalty for cases where more than 30 days elapse.",
+   "Would you mind defining a critical section from create fine to add penalty, applying it only when more than 30 days have passed?",
+   "Define a critical section from create fine to the penalty step when over 30 days go by."
+  ],
+  "ambiguity": "the penalty step is a loose reference that could match add penalty or another penalty-related activity."
+ },
+ "road_traffic_fine-R09": {
+  "texts": [
+   "Define a region from 'Create Fine' to 'Add penalty' in the cases with lastSent equal to 'P'",
+   "Define a region from create fine to add penalty, but only in the cases where last sent is P.",
+   "I would like you to set up a region from create fine to add penalty, restricted to cases where the last sent variable equals P.",
+   "Create a region from create fine to add penalty for the P cases."
+  ],
+  "ambiguity": "the P cases does not specify which variable equals P, so it could refer to last sent or another variable."
+ },
+ "road_traffic_fine-R10": {
+  "texts": [
+   "Define a critical section from 'Create Fine' to 'Send for Credit Collection' only in the cases with notificationType equal to 'P'",
+   "Define a critical section from create fine to send for credit collection, only for cases where notification type is P.",
+   "Could you please define a critical section from create fine to send for credit collection, limited to cases where the notification type variable equals P?",
+   "Set up a critical section from create fine to credit collection for the P notification cases."
+  ],
+  "ambiguity": "credit collection is a shortened form of the activity name that could fit more than one activity."
+ },
+ "road_traffic_fine-M01": {
+  "texts": [
+   "Define 'Send for Credit Collection' as a milestone",
+   "Mark send for credit collection as a milestone.",
+   "Could you please set send for credit collection as a milestone?",
+   "Define the credit collection step as a milestone."
+  ],
+  "ambiguity": "the credit collection step is a shortened reference that could match send for credit collection or another activity."
+ },
+ "road_traffic_fine-M02": {
+  "texts": [
+   "Mark 'Send Fine' and 'Add penalty' as milestones",
+   "Mark send fine and add penalty as milestones.",
+   "I would like you to mark both send fine and add penalty as milestones, please.",
+   "Set the fine sending and add penalty as milestones."
+  ],
+  "ambiguity": "the fine sending is a loose description that could refer to send fine or another sending-related activity."
+ },
+ "road_traffic_fine-M03": {
+  "texts": [
+   "Use 'Payment' as a milestone",
+   "Make payment a milestone in the model.",
+   "Could you please set payment as a milestone?",
+   "Mark the payment step as a milestone."
+  ],
+  "ambiguity": "The phrase 'the payment step' is a loose, shortened name that could refer to a different activity in the process."
+ },
+ "road_traffic_fine-M04": {
+  "texts": [
+   "Define 'Insert Date Appeal to Prefecture' as a milestone",
+   "Set insert date appeal to prefecture as a milestone.",
+   "I would like you to define insert date appeal to prefecture as a milestone.",
+   "Mark the appeal date entry as a milestone."
+  ],
+  "ambiguity": "'The appeal date entry' is a loosely named activity that could be confused with another step involving the appeal."
+ },
+ "road_traffic_fine-M05": {
+  "texts": [
+   "Define 'Insert Fine Notification' and 'Add penalty' as milestones",
+   "Make insert fine notification and add penalty milestones.",
+   "It would be great if you could define insert fine notification and add penalty as milestones.",
+   "Set the fine notification and the penalty as milestones."
+  ],
+  "ambiguity": "'The fine notification' and 'the penalty' are shortened names that could each fit a different activity in the model."
+ },
+ "road_traffic_fine-M06": {
+  "texts": [
+   "Mark 'Insert Fine Notification', 'Send Appeal to Prefecture' and 'Send for Credit Collection' as milestones",
+   "Mark insert fine notification, send appeal to prefecture, and send for credit collection as milestones.",
+   "Could you please mark insert fine notification, send appeal to prefecture, and send for credit collection as milestones?",
+   "Set the fine notification, the prefecture appeal, and the credit collection as milestones."
+  ],
+  "ambiguity": "'The prefecture appeal' and 'the credit collection' are shortened names that could refer to different activities in the process."
+ },
+ "road_traffic_fine-M07": {
+  "texts": [
+   "Define 'Payment' and 'Send Fine' as milestones",
+   "Make payment and send fine milestones.",
+   "I would like you to define payment and send fine as milestones.",
+   "Set the payment and the fine sending as milestones."
+  ],
+  "ambiguity": "'The fine sending' is a loosely named activity that could be confused with another step involving the fine."
+ },
+ "road_traffic_fine-M08": {
+  "texts": [
+   "Mark 'Add penalty', 'Send Appeal to Prefecture' and 'Insert Fine Notification' as milestones",
+   "Mark add penalty, send appeal to prefecture, and insert fine notification as milestones.",
+   "It would be interesting if you could mark add penalty, send appeal to prefecture, and insert fine notification as milestones.",
+   "Set the penalty, the appeal to prefecture, and the fine notification as milestones."
+  ],
+  "ambiguity": "'The penalty' is a shortened name that could refer to a different activity in the model."
+ },
+ "road_traffic_fine-M09": {
+  "texts": [
+   "Define 'Insert Date Appeal to Prefecture' and 'Add penalty' as milestones",
+   "Make insert date appeal to prefecture and add penalty milestones.",
+   "Could you please define insert date appeal to prefecture and add penalty as milestones?",
+   "Set the appeal date and the penalty as milestones."
+  ],
+  "ambiguity": "'The appeal date' is a shortened name that could be confused with another activity related to the appeal."
+ },
+ "road_traffic_fine-M10": {
+  "texts": [
+   "Mark 'Send for Credit Collection', 'Send Fine' and 'Insert Fine Notification' as milestones",
+   "Mark send for credit collection, send fine, and insert fine notification as milestones.",
+   "I would like you to mark send for credit collection, send fine, and insert fine notification as milestones.",
+   "Set the credit collection, the fine, and the fine notification as milestones."
+  ],
+  "ambiguity": "'The fine' is a very short name that could refer to multiple activities such as send fine or insert fine notification."
+ }
+}

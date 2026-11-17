@@ -1,0 +1,874 @@
+{
+ "log": "bpic2020_prepaid_travel_costs",
+ "lang": "en",
+ "cases": 2099,
+ "version": "v2",
+ "note": "orders only; no clarification items; one wording per item",
+ "filters": [
+  {
+   "id": "bpic2020_prepaid_travel_costs-F01",
+   "family": "exists",
+   "cls": "act",
+   "text": "Limit the cases to: cases in which 'Request For Payment REJECTED by ADMINISTRATION' occurs",
+   "expr": "'Request For Payment REJECTED by ADMINISTRATION'",
+   "count": 211,
+   "pct": 10.1,
+   "case_hash": "1a4ac0ceb5aa65e8",
+   "texts": [
+    "Limit the cases to: cases in which 'Request For Payment REJECTED by ADMINISTRATION' occurs",
+    "Filter the cases to only those where the request for payment was rejected by administration.",
+    "Could you limit the cases to those in which the request for payment was rejected by administration?",
+    "Filter the cases to those where the payment was rejected by administration."
+   ],
+   "ambiguity": "Payment is a shortened name that could refer to different activities in the process."
+  },
+  {
+   "id": "bpic2020_prepaid_travel_costs-F02",
+   "family": "exists",
+   "cls": "act",
+   "text": "Limit the cases to: cases that went through 'Request For Payment REJECTED by EMPLOYEE'",
+   "expr": "'Request For Payment REJECTED by EMPLOYEE'",
+   "count": 253,
+   "pct": 12.1,
+   "case_hash": "a456adf644cd3db9",
+   "texts": [
+    "Limit the cases to: cases that went through 'Request For Payment REJECTED by EMPLOYEE'",
+    "Filter the cases to only those that went through the request for payment rejected by employee.",
+    "I would like you to limit the cases to those that passed through the request for payment rejected by employee.",
+    "Filter the cases to those where the request was rejected by employee."
+   ],
+   "ambiguity": "Request is a shortened name that could refer to either the permit request or the request for payment."
+  },
+  {
+   "id": "bpic2020_prepaid_travel_costs-F32",
+   "family": "var_range",
+   "cls": "var",
+   "text": "Limit the cases to: cases with Permit RequestedBudget between 1031.8 and 2193.9",
+   "expr": "['Permit RequestedBudget' >= 1031.8, 'Permit RequestedBudget' <= 2193.9]",
+   "count": 734,
+   "pct": 35.0,
+   "case_hash": "91a21e108771af61",
+   "texts": [
+    "Limit the cases to: cases with Permit RequestedBudget between 1031.8 and 2193.9",
+    "Filter the cases to those where the permit requested budget is between 1031.8 and 2193.9.",
+    "It would be helpful if you could limit the cases to those with a permit requested budget between 1031.8 and 2193.9.",
+    "Filter the cases to those where the requested budget is between 1031.8 and 2193.9."
+   ],
+   "ambiguity": "Requested budget without the permit qualifier could refer to a different variable in the model."
+  },
+  {
+   "id": "bpic2020_prepaid_travel_costs-F33",
+   "family": "var_cat",
+   "cls": "var",
+   "text": "Limit the cases to: cases with Permit OrganizationalEntity equal to 'UNKNOWN'",
+   "expr": "['Permit OrganizationalEntity' == 'UNKNOWN']",
+   "count": 155,
+   "pct": 7.4,
+   "case_hash": "e788126472ccd7c9",
+   "texts": [
+    "Limit the cases to: cases with Permit OrganizationalEntity equal to 'UNKNOWN'",
+    "Filter the cases to those where the permit organizational entity is unknown.",
+    "Could you please limit the cases to those in which the permit organizational entity is set to unknown?",
+    "Filter the cases to those where the organizational entity is unknown."
+   ],
+   "ambiguity": "Organizational entity without the permit qualifier could refer to a different variable in the model."
+  },
+  {
+   "id": "bpic2020_prepaid_travel_costs-F38",
+   "family": "time_lt",
+   "cls": "time",
+   "text": "Limit the cases to: cases with 'Permit APPROVED by ADMINISTRATION' and, later, 'Permit FINAL_APPROVED by DIRECTOR' in less than 5 days",
+   "expr": "('Permit APPROVED by ADMINISTRATION' >> 'Permit FINAL_APPROVED by DIRECTOR')[-5d]",
+   "count": 159,
+   "pct": 7.6,
+   "case_hash": "cd7f276d7cebac0c",
+   "texts": [
+    "Limit the cases to: cases with 'Permit APPROVED by ADMINISTRATION' and, later, 'Permit FINAL_APPROVED by DIRECTOR' in less than 5 days",
+    "Filter the cases to those where the permit was approved by administration and then finally approved by director in less than 5 days.",
+    "I would like you to limit the cases to those in which the permit was approved by administration followed by final approval by director within less than 5 days.",
+    "Filter the cases to those where the permit was approved by administration and then approved by director in less than 5 days."
+   ],
+   "ambiguity": "Approved by director omits the word final and could refer to a different approval step."
+  },
+  {
+   "id": "bpic2020_prepaid_travel_costs-F39",
+   "family": "time_gt",
+   "cls": "time",
+   "text": "Limit the cases to: cases with 'Permit APPROVED by ADMINISTRATION' and, later, 'Permit APPROVED by SUPERVISOR' more than 3 days apart",
+   "expr": "('Permit APPROVED by ADMINISTRATION' >> 'Permit APPROVED by SUPERVISOR')[3d-]",
+   "count": 143,
+   "pct": 6.8,
+   "case_hash": "6244269808492a20",
+   "texts": [
+    "Limit the cases to: cases with 'Permit APPROVED by ADMINISTRATION' and, later, 'Permit APPROVED by SUPERVISOR' more than 3 days apart",
+    "Filter the cases to those where the permit was approved by administration and then approved by supervisor more than 3 days later.",
+    "Could you limit the cases to those in which the permit was approved by administration and subsequently approved by supervisor with more than 3 days in between?",
+    "Filter the cases to those where the permit was approved by administration and by supervisor more than 3 days apart."
+   ],
+   "ambiguity": "The ordering between the two approvals is not explicitly stated, leaving it unclear which one comes first."
+  },
+  {
+   "id": "bpic2020_prepaid_travel_costs-F37",
+   "family": "var_seq",
+   "cls": "mixed",
+   "text": "Limit the cases to: cases with 'Request For Payment APPROVED by PRE_APPROVER' and, later, 'Payment Handled', where Permit TaskNumber is 'task 427'",
+   "expr": "('Request For Payment APPROVED by PRE_APPROVER' >> 'Payment Handled')['Permit TaskNumber' == 'task 427']",
+   "count": 119,
+   "pct": 5.7,
+   "case_hash": "55fdb06315e816fa",
+   "texts": [
+    "Limit the cases to: cases with 'Request For Payment APPROVED by PRE_APPROVER' and, later, 'Payment Handled', where Permit TaskNumber is 'task 427'",
+    "Filter the cases to those where the request for payment was approved by the pre-approver and then the payment was handled, for permit task number task 427.",
+    "I would like you to limit the cases to those in which the request for payment was approved by the pre-approver followed by the payment being handled, where the permit task number is task 427.",
+    "Filter the cases to those where the payment was approved by the pre-approver and then handled, for task 427."
+   ],
+   "ambiguity": "Payment is a shortened name that could refer to different activities, and task 427 lacks the permit task number qualifier."
+  },
+  {
+   "id": "bpic2020_prepaid_travel_costs-F41",
+   "family": "time_var",
+   "cls": "mixed",
+   "text": "Limit the cases to: cases with Permit RequestedBudget greater than 1181.2 and 'Request For Payment SUBMITTED by EMPLOYEE' less than 20 days after 'Permit APPROVED by BUDGET OWNER'",
+   "expr": "('Permit APPROVED by BUDGET OWNER' >> 'Request For Payment SUBMITTED by EMPLOYEE')['Permit RequestedBudget' > 1181.2, -20d]",
+   "count": 180,
+   "pct": 8.6,
+   "case_hash": "f084dbc1cabc7ce6",
+   "texts": [
+    "Limit the cases to: cases with Permit RequestedBudget greater than 1181.2 and 'Request For Payment SUBMITTED by EMPLOYEE' less than 20 days after 'Permit APPROVED by BUDGET OWNER'",
+    "Filter the cases to those where the permit requested budget is greater than 1181.2 and the request for payment was submitted by the employee less than 20 days after the permit was approved by the budget owner.",
+    "Could you please limit the cases to those in which the permit requested budget exceeds 1181.2 and the request for payment was submitted by the employee within less than 20 days after the permit was approved by the budget owner?",
+    "Filter the cases to those where the budget is greater than 1181.2 and the request was submitted by the employee less than 20 days after the permit was approved by the budget owner."
+   ],
+   "ambiguity": "Budget without the permit requested qualifier could refer to a different variable, and request could mean either the permit request or the request for payment."
+  }
+ ],
+ "circuits": [
+  {
+   "id": "bpic2020_prepaid_travel_costs-C01",
+   "text": "Create circuits for this: separate the cases by how they end: payment handled, rejected by the employee, saved by the employee or final supervisor permit approval",
+   "cls": "act",
+   "circuits": [
+    {
+     "name": "ends_0",
+     "expr": "'Payment Handled'$"
+    },
+    {
+     "name": "ends_1",
+     "expr": "'Request For Payment REJECTED by EMPLOYEE'$"
+    },
+    {
+     "name": "ends_2",
+     "expr": "'Request For Payment SAVED by EMPLOYEE'$"
+    },
+    {
+     "name": "ends_3",
+     "expr": "'Permit FINAL_APPROVED by SUPERVISOR'$"
+    }
+   ],
+   "gold_counts": {
+    "UNK": 25,
+    "ends_0": 1970,
+    "ends_1": 72,
+    "ends_2": 20,
+    "ends_3": 12
+   },
+   "texts": [
+    "Create circuits for this: separate the cases by how they end: payment handled, rejected by the employee, saved by the employee or final supervisor permit approval",
+    "Create circuits that separate the cases by how they end: payment handled, request for payment rejected by the employee, request for payment saved by the employee, or permit final approved by the supervisor.",
+    "Could you create circuits to classify the cases by their ending, with the four groups being payment handled, request for payment rejected by the employee, request for payment saved by the employee, and permit final approved by the supervisor?",
+    "Create circuits to split the cases by their final step: payment handled, rejected by the employee, saved by the employee, or the supervisor's final approval."
+   ],
+   "ambiguity": "The phrases rejected by the employee and saved by the employee do not specify that they refer to the request for payment, so they could match other rejection or saving activities."
+  },
+  {
+   "id": "bpic2020_prepaid_travel_costs-C02",
+   "text": "Create circuits for this: classify the cases by whether the administration rejected the request, the employee rejected it or the supervisor approved the permit (first match wins)",
+   "cls": "act",
+   "circuits": [
+    {
+     "name": "with_0",
+     "expr": "'Request For Payment REJECTED by ADMINISTRATION'"
+    },
+    {
+     "name": "with_1",
+     "expr": "'Request For Payment REJECTED by EMPLOYEE'"
+    },
+    {
+     "name": "with_2",
+     "expr": "'Permit APPROVED by SUPERVISOR'"
+    }
+   ],
+   "gold_counts": {
+    "UNK": 1496,
+    "with_2": 348,
+    "with_1": 44,
+    "with_0": 211
+   },
+   "texts": [
+    "Create circuits for this: classify the cases by whether the administration rejected the request, the employee rejected it or the supervisor approved the permit (first match wins)",
+    "Create circuits that classify the cases by whether the administration rejected the request for payment, the employee rejected it, or the supervisor approved the permit.",
+    "I would like you to create circuits grouping the cases by whether the request for payment was rejected by the administration, rejected by the employee, or the permit was approved by the supervisor.",
+    "Create circuits to separate the cases by rejection or approval: rejected by the administration, rejected by the employee, or approved by the supervisor."
+   ],
+   "ambiguity": "The words rejected and approved do not specify which activity they refer to (request for payment or permit), so a reader might not know which exact activities are meant."
+  },
+  {
+   "id": "bpic2020_prepaid_travel_costs-C03",
+   "text": "Create circuits for this: separate the cases where the pre-approver approved and payment followed, those with only the pre-approver's approval, and the rest",
+   "cls": "act",
+   "circuits": [
+    {
+     "name": "a_then_b",
+     "expr": "('Request For Payment APPROVED by PRE_APPROVER' >> 'Payment Handled')"
+    },
+    {
+     "name": "has_a",
+     "expr": "'Request For Payment APPROVED by PRE_APPROVER'"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "rest": 1940,
+    "a_then_b": 154,
+    "has_a": 5
+   },
+   "texts": [
+    "Create circuits for this: separate the cases where the pre-approver approved and payment followed, those with only the pre-approver's approval, and the rest",
+    "Create circuits to separate the cases into three groups: those where the request for payment was approved by the pre-approver and then payment was handled, those with only the pre-approver's approval, and the rest.",
+    "It would be helpful if you could create circuits splitting the cases into: request for payment approved by the pre-approver followed by payment handled, just the pre-approver's approval, and everything else.",
+    "Create circuits to group the cases: pre-approver approval followed by payment, only pre-approver approval, and the rest."
+   ],
+   "ambiguity": "The shortened phrases pre-approver approval and payment do not make clear whether they refer to the specific activities request for payment approved by the pre-approver and payment handled."
+  },
+  {
+   "id": "bpic2020_prepaid_travel_costs-C04",
+   "text": "Create circuits for this: separate the cases by how they end: 'Payment Handled' or 'Request For Payment REJECTED by EMPLOYEE'",
+   "cls": "act",
+   "circuits": [
+    {
+     "name": "ends_Payment_Handled",
+     "expr": "'Payment Handled'$"
+    },
+    {
+     "name": "ends_Request_For_Payment_REJECTED_by_EMPLOYEE",
+     "expr": "'Request For Payment REJECTED by EMPLOYEE'$"
+    }
+   ],
+   "gold_counts": {
+    "UNK": 57,
+    "ends_Payment_Handled": 1970,
+    "ends_Request_For_Payment_REJECTED_by_EMPLOYEE": 72
+   },
+   "texts": [
+    "Create circuits for this: separate the cases by how they end: 'Payment Handled' or 'Request For Payment REJECTED by EMPLOYEE'",
+    "Create circuits that separate the cases by their ending: payment handled or request for payment rejected by the employee.",
+    "Could you create circuits to split the cases by how they end, with the two groups being payment handled and request for payment rejected by the employee?",
+    "Create circuits to separate the cases by their final activity: payment handled or rejected by the employee."
+   ],
+   "ambiguity": "The phrase rejected by the employee omits the activity name request for payment, so it could be confused with another rejection activity."
+  },
+  {
+   "id": "bpic2020_prepaid_travel_costs-C05",
+   "text": "Create circuits for this: separate the cases by organisational unit: 65455, 65456, 65458 and 65454",
+   "cls": "var",
+   "circuits": [
+    {
+     "name": "Permit_OrganizationalEntity_organizational_unit_65455",
+     "expr": "['Permit OrganizationalEntity' == 'organizational unit 65455']"
+    },
+    {
+     "name": "Permit_OrganizationalEntity_organizational_unit_65456",
+     "expr": "['Permit OrganizationalEntity' == 'organizational unit 65456']"
+    },
+    {
+     "name": "Permit_OrganizationalEntity_organizational_unit_65458",
+     "expr": "['Permit OrganizationalEntity' == 'organizational unit 65458']"
+    },
+    {
+     "name": "Permit_OrganizationalEntity_organizational_unit_65454",
+     "expr": "['Permit OrganizationalEntity' == 'organizational unit 65454']"
+    }
+   ],
+   "gold_counts": {
+    "Permit_OrganizationalEntity_organizational_unit_65455": 336,
+    "Permit_OrganizationalEntity_organizational_unit_65454": 259,
+    "Permit_OrganizationalEntity_organizational_unit_65458": 284,
+    "UNK": 885,
+    "Permit_OrganizationalEntity_organizational_unit_65456": 335
+   },
+   "texts": [
+    "Create circuits for this: separate the cases by organisational unit: 65455, 65456, 65458 and 65454",
+    "Create circuits to separate the cases by the permit organizational entity: organizational unit 65455, organizational unit 65456, organizational unit 65458, and organizational unit 65454.",
+    "I would like you to create circuits grouping the cases by the permit organizational entity, with the four groups being organizational unit 65455, organizational unit 65456, organizational unit 65458, and organizational unit 65454.",
+    "Create circuits to split the cases by organizational unit: 65455, 65456, 65458, and 65454."
+   ],
+   "ambiguity": "The variable is not named, so it is unclear whether the organizational units refer to the permit organizational entity or some other organizational field."
+  },
+  {
+   "id": "bpic2020_prepaid_travel_costs-C06",
+   "text": "Create circuits for this: separate the cases by Activity: 'activity 505' or 'UNKNOWN'",
+   "cls": "var",
+   "circuits": [
+    {
+     "name": "Activity_activity_505",
+     "expr": "[Activity == 'activity 505']"
+    },
+    {
+     "name": "Activity_UNKNOWN",
+     "expr": "[Activity == 'UNKNOWN']"
+    }
+   ],
+   "gold_counts": {
+    "Activity_activity_505": 1266,
+    "Activity_UNKNOWN": 817,
+    "UNK": 16
+   },
+   "texts": [
+    "Create circuits for this: separate the cases by Activity: 'activity 505' or 'UNKNOWN'",
+    "Create circuits to separate the cases by the activity variable: activity 505 or unknown.",
+    "Could you create circuits to group the cases by the activity value, with the two groups being activity 505 and unknown?",
+    "Create circuits to split the cases by activity: 505 or unknown."
+   ],
+   "ambiguity": "The word activity could refer to the variable name or to a specific process activity, and the shortened value 505 omits the word activity that identifies it."
+  },
+  {
+   "id": "bpic2020_prepaid_travel_costs-C07",
+   "text": "Create circuits for this: group the cases by Permit OrganizationalEntity: 'organizational unit 65455' or 'organizational unit 65456'",
+   "cls": "var",
+   "circuits": [
+    {
+     "name": "Permit_OrganizationalEntity_organizational_unit_65455",
+     "expr": "['Permit OrganizationalEntity' == 'organizational unit 65455']"
+    },
+    {
+     "name": "Permit_OrganizationalEntity_organizational_unit_65456",
+     "expr": "['Permit OrganizationalEntity' == 'organizational unit 65456']"
+    }
+   ],
+   "gold_counts": {
+    "Permit_OrganizationalEntity_organizational_unit_65455": 336,
+    "UNK": 1428,
+    "Permit_OrganizationalEntity_organizational_unit_65456": 335
+   },
+   "texts": [
+    "Create circuits for this: group the cases by Permit OrganizationalEntity: 'organizational unit 65455' or 'organizational unit 65456'",
+    "Create circuits to group the cases by the permit organizational entity: organizational unit 65455 or organizational unit 65456.",
+    "It would be great if you could create circuits grouping the cases by the permit organizational entity, with the two groups being organizational unit 65455 and organizational unit 65456.",
+    "Create circuits to separate the cases by organizational unit: 65455 or 65456."
+   ],
+   "ambiguity": "The variable permit organizational entity is not named and the unit values are shortened to bare numbers, so it is unclear which field and which full values are intended."
+  },
+  {
+   "id": "bpic2020_prepaid_travel_costs-C08",
+   "text": "Create one circuit for each value of Permit TaskNumber: 'task 427' or 'UNKNOWN'",
+   "cls": "var",
+   "circuits": [
+    {
+     "name": "Permit_TaskNumber_task_427",
+     "expr": "['Permit TaskNumber' == 'task 427']"
+    },
+    {
+     "name": "Permit_TaskNumber_UNKNOWN",
+     "expr": "['Permit TaskNumber' == 'UNKNOWN']"
+    }
+   ],
+   "gold_counts": {
+    "Permit_TaskNumber_UNKNOWN": 840,
+    "Permit_TaskNumber_task_427": 1250,
+    "UNK": 9
+   },
+   "texts": [
+    "Create one circuit for each value of Permit TaskNumber: 'task 427' or 'UNKNOWN'",
+    "Create circuits to separate the cases by the permit task number: task 427 or unknown.",
+    "I would like you to create circuits grouping the cases by the permit task number, with the two groups being task 427 and unknown.",
+    "Create circuits to split the cases by task number: 427 or unknown."
+   ],
+   "ambiguity": "The word task number does not specify that it is the permit task number, and the value 427 is shortened from task 427, making it unclear which variable and exact value are meant."
+  },
+  {
+   "id": "bpic2020_prepaid_travel_costs-C09",
+   "text": "Create three circuits: 'Request For Payment REJECTED by ADMINISTRATION' then 'Request For Payment FINAL_APPROVED by SUPERVISOR' in less than 7 days, the rest of those with 'Request For Payment REJECTED by ADMINISTRATION' then 'Request For Payment FINAL_APPROVED by SUPERVISOR', and all the others",
+   "cls": "time",
+   "circuits": [
+    {
+     "name": "Request_For_Payment_REJECTED_by_ADMINISTRATION_to_Request_For_Payment_FINAL_APPROVED_by_SUPERVISOR_fast",
+     "expr": "('Request For Payment REJECTED by ADMINISTRATION' >> 'Request For Payment FINAL_APPROVED by SUPERVISOR')[-7d]"
+    },
+    {
+     "name": "Request_For_Payment_REJECTED_by_ADMINISTRATION_to_Request_For_Payment_FINAL_APPROVED_by_SUPERVISOR_slow",
+     "expr": "('Request For Payment REJECTED by ADMINISTRATION' >> 'Request For Payment FINAL_APPROVED by SUPERVISOR')"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "rest": 1955,
+    "Request_For_Payment_REJECTED_by_ADMINISTRATION_to_Request_For_Payment_FINAL_APPROVED_by_SUPERVISOR_slow": 73,
+    "Request_For_Payment_REJECTED_by_ADMINISTRATION_to_Request_For_Payment_FINAL_APPROVED_by_SUPERVISOR_fast": 71
+   },
+   "texts": [
+    "Create three circuits: 'Request For Payment REJECTED by ADMINISTRATION' then 'Request For Payment FINAL_APPROVED by SUPERVISOR' in less than 7 days, the rest of those with 'Request For Payment REJECTED by ADMINISTRATION' then 'Request For Payment FINAL_APPROVED by SUPERVISOR', and all the others",
+    "Create three circuits: first, cases where the request for payment is rejected by administration and then finally approved by the supervisor in less than seven days; second, the remaining cases where the request for payment is rejected by administration and then finally approved by the supervisor; and third, all the others.",
+    "I would like you to create three circuits: the first capturing cases where the request for payment is rejected by administration and then finally approved by the supervisor within seven days, the second covering the rest of those rejected-then-approved cases, and the third including everything else.",
+    "Make three circuits: one for when the payment request gets rejected by administration and then approved by the supervisor in less than seven days, another for the slower rejected-then-approved cases, and the rest."
+   ],
+   "ambiguity": "The phrase 'the slower rejected-then-approved cases' does not explicitly restate both activity names, so a reader might momentarily wonder which exact pair of activities is meant."
+  },
+  {
+   "id": "bpic2020_prepaid_travel_costs-C10",
+   "text": "Make three circuits by the time between 'Permit APPROVED by PRE_APPROVER' and 'Request For Payment SUBMITTED by EMPLOYEE': less than 10 days, longer, and those without that stretch",
+   "cls": "time",
+   "circuits": [
+    {
+     "name": "Permit_APPROVED_by_PRE_APPROVER_to_Request_For_Payment_SUBMITTED_by_EMPLOYEE_fast",
+     "expr": "('Permit APPROVED by PRE_APPROVER' >> 'Request For Payment SUBMITTED by EMPLOYEE')[-10d]"
+    },
+    {
+     "name": "Permit_APPROVED_by_PRE_APPROVER_to_Request_For_Payment_SUBMITTED_by_EMPLOYEE_slow",
+     "expr": "('Permit APPROVED by PRE_APPROVER' >> 'Request For Payment SUBMITTED by EMPLOYEE')"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "rest": 1944,
+    "Permit_APPROVED_by_PRE_APPROVER_to_Request_For_Payment_SUBMITTED_by_EMPLOYEE_fast": 71,
+    "Permit_APPROVED_by_PRE_APPROVER_to_Request_For_Payment_SUBMITTED_by_EMPLOYEE_slow": 84
+   },
+   "texts": [
+    "Make three circuits by the time between 'Permit APPROVED by PRE_APPROVER' and 'Request For Payment SUBMITTED by EMPLOYEE': less than 10 days, longer, and those without that stretch",
+    "Make three circuits based on the time between the permit approved by the pre-approver and the request for payment submitted by the employee: less than ten days, longer than that, and cases without that stretch.",
+    "Could you create three circuits for me, splitting cases by the time between the permit approved by the pre-approver and the request for payment submitted by the employee into less than ten days, longer, and those that do not have that sequence?",
+    "Create three circuits: fast cases between the permit approval and the payment submission, the slow ones, and the rest."
+   ],
+   "ambiguity": "'Permit approval' and 'payment submission' are shortened names that could each match several activities in the model, making it unclear which exact pair is intended."
+  },
+  {
+   "id": "bpic2020_prepaid_travel_costs-C11",
+   "text": "Create three circuits: cases with Activity equal to 'activity 505' that go through 'Permit FINAL_APPROVED by SUPERVISOR', the rest of the cases with Activity equal to 'activity 505', and all the others",
+   "cls": "mixed",
+   "circuits": [
+    {
+     "name": "Activity_activity_505_Permit_FINAL_APPROVED_by_SUPERVISOR",
+     "expr": "'Permit FINAL_APPROVED by SUPERVISOR' & [Activity == 'activity 505']"
+    },
+    {
+     "name": "Activity_activity_505",
+     "expr": "[Activity == 'activity 505']"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "Activity_activity_505_Permit_FINAL_APPROVED_by_SUPERVISOR": 956,
+    "rest": 833,
+    "Activity_activity_505": 310
+   },
+   "texts": [
+    "Create three circuits: cases with Activity equal to 'activity 505' that go through 'Permit FINAL_APPROVED by SUPERVISOR', the rest of the cases with Activity equal to 'activity 505', and all the others",
+    "Create three circuits: first, cases where the activity is activity 505 and the permit is finally approved by the supervisor; second, the remaining cases where the activity is activity 505; and third, all the others.",
+    "I would like you to make three circuits: one for cases with activity 505 that go through the permit finally approved by the supervisor, another for the rest of the activity 505 cases, and a third for everything else.",
+    "Make three circuits: the ones with activity 505 that pass through the final supervisor approval, the other activity 505 cases, and the rest."
+   ],
+   "ambiguity": "'Final supervisor approval' is a shortened label that could be confused with other supervisor-level approval activities in the process."
+  },
+  {
+   "id": "bpic2020_prepaid_travel_costs-C12",
+   "text": "Make three circuits: Permit OrganizationalEntity equal to 'organizational unit 65455' and 'Request For Payment REJECTED by ADMINISTRATION', only Permit OrganizationalEntity equal to 'organizational unit 65455', and the rest",
+   "cls": "mixed",
+   "circuits": [
+    {
+     "name": "Permit_OrganizationalEntity_organizational_unit_65455_Request_For_Payment_REJECTED_by_ADMINISTRATION",
+     "expr": "'Request For Payment REJECTED by ADMINISTRATION' & ['Permit OrganizationalEntity' == 'organizational unit 65455']"
+    },
+    {
+     "name": "Permit_OrganizationalEntity_organizational_unit_65455",
+     "expr": "['Permit OrganizationalEntity' == 'organizational unit 65455']"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "Permit_OrganizationalEntity_organizational_unit_65455": 326,
+    "rest": 1763,
+    "Permit_OrganizationalEntity_organizational_unit_65455_Request_For_Payment_REJECTED_by_ADMINISTRATION": 10
+   },
+   "texts": [
+    "Make three circuits: Permit OrganizationalEntity equal to 'organizational unit 65455' and 'Request For Payment REJECTED by ADMINISTRATION', only Permit OrganizationalEntity equal to 'organizational unit 65455', and the rest",
+    "Create three circuits: first, cases where the permit organizational entity is organizational unit 65455 and the request for payment is rejected by administration; second, cases where the permit organizational entity is organizational unit 65455; and third, all the others.",
+    "Could you create three circuits for me? I would like the first to capture cases where the permit organizational entity is organizational unit 65455 and the request for payment is rejected by administration, the second to cover just the organizational unit 65455 cases, and the third to include the rest.",
+    "Make three circuits: the ones from organizational unit 65455 that get rejected by administration, the other 65455 cases, and the rest."
+   ],
+   "ambiguity": "'The ones from organizational unit 65455' is a loose reference that does not specify that the variable is the permit organizational entity, so it could be misread as referring to a different entity attribute."
+  }
+ ],
+ "regions": [
+  {
+   "id": "bpic2020_prepaid_travel_costs-R01",
+   "text": "Define a region from 'Request For Payment APPROVED by PRE_APPROVER' to 'Payment Handled'",
+   "cls": "act",
+   "regions": [
+    {
+     "name": "Request_For_Payment_APPROVED_by_PRE_APPROVER_to_Payment_Handled",
+     "expr": "('Request For Payment APPROVED by PRE_APPROVER' >> 'Payment Handled')",
+     "traces": 154
+    }
+   ],
+   "texts": [
+    "Define a region from 'Request For Payment APPROVED by PRE_APPROVER' to 'Payment Handled'",
+    "Define a region from the request for payment approved by the pre-approver to payment handled.",
+    "I would like you to define a region from the request for payment approved by the pre-approver to payment handled.",
+    "Create a region from the payment approval by the pre-approver to when the payment is handled."
+   ],
+   "ambiguity": "'Payment approval by the pre-approver' is a shortened name that could be confused with other approval activities involving the pre-approver role."
+  },
+  {
+   "id": "bpic2020_prepaid_travel_costs-R02",
+   "text": "Define a critical section from 'Permit SUBMITTED by EMPLOYEE' to 'Request For Payment REJECTED by EMPLOYEE'",
+   "cls": "act",
+   "regions": [
+    {
+     "name": "Permit_SUBMITTED_by_EMPLOYEE_to_Request_For_Payment_REJECTED_by_EMPLOYEE",
+     "expr": "('Permit SUBMITTED by EMPLOYEE' >> 'Request For Payment REJECTED by EMPLOYEE')",
+     "traces": 221
+    }
+   ],
+   "texts": [
+    "Define a critical section from 'Permit SUBMITTED by EMPLOYEE' to 'Request For Payment REJECTED by EMPLOYEE'",
+    "Define a critical section from the permit submitted by the employee to the request for payment rejected by the employee.",
+    "Could you define a critical section from the permit submitted by the employee to the request for payment rejected by the employee?",
+    "Make a critical section from the employee's permit submission to the employee's payment rejection."
+   ],
+   "ambiguity": "'Employee's payment rejection' is a shortened name that could refer to different rejection activities performed by the employee."
+  },
+  {
+   "id": "bpic2020_prepaid_travel_costs-R03",
+   "text": "Define a region from 'Request For Payment APPROVED by ADMINISTRATION' to 'Request For Payment APPROVED by BUDGET OWNER'",
+   "cls": "act",
+   "regions": [
+    {
+     "name": "Request_For_Payment_APPROVED_by_ADMINISTRATION_to_Request_For_Payment_APPROVED_by_BUDGET_OWNER",
+     "expr": "('Request For Payment APPROVED by ADMINISTRATION' >> 'Request For Payment APPROVED by BUDGET OWNER')",
+     "traces": 702
+    }
+   ],
+   "texts": [
+    "Define a region from 'Request For Payment APPROVED by ADMINISTRATION' to 'Request For Payment APPROVED by BUDGET OWNER'",
+    "Define a region from the request for payment approved by administration to the request for payment approved by the budget owner.",
+    "I would like you to define a region from the request for payment approved by administration to the request for payment approved by the budget owner.",
+    "Create a region from the administration approval to the budget owner approval."
+   ],
+   "ambiguity": "'Administration approval' and 'budget owner approval' are shortened names that could each match several approval activities in the model."
+  },
+  {
+   "id": "bpic2020_prepaid_travel_costs-R04",
+   "text": "Define two critical sections: from 'Permit FINAL_APPROVED by DIRECTOR' to 'Request For Payment SUBMITTED by EMPLOYEE' and from 'Permit APPROVED by SUPERVISOR' to 'Request For Payment APPROVED by BUDGET OWNER'",
+   "cls": "act",
+   "regions": [
+    {
+     "name": "Permit_FINAL_APPROVED_by_DIRECTOR_to_Request_For_Payment_SUBMITTED_by_EMPLOYEE",
+     "expr": "('Permit FINAL_APPROVED by DIRECTOR' >> 'Request For Payment SUBMITTED by EMPLOYEE')",
+     "traces": 346
+    },
+    {
+     "name": "Permit_APPROVED_by_SUPERVISOR_to_Request_For_Payment_APPROVED_by_BUDGET_OWNER",
+     "expr": "('Permit APPROVED by SUPERVISOR' >> 'Request For Payment APPROVED by BUDGET OWNER')",
+     "traces": 129
+    }
+   ],
+   "texts": [
+    "Define two critical sections: from 'Permit FINAL_APPROVED by DIRECTOR' to 'Request For Payment SUBMITTED by EMPLOYEE' and from 'Permit APPROVED by SUPERVISOR' to 'Request For Payment APPROVED by BUDGET OWNER'",
+    "Define two critical sections: one from the permit finally approved by the director to the request for payment submitted by the employee, and another from the permit approved by the supervisor to the request for payment approved by the budget owner.",
+    "Could you define two critical sections for me? I would like one from the permit finally approved by the director to the request for payment submitted by the employee, and another from the permit approved by the supervisor to the request for payment approved by the budget owner.",
+    "Make two critical sections: from the director's final permit approval to the employee's payment submission, and from the supervisor's permit approval to the budget owner's payment approval."
+   ],
+   "ambiguity": "'The supervisor's permit approval' and 'the director's final permit approval' are both shortened permit-approval references, making it easy to momentarily mix up which role belongs to which section."
+  },
+  {
+   "id": "bpic2020_prepaid_travel_costs-R05",
+   "text": "Define two regions: from 'Request For Payment APPROVED by ADMINISTRATION' to 'Request For Payment APPROVED by BUDGET OWNER' and from 'Request For Payment REJECTED by EMPLOYEE' to 'Payment Handled'",
+   "cls": "act",
+   "regions": [
+    {
+     "name": "Request_For_Payment_APPROVED_by_ADMINISTRATION_to_Request_For_Payment_APPROVED_by_BUDGET_OWNER",
+     "expr": "('Request For Payment APPROVED by ADMINISTRATION' >> 'Request For Payment APPROVED by BUDGET OWNER')",
+     "traces": 702
+    },
+    {
+     "name": "Request_For_Payment_REJECTED_by_EMPLOYEE_to_Payment_Handled",
+     "expr": "('Request For Payment REJECTED by EMPLOYEE' >> 'Payment Handled')",
+     "traces": 176
+    }
+   ],
+   "texts": [
+    "Define two regions: from 'Request For Payment APPROVED by ADMINISTRATION' to 'Request For Payment APPROVED by BUDGET OWNER' and from 'Request For Payment REJECTED by EMPLOYEE' to 'Payment Handled'",
+    "Define two regions: one from request for payment approved by administration to request for payment approved by budget owner, and another from request for payment rejected by employee to payment handled.",
+    "I would like you to define two regions: the first from request for payment approved by administration to request for payment approved by budget owner, and the second from request for payment rejected by employee to payment handled.",
+    "Define two regions: one from the payment approval by administration to the payment approval by budget owner, and another from the payment rejection by employee to payment handled."
+   ],
+   "ambiguity": "The shortened phrases 'payment approval' and 'payment rejection' could refer to different activities in the process, making it unclear which exact activities are meant."
+  },
+  {
+   "id": "bpic2020_prepaid_travel_costs-R06",
+   "text": "Define a region from 'Request For Payment REJECTED by ADMINISTRATION' to 'Request For Payment FINAL_APPROVED by SUPERVISOR' when less than 7 days pass between them",
+   "cls": "time",
+   "regions": [
+    {
+     "name": "Request_For_Payment_REJECTED_by_ADMINISTRATION_to_Request_For_Payment_FINAL_APPROVED_by_SUPERVISOR_fast",
+     "expr": "('Request For Payment REJECTED by ADMINISTRATION' >> 'Request For Payment FINAL_APPROVED by SUPERVISOR')[-7d]",
+     "traces": 71
+    }
+   ],
+   "texts": [
+    "Define a region from 'Request For Payment REJECTED by ADMINISTRATION' to 'Request For Payment FINAL_APPROVED by SUPERVISOR' when less than 7 days pass between them",
+    "Define a region from request for payment rejected by administration to request for payment final approved by supervisor, limited to cases where less than 7 days pass between them.",
+    "It would be interesting if you could define a region from request for payment rejected by administration to request for payment final approved by supervisor, but only when less than 7 days elapse between the two activities.",
+    "Define a region from the payment rejection by administration to the final approval by supervisor when less than 7 days pass."
+   ],
+   "ambiguity": "The shortened phrase 'the payment rejection by administration' could be confused with other rejection activities in the process, and 'the final approval by supervisor' omits the full activity name."
+  },
+  {
+   "id": "bpic2020_prepaid_travel_costs-R07",
+   "text": "Define a critical section from 'Permit APPROVED by PRE_APPROVER' to 'Request For Payment SUBMITTED by EMPLOYEE' when more than 20 days elapse",
+   "cls": "time",
+   "regions": [
+    {
+     "name": "Permit_APPROVED_by_PRE_APPROVER_to_Request_For_Payment_SUBMITTED_by_EMPLOYEE_slow",
+     "expr": "('Permit APPROVED by PRE_APPROVER' >> 'Request For Payment SUBMITTED by EMPLOYEE')[20d-]",
+     "traces": 70
+    }
+   ],
+   "texts": [
+    "Define a critical section from 'Permit APPROVED by PRE_APPROVER' to 'Request For Payment SUBMITTED by EMPLOYEE' when more than 20 days elapse",
+    "Define a critical section from permit approved by pre approver to request for payment submitted by employee, for cases where more than 20 days elapse.",
+    "Could you define a critical section from permit approved by pre approver to request for payment submitted by employee, considering only cases where more than 20 days pass between them?",
+    "Define a critical section from the permit approval to the payment submission when more than 20 days elapse."
+   ],
+   "ambiguity": "The shortened phrase 'the permit approval' could refer to different approval activities within the permit process, and 'the payment submission' is a loose name that does not clearly identify the exact activity."
+  },
+  {
+   "id": "bpic2020_prepaid_travel_costs-R08",
+   "text": "Define a region from 'Permit FINAL_APPROVED by DIRECTOR' to 'Request For Payment FINAL_APPROVED by SUPERVISOR' when less than 20 days pass between them",
+   "cls": "time",
+   "regions": [
+    {
+     "name": "Permit_FINAL_APPROVED_by_DIRECTOR_to_Request_For_Payment_FINAL_APPROVED_by_SUPERVISOR_fast",
+     "expr": "('Permit FINAL_APPROVED by DIRECTOR' >> 'Request For Payment FINAL_APPROVED by SUPERVISOR')[-20d]",
+     "traces": 137
+    }
+   ],
+   "texts": [
+    "Define a region from 'Permit FINAL_APPROVED by DIRECTOR' to 'Request For Payment FINAL_APPROVED by SUPERVISOR' when less than 20 days pass between them",
+    "Define a region from permit final approved by director to request for payment final approved by supervisor, limited to cases where less than 20 days pass between them.",
+    "I would like you to define a region from permit final approved by director to request for payment final approved by supervisor, but only when less than 20 days elapse between the two.",
+    "Define a region from the director's final approval to the supervisor's final approval when less than 20 days pass."
+   ],
+   "ambiguity": "The shortened phrases 'the director's final approval' and 'the supervisor's final approval' omit the full activity names and could be confused with other approval steps in the process."
+  },
+  {
+   "id": "bpic2020_prepaid_travel_costs-R09",
+   "text": "Define a region from 'Request For Payment APPROVED by ADMINISTRATION' to 'Request For Payment APPROVED by BUDGET OWNER' in the cases with Activity equal to 'activity 505'",
+   "cls": "mixed",
+   "regions": [
+    {
+     "name": "Request_For_Payment_APPROVED_by_ADMINISTRATION_to_Request_For_Payment_APPROVED_by_BUDGET_OWNER_Activity_activity_505",
+     "expr": "('Request For Payment APPROVED by ADMINISTRATION' >> 'Request For Payment APPROVED by BUDGET OWNER')[Activity == 'activity 505']",
+     "traces": 413
+    }
+   ],
+   "texts": [
+    "Define a region from 'Request For Payment APPROVED by ADMINISTRATION' to 'Request For Payment APPROVED by BUDGET OWNER' in the cases with Activity equal to 'activity 505'",
+    "Define a region from request for payment approved by administration to request for payment approved by budget owner, but only in the cases where the activity variable equals activity 505.",
+    "Could you please define a region from request for payment approved by administration to request for payment approved by budget owner, restricted to cases where the activity is set to activity 505?",
+    "Define a region from the administration approval to the budget owner approval in cases where the activity is 505."
+   ],
+   "ambiguity": "The shortened phrases 'the administration approval' and 'the budget owner approval' are loose names that could fit multiple activities, and 'the activity' could be misread as referring to a specific activity rather than the variable."
+  },
+  {
+   "id": "bpic2020_prepaid_travel_costs-R10",
+   "text": "Define a critical section from 'Request For Payment REJECTED by EMPLOYEE' to 'Payment Handled' only in the cases with Permit OrganizationalEntity equal to 'organizational unit 65455'",
+   "cls": "mixed",
+   "regions": [
+    {
+     "name": "Request_For_Payment_REJECTED_by_EMPLOYEE_to_Payment_Handled_Permit_OrganizationalEntity_organizational_unit_65455",
+     "expr": "('Request For Payment REJECTED by EMPLOYEE' >> 'Payment Handled')['Permit OrganizationalEntity' == 'organizational unit 65455']",
+     "traces": 20
+    }
+   ],
+   "texts": [
+    "Define a critical section from 'Request For Payment REJECTED by EMPLOYEE' to 'Payment Handled' only in the cases with Permit OrganizationalEntity equal to 'organizational unit 65455'",
+    "Define a critical section from request for payment rejected by employee to payment handled, only in the cases where the permit organizational entity equals organizational unit 65455.",
+    "It would be great if you could define a critical section from request for payment rejected by employee to payment handled, but only for cases where the permit organizational entity is organizational unit 65455.",
+    "Define a critical section from the employee rejection to payment handled in cases where the organizational entity is 65455."
+   ],
+   "ambiguity": "The shortened phrase 'the employee rejection' could refer to either the permit rejected by employee or the request for payment rejected by employee, and 'the organizational entity' omits the 'permit' qualifier."
+  }
+ ],
+ "milestones": [
+  {
+   "id": "bpic2020_prepaid_travel_costs-M01",
+   "text": "Define 'Permit REJECTED by EMPLOYEE' as a milestone",
+   "nodes": [
+    "Permit REJECTED by EMPLOYEE"
+   ],
+   "texts": [
+    "Define 'Permit REJECTED by EMPLOYEE' as a milestone",
+    "Define permit rejected by employee as a milestone.",
+    "I would like you to mark permit rejected by employee as a milestone.",
+    "Mark the rejection by employee as a milestone."
+   ],
+   "ambiguity": "The phrase 'the rejection by employee' could refer to either permit rejected by employee or request for payment rejected by employee, making it unclear which activity is intended."
+  },
+  {
+   "id": "bpic2020_prepaid_travel_costs-M02",
+   "text": "Mark 'Request For Payment REJECTED by EMPLOYEE' and 'Permit APPROVED by SUPERVISOR' as milestones",
+   "nodes": [
+    "Request For Payment REJECTED by EMPLOYEE",
+    "Permit APPROVED by SUPERVISOR"
+   ],
+   "texts": [
+    "Mark 'Request For Payment REJECTED by EMPLOYEE' and 'Permit APPROVED by SUPERVISOR' as milestones",
+    "Mark request for payment rejected by employee and permit approved by supervisor as milestones.",
+    "Could you please define request for payment rejected by employee and permit approved by supervisor as milestones?",
+    "Mark the employee rejection and the supervisor approval as milestones."
+   ],
+   "ambiguity": "The phrase 'the employee rejection' could refer to either permit rejected by employee or request for payment rejected by employee, making it unclear which of the two activities is meant."
+  },
+  {
+   "id": "bpic2020_prepaid_travel_costs-M03",
+   "text": "Use 'Request For Payment APPROVED by ADMINISTRATION' as a milestone",
+   "nodes": [
+    "Request For Payment APPROVED by ADMINISTRATION"
+   ],
+   "texts": [
+    "Use 'Request For Payment APPROVED by ADMINISTRATION' as a milestone",
+    "Make the request for payment approved by administration a milestone.",
+    "Could you please set the request for payment approved by administration as a milestone?",
+    "Make the payment approved by administration a milestone."
+   ],
+   "ambiguity": "Payment is a shortened name that could refer to several payment-related activities in the process."
+  },
+  {
+   "id": "bpic2020_prepaid_travel_costs-M04",
+   "text": "Define 'Request For Payment APPROVED by PRE_APPROVER' as a milestone",
+   "nodes": [
+    "Request For Payment APPROVED by PRE_APPROVER"
+   ],
+   "texts": [
+    "Define 'Request For Payment APPROVED by PRE_APPROVER' as a milestone",
+    "Set the request for payment approved by the pre-approver as a milestone.",
+    "I would like you to define the request for payment approved by the pre-approver as a milestone.",
+    "Make the payment approved by the pre-approver a milestone."
+   ],
+   "ambiguity": "Payment is a shortened form that could fit multiple payment-related activities in the model."
+  },
+  {
+   "id": "bpic2020_prepaid_travel_costs-M05",
+   "text": "Define 'Permit APPROVED by SUPERVISOR' and 'Request For Payment APPROVED by PRE_APPROVER' as milestones",
+   "nodes": [
+    "Permit APPROVED by SUPERVISOR",
+    "Request For Payment APPROVED by PRE_APPROVER"
+   ],
+   "texts": [
+    "Define 'Permit APPROVED by SUPERVISOR' and 'Request For Payment APPROVED by PRE_APPROVER' as milestones",
+    "Mark the permit approved by the supervisor and the request for payment approved by the pre-approver as milestones.",
+    "It would be useful if you could define the permit approved by the supervisor and the request for payment approved by the pre-approver as milestones.",
+    "Mark the permit approved by the supervisor and the payment approved by the pre-approver as milestones."
+   ],
+   "ambiguity": "Payment is a shortened name that could refer to different payment-related activities in the process."
+  },
+  {
+   "id": "bpic2020_prepaid_travel_costs-M06",
+   "text": "Mark 'Request For Payment APPROVED by PRE_APPROVER', 'Request For Payment APPROVED by BUDGET OWNER' and 'Permit FINAL_APPROVED by SUPERVISOR' as milestones",
+   "nodes": [
+    "Request For Payment APPROVED by PRE_APPROVER",
+    "Request For Payment APPROVED by BUDGET OWNER",
+    "Permit FINAL_APPROVED by SUPERVISOR"
+   ],
+   "texts": [
+    "Mark 'Request For Payment APPROVED by PRE_APPROVER', 'Request For Payment APPROVED by BUDGET OWNER' and 'Permit FINAL_APPROVED by SUPERVISOR' as milestones",
+    "Mark the request for payment approved by the pre-approver, the request for payment approved by the budget owner, and the permit final approved by the supervisor as milestones.",
+    "Could you please set the request for payment approved by the pre-approver, the request for payment approved by the budget owner, and the permit final approved by the supervisor as milestones?",
+    "Mark the payment approved by the pre-approver, the payment approved by the budget owner, and the permit final approved by the supervisor as milestones."
+   ],
+   "ambiguity": "Payment is a shortened name that could fit multiple payment-related activities in the model."
+  },
+  {
+   "id": "bpic2020_prepaid_travel_costs-M07",
+   "text": "Define 'Permit APPROVED by BUDGET OWNER' as a milestone",
+   "nodes": [
+    "Permit APPROVED by BUDGET OWNER"
+   ],
+   "texts": [
+    "Define 'Permit APPROVED by BUDGET OWNER' as a milestone",
+    "Define the permit approved by the budget owner as a milestone.",
+    "I would like you to mark the permit approved by the budget owner as a milestone.",
+    "Define the permit approved by the owner as a milestone."
+   ],
+   "ambiguity": "Owner without the qualifier budget could refer to different types of owners in the process."
+  },
+  {
+   "id": "bpic2020_prepaid_travel_costs-M08",
+   "text": "Mark 'Permit FINAL_APPROVED by DIRECTOR' and 'Permit REJECTED by EMPLOYEE' as milestones",
+   "nodes": [
+    "Permit FINAL_APPROVED by DIRECTOR",
+    "Permit REJECTED by EMPLOYEE"
+   ],
+   "texts": [
+    "Mark 'Permit FINAL_APPROVED by DIRECTOR' and 'Permit REJECTED by EMPLOYEE' as milestones",
+    "Mark the permit final approved by the director and the permit rejected by the employee as milestones.",
+    "It would be interesting if you could define the permit final approved by the director and the permit rejected by the employee as milestones.",
+    "Mark the permit approved by the director and the permit rejected by the employee as milestones."
+   ],
+   "ambiguity": "Approved without the qualifier final could refer to a different approval stage of the permit."
+  },
+  {
+   "id": "bpic2020_prepaid_travel_costs-M09",
+   "text": "Define 'Permit APPROVED by PRE_APPROVER', 'Permit APPROVED by SUPERVISOR' and 'Permit FINAL_APPROVED by DIRECTOR' as milestones",
+   "nodes": [
+    "Permit APPROVED by PRE_APPROVER",
+    "Permit APPROVED by SUPERVISOR",
+    "Permit FINAL_APPROVED by DIRECTOR"
+   ],
+   "texts": [
+    "Define 'Permit APPROVED by PRE_APPROVER', 'Permit APPROVED by SUPERVISOR' and 'Permit FINAL_APPROVED by DIRECTOR' as milestones",
+    "Define the permit approved by the pre-approver, the permit approved by the supervisor, and the permit final approved by the director as milestones.",
+    "Could you set the permit approved by the pre-approver, the permit approved by the supervisor, and the permit final approved by the director as milestones?",
+    "Define the permit approved by the pre-approver, the permit approved by the supervisor, and the permit approved by the director as milestones."
+   ],
+   "ambiguity": "Approved by the director without the qualifier final could refer to a different approval stage of the permit."
+  },
+  {
+   "id": "bpic2020_prepaid_travel_costs-M10",
+   "text": "Define 'Permit SUBMITTED by EMPLOYEE' as a milestone",
+   "nodes": [
+    "Permit SUBMITTED by EMPLOYEE"
+   ],
+   "texts": [
+    "Define 'Permit SUBMITTED by EMPLOYEE' as a milestone",
+    "Set the permit submitted by the employee as a milestone.",
+    "I would like you to mark the permit submitted by the employee as a milestone.",
+    "Set the permit sent by the employee as a milestone."
+   ],
+   "ambiguity": "Sent is a loosely named activity that could refer to different submission or sending actions in the process."
+  }
+ ],
+ "asks": [],
+ "levels": [
+  "order (robotic, exact names)",
+  "natural",
+  "polite",
+  "ambiguous"
+ ]
+}

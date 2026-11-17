@@ -1,0 +1,863 @@
+{
+ "log": "ictus",
+ "lang": "es",
+ "cases": 2000,
+ "version": "v2",
+ "note": "orders only; no clarification items; one wording per item",
+ "filters": [
+  {
+   "id": "ictus-F01",
+   "family": "existe",
+   "cls": "act",
+   "text": "Limita los casos a: pacientes que recibieron trombólisis",
+   "expr": "'Trombolisis'",
+   "count": 382,
+   "pct": 19.1,
+   "case_hash": "5790af9da23e7aa8",
+   "texts": [
+    "Limita los casos a: pacientes que recibieron trombólisis",
+    "Filtra los casos a pacientes que recibieron trombólisis.",
+    "¿Podrías limitar los casos a aquellos pacientes que recibieron trombólisis?",
+    "Limita los casos a los de trombólisis."
+   ],
+   "ambiguity": "The shortened nominal phrase \"los de trombólisis\" could refer to the cases themselves or to the patients who underwent the procedure."
+  },
+  {
+   "id": "ictus-F02",
+   "family": "existe",
+   "cls": "act",
+   "text": "Limita los casos a: pacientes que ingresaron en UCI",
+   "expr": "'IngresoUCI'",
+   "count": 312,
+   "pct": 15.6,
+   "case_hash": "cba7d69bf2ab0a90",
+   "texts": [
+    "Limita los casos a: pacientes que ingresaron en UCI",
+    "Filtra los casos a pacientes que ingresaron en la UCI.",
+    "Sería interesante que limitaras los casos a los pacientes con ingreso en UCI.",
+    "Limita los casos a los que entraron en la UCI."
+   ],
+   "ambiguity": "The vague verb \"entraron\" could mean physically walking into the ICU room rather than being formally admitted to it."
+  },
+  {
+   "id": "ictus-F33",
+   "family": "variable",
+   "cls": "var",
+   "text": "Limita los casos a: pacientes mayores de 80 años",
+   "expr": "[Edad > 80]",
+   "count": 524,
+   "pct": 26.2,
+   "case_hash": "2045a6cfe737a792",
+   "texts": [
+    "Limita los casos a: pacientes mayores de 80 años",
+    "Filtra los casos a pacientes mayores de 80 años.",
+    "¿Podrías limitar los casos a aquellos pacientes que tengan más de 80 años?",
+    "Limita los casos a los mayores de 80."
+   ],
+   "ambiguity": "The noun \"pacientes\" is omitted, so \"los mayores de 80\" could refer to the cases in the dataset rather than to the patients."
+  },
+  {
+   "id": "ictus-F34",
+   "family": "variable",
+   "cls": "var",
+   "text": "Limita los casos a: pacientes con ictus grave",
+   "expr": "[Gravedad == 'grave']",
+   "count": 347,
+   "pct": 17.4,
+   "case_hash": "7b4af60f108d99dc",
+   "texts": [
+    "Limita los casos a: pacientes con ictus grave",
+    "Filtra los casos a pacientes con ictus grave.",
+    "¿Podrías limitar los casos a los pacientes cuyo ictus es grave?",
+    "Limita los casos a los ictus graves."
+   ],
+   "ambiguity": "The phrase \"los ictus graves\" shifts the referent from patients to the stroke events themselves, making it unclear what entity is being filtered."
+  },
+  {
+   "id": "ictus-F42",
+   "family": "tiempo",
+   "cls": "time",
+   "text": "Limita los casos a: pacientes a los que se hizo el TAC en menos de 30 minutos desde el triaje",
+   "expr": "('TriajeUrgencias' >> 'TAC')[-30m]",
+   "count": 653,
+   "pct": 32.6,
+   "case_hash": "93f8cf9770a647c5",
+   "texts": [
+    "Limita los casos a: pacientes a los que se hizo el TAC en menos de 30 minutos desde el triaje",
+    "Filtra los casos a pacientes a los que se hizo el TAC en menos de 30 minutos desde el triaje de urgencias.",
+    "¿Podrías limitar los casos a aquellos en los que el TAC se realizó en menos de 30 minutos tras el triaje de urgencias?",
+    "Limita los casos a los que hicieron el TAC en menos de 30 minutos desde el triaje."
+   ],
+   "ambiguity": "The shortened name \"el triaje\" omits \"de urgencias\" and could match a different triage activity in the model."
+  },
+  {
+   "id": "ictus-F43",
+   "family": "tiempo",
+   "cls": "time",
+   "text": "Limita los casos a: pacientes con más de una hora entre el triaje y la trombólisis",
+   "expr": "('TriajeUrgencias' >> 'Trombolisis')[1h-]",
+   "count": 252,
+   "pct": 12.6,
+   "case_hash": "f2a854082be0884b",
+   "texts": [
+    "Limita los casos a: pacientes con más de una hora entre el triaje y la trombólisis",
+    "Filtra los casos a pacientes con más de una hora entre el triaje de urgencias y la trombólisis.",
+    "¿Podrías limitar los casos a aquellos donde transcurrió más de una hora entre el triaje de urgencias y la trombólisis?",
+    "Limita los casos a los que tuvieron más de una hora entre el triaje de urgencias y la trombólisis."
+   ],
+   "ambiguity": "The pronoun \"los que\" lacks a clear referent and could point to the cases, the patients, or the medical team."
+  },
+  {
+   "id": "ictus-F40",
+   "family": "variable+actividad",
+   "cls": "mixed",
+   "text": "Limita los casos a: pacientes mayores de 70 años con trombólisis",
+   "expr": "'Trombolisis' & [Edad > 70]",
+   "count": 220,
+   "pct": 11.0,
+   "case_hash": "f4e718e141fbf509",
+   "texts": [
+    "Limita los casos a: pacientes mayores de 70 años con trombólisis",
+    "Filtra los casos a pacientes mayores de 70 años que recibieron trombólisis.",
+    "¿Podrías limitar los casos a pacientes de más de 70 años con trombólisis?",
+    "Limita los casos a los mayores de 70 con trombólisis."
+   ],
+   "ambiguity": "The noun \"pacientes\" is dropped, so \"los mayores de 70\" could be read as the older cases in the dataset rather than the patients."
+  },
+  {
+   "id": "ictus-F41",
+   "family": "variable+secuencia",
+   "cls": "mixed",
+   "text": "Limita los casos a: mujeres con TAC y, más tarde, trombólisis",
+   "expr": "('TAC' >> 'Trombolisis')[Sexo == 'F']",
+   "count": 174,
+   "pct": 8.7,
+   "case_hash": "8bad40d244613dca",
+   "texts": [
+    "Limita los casos a: mujeres con TAC y, más tarde, trombólisis",
+    "Filtra los casos a mujeres que tuvieron TAC y, después, trombólisis.",
+    "¿Podrías limitar los casos a las pacientes mujeres que recibieron TAC y, más tarde, trombólisis?",
+    "Limita los casos a mujeres con TAC y luego trombólisis."
+   ],
+   "ambiguity": "The connector \"luego\" is unspecific and could mean a strict immediate sequence or a more general \"afterwards\" without a defined time gap."
+  }
+ ],
+ "circuits": [
+  {
+   "id": "ictus-C01",
+   "text": "Crea circuitos para esto: separa los pacientes según cómo terminan: a casa, a un centro de rehabilitación, a una residencia o fallecidos",
+   "cls": "act",
+   "circuits": [
+    {
+     "name": "domicilio",
+     "expr": "'AltaDomicilio'"
+    },
+    {
+     "name": "rehabilitacion",
+     "expr": "'AltaCentroRehabilitacion'"
+    },
+    {
+     "name": "residencia",
+     "expr": "'AltaResidencia'"
+    },
+    {
+     "name": "fallecimiento",
+     "expr": "'Exitus'"
+    }
+   ],
+   "gold_counts": {
+    "residencia": 308,
+    "domicilio": 1230,
+    "fallecimiento": 272,
+    "rehabilitacion": 190
+   },
+   "texts": [
+    "Crea circuitos para esto: separa los pacientes según cómo terminan: a casa, a un centro de rehabilitación, a una residencia o fallecidos",
+    "Crea circuitos que separen a los pacientes según su destino final: alta a domicilio, alta a centro de rehabilitación, alta a residencia o fallecimiento.",
+    "¿Podrías crear circuitos para dividir a los pacientes en cuatro grupos según cómo terminan: a domicilio, a un centro de rehabilitación, a una residencia o fallecidos?",
+    "Crea circuitos que agrupen a los pacientes por su salida: a casa, a rehabilitación, a residencia o los que mueren."
+   ],
+   "ambiguity": "a casa is a colloquial shortening that could match different discharge activities."
+  },
+  {
+   "id": "ictus-C02",
+   "text": "Crea circuitos para esto: divide a los pacientes en tres grupos: los que tuvieron trombectomía, los que solo tuvieron trombólisis y los que no recibieron reperfusión",
+   "cls": "act",
+   "circuits": [
+    {
+     "name": "trombectomia",
+     "expr": "'Trombectomia'"
+    },
+    {
+     "name": "solo_trombolisis",
+     "expr": "'Trombolisis'"
+    },
+    {
+     "name": "sin_reperfusion",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "solo_trombolisis": 307,
+    "sin_reperfusion": 1517,
+    "trombectomia": 176
+   },
+   "texts": [
+    "Crea circuitos para esto: divide a los pacientes en tres grupos: los que tuvieron trombectomía, los que solo tuvieron trombólisis y los que no recibieron reperfusión",
+    "Crea circuitos que dividan a los pacientes en tres grupos: los que tuvieron trombectomía, los que solo tuvieron trombólisis y los que no recibieron reperfusión.",
+    "Sería interesante que crearas circuitos para separar a los pacientes en tres grupos según el tratamiento: trombectomía, solo trombólisis y sin reperfusión.",
+    "Crea circuitos que agrupen a los pacientes por tratamiento: trombectomía, trombólisis y el resto."
+   ],
+   "ambiguity": "el resto is too vague and does not specify that it means patients who received no reperfusion."
+  },
+  {
+   "id": "ictus-C03",
+   "text": "Crea circuitos para esto: clasifica a los pacientes según dónde ingresan: UCI, unidad de ictus o planta",
+   "cls": "act",
+   "circuits": [
+    {
+     "name": "uci",
+     "expr": "'IngresoUCI'"
+    },
+    {
+     "name": "unidad_ictus",
+     "expr": "'IngresoUnidadIctus'"
+    },
+    {
+     "name": "planta",
+     "expr": "'IngresoPlanta'"
+    }
+   ],
+   "gold_counts": {
+    "planta": 483,
+    "unidad_ictus": 1205,
+    "uci": 312
+   },
+   "texts": [
+    "Crea circuitos para esto: clasifica a los pacientes según dónde ingresan: UCI, unidad de ictus o planta",
+    "Crea circuitos que clasifiquen a los pacientes según dónde ingresan: UCI, unidad de ictus o planta.",
+    "Me gustaría que crearas circuitos para dividir a los pacientes en tres grupos según su lugar de ingreso: UCI, unidad de ictus o planta.",
+    "Crea circuitos que separen a los pacientes por su ingreso: UCI, unidad de ictus o el resto."
+   ],
+   "ambiguity": "el resto does not explicitly name the ward (planta) admission type."
+  },
+  {
+   "id": "ictus-C04",
+   "text": "Crea circuitos para esto: separa los casos según cómo terminan: «AltaDomicilio» o «AltaResidencia»",
+   "cls": "act",
+   "circuits": [
+    {
+     "name": "ends_AltaDomicilio",
+     "expr": "'AltaDomicilio'$"
+    },
+    {
+     "name": "ends_AltaResidencia",
+     "expr": "'AltaResidencia'$"
+    }
+   ],
+   "gold_counts": {
+    "ends_AltaResidencia": 308,
+    "ends_AltaDomicilio": 1230,
+    "UNK": 462
+   },
+   "texts": [
+    "Crea circuitos para esto: separa los casos según cómo terminan: «AltaDomicilio» o «AltaResidencia»",
+    "Crea circuitos que separen los casos según cómo terminan: con alta a domicilio o con alta a residencia.",
+    "¿Podrías crear circuitos para dividir los casos en dos grupos según su actividad final: alta a domicilio o alta a residencia?",
+    "Crea circuitos que separen los casos por su final: a domicilio o a residencia."
+   ],
+   "ambiguity": "a domicilio o a residencia without the word alta could be confused with other activities involving those locations."
+  },
+  {
+   "id": "ictus-C05",
+   "text": "Crea circuitos para esto: separa a los pacientes por gravedad al llegar: grave, moderada y leve",
+   "cls": "var",
+   "circuits": [
+    {
+     "name": "grave",
+     "expr": "[Gravedad == 'grave']"
+    },
+    {
+     "name": "moderado",
+     "expr": "[Gravedad == 'moderado']"
+    },
+    {
+     "name": "leve",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "moderado": 775,
+    "leve": 878,
+    "grave": 347
+   },
+   "texts": [
+    "Crea circuitos para esto: separa a los pacientes por gravedad al llegar: grave, moderada y leve",
+    "Crea circuitos que separen a los pacientes según su gravedad al llegar: primero los graves, después los moderados y al final los leves.",
+    "¿Podrías crear circuitos para clasificar a los pacientes por su gravedad al ingreso, de forma que primero queden los graves, luego los moderados y por último los leves?",
+    "Crea circuitos para separar a los pacientes por gravedad al llegar: los graves, los moderados y los que queden."
+   ],
+   "ambiguity": "The catch-all group is described as 'los que queden' instead of being explicitly named 'leve', so the reader must infer which severity level it refers to."
+  },
+  {
+   "id": "ictus-C06",
+   "text": "Crea circuitos para esto: separa los casos según AlimentacionSinCribado: «no» o «si»",
+   "cls": "var",
+   "circuits": [
+    {
+     "name": "AlimentacionSinCribado_no",
+     "expr": "[AlimentacionSinCribado == 'no']"
+    },
+    {
+     "name": "AlimentacionSinCribado_si",
+     "expr": "[AlimentacionSinCribado == 'si']"
+    }
+   ],
+   "gold_counts": {
+    "AlimentacionSinCribado_no": 1815,
+    "AlimentacionSinCribado_si": 185
+   },
+   "texts": [
+    "Crea circuitos para esto: separa los casos según AlimentacionSinCribado: «no» o «si»",
+    "Crea circuitos que separen los casos según alimentación sin cribado: no o sí.",
+    "¿Podrías crear circuitos para dividir los casos en dos grupos según la variable de alimentación sin cribado: no o sí?",
+    "Crea circuitos que separen los casos por cribado de alimentación: no o sí."
+   ],
+   "ambiguity": "cribado de alimentación drops the sin (without), which could invert the meaning of the variable."
+  },
+  {
+   "id": "ictus-C07",
+   "text": "Crea circuitos para esto: agrupa los casos por Anticoagulado: «no» o «si»",
+   "cls": "var",
+   "circuits": [
+    {
+     "name": "Anticoagulado_no",
+     "expr": "[Anticoagulado == 'no']"
+    },
+    {
+     "name": "Anticoagulado_si",
+     "expr": "[Anticoagulado == 'si']"
+    }
+   ],
+   "gold_counts": {
+    "Anticoagulado_no": 1854,
+    "Anticoagulado_si": 146
+   },
+   "texts": [
+    "Crea circuitos para esto: agrupa los casos por Anticoagulado: «no» o «si»",
+    "Crea circuitos que agrupen los casos según anticoagulado: no o sí.",
+    "¿Podrías crear circuitos para dividir los casos en dos grupos según si estaban anticoagulados: no o sí?",
+    "Crea circuitos que separen los casos por anticoagulación: no o sí."
+   ],
+   "ambiguity": "anticoagulación is a shortened form that could refer to the treatment itself rather than the patient's anticoagulated status."
+  },
+  {
+   "id": "ictus-C08",
+   "text": "Crea un circuito por cada valor de CodigoActivado: «si» o «no»",
+   "cls": "var",
+   "circuits": [
+    {
+     "name": "CodigoActivado_si",
+     "expr": "[CodigoActivado == 'si']"
+    },
+    {
+     "name": "CodigoActivado_no",
+     "expr": "[CodigoActivado == 'no']"
+    }
+   ],
+   "gold_counts": {
+    "CodigoActivado_si": 1666,
+    "CodigoActivado_no": 334
+   },
+   "texts": [
+    "Crea un circuito por cada valor de CodigoActivado: «si» o «no»",
+    "Crea circuitos, uno por cada valor de código activado: sí o no.",
+    "Me gustaría que crearas circuitos para separar los casos según el código activado: sí o no.",
+    "Crea circuitos por cada valor de código: sí o no."
+   ],
+   "ambiguity": "código is shortened from código activado and could refer to a different code variable."
+  },
+  {
+   "id": "ictus-C09",
+   "text": "Crea tres circuitos: «PlanAlta» y luego «AltaCentroRehabilitacion» en menos de 14 días, el resto de los que tienen «PlanAlta» y luego «AltaCentroRehabilitacion», y los demás",
+   "cls": "time",
+   "circuits": [
+    {
+     "name": "PlanAlta_to_AltaCentroRehabilitacion_fast",
+     "expr": "('PlanAlta' >> 'AltaCentroRehabilitacion')[-14d]"
+    },
+    {
+     "name": "PlanAlta_to_AltaCentroRehabilitacion_slow",
+     "expr": "('PlanAlta' >> 'AltaCentroRehabilitacion')"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "rest": 1810,
+    "PlanAlta_to_AltaCentroRehabilitacion_slow": 121,
+    "PlanAlta_to_AltaCentroRehabilitacion_fast": 69
+   },
+   "texts": [
+    "Crea tres circuitos: «PlanAlta» y luego «AltaCentroRehabilitacion» en menos de 14 días, el resto de los que tienen «PlanAlta» y luego «AltaCentroRehabilitacion», y los demás",
+    "Crea tres circuitos: los casos que van del plan de alta al alta a centro de rehabilitación en menos de catorce días, el resto que sí pasan por esas dos actividades, y todos los demás.",
+    "Me gustaría que crearas tres circuitos: uno para los que van del plan de alta al alta a centro de rehabilitación en menos de catorce días, otro para el resto con ese tramo, y un último para los que no.",
+    "Crea tres circuitos: los que van del plan de alta a la rehabilitación en menos de catorce días, los demás con ese tramo, y el resto."
+   ],
+   "ambiguity": "la rehabilitación is a shortened name that could refer to different activities related to rehabilitation."
+  },
+  {
+   "id": "ictus-C10",
+   "text": "Haz tres circuitos según el tiempo entre «TAC» y «OrdenAlimentacionPrecoz»: menos de 4 horas, más tiempo, y los que no tienen ese tramo",
+   "cls": "time",
+   "circuits": [
+    {
+     "name": "TAC_to_OrdenAlimentacionPrecoz_fast",
+     "expr": "('TAC' >> 'OrdenAlimentacionPrecoz')[-4h]"
+    },
+    {
+     "name": "TAC_to_OrdenAlimentacionPrecoz_slow",
+     "expr": "('TAC' >> 'OrdenAlimentacionPrecoz')"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "rest": 1819,
+    "TAC_to_OrdenAlimentacionPrecoz_slow": 117,
+    "TAC_to_OrdenAlimentacionPrecoz_fast": 64
+   },
+   "texts": [
+    "Haz tres circuitos según el tiempo entre «TAC» y «OrdenAlimentacionPrecoz»: menos de 4 horas, más tiempo, y los que no tienen ese tramo",
+    "Haz tres circuitos según el tiempo entre el TAC y la orden de alimentación precoz: menos de cuatro horas, más tiempo, y los que no tienen ese tramo.",
+    "¿Podrías hacer tres circuitos basados en el tiempo que pasa entre el TAC y la orden de alimentación precoz? Uno para menos de cuatro horas, otro para más tiempo, y otro para los que no tienen ese tramo.",
+    "Crea tres circuitos según el tiempo entre la tomografía y la orden de alimentación precoz: menos de cuatro horas, más, y los que no."
+   ],
+   "ambiguity": "la tomografía is a loosely named activity that could refer to different types of tomography."
+  },
+  {
+   "id": "ictus-C11",
+   "text": "Crea tres circuitos: casos con AlimentacionSinCribado igual a «no» que pasan por «DisfagiaDetectada», el resto de casos con AlimentacionSinCribado igual a «no», y los demás",
+   "cls": "mixed",
+   "circuits": [
+    {
+     "name": "AlimentacionSinCribado_no_DisfagiaDetectada",
+     "expr": "'DisfagiaDetectada' & [AlimentacionSinCribado == 'no']"
+    },
+    {
+     "name": "AlimentacionSinCribado_no",
+     "expr": "[AlimentacionSinCribado == 'no']"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "AlimentacionSinCribado_no": 1354,
+    "rest": 185,
+    "AlimentacionSinCribado_no_DisfagiaDetectada": 461
+   },
+   "texts": [
+    "Crea tres circuitos: casos con AlimentacionSinCribado igual a «no» que pasan por «DisfagiaDetectada», el resto de casos con AlimentacionSinCribado igual a «no», y los demás",
+    "Crea tres circuitos: primero los casos con alimentación sin cribado en no que pasan por disfagia detectada, después el resto de casos con alimentación sin cribado en no, y al final los demás.",
+    "¿Podrías crear tres circuitos, por favor? El primero para los casos donde alimentación sin cribado es no y pasan por disfagia detectada, el segundo para el resto con alimentación sin cribado en no, y el tercero para todos los demás.",
+    "Crea tres circuitos: los que tienen alimentación sin cribado en no y pasan por disfagia, los otros con alimentación sin cribado en no, y el resto."
+   ],
+   "ambiguity": "disfagia is a shortened name that could refer to disfagia detectada or another activity related to dysphagia."
+  },
+  {
+   "id": "ictus-C12",
+   "text": "Crea tres circuitos: casos con Anticoagulado igual a «no» que pasan por «Trombectomia», el resto de casos con Anticoagulado igual a «no», y los demás",
+   "cls": "mixed",
+   "circuits": [
+    {
+     "name": "Anticoagulado_no_Trombectomia",
+     "expr": "'Trombectomia' & [Anticoagulado == 'no']"
+    },
+    {
+     "name": "Anticoagulado_no",
+     "expr": "[Anticoagulado == 'no']"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "Anticoagulado_no": 1699,
+    "Anticoagulado_no_Trombectomia": 155,
+    "rest": 146
+   },
+   "texts": [
+    "Crea tres circuitos: casos con Anticoagulado igual a «no» que pasan por «Trombectomia», el resto de casos con Anticoagulado igual a «no», y los demás",
+    "Crea tres circuitos: los casos con anticoagulado igual a no que pasan por la trombectomía, el resto con anticoagulado igual a no, y los demás.",
+    "¿Podrías crear tres circuitos, por favor? Uno para los casos con anticoagulado en no que pasan por la trombectomía, otro para el resto con anticoagulado en no, y un último para los que no.",
+    "Haz tres circuitos: los que no están anticoagulados y pasan por la trombectomía, el resto de los no anticoagulados, y los demás."
+   ],
+   "ambiguity": "no están anticoagulados is a looser phrasing of the variable value that could be interpreted as a general clinical state rather than a specific variable."
+  }
+ ],
+ "regions": [
+  {
+   "id": "ictus-R01",
+   "text": "Define una región desde «TAC» hasta «Trombolisis»",
+   "cls": "act",
+   "regions": [
+    {
+     "name": "tac_a_trombolisis",
+     "expr": "('TAC' >> 'Trombolisis')",
+     "traces": 356
+    }
+   ],
+   "texts": [
+    "Define una región desde «TAC» hasta «Trombolisis»",
+    "Define una región desde el TAC hasta la trombólisis.",
+    "¿Podrías definir una región que vaya desde el TAC hasta la trombólisis?",
+    "Define una región desde la tomografía hasta la trombólisis."
+   ],
+   "ambiguity": "la tomografía is a loosely named activity that could refer to different types of tomography."
+  },
+  {
+   "id": "ictus-R02",
+   "text": "Define una sección crítica desde «CribadoDisfagia» hasta «Logopedia»",
+   "cls": "act",
+   "regions": [
+    {
+     "name": "disfagia_a_logopedia",
+     "expr": "('CribadoDisfagia' >> 'Logopedia')",
+     "traces": 376
+    }
+   ],
+   "texts": [
+    "Define una sección crítica desde «CribadoDisfagia» hasta «Logopedia»",
+    "Define una sección crítica desde el cribado de disfagia hasta la logopedia.",
+    "Me gustaría que definieras una sección crítica que vaya desde el cribado de disfagia hasta la logopedia.",
+    "Define una sección crítica desde el cribado hasta la logopedia."
+   ],
+   "ambiguity": "el cribado is a shortened name that could refer to different screening activities."
+  },
+  {
+   "id": "ictus-R03",
+   "text": "Define una región desde «AngioTAC» hasta «ControlEvolutivo»",
+   "cls": "act",
+   "regions": [
+    {
+     "name": "AngioTAC_to_ControlEvolutivo",
+     "expr": "('AngioTAC' >> 'ControlEvolutivo')",
+     "traces": 762
+    }
+   ],
+   "texts": [
+    "Define una región desde «AngioTAC» hasta «ControlEvolutivo»",
+    "Define una región desde el angio-TAC hasta el control evolutivo.",
+    "¿Podrías definir una región que vaya desde el angio-TAC hasta el control evolutivo?",
+    "Define una región desde el angio hasta el control evolutivo."
+   ],
+   "ambiguity": "el angio is a shortened name that could refer to different angiography-related activities."
+  },
+  {
+   "id": "ictus-R04",
+   "text": "Define dos secciones críticas: de «TriajeUrgencias» a «TAC» y de «IngresoUnidadIctus» a «SalidaHospital»",
+   "cls": "act",
+   "regions": [
+    {
+     "name": "triaje_a_tac",
+     "expr": "('TriajeUrgencias' >> 'TAC')",
+     "traces": 1974
+    },
+    {
+     "name": "unidad_a_salida",
+     "expr": "('IngresoUnidadIctus' >> 'SalidaHospital')",
+     "traces": 1061
+    }
+   ],
+   "texts": [
+    "Define dos secciones críticas: de «TriajeUrgencias» a «TAC» y de «IngresoUnidadIctus» a «SalidaHospital»",
+    "Define dos secciones críticas: de triaje de urgencias a TAC y de ingreso en unidad de ictus a salida del hospital.",
+    "¿Podrías definir dos secciones críticas, una que vaya de triaje de urgencias a TAC y otra de ingreso en unidad de ictus a salida del hospital?",
+    "Define dos regiones: de triaje a TAC y de ingreso en unidad de ictus a salida del hospital."
+   ],
+   "ambiguity": "The activity 'triage' is shortened and could refer to a different triage activity besides the emergency triage."
+  },
+  {
+   "id": "ictus-R05",
+   "text": "Define dos regiones: de «AngioTAC» a «ControlEvolutivo» y de «IngresoUnidadIctus» a «CribadoDisfagia»",
+   "cls": "act",
+   "regions": [
+    {
+     "name": "AngioTAC_to_ControlEvolutivo",
+     "expr": "('AngioTAC' >> 'ControlEvolutivo')",
+     "traces": 762
+    },
+    {
+     "name": "IngresoUnidadIctus_to_CribadoDisfagia",
+     "expr": "('IngresoUnidadIctus' >> 'CribadoDisfagia')",
+     "traces": 1096
+    }
+   ],
+   "texts": [
+    "Define dos regiones: de «AngioTAC» a «ControlEvolutivo» y de «IngresoUnidadIctus» a «CribadoDisfagia»",
+    "Define dos regiones: una de angio TAC a control evolutivo y otra del ingreso en la unidad de ictus al cribado de disfagia.",
+    "¿Podrías definir dos regiones, una que va de angio TAC hasta control evolutivo y otra que va del ingreso en la unidad de ictus al cribado de disfagia?",
+    "Define dos regiones: de angio TAC a control evolutivo y de ingreso a cribado de disfagia."
+   ],
+   "ambiguity": "The start activity of the second region is shortened to just 'ingreso', which could refer to several admission activities in the model."
+  },
+  {
+   "id": "ictus-R06",
+   "text": "Define una región desde «PlanAlta» hasta «AltaCentroRehabilitacion» cuando pasan menos de 14 días entre ambos",
+   "cls": "time",
+   "regions": [
+    {
+     "name": "PlanAlta_to_AltaCentroRehabilitacion_fast",
+     "expr": "('PlanAlta' >> 'AltaCentroRehabilitacion')[-14d]",
+     "traces": 69
+    }
+   ],
+   "texts": [
+    "Define una región desde «PlanAlta» hasta «AltaCentroRehabilitacion» cuando pasan menos de 14 días entre ambos",
+    "Define una región desde el plan de alta hasta el alta en el centro de rehabilitación cuando pasan menos de 14 días entre ambos.",
+    "Me gustaría que definieras una región que va del plan de alta al alta en el centro de rehabilitación, siempre que el tiempo entre ambos sea inferior a 14 días.",
+    "Define una región entre el plan de alta y el alta en rehabilitación si el intervalo es menor de 14 días."
+   ],
+   "ambiguity": "The end activity is shortened to 'alta en rehabilitación', which could be confused with other discharge or rehabilitation-related activities."
+  },
+  {
+   "id": "ictus-R07",
+   "text": "Define una sección crítica desde «TAC» hasta «OrdenAlimentacionPrecoz» cuando transcurren más de 4 horas",
+   "cls": "time",
+   "regions": [
+    {
+     "name": "TAC_to_OrdenAlimentacionPrecoz_slow",
+     "expr": "('TAC' >> 'OrdenAlimentacionPrecoz')[4h-]",
+     "traces": 117
+    }
+   ],
+   "texts": [
+    "Define una sección crítica desde «TAC» hasta «OrdenAlimentacionPrecoz» cuando transcurren más de 4 horas",
+    "Define una sección crítica desde el TAC hasta la orden de alimentación precoz cuando transcurren más de 4 horas.",
+    "Sería interesante que definieras una sección crítica que va del TAC a la orden de alimentación precoz en los casos en que pasan más de 4 horas.",
+    "Define una sección crítica desde la tomografía hasta la orden de alimentación precoz cuando transcurren más de 4 horas."
+   ],
+   "ambiguity": "The start activity is referred to as 'tomografía' instead of 'TAC', which could match other CT scan or imaging activities in the model."
+  },
+  {
+   "id": "ictus-R08",
+   "text": "Define una región desde «OrdenAlimentacionPrecoz» hasta «SalidaHospital» cuando pasan menos de 6 días entre ambos",
+   "cls": "time",
+   "regions": [
+    {
+     "name": "OrdenAlimentacionPrecoz_to_SalidaHospital_fast",
+     "expr": "('OrdenAlimentacionPrecoz' >> 'SalidaHospital')[-6d]",
+     "traces": 69
+    }
+   ],
+   "texts": [
+    "Define una región desde «OrdenAlimentacionPrecoz» hasta «SalidaHospital» cuando pasan menos de 6 días entre ambos",
+    "Define una región desde la orden de alimentación precoz hasta la salida del hospital cuando pasan menos de 6 días entre ambos.",
+    "¿Podrías definir una región que va de la orden de alimentación precoz a la salida del hospital, siempre que el intervalo sea inferior a 6 días?",
+    "Define una región desde la orden de alimentación precoz hasta la salida cuando pasan menos de 6 días."
+   ],
+   "ambiguity": "The end activity is shortened to just 'salida', which could refer to different exit or discharge activities in the model."
+  },
+  {
+   "id": "ictus-R09",
+   "text": "Define una región desde «AngioTAC» hasta «ControlEvolutivo» en los casos con AlimentacionSinCribado igual a «no»",
+   "cls": "mixed",
+   "regions": [
+    {
+     "name": "AngioTAC_to_ControlEvolutivo_AlimentacionSinCribado_no",
+     "expr": "('AngioTAC' >> 'ControlEvolutivo')[AlimentacionSinCribado == 'no']",
+     "traces": 693
+    }
+   ],
+   "texts": [
+    "Define una región desde «AngioTAC» hasta «ControlEvolutivo» en los casos con AlimentacionSinCribado igual a «no»",
+    "Define una región desde angio TAC hasta control evolutivo en los casos con alimentación sin cribado igual a no.",
+    "¿Podrías definir una región de angio TAC a control evolutivo, pero solo en los casos donde la alimentación sin cribado es no?",
+    "Define una región desde angio TAC hasta control evolutivo en los casos con alimentación sin cribado negativa."
+   ],
+   "ambiguity": "The variable value is expressed as 'negativa' instead of the exact value 'no', which could be interpreted as a different categorical value."
+  },
+  {
+   "id": "ictus-R10",
+   "text": "Define una sección crítica desde «IngresoUnidadIctus» hasta «CribadoDisfagia» solo en los casos con AnticoagulacionAlta igual a «si»",
+   "cls": "mixed",
+   "regions": [
+    {
+     "name": "IngresoUnidadIctus_to_CribadoDisfagia_AnticoagulacionAlta_si",
+     "expr": "('IngresoUnidadIctus' >> 'CribadoDisfagia')[AnticoagulacionAlta == 'si']",
+     "traces": 139
+    }
+   ],
+   "texts": [
+    "Define una sección crítica desde «IngresoUnidadIctus» hasta «CribadoDisfagia» solo en los casos con AnticoagulacionAlta igual a «si»",
+    "Define una sección crítica desde el ingreso en la unidad de ictus hasta el cribado de disfagia solo en los casos con anticoagulación alta igual a sí.",
+    "Me gustaría que definieras una sección crítica que va del ingreso en la unidad de ictus al cribado de disfagia, pero únicamente en los casos donde la anticoagulación alta es sí.",
+    "Define una sección crítica desde el ingreso en ictus hasta el cribado de disfagia solo en los casos con anticoagulación alta igual a sí."
+   ],
+   "ambiguity": "The start activity is shortened to 'ingreso en ictus', which could be confused with other stroke-related admission activities."
+  }
+ ],
+ "milestones": [
+  {
+   "id": "ictus-M01",
+   "text": "Define «Trombectomia» como hito",
+   "nodes": [
+    "Trombectomia"
+   ],
+   "texts": [
+    "Define «Trombectomia» como hito",
+    "Define trombectomía como hito.",
+    "¿Podrías marcar trombectomía como hito?",
+    "Define la intervención como hito."
+   ],
+   "ambiguity": "The activity is referred to as 'la intervención' (the intervention) instead of its specific name, which could match several procedural activities."
+  },
+  {
+   "id": "ictus-M02",
+   "text": "Marca «IngresoUnidadIctus» y «IngresoUCI» como hitos",
+   "nodes": [
+    "IngresoUnidadIctus",
+    "IngresoUCI"
+   ],
+   "texts": [
+    "Marca «IngresoUnidadIctus» y «IngresoUCI» como hitos",
+    "Marca el ingreso en la unidad de ictus y el ingreso en la UCI como hitos.",
+    "¿Podrías marcar como hitos el ingreso en la unidad de ictus y el ingreso en la UCI?",
+    "Marca el ingreso en ictus y el ingreso en la UCI como hitos."
+   ],
+   "ambiguity": "The first activity is shortened to 'ingreso en ictus', which could be confused with other stroke-related admission activities."
+  },
+  {
+   "id": "ictus-M03",
+   "text": "Usa «TAC» como hito",
+   "nodes": [
+    "TAC"
+   ],
+   "texts": [
+    "Usa «TAC» como hito",
+    "Marca la TAC como hito.",
+    "¿Podrías definir la TAC como hito, por favor?",
+    "Marca la tomografía como hito."
+   ],
+   "ambiguity": "Tomografía is a generic term that could refer to different imaging procedures, not specifically the TAC activity."
+  },
+  {
+   "id": "ictus-M04",
+   "text": "Define «LlegadaPropiosMedios» como hito",
+   "nodes": [
+    "LlegadaPropiosMedios"
+   ],
+   "texts": [
+    "Define «LlegadaPropiosMedios» como hito",
+    "Define la llegada con medios propios como hito.",
+    "Sería interesante que marcaras la llegada con medios propios como hito.",
+    "Marca la llegada como hito."
+   ],
+   "ambiguity": "Llegada is too generic and could refer to any arrival-related activity in the process, not specifically the arrival by own means."
+  },
+  {
+   "id": "ictus-M05",
+   "text": "Define «ActivacionCodigoIctus» y «AltaResidencia» como hitos",
+   "nodes": [
+    "ActivacionCodigoIctus",
+    "AltaResidencia"
+   ],
+   "texts": [
+    "Define «ActivacionCodigoIctus» y «AltaResidencia» como hitos",
+    "Define la activación del código ictus y el alta en residencia como hitos.",
+    "¿Podrías marcar la activación del código ictus y el alta en residencia como hitos?",
+    "Define la activación del código y el alta en residencia como hitos."
+   ],
+   "ambiguity": "Código without the qualifier ictus could refer to other activation codes in the process."
+  },
+  {
+   "id": "ictus-M06",
+   "text": "Marca «ActivacionCodigoIctus», «SalidaHospital» y «Rehabilitacion» como hitos",
+   "nodes": [
+    "ActivacionCodigoIctus",
+    "SalidaHospital",
+    "Rehabilitacion"
+   ],
+   "texts": [
+    "Marca «ActivacionCodigoIctus», «SalidaHospital» y «Rehabilitacion» como hitos",
+    "Marca activación código ictus, salida del hospital y rehabilitación como hitos.",
+    "Me gustaría que marcaras activación código ictus, salida del hospital y rehabilitación como hitos, por favor.",
+    "Marca la activación código ictus, la salida y la rehabilitación como hitos."
+   ],
+   "ambiguity": "la salida without the qualifier del hospital could refer to a different exit activity."
+  },
+  {
+   "id": "ictus-M07",
+   "text": "Define «OrdenAlimentacionPrecoz» como hito",
+   "nodes": [
+    "OrdenAlimentacionPrecoz"
+   ],
+   "texts": [
+    "Define «OrdenAlimentacionPrecoz» como hito",
+    "Define orden de alimentación precoz como hito.",
+    "¿Podrías definir orden de alimentación precoz como hito?",
+    "Define la orden de alimentación como hito."
+   ],
+   "ambiguity": "the adjective precoz is omitted, so it could match a different ordering activity."
+  },
+  {
+   "id": "ictus-M08",
+   "text": "Marca «SalidaHospital» y «Logopedia» como hitos",
+   "nodes": [
+    "SalidaHospital",
+    "Logopedia"
+   ],
+   "texts": [
+    "Marca «SalidaHospital» y «Logopedia» como hitos",
+    "Marca la salida del hospital y la logopedia como hitos.",
+    "¿Podrías definir la salida del hospital y la logopedia como hitos?",
+    "Marca la salida y la logopedia como hitos."
+   ],
+   "ambiguity": "Salida is a generic term that could refer to different discharge or exit activities in the process."
+  },
+  {
+   "id": "ictus-M09",
+   "text": "Define «ActivacionCodigoIctus», «TrasladoInterhospitalario» y «Llamada112» como hitos",
+   "nodes": [
+    "ActivacionCodigoIctus",
+    "TrasladoInterhospitalario",
+    "Llamada112"
+   ],
+   "texts": [
+    "Define «ActivacionCodigoIctus», «TrasladoInterhospitalario» y «Llamada112» como hitos",
+    "Define como hitos la activación de código ictus, el traslado interhospitalario y la llamada al 112.",
+    "Me gustaría que definieras como hitos la activación de código ictus, el traslado interhospitalario y la llamada al 112, si te parece bien.",
+    "Define como hitos la activación de código ictus, el traslado y la llamada al 112."
+   ],
+   "ambiguity": "el traslado could refer to any transfer activity, not specifically the interhospitalary one."
+  },
+  {
+   "id": "ictus-M10",
+   "text": "Define «PlanAlta» como hito",
+   "nodes": [
+    "PlanAlta"
+   ],
+   "texts": [
+    "Define «PlanAlta» como hito",
+    "Define el plan de alta como hito.",
+    "¿Podrías marcar el plan de alta como hito?",
+    "Define el plan como hito."
+   ],
+   "ambiguity": "Plan without the qualifier de alta could refer to other planning activities in the process."
+  }
+ ],
+ "asks": [],
+ "levels": [
+  "order (robotic, exact names)",
+  "natural",
+  "polite",
+  "ambiguous"
+ ]
+}

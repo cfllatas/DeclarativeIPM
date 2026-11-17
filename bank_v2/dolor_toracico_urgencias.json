@@ -1,0 +1,855 @@
+{
+ "log": "dolor_toracico_urgencias",
+ "lang": "es",
+ "cases": 2000,
+ "version": "v2",
+ "note": "orders only; no clarification items; one wording per item",
+ "filters": [
+  {
+   "id": "dolor_toracico_urgencias-F01",
+   "family": "exists",
+   "cls": "act",
+   "text": "Limita los casos a: casos en los que ocurre «PlantaCardiologia»",
+   "expr": "'PlantaCardiologia'",
+   "count": 303,
+   "pct": 15.2,
+   "case_hash": "7bb471fe8ded0658",
+   "texts": [
+    "Limita los casos a: casos en los que ocurre «PlantaCardiologia»",
+    "Filtra los casos a aquellos en los que se produce la planta de cardiología.",
+    "¿Podrías limitar los casos a los que pasan por la planta de cardiología?",
+    "Filtra los casos a los que van a planta."
+   ],
+   "ambiguity": "The word 'planta' without specifying which one could refer to any hospital plant or unit, not necessarily the cardiology one."
+  },
+  {
+   "id": "dolor_toracico_urgencias-F02",
+   "family": "exists",
+   "cls": "act",
+   "text": "Limita los casos a: pacientes/casos que pasaron por «UnidadCoronaria»",
+   "expr": "'UnidadCoronaria'",
+   "count": 165,
+   "pct": 8.2,
+   "case_hash": "3da7e56552fa7479",
+   "texts": [
+    "Limita los casos a: pacientes/casos que pasaron por «UnidadCoronaria»",
+    "Limita los casos a los pacientes que pasaron por la unidad coronaria.",
+    "Me gustaría que limitaras los casos a aquellos que pasaron por la unidad coronaria.",
+    "Filtra los casos a los que fueron a la unidad."
+   ],
+   "ambiguity": "The generic 'la unidad' could refer to several different units in the hospital, not specifically the coronary unit."
+  },
+  {
+   "id": "dolor_toracico_urgencias-F32",
+   "family": "var_num",
+   "cls": "var",
+   "text": "Limita los casos a: casos con Edad mayor que 57",
+   "expr": "[Edad > 57]",
+   "count": 1245,
+   "pct": 62.2,
+   "case_hash": "d65458f8321e78de",
+   "texts": [
+    "Limita los casos a: casos con Edad mayor que 57",
+    "Filtra los casos a aquellos con edad mayor que 57.",
+    "¿Podrías limitar los casos a los pacientes con edad superior a 57 años?",
+    "Limita los casos a los mayores de 57."
+   ],
+   "ambiguity": "The expression 'mayores de 57' is ambiguous between strictly greater than 57 and 57 or more."
+  },
+  {
+   "id": "dolor_toracico_urgencias-F33",
+   "family": "var_range",
+   "cls": "var",
+   "text": "Limita los casos a: casos con Edad entre 57 y 69",
+   "expr": "[Edad >= 57, Edad <= 69]",
+   "count": 736,
+   "pct": 36.8,
+   "case_hash": "07bcfc796e5e6aea",
+   "texts": [
+    "Limita los casos a: casos con Edad entre 57 y 69",
+    "Limita los casos a los que tienen una edad entre 57 y 69 años.",
+    "Sería interesante que filtraras los casos a aquellos con edad comprendida entre 57 y 69.",
+    "Filtra los casos a los de 57 a 69 años."
+   ],
+   "ambiguity": "It is unclear whether the boundary values 57 and 69 are included in the range or excluded."
+  },
+  {
+   "id": "dolor_toracico_urgencias-F40",
+   "family": "time_lt",
+   "cls": "time",
+   "text": "Limita los casos a: casos con «ECG» y, más tarde, «CoronariografiaPrecoz» en menos de 2 horas",
+   "expr": "('ECG' >> 'CoronariografiaPrecoz')[-2h]",
+   "count": 127,
+   "pct": 6.3,
+   "case_hash": "11ce60afdd3876a1",
+   "texts": [
+    "Limita los casos a: casos con «ECG» y, más tarde, «CoronariografiaPrecoz» en menos de 2 horas",
+    "Limita los casos a aquellos en los que se hace un ECG y, más tarde, una coronariografía precoz en menos de 2 horas.",
+    "¿Podrías filtrar los casos a los que tienen un ECG seguido de una coronariografía precoz en un intervalo inferior a 2 horas?",
+    "Filtra los casos a los que hacen un ECG y luego una coronariografía en menos de 2 horas."
+   ],
+   "ambiguity": "The word 'coronariografía' without the qualifier 'precoz' could match either the early coronary angiography or the regular one."
+  },
+  {
+   "id": "dolor_toracico_urgencias-F41",
+   "family": "time_gt",
+   "cls": "time",
+   "text": "Limita los casos a: casos con «Coronariografia» y, más tarde, «UnidadCoronaria» con más de 1 hora entre ambos",
+   "expr": "('Coronariografia' >> 'UnidadCoronaria')[1h-]",
+   "count": 130,
+   "pct": 6.5,
+   "case_hash": "f63ac8914b763760",
+   "texts": [
+    "Limita los casos a: casos con «Coronariografia» y, más tarde, «UnidadCoronaria» con más de 1 hora entre ambos",
+    "Limita los casos a aquellos en los que se realiza una coronariografía y, más tarde, se ingresa en la unidad coronaria con más de 1 hora entre ambas.",
+    "Me gustaría que limitaras los casos a los que tienen una coronariografía y después una unidad coronaria, con un intervalo superior a 1 hora.",
+    "Filtra los casos a los que hacen una coronariografía y luego van a la unidad con más de una hora de diferencia."
+   ],
+   "ambiguity": "The vague 'la unidad' could refer to several different units in the process, not specifically the coronary unit."
+  },
+  {
+   "id": "dolor_toracico_urgencias-F38",
+   "family": "var_act",
+   "cls": "mixed",
+   "text": "Limita los casos a: casos con «PlantaCardiologia» y Edad mayor que 62",
+   "expr": "'PlantaCardiologia' & [Edad > 62]",
+   "count": 201,
+   "pct": 10.1,
+   "case_hash": "d7a058fa00c9240d",
+   "texts": [
+    "Limita los casos a: casos con «PlantaCardiologia» y Edad mayor que 62",
+    "Limita los casos a aquellos con planta de cardiología y edad mayor que 62.",
+    "¿Podrías filtrar los casos a los que pasan por la planta de cardiología y tienen más de 62 años?",
+    "Filtra los casos a los que van a planta y son mayores de 62."
+   ],
+   "ambiguity": "'Planta' is too generic to identify the cardiology plant, and 'mayores de 62' is ambiguous between strictly greater than 62 and 62 or more."
+  },
+  {
+   "id": "dolor_toracico_urgencias-F39",
+   "family": "var_seq",
+   "cls": "mixed",
+   "text": "Limita los casos a: casos con «Muestra1h» y, más tarde, «CoronariografiaPrecoz», con DiagnosticoAlta igual a «IAMSEST»",
+   "expr": "('Muestra1h' >> 'CoronariografiaPrecoz')[DiagnosticoAlta == 'IAMSEST']",
+   "count": 303,
+   "pct": 15.2,
+   "case_hash": "7bb471fe8ded0658",
+   "texts": [
+    "Limita los casos a: casos con «Muestra1h» y, más tarde, «CoronariografiaPrecoz», con DiagnosticoAlta igual a «IAMSEST»",
+    "Limita los casos a aquellos con muestra a la hora y, más tarde, coronariografía precoz, con diagnóstico de alta igual a IAM sin supradesnivel del ST.",
+    "¿Podrías limitar los casos a los que tienen una muestra a la hora seguida de una coronariografía precoz, con diagnóstico de alta de IAM sin supradesnivel del ST?",
+    "Filtra los casos a los que hacen una muestra y luego una coronariografía precoz, con diagnóstico de alta de IAM."
+   ],
+   "ambiguity": "'Muestra' without 'a la hora' could refer to different sampling activities, and the shortened 'IAM' could match several diagnosis codes rather than specifically the one without ST elevation."
+  }
+ ],
+ "circuits": [
+  {
+   "id": "dolor_toracico_urgencias-C01",
+   "text": "Crea circuitos para esto: separa a los pacientes según cómo acaba su atención: alta, planta de cardiología o unidad coronaria",
+   "cls": "act",
+   "circuits": [
+    {
+     "name": "ends_0",
+     "expr": "'Alta'$"
+    },
+    {
+     "name": "ends_1",
+     "expr": "'PlantaCardiologia'$"
+    },
+    {
+     "name": "ends_2",
+     "expr": "'UnidadCoronaria'$"
+    }
+   ],
+   "gold_counts": {
+    "ends_0": 1532,
+    "ends_2": 165,
+    "ends_1": 303
+   },
+   "texts": [
+    "Crea circuitos para esto: separa a los pacientes según cómo acaba su atención: alta, planta de cardiología o unidad coronaria",
+    "Crea circuitos que separen a los pacientes según cómo termine su atención: alta, planta de cardiología o unidad coronaria.",
+    "¿Podrías crear circuitos para clasificar a los pacientes según el final de su atención, es decir, alta, planta de cardiología o unidad coronaria?",
+    "Crea circuitos que separen a los pacientes según cómo acabe su atención: alta, cardiología o coronaria."
+   ],
+   "ambiguity": "The names 'cardiología' and 'coronaria' are shortened and could refer to different departments or units."
+  },
+  {
+   "id": "dolor_toracico_urgencias-C02",
+   "text": "Crea circuitos para esto: clasifica a los pacientes según hayan ido a planta de cardiología, a la unidad coronaria o a angioplastia (el primero que cumpla)",
+   "cls": "act",
+   "circuits": [
+    {
+     "name": "with_0",
+     "expr": "'PlantaCardiologia'"
+    },
+    {
+     "name": "with_1",
+     "expr": "'UnidadCoronaria'"
+    },
+    {
+     "name": "with_2",
+     "expr": "'ICP'"
+    }
+   ],
+   "gold_counts": {
+    "UNK": 1532,
+    "with_1": 165,
+    "with_0": 303
+   },
+   "texts": [
+    "Crea circuitos para esto: clasifica a los pacientes según hayan ido a planta de cardiología, a la unidad coronaria o a angioplastia (el primero que cumpla)",
+    "Crea circuitos que clasifiquen a los pacientes según hayan pasado por planta de cardiología, unidad coronaria o angioplastia, tomando el primero que cumpla.",
+    "Sería interesante que crearas circuitos para separar a los pacientes según hayan ido a planta de cardiología, a la unidad coronaria o a angioplastia, priorizando el primero que se cumpla.",
+    "Crea circuitos que separen a los pacientes según hayan ido a cardiología, coronaria o angioplastia, el primero que cumpla."
+   ],
+   "ambiguity": "'Cardiología' and 'coronaria' are shortened names that could fit multiple activities or units."
+  },
+  {
+   "id": "dolor_toracico_urgencias-C03",
+   "text": "Crea circuitos para esto: separa los pacientes que pasaron de la troponina de la primera hora a coronariografía precoz, los que solo tuvieron esa troponina y el resto",
+   "cls": "act",
+   "circuits": [
+    {
+     "name": "a_then_b",
+     "expr": "('Muestra1h' >> 'CoronariografiaPrecoz')"
+    },
+    {
+     "name": "has_a",
+     "expr": "'Muestra1h'"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "has_a": 1532,
+    "rest": 165,
+    "a_then_b": 303
+   },
+   "texts": [
+    "Crea circuitos para esto: separa los pacientes que pasaron de la troponina de la primera hora a coronariografía precoz, los que solo tuvieron esa troponina y el resto",
+    "Crea circuitos que separen a los pacientes que pasaron de la muestra de la primera hora a coronariografía precoz, los que solo tuvieron esa muestra y el resto.",
+    "¿Podrías crear circuitos para distinguir a los pacientes que fueron de la muestra de la primera hora a coronariografía precoz, de los que solo se les hizo esa muestra, y del resto?",
+    "Crea circuitos que separen a los que pasaron de la troponina de la primera hora a coronariografía precoz, los que solo tuvieron la troponina y el resto."
+   ],
+   "ambiguity": "'La troponina' is a loose name for the activity 'muestra de la primera hora', which could be confused with other troponin tests."
+  },
+  {
+   "id": "dolor_toracico_urgencias-C04",
+   "text": "Crea circuitos para esto: separa los casos según cómo terminan: «Alta» o «PlantaCardiologia»",
+   "cls": "act",
+   "circuits": [
+    {
+     "name": "ends_Alta",
+     "expr": "'Alta'$"
+    },
+    {
+     "name": "ends_PlantaCardiologia",
+     "expr": "'PlantaCardiologia'$"
+    }
+   ],
+   "gold_counts": {
+    "ends_Alta": 1532,
+    "UNK": 165,
+    "ends_PlantaCardiologia": 303
+   },
+   "texts": [
+    "Crea circuitos para esto: separa los casos según cómo terminan: «Alta» o «PlantaCardiologia»",
+    "Crea circuitos que separen los casos según cómo terminen: alta o planta de cardiología.",
+    "Me gustaría que crearas circuitos para clasificar los casos según su final: alta o planta de cardiología.",
+    "Crea circuitos que separen los casos según cómo acaben: alta o cardiología."
+   ],
+   "ambiguity": "'Cardiología' is a shortened name that could refer to the ward or to a broader department."
+  },
+  {
+   "id": "dolor_toracico_urgencias-C05",
+   "text": "Crea circuitos para esto: separa a los pacientes por sexo",
+   "cls": "var",
+   "circuits": [
+    {
+     "name": "Sexo_M",
+     "expr": "[Sexo == 'M']"
+    },
+    {
+     "name": "Sexo_F",
+     "expr": "[Sexo == 'F']"
+    }
+   ],
+   "gold_counts": {
+    "Sexo_F": 806,
+    "Sexo_M": 1194
+   },
+   "texts": [
+    "Crea circuitos para esto: separa a los pacientes por sexo",
+    "Crea circuitos que separen a los pacientes por sexo: masculino o femenino.",
+    "¿Podrías crear circuitos para agrupar a los pacientes según su sexo, masculino o femenino?",
+    "Crea circuitos que separen a los pacientes por sexo."
+   ],
+   "ambiguity": "The specific values (masculine and female) are not stated, though the operation is clear."
+  },
+  {
+   "id": "dolor_toracico_urgencias-C06",
+   "text": "Crea un circuito por cada valor de AntecedenteCoronario: «no» o «si»",
+   "cls": "var",
+   "circuits": [
+    {
+     "name": "AntecedenteCoronario_no",
+     "expr": "[AntecedenteCoronario == 'no']"
+    },
+    {
+     "name": "AntecedenteCoronario_si",
+     "expr": "[AntecedenteCoronario == 'si']"
+    }
+   ],
+   "gold_counts": {
+    "AntecedenteCoronario_no": 1578,
+    "AntecedenteCoronario_si": 422
+   },
+   "texts": [
+    "Crea un circuito por cada valor de AntecedenteCoronario: «no» o «si»",
+    "Crea un circuito por cada valor del antecedente coronario: no o sí.",
+    "¿Podrías crear un circuito para cada valor del antecedente coronario, es decir, no o sí?",
+    "Crea un circuito por cada valor del antecedente coronario."
+   ],
+   "ambiguity": "The specific values 'no' and 'sí' are not explicitly listed, though 'por cada valor' implies all of them."
+  },
+  {
+   "id": "dolor_toracico_urgencias-C07",
+   "text": "Crea circuitos para esto: separa los casos según Diabetes: «no» o «si»",
+   "cls": "var",
+   "circuits": [
+    {
+     "name": "Diabetes_no",
+     "expr": "[Diabetes == 'no']"
+    },
+    {
+     "name": "Diabetes_si",
+     "expr": "[Diabetes == 'si']"
+    }
+   ],
+   "gold_counts": {
+    "Diabetes_no": 1622,
+    "Diabetes_si": 378
+   },
+   "texts": [
+    "Crea circuitos para esto: separa los casos según Diabetes: «no» o «si»",
+    "Crea circuitos que separen los casos según diabetes: no o sí.",
+    "¿Podrías crear circuitos para agrupar los casos según tengan diabetes o no?",
+    "Crea circuitos que separen los casos según diabetes."
+   ],
+   "ambiguity": "The two values 'no' and 'sí' are not stated explicitly."
+  },
+  {
+   "id": "dolor_toracico_urgencias-C08",
+   "text": "Crea circuitos para esto: agrupa los casos por DiagnosticoAlta: «Dolor torácico no coronario» o «IAMSEST»",
+   "cls": "var",
+   "circuits": [
+    {
+     "name": "DiagnosticoAlta_Dolor_torácico_no_coronario",
+     "expr": "[DiagnosticoAlta == 'Dolor torácico no coronario']"
+    },
+    {
+     "name": "DiagnosticoAlta_IAMSEST",
+     "expr": "[DiagnosticoAlta == 'IAMSEST']"
+    }
+   ],
+   "gold_counts": {
+    "DiagnosticoAlta_Dolor_torácico_no_coronario": 1532,
+    "UNK": 165,
+    "DiagnosticoAlta_IAMSEST": 303
+   },
+   "texts": [
+    "Crea circuitos para esto: agrupa los casos por DiagnosticoAlta: «Dolor torácico no coronario» o «IAMSEST»",
+    "Crea circuitos que agrupen los casos según el diagnóstico de alta: dolor torácico no coronario o infarto sin elevación del ST.",
+    "Me gustaría que crearas circuitos para clasificar los casos según el diagnóstico de alta, es decir, dolor torácico no coronario o infarto sin elevación del ST.",
+    "Crea circuitos que agrupen los casos según el diagnóstico de alta: dolor torácico no coronario o infarto."
+   ],
+   "ambiguity": "'Infarto' is a shortened name that could refer to different types of myocardial infarction."
+  },
+  {
+   "id": "dolor_toracico_urgencias-C09",
+   "text": "Crea tres circuitos: «ECG» y luego «PlantaCardiologia» en menos de 3 horas, el resto de los que tienen «ECG» y luego «PlantaCardiologia», y los demás",
+   "cls": "time",
+   "circuits": [
+    {
+     "name": "ECG_to_PlantaCardiologia_fast",
+     "expr": "('ECG' >> 'PlantaCardiologia')[-3h]"
+    },
+    {
+     "name": "ECG_to_PlantaCardiologia_slow",
+     "expr": "('ECG' >> 'PlantaCardiologia')"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "rest": 1697,
+    "ECG_to_PlantaCardiologia_slow": 183,
+    "ECG_to_PlantaCardiologia_fast": 120
+   },
+   "texts": [
+    "Crea tres circuitos: «ECG» y luego «PlantaCardiologia» en menos de 3 horas, el resto de los que tienen «ECG» y luego «PlantaCardiologia», y los demás",
+    "Crea tres circuitos: los que pasan del ECG a planta de cardiología en menos de tres horas, los que pasan del ECG a planta de cardiología sin límite de tiempo, y el resto.",
+    "¿Podrías crear tres circuitos, uno para los casos que van del ECG a planta de cardiología en menos de tres horas, otro para los que van del ECG a planta de cardiología sin importar el tiempo, y un tercero para el resto?",
+    "Crea tres circuitos: los que van del ECG a planta de cardiología en menos de tres horas, los que van del ECG a planta, y los demás."
+   ],
+   "ambiguity": "planta is a shortened name that could refer to different ward or plant activities."
+  },
+  {
+   "id": "dolor_toracico_urgencias-C10",
+   "text": "Haz tres circuitos según el tiempo entre «Cardiologia» y «PlantaCardiologia»: menos de 1 hora, más tiempo, y los que no tienen ese tramo",
+   "cls": "time",
+   "circuits": [
+    {
+     "name": "Cardiologia_to_PlantaCardiologia_fast",
+     "expr": "('Cardiologia' >> 'PlantaCardiologia')[-1h]"
+    },
+    {
+     "name": "Cardiologia_to_PlantaCardiologia_slow",
+     "expr": "('Cardiologia' >> 'PlantaCardiologia')"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "rest": 1697,
+    "Cardiologia_to_PlantaCardiologia_slow": 298,
+    "Cardiologia_to_PlantaCardiologia_fast": 5
+   },
+   "texts": [
+    "Haz tres circuitos según el tiempo entre «Cardiologia» y «PlantaCardiologia»: menos de 1 hora, más tiempo, y los que no tienen ese tramo",
+    "Haz tres circuitos según el tiempo entre cardiología y planta de cardiología: los que tardan menos de una hora, los que tardan más, y los que no tienen ese tramo.",
+    "Sería interesante que crearas tres circuitos según el tiempo entre cardiología y planta de cardiología: uno para los que tardan menos de una hora, otro para los que tardan más, y un tercero para los que no tienen ese tramo.",
+    "Haz tres circuitos según el tiempo entre cardiología y planta: menos de una hora, más tiempo, y los que no tienen ese tramo."
+   ],
+   "ambiguity": "planta is a shortened name that could refer to different ward or plant activities."
+  },
+  {
+   "id": "dolor_toracico_urgencias-C11",
+   "text": "Crea tres circuitos: casos con AntecedenteCoronario igual a «no» que pasan por «CoronariografiaPrecoz», el resto de casos con AntecedenteCoronario igual a «no», y los demás",
+   "cls": "mixed",
+   "circuits": [
+    {
+     "name": "AntecedenteCoronario_no_CoronariografiaPrecoz",
+     "expr": "'CoronariografiaPrecoz' & [AntecedenteCoronario == 'no']"
+    },
+    {
+     "name": "AntecedenteCoronario_no",
+     "expr": "[AntecedenteCoronario == 'no']"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "AntecedenteCoronario_no": 1376,
+    "rest": 422,
+    "AntecedenteCoronario_no_CoronariografiaPrecoz": 202
+   },
+   "texts": [
+    "Crea tres circuitos: casos con AntecedenteCoronario igual a «no» que pasan por «CoronariografiaPrecoz», el resto de casos con AntecedenteCoronario igual a «no», y los demás",
+    "Crea tres circuitos: los casos con antecedente coronario igual a no que pasan por coronariografía precoz, el resto de casos con antecedente coronario igual a no, y los demás.",
+    "¿Podrías crear tres circuitos, uno para los casos con antecedente coronario igual a no que pasan por coronariografía precoz, otro para el resto de casos con antecedente coronario igual a no, y un tercero para los demás?",
+    "Crea tres circuitos: los que tienen antecedente coronario negativo y pasan por coronariografía precoz, los que tienen antecedente coronario negativo, y el resto."
+   ],
+   "ambiguity": "negativo is a loose paraphrase of the exact value no for the variable."
+  },
+  {
+   "id": "dolor_toracico_urgencias-C12",
+   "text": "Haz tres circuitos: Diabetes igual a «no» y «Cardiologia», solo Diabetes igual a «no», y el resto",
+   "cls": "mixed",
+   "circuits": [
+    {
+     "name": "Diabetes_no_Cardiologia",
+     "expr": "'Cardiologia' & [Diabetes == 'no']"
+    },
+    {
+     "name": "Diabetes_no",
+     "expr": "[Diabetes == 'no']"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "Diabetes_no": 1394,
+    "rest": 378,
+    "Diabetes_no_Cardiologia": 228
+   },
+   "texts": [
+    "Haz tres circuitos: Diabetes igual a «no» y «Cardiologia», solo Diabetes igual a «no», y el resto",
+    "Haz tres circuitos: los que tienen diabetes igual a no y pasan por cardiología, los que solo tienen diabetes igual a no, y el resto.",
+    "¿Podrías hacer tres circuitos, uno para los casos con diabetes igual a no que pasan por cardiología, otro para los que solo tienen diabetes igual a no, y un tercero para el resto?",
+    "Haz tres circuitos: los que tienen diabetes en no y van a cardiología, los que tienen diabetes en no, y el resto."
+   ],
+   "ambiguity": "en no is a loose way to express the exact value no for the variable."
+  }
+ ],
+ "regions": [
+  {
+   "id": "dolor_toracico_urgencias-R01",
+   "text": "Define una región desde «Muestra1h» hasta «CoronariografiaPrecoz»",
+   "cls": "act",
+   "regions": [
+    {
+     "name": "Muestra1h_to_CoronariografiaPrecoz",
+     "expr": "('Muestra1h' >> 'CoronariografiaPrecoz')",
+     "traces": 303
+    }
+   ],
+   "texts": [
+    "Define una región desde «Muestra1h» hasta «CoronariografiaPrecoz»",
+    "Define una región desde la muestra de una hora hasta la coronariografía precoz.",
+    "¿Podrías definir una sección crítica desde la muestra de una hora hasta la coronariografía precoz?",
+    "Define una región desde la muestra hasta la coronariografía precoz."
+   ],
+   "ambiguity": "la muestra is a shortened name that could refer to different sample activities."
+  },
+  {
+   "id": "dolor_toracico_urgencias-R02",
+   "text": "Define una sección crítica desde «ECG» hasta «PlantaCardiologia»",
+   "cls": "act",
+   "regions": [
+    {
+     "name": "ECG_to_PlantaCardiologia",
+     "expr": "('ECG' >> 'PlantaCardiologia')",
+     "traces": 303
+    }
+   ],
+   "texts": [
+    "Define una sección crítica desde «ECG» hasta «PlantaCardiologia»",
+    "Define una sección crítica desde el ECG hasta la planta de cardiología.",
+    "Sería interesante que definieras una región desde el ECG hasta la planta de cardiología.",
+    "Define una sección crítica desde el ECG hasta la planta."
+   ],
+   "ambiguity": "la planta is a shortened name that could refer to different ward or plant activities."
+  },
+  {
+   "id": "dolor_toracico_urgencias-R03",
+   "text": "Define una región desde «ECG» hasta «Cardiologia»",
+   "cls": "act",
+   "regions": [
+    {
+     "name": "ECG_to_Cardiologia",
+     "expr": "('ECG' >> 'Cardiologia')",
+     "traces": 303
+    }
+   ],
+   "texts": [
+    "Define una región desde «ECG» hasta «Cardiologia»",
+    "Define una región desde el ECG hasta cardiología.",
+    "¿Podrías definir una sección crítica desde el ECG hasta cardiología?",
+    "Define una región desde el ECG hasta la cardio."
+   ],
+   "ambiguity": "la cardio is a colloquial shortened name that could fit multiple cardiology-related activities."
+  },
+  {
+   "id": "dolor_toracico_urgencias-R04",
+   "text": "Define dos secciones críticas: de «CodigoInfarto» a «Coronariografia» y de «ICP» a «UnidadCoronaria»",
+   "cls": "act",
+   "regions": [
+    {
+     "name": "CodigoInfarto_to_Coronariografia",
+     "expr": "('CodigoInfarto' >> 'Coronariografia')",
+     "traces": 165
+    },
+    {
+     "name": "ICP_to_UnidadCoronaria",
+     "expr": "('ICP' >> 'UnidadCoronaria')",
+     "traces": 165
+    }
+   ],
+   "texts": [
+    "Define dos secciones críticas: de «CodigoInfarto» a «Coronariografia» y de «ICP» a «UnidadCoronaria»",
+    "Define dos secciones críticas: una del código infarto a la coronariografía y otra del ICP a la unidad coronaria.",
+    "¿Podrías definir dos regiones, una desde el código infarto hasta la coronariografía y otra desde el ICP hasta la unidad coronaria?",
+    "Define dos secciones críticas: una del código infarto a la coronaria y otra del ICP a la unidad coronaria."
+   ],
+   "ambiguity": "la coronaria is a shortened name that could refer to either coronariografía or unidad coronaria."
+  },
+  {
+   "id": "dolor_toracico_urgencias-R05",
+   "text": "Define dos regiones: de «ECG» a «Cardiologia» y de «ECG» a «PlantaCardiologia»",
+   "cls": "act",
+   "regions": [
+    {
+     "name": "ECG_to_Cardiologia",
+     "expr": "('ECG' >> 'Cardiologia')",
+     "traces": 303
+    },
+    {
+     "name": "ECG_to_PlantaCardiologia",
+     "expr": "('ECG' >> 'PlantaCardiologia')",
+     "traces": 303
+    }
+   ],
+   "texts": [
+    "Define dos regiones: de «ECG» a «Cardiologia» y de «ECG» a «PlantaCardiologia»",
+    "Define dos regiones: una desde el ECG hasta la cardiología y otra desde el ECG hasta la planta de cardiología.",
+    "¿Podrías definir dos regiones, una que vaya del ECG a la cardiología y otra del ECG a la planta de cardiología?",
+    "Define dos regiones desde el ECG: una hasta cardiología y otra hasta la planta."
+   ],
+   "ambiguity": "la planta is a shortened name that could refer to different wards or departments."
+  },
+  {
+   "id": "dolor_toracico_urgencias-R06",
+   "text": "Define una región desde «ECG» hasta «PlantaCardiologia» cuando pasan menos de 3 horas entre ambos",
+   "cls": "time",
+   "regions": [
+    {
+     "name": "ECG_to_PlantaCardiologia_fast",
+     "expr": "('ECG' >> 'PlantaCardiologia')[-3h]",
+     "traces": 120
+    }
+   ],
+   "texts": [
+    "Define una región desde «ECG» hasta «PlantaCardiologia» cuando pasan menos de 3 horas entre ambos",
+    "Define una región desde el ECG hasta la planta de cardiología para los casos en los que pasan menos de tres horas entre ambas.",
+    "Sería interesante que definieras una región del ECG a la planta de cardiología cuando el tiempo entre ambas actividades es inferior a tres horas.",
+    "Define una región desde el ECG hasta la planta cuando no pasan más de tres horas."
+   ],
+   "ambiguity": "la planta is a shortened name that could refer to different wards or departments."
+  },
+  {
+   "id": "dolor_toracico_urgencias-R07",
+   "text": "Define una sección crítica desde «Cardiologia» hasta «PlantaCardiologia» cuando transcurren más de 2 horas",
+   "cls": "time",
+   "regions": [
+    {
+     "name": "Cardiologia_to_PlantaCardiologia_slow",
+     "expr": "('Cardiologia' >> 'PlantaCardiologia')[2h-]",
+     "traces": 151
+    }
+   ],
+   "texts": [
+    "Define una sección crítica desde «Cardiologia» hasta «PlantaCardiologia» cuando transcurren más de 2 horas",
+    "Define una sección crítica desde la cardiología hasta la planta de cardiología cuando transcurren más de dos horas.",
+    "¿Podrías marcar una sección crítica entre la cardiología y la planta de cardiología para los casos en que pasan más de dos horas?",
+    "Define una sección crítica desde cardiología hasta la planta cuando pasan más de dos horas."
+   ],
+   "ambiguity": "la planta is a shortened name that could refer to different wards or departments."
+  },
+  {
+   "id": "dolor_toracico_urgencias-R08",
+   "text": "Define una sección crítica desde «ECG» hasta «Cardiologia» cuando transcurren más de 1 hora",
+   "cls": "time",
+   "regions": [
+    {
+     "name": "ECG_to_Cardiologia_slow",
+     "expr": "('ECG' >> 'Cardiologia')[1h-]",
+     "traces": 303
+    }
+   ],
+   "texts": [
+    "Define una sección crítica desde «ECG» hasta «Cardiologia» cuando transcurren más de 1 hora",
+    "Define una sección crítica desde el ECG hasta la cardiología cuando transcurren más de una hora.",
+    "Me gustaría que definieras una sección crítica del ECG a la cardiología para los casos en los que pasan más de una hora.",
+    "Define una sección crítica desde el ECG hasta cardiología si pasan más de una hora."
+   ],
+   "ambiguity": "cardiología without the article could be confused with the longer name planta de cardiología."
+  },
+  {
+   "id": "dolor_toracico_urgencias-R09",
+   "text": "Define una región desde «ECG» hasta «Cardiologia» en los casos con AntecedenteCoronario igual a «no»",
+   "cls": "mixed",
+   "regions": [
+    {
+     "name": "ECG_to_Cardiologia_AntecedenteCoronario_no",
+     "expr": "('ECG' >> 'Cardiologia')[AntecedenteCoronario == 'no']",
+     "traces": 202
+    }
+   ],
+   "texts": [
+    "Define una región desde «ECG» hasta «Cardiologia» en los casos con AntecedenteCoronario igual a «no»",
+    "Define una región desde el ECG hasta la cardiología solo en los casos donde el antecedente coronario es no.",
+    "¿Podrías definir una región del ECG a la cardiología limitada a los casos con antecedente coronario igual a no?",
+    "Define una región desde el ECG hasta cardiología en los casos sin antecedente coronario."
+   ],
+   "ambiguity": "sin antecedente coronario could be read as the variable being absent rather than having the value no."
+  },
+  {
+   "id": "dolor_toracico_urgencias-R10",
+   "text": "Define una sección crítica desde «ECG» hasta «PlantaCardiologia» solo en los casos con Diabetes igual a «no»",
+   "cls": "mixed",
+   "regions": [
+    {
+     "name": "ECG_to_PlantaCardiologia_Diabetes_no",
+     "expr": "('ECG' >> 'PlantaCardiologia')[Diabetes == 'no']",
+     "traces": 228
+    }
+   ],
+   "texts": [
+    "Define una sección crítica desde «ECG» hasta «PlantaCardiologia» solo en los casos con Diabetes igual a «no»",
+    "Define una sección crítica desde el ECG hasta la planta de cardiología, solo para los casos donde la diabetes es no.",
+    "¿Podrías definir una sección crítica desde el ECG hasta la planta de cardiología, limitándola únicamente a los casos en los que la diabetes es no?",
+    "Define una sección crítica desde el ECG hasta la planta, solo en los casos con diabetes no."
+   ],
+   "ambiguity": "la planta could refer to any department or floor, not specifically the cardiology one."
+  }
+ ],
+ "milestones": [
+  {
+   "id": "dolor_toracico_urgencias-M01",
+   "text": "Define «Alta» como hito",
+   "nodes": [
+    "Alta"
+   ],
+   "texts": [
+    "Define «Alta» como hito",
+    "Define el alta como hito.",
+    "¿Podrías marcar el alta como hito?",
+    "Define la actividad de alta como hito."
+   ],
+   "ambiguity": "la actividad de alta is loosely named and could refer to different discharge-related activities."
+  },
+  {
+   "id": "dolor_toracico_urgencias-M02",
+   "text": "Marca «CodigoInfarto» y «CoronariografiaPrecoz» como hitos",
+   "nodes": [
+    "CodigoInfarto",
+    "CoronariografiaPrecoz"
+   ],
+   "texts": [
+    "Marca «CodigoInfarto» y «CoronariografiaPrecoz» como hitos",
+    "Marca el código de infarto y la coronariografía precoz como hitos.",
+    "¿Podrías definir el código de infarto y la coronariografía precoz como hitos?",
+    "Marca el código de infarto y la coronariografía como hitos."
+   ],
+   "ambiguity": "la coronariografía without precoz could refer to a different coronary angiography activity."
+  },
+  {
+   "id": "dolor_toracico_urgencias-M03",
+   "text": "Usa «ICP» como hito",
+   "nodes": [
+    "ICP"
+   ],
+   "texts": [
+    "Usa «ICP» como hito",
+    "Marca ICP como hito.",
+    "¿Podrías definir ICP como hito, por favor?",
+    "Marca el ICP como hito."
+   ],
+   "ambiguity": "The definite article 'el' makes ICP sound like a specific measurement or instance rather than the activity name itself."
+  },
+  {
+   "id": "dolor_toracico_urgencias-M04",
+   "text": "Define «Coronariografia» como hito",
+   "nodes": [
+    "Coronariografia"
+   ],
+   "texts": [
+    "Define «Coronariografia» como hito",
+    "Marca la coronariografía como hito.",
+    "Me gustaría que definieras la coronariografía como hito.",
+    "Marca la coronaria como hito."
+   ],
+   "ambiguity": "'Coronaria' is a shortened form that could refer to the coronary artery itself rather than the procedure 'coronariografía'."
+  },
+  {
+   "id": "dolor_toracico_urgencias-M05",
+   "text": "Define «CoronariografiaPrecoz» y «CodigoInfarto» como hitos",
+   "nodes": [
+    "CoronariografiaPrecoz",
+    "CodigoInfarto"
+   ],
+   "texts": [
+    "Define «CoronariografiaPrecoz» y «CodigoInfarto» como hitos",
+    "Define la coronariografía precoz y el código de infarto como hitos.",
+    "Me gustaría que definieras la coronariografía precoz y el código de infarto como hitos, por favor.",
+    "Define la coronariografía y el código de infarto como hitos."
+   ],
+   "ambiguity": "The activity name omits 'precoz', so it could refer to any coronary angiography activity."
+  },
+  {
+   "id": "dolor_toracico_urgencias-M06",
+   "text": "Marca «CoronariografiaPrecoz», «ICP» y «PlantaCardiologia» como hitos",
+   "nodes": [
+    "CoronariografiaPrecoz",
+    "ICP",
+    "PlantaCardiologia"
+   ],
+   "texts": [
+    "Marca «CoronariografiaPrecoz», «ICP» y «PlantaCardiologia» como hitos",
+    "Define coronariografía precoz, ICP y planta de cardiología como hitos.",
+    "¿Podrías marcar la coronariografía precoz, el ICP y la planta de cardiología como hitos, por favor?",
+    "Marca la coronaria precoz, el ICP y la planta de cardio como hitos."
+   ],
+   "ambiguity": "'Planta de cardio' is a colloquial shortened name that could refer to different cardiology units or services."
+  },
+  {
+   "id": "dolor_toracico_urgencias-M07",
+   "text": "Define «Cardiologia» como hito",
+   "nodes": [
+    "Cardiologia"
+   ],
+   "texts": [
+    "Define «Cardiologia» como hito",
+    "Marca cardiología como hito.",
+    "¿Podrías definir la cardiología como hito, por favor?",
+    "Marca la cardio como hito."
+   ],
+   "ambiguity": "'Cardio' is a colloquial abbreviation that could refer to the department, a specific service, or a cardiology unit."
+  },
+  {
+   "id": "dolor_toracico_urgencias-M08",
+   "text": "Marca «Cardiologia» y «UnidadCoronaria» como hitos",
+   "nodes": [
+    "Cardiologia",
+    "UnidadCoronaria"
+   ],
+   "texts": [
+    "Marca «Cardiologia» y «UnidadCoronaria» como hitos",
+    "Define cardiología y unidad coronaria como hitos.",
+    "Me gustaría que marcaras la cardiología y la unidad coronaria como hitos.",
+    "Marca la cardio y la unidad coronaria como hitos."
+   ],
+   "ambiguity": "'Cardio' is a shortened name that could refer to the cardiology department or to a specific cardiology service."
+  },
+  {
+   "id": "dolor_toracico_urgencias-M09",
+   "text": "Define «Cardiologia», «CoronariografiaPrecoz» y «PlantaCardiologia» como hitos",
+   "nodes": [
+    "Cardiologia",
+    "CoronariografiaPrecoz",
+    "PlantaCardiologia"
+   ],
+   "texts": [
+    "Define «Cardiologia», «CoronariografiaPrecoz» y «PlantaCardiologia» como hitos",
+    "Define cardiología, la coronariografía precoz y planta de cardiología como hitos.",
+    "¿Podrías definir cardiología, la coronariografía precoz y planta de cardiología como hitos, por favor?",
+    "Define cardiología, la coronariografía precoz y la planta como hitos."
+   ],
+   "ambiguity": "The shortened 'la planta' could refer to any ward, not specifically the cardiology ward."
+  },
+  {
+   "id": "dolor_toracico_urgencias-M10",
+   "text": "Marca «PlantaCardiologia» y «CoronariografiaPrecoz» como hitos",
+   "nodes": [
+    "PlantaCardiologia",
+    "CoronariografiaPrecoz"
+   ],
+   "texts": [
+    "Marca «PlantaCardiologia» y «CoronariografiaPrecoz» como hitos",
+    "Define planta de cardiología y coronariografía precoz como hitos.",
+    "¿Podrías marcar la planta de cardiología y la coronariografía precoz como hitos, por favor?",
+    "Marca la planta de cardio y la coronaria precoz como hitos."
+   ],
+   "ambiguity": "'Coronaria precoz' is a shortened form that could be confused with a generic coronary procedure rather than the specific 'coronariografía precoz' activity."
+  }
+ ],
+ "asks": [],
+ "levels": [
+  "order (robotic, exact names)",
+  "natural",
+  "polite",
+  "ambiguous"
+ ]
+}

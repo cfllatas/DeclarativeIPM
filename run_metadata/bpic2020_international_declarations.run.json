@@ -1,0 +1,75 @@
+{
+  "stage": 2,
+  "log": "bpic2020_international_declarations",
+  "language": "en",
+  "runId": "20261109-184332",
+  "startedAt": "2026-11-09T18:43:32.0751144+01:00",
+  "machine": "<machine>",
+  "command": "--stage1 <SVELTA>/DeclarativeIPM/bank_v2/bpic2020_international_declarations.json <tmp>/logs/pub_bpic2020_international_declarations/MetaInfo/__ModelInfo --stage 2 --phrasings 0,1,2,3 --models L2-qwen3.5-27b --ctx 32768",
+  "settings": {
+    "temperature": 0,
+    "seed": 1,
+    "numCtx": 32768,
+    "numPredict": 4096,
+    "phrasing": "phrasings 0,1,2,3 (0 = first), in the language of the log",
+    "retries": 0,
+    "poligptMinIntervalSeconds": 15,
+    "warmup": "one call per model with the first question (warmup=true, excluded from statistics) + one validation and two engine executions before measuring"
+  },
+  "cases": 6449,
+  "questions": 40,
+  "files": {
+    "bank": {
+      "path": "<SVELTA>/DeclarativeIPM/bank_v2/bpic2020_international_declarations.json",
+      "sha256": "43562d2aef2fc6dc2212965d216faffb7893e0f149e88ec3f619c1b7588e6076"
+    },
+    "log": {
+      "path": "<tmp>/logs/pub_bpic2020_international_declarations/Resources/log.jsonl",
+      "sha256": "a89688075b9d0fa1d75d15e8cf44c277eead078cff7a65ab0d71cbee2bcae53d"
+    },
+    "modelInfo": {
+      "path": "<tmp>/logs/pub_bpic2020_international_declarations/MetaInfo/__ModelInfo",
+      "sha256": "56d8d39bca9002bbeb652d3ec4f3eec326f6f5434343146816588b9fd179451d"
+    },
+    "models": {
+      "path": "<SVELTA>\\tools\\declarative-ipm-eval\\models-stage1.json",
+      "sha256": "c7347dde0620c89b0b18379d5a0d3ad202f6e093a550bb3387338cacb90e772e"
+    }
+  },
+  "prompt": {
+    "sha256": "3c409b6f1fe8ce24c0447c1493a492dc8acfd7583a6135a5584720e152c903b7",
+    "characters": 75577
+  },
+  "models": [
+    {
+      "Id": "L2-qwen3.5-27b",
+      "Backend": "ollama",
+      "Model": "qwen3.5:27b",
+      "Think": "false"
+    }
+  ],
+  "git": {
+    "svelta": {
+      "commit": "7aced9e496738b1b3ae4f70d6650565004c128e8",
+      "dirty": true
+    },
+    "engine_pm4hResearch": {
+      "commit": "b01406ac9bd016e990d720eafbb3fdfbc6c40d78",
+      "dirty": true
+    }
+  },
+  "notes": "The Declare engine is compiled from source: the engine commit above plus the uncommitted fixes of 2026-11-07 (wildcard, numeric ==) define the semantics used to execute the answers.",
+  "ollama": {
+    "version": "0.32.0",
+    "models": {
+      "qwen3.5:27b": {
+        "digest": "7653528ba5cba4dd8e19da24aaddc7f4d0b5ecd93571c0825dfd4137958ec06e",
+        "sizeBytes": 17420432728,
+        "modifiedAt": "2026-07-16T19:23:25.627290342Z"
+      }
+    }
+  },
+  "resumedAt": [
+    "2026-11-09T21:21:23.3319685+01:00"
+  ]
+}

@@ -1,0 +1,362 @@
+{
+ "atencion_primaria-F01": {
+  "texts": [
+   "Limita los casos a: casos en los que ocurre «AtencionUrgenciasHospital»",
+   "Filtra los casos a aquellos en los que se produce atención de urgencias hospitalarias.",
+   "¿Podrías limitar los casos a los que incluyen una atención de urgencias hospitalarias?",
+   "Limita los casos a los que pasan por urgencias."
+  ],
+  "ambiguity": "Urgencias is a shortened name that could refer to hospital emergency care or to primary-care emergency visits."
+ },
+ "atencion_primaria-F02": {
+  "texts": [
+   "Limita los casos a: pacientes/casos que pasaron por «SolicitudRetinografia»",
+   "Limita los casos a los pacientes que pasaron por una solicitud de retinografía.",
+   "Me gustaría que filtraras los casos a aquellos en los que se realiza una solicitud de retinografía.",
+   "Filtra los casos a los que tienen una retinografía."
+  ],
+  "ambiguity": "Retinografía could refer to the request for the test or to the actual imaging procedure, making the intended activity unclear."
+ },
+ "atencion_primaria-F33": {
+  "texts": [
+   "Limita los casos a: casos con IMC entre 26.6 y 31.6",
+   "Limita los casos a aquellos con IMC entre 26,6 y 31,6.",
+   "¿Podrías filtrar los casos a los que tengan un IMC comprendido entre 26,6 y 31,6?",
+   "Filtra los casos a los que tienen un IMC entre 26,6 y 31,6."
+  ],
+  "ambiguity": "Entre does not specify whether the bounds 26,6 and 31,6 are included or excluded from the range."
+ },
+ "atencion_primaria-F39": {
+  "texts": [
+   "Limita los casos a: casos con «Analitica» y, más tarde, «IntensificacionAntidiabeticos» en menos de 5 días",
+   "Filtra los casos a aquellos en los que se hace una analítica y, después, una intensificación de antidiabéticos en menos de cinco días.",
+   "¿Podrías limitar los casos a los que incluyen una analítica seguida de una intensificación de antidiabéticos en un plazo inferior a cinco días?",
+   "Limita los casos a los que tienen una analítica y una intensificación de antidiabéticos en menos de cinco días."
+  ],
+  "ambiguity": "It is unclear whether the five-day constraint refers to the gap between the two events or to the overall time window in which both occur."
+ },
+ "atencion_primaria-F38": {
+  "texts": [
+   "Limita los casos a: casos con «RegistroProgramaLipidos» y, más tarde, «RevisionAnualCronicos», con ExploracionPieHecha igual a «si»",
+   "Limita los casos a aquellos con un registro del programa de lípidos y, después, una revisión anual de crónicos, con la exploración del pie hecha igual a sí.",
+   "¿Podrías filtrar los casos a los que incluyen un registro del programa de lípidos seguido de una revisión anual de crónicos, donde la exploración del pie hecha sea sí?",
+   "Filtra los casos a los que tienen un registro de lípidos y una revisión anual de crónicos, con la exploración del pie hecha en sí."
+  ],
+  "ambiguity": "Registro de lípidos is a shortened name that could fit multiple lipid-related registration activities in the process."
+ },
+ "atencion_primaria-F42": {
+  "texts": [
+   "Limita los casos a: casos con IMC mayor que 27.3 y «RevisionAnualCronicos» en menos de 14 días desde «RegistroProgramaLipidos»",
+   "Limita los casos a aquellos con IMC mayor que 27,3 y una revisión anual de crónicos en menos de catorce días desde el registro del programa de lípidos.",
+   "¿Podrías filtrar los casos a los que tengan un IMC superior a 27,3 y una revisión anual de crónicos a menos de catorce días del registro del programa de lípidos?",
+   "Filtra los casos a los que tienen un IMC por encima de 27,3 y una revisión anual en menos de catorce días del registro de lípidos."
+  ],
+  "ambiguity": "Registro de lípidos is a shortened name that could refer to different lipid-related activities, and por encima de is slightly ambiguous for a strict inequality."
+ },
+ "atencion_primaria-F32": {
+  "texts": [
+   "Limita los casos a: casos con IMC mayor que 26.6",
+   "Filtra los casos a los que tengan un IMC mayor que 26.6.",
+   "Me gustaría que limitaras los casos a aquellos con un IMC superior a 26.6, si te parece bien.",
+   "Filtra los casos a los que tengan un índice por encima de 26.6."
+  ],
+  "ambiguity": "The word 'índice' is vague and could refer to BMI or to some other clinical index."
+ },
+ "atencion_primaria-F40": {
+  "texts": [
+   "Limita los casos a: casos con «ConsultaMedicaResultados» y, más tarde, «ObjetivoLDLNoAlcanzado» con más de 30 días entre ambos",
+   "Filtra los casos a los que tengan la consulta médica de resultados y, más tarde, el objetivo de LDL no alcanzado, con más de 30 días entre ambos.",
+   "¿Podrías limitar los casos a aquellos en los que aparezca la consulta médica de resultados y, después, el objetivo de LDL no alcanzado, con un intervalo de más de 30 días entre ambas?",
+   "Limita los casos a los que tengan la consulta de resultados y luego el objetivo de LDL no alcanzado, con más de 30 días de diferencia."
+  ],
+  "ambiguity": "The shortened name 'consulta de resultados' could match more than one consultation activity in the model."
+ },
+ "atencion_primaria-C01": {
+  "texts": [
+   "Crea circuitos para esto: separa a los pacientes por cómo acaba su año: seguimiento completo, abandono, fallecimiento en casa o fallecimiento en el hospital",
+   "Crea circuitos que separen a los pacientes según cómo termina su año: con seguimiento completo, con abandono, con fallecimiento en domicilio o con fallecimiento en hospital.",
+   "¿Podrías crear circuitos para clasificar a los pacientes según el desenlace de su año? Me gustaría distinguir entre seguimiento completo, abandono, fallecimiento en casa y fallecimiento en el hospital.",
+   "Crea circuitos para separar a los pacientes según cómo acaba su año: seguimiento completo, abandono, muerte en casa o en el hospital."
+  ],
+  "ambiguity": "The phrase 'muerte en casa o en el hospital' could be read as a single combined group rather than two separate circuits."
+ },
+ "atencion_primaria-C03": {
+  "texts": [
+   "Crea circuitos para esto: separa los pacientes que pasaron del programa de lípidos a la revisión anual, los que solo están en el programa de lípidos y el resto",
+   "Crea circuitos que separen a los pacientes que pasaron del programa de lípidos a la revisión anual de crónicos, los que solo están en el programa de lípidos y el resto.",
+   "¿Podrías crear circuitos para distinguir tres grupos? Me gustaría separar a quienes pasaron del programa de lípidos a la revisión anual de crónicos, a quienes solo figuran en el programa de lípidos y al resto de casos.",
+   "Crea circuitos para separar a los que pasaron de lípidos a la revisión anual, los que solo están en lípidos y el resto."
+  ],
+  "ambiguity": "'Lípidos' is a shortened name that could refer to the lipid program or to lipid tests or analyses."
+ },
+ "atencion_primaria-C04": {
+  "texts": [
+   "Crea circuitos para esto: separa los casos según cómo terminan: «FinSeguimientoCompleto» o «AbandonoSeguimiento»",
+   "Crea circuitos que separen los casos según cómo terminan: con seguimiento completo o con abandono del seguimiento.",
+   "¿Podrías crear circuitos para distinguir los casos que terminan con seguimiento completo de los que terminan con abandono del seguimiento?",
+   "Crea circuitos para separar los casos según su final: seguimiento completo o abandono."
+  ],
+  "ambiguity": "'Abandono' without specifying 'del seguimiento' could refer to abandoning the hospital, the program, or the follow-up."
+ },
+ "atencion_primaria-C05": {
+  "texts": [
+   "Crea circuitos para esto: separa a los diabéticos que se hicieron la exploración del pie de los que no",
+   "Crea circuitos que separen a los diabéticos según que la exploración del pie esté marcada como sí o como no.",
+   "¿Podrías crear circuitos para agrupar a los diabéticos según el valor de la exploración del pie, en sí o en no?",
+   "Crea circuitos para separar a los diabéticos según la exploración del pie: sí o no."
+  ],
+  "ambiguity": "'La exploración del pie' could be interpreted as the activity of performing the examination rather than the variable recording whether it was done."
+ },
+ "atencion_primaria-C06": {
+  "texts": [
+   "Crea circuitos para esto: agrupa los casos por AccesoDigital: «si» o «no»",
+   "Crea circuitos que agrupen los casos según el acceso digital: los que lo tienen y los que no.",
+   "¿Podrías crear circuitos para separar los casos por acceso digital, distinguiendo entre quienes lo tienen y quienes no?",
+   "Crea circuitos para agrupar los casos por acceso digital: sí o no."
+  ],
+  "ambiguity": "'Acceso digital' could refer to digital access to the system or to digital access to health records specifically."
+ },
+ "atencion_primaria-C07": {
+  "texts": [
+   "Crea un circuito por cada valor de Adherencia: «buena» o «regular»",
+   "Crea un circuito para cada valor de adherencia: uno para los de adherencia buena y otro para los de adherencia regular.",
+   "¿Podrías crear circuitos según la adherencia, uno para los casos con adherencia buena y otro para los de adherencia regular?",
+   "Crea circuitos por adherencia: buena o regular."
+  ],
+  "ambiguity": "'Adherencia' without further context could refer to medication adherence, treatment adherence, or program adherence."
+ },
+ "atencion_primaria-C08": {
+  "texts": [
+   "Crea circuitos para esto: separa los casos según AnaliticaRepetida: «no» o «si»",
+   "Crea circuitos que separen los casos según la analítica repetida: los que no la tienen y los que sí.",
+   "¿Podrías crear circuitos para distinguir los casos según la analítica repetida, separando los que no la tienen de los que sí?",
+   "Crea circuitos para separar los casos según analítica repetida: no o sí."
+  ],
+  "ambiguity": "'Analítica repetida' could mean repeated laboratory work or a repeated analysis of the same test."
+ },
+ "atencion_primaria-C02": {
+  "texts": [
+   "Crea circuitos para esto: clasifica a los pacientes según hayan pasado por urgencias del hospital, hayan pedido retinografía o hayan recibido educación diabetológica (el primero que cumpla)",
+   "Divide los pacientes en circuitos según si pasaron por urgencias del hospital, pidieron retinografía o recibieron educación diabetológica, que el primero que cumpla sea el que aplique.",
+   "¿Podrías crear circuitos para clasificar a los pacientes según hayan pasado por urgencias del hospital, hayan solicitado retinografía o hayan recibido educación diabetológica, de modo que el primero que cumpla sea el que aplique?",
+   "Genera circuitos para clasificar a los pacientes según urgencias, retinografía o educación diabetológica, que el primero que cumpla gane."
+  ],
+  "ambiguity": "The shortened word 'urgencias' could refer to hospital emergency or to primary-care emergency."
+ },
+ "atencion_primaria-C09": {
+  "texts": [
+   "Crea tres circuitos: «AplazaDecisionTratamiento» y luego «EvaluacionAnualIndicadores» en menos de 30 días, el resto de los que tienen «AplazaDecisionTratamiento» y luego «EvaluacionAnualIndicadores», y los demás",
+   "Crea tres circuitos: el primero para los casos donde el aplazamiento de la decisión de tratamiento va seguido de la evaluación anual de indicadores en menos de 30 días, el segundo para el resto de casos con esa misma secuencia, y el tercero para todo lo demás.",
+   "¿Podrías crear tres circuitos? Uno para los casos en que el aplazamiento de la decisión de tratamiento va seguido de la evaluación anual de indicadores en menos de 30 días, otro para el resto de esa secuencia, y un tercero para los demás.",
+   "Crea tres circuitos: el de aplazamiento y evaluación anual en menos de 30 días, el resto de esa secuencia, y los demás."
+  ],
+  "ambiguity": "Aplazamiento is a shortened name that could refer to several different activities in the model."
+ },
+ "atencion_primaria-C10": {
+  "texts": [
+   "Crea tres circuitos: «RegistroProgramaLipidos» y luego «Espirometria» en menos de 14 días, el resto de los que tienen «RegistroProgramaLipidos» y luego «Espirometria», y los demás",
+   "Crea tres circuitos: el primero para los casos donde el registro del programa de lípidos va seguido de la espirometría en menos de 14 días, el segundo para el resto de casos con esa secuencia, y el tercero para todo lo demás.",
+   "Me gustaría que crearas tres circuitos: uno para los casos en que el registro del programa de lípidos va seguido de la espirometría en menos de 14 días, otro para el resto de esa secuencia, y un tercero para los demás.",
+   "Crea tres circuitos: el de registro de lípidos y espirometría en menos de 14 días, el resto de esa secuencia, y los demás."
+  ],
+  "ambiguity": "Registro de lípidos is a shortened name that could fit more than one activity in the model."
+ },
+ "atencion_primaria-C11": {
+  "texts": [
+   "Crea tres circuitos: casos con AccesoDigital igual a «si» que pasan por «EvaluacionAnualIndicadores», el resto de casos con AccesoDigital igual a «si», y los demás",
+   "Crea tres circuitos: el primero para los casos con acceso digital igual a sí que pasan por la evaluación anual de indicadores, el segundo para el resto de casos con acceso digital igual a sí, y el tercero para los demás.",
+   "¿Podrías crear tres circuitos? Uno para los casos con acceso digital igual a sí que incluyen la evaluación anual de indicadores, otro para el resto con acceso digital igual a sí, y un tercero para todo lo demás.",
+   "Crea tres circuitos: los que tienen acceso digital en sí y pasan por la evaluación anual, el resto con acceso digital en sí, y los demás."
+  ],
+  "ambiguity": "The phrase en sí can be read as the adverbial expression in itself rather than the boolean value sí of the variable."
+ },
+ "atencion_primaria-C12": {
+  "texts": [
+   "Haz tres circuitos: Adherencia igual a «buena» y «RegistroProgramaHipertension», solo Adherencia igual a «buena», y el resto",
+   "Haz tres circuitos: el primero para los casos con adherencia igual a buena que incluyen el registro del programa de hipertensión, el segundo para el resto de casos con adherencia igual a buena, y el tercero para los demás.",
+   "Sería interesante que crearas tres circuitos: uno para los casos con adherencia buena que pasan por el registro del programa de hipertensión, otro para el resto con adherencia buena, y un tercero para todo lo demás.",
+   "Haz tres circuitos: adherencia buena con registro de hipertensión, solo adherencia buena, y el resto."
+  ],
+  "ambiguity": "Registro de hipertensión is a shortened name that could match more than one activity in the model."
+ },
+ "atencion_primaria-R01": {
+  "texts": [
+   "Define una región desde «RegistroProgramaLipidos» hasta «RevisionAnualCronicos»",
+   "Define una región desde el registro del programa de lípidos hasta la revisión anual de crónicos.",
+   "¿Podrías definir una región que vaya desde el registro del programa de lípidos hasta la revisión anual de crónicos?",
+   "Define una región desde el registro de lípidos hasta la revisión anual."
+  ],
+  "ambiguity": "Revisión anual is a shortened name that could refer to different annual review activities in the model."
+ },
+ "atencion_primaria-R02": {
+  "texts": [
+   "Define una sección crítica desde «SolicitudCitaPresencial» hasta «CitaDemorada»",
+   "Define una sección crítica desde la solicitud de cita presencial hasta la cita demorada.",
+   "Me gustaría que definieras una sección crítica que vaya desde la solicitud de cita presencial hasta la cita demorada.",
+   "Define una sección crítica desde la solicitud de cita hasta la cita demorada."
+  ],
+  "ambiguity": "Solicitud de cita without the qualifier presencial could refer to a different appointment-request activity."
+ },
+ "atencion_primaria-R03": {
+  "texts": [
+   "Define una región desde «CitaDemorada» hasta «EducacionDiabetologica»",
+   "Define una región desde la cita demorada hasta la educación diabetológica.",
+   "¿Podrías definir una región que vaya desde la cita demorada hasta la educación diabetológica?",
+   "Define una región desde la cita demorada hasta la educación."
+  ],
+  "ambiguity": "Educación is a shortened name that could refer to several different education-related activities."
+ },
+ "atencion_primaria-R04": {
+  "texts": [
+   "Define dos secciones críticas: de «ExploracionPie» a «ObjetivoTANoAlcanzado» y de «InicioSeguimiento» a «AnaliticaRepetida»",
+   "Define dos secciones críticas: una desde la exploración del pie hasta el objetivo de tensión arterial no alcanzado, y otra desde el inicio de seguimiento hasta la analítica repetida.",
+   "¿Podrías definir dos secciones críticas? Una desde la exploración del pie hasta el objetivo de tensión arterial no alcanzado, y otra desde el inicio de seguimiento hasta la analítica repetida.",
+   "Define dos secciones críticas: de exploración del pie a objetivo no alcanzado, y de inicio de seguimiento a analítica repetida."
+  ],
+  "ambiguity": "Objetivo no alcanzado omits the qualifier de tensión arterial, so it could match other unmet-objective activities."
+ },
+ "atencion_primaria-R05": {
+  "texts": [
+   "Define dos regiones: de «CitaDemorada» a «EducacionDiabetologica» y de «RevisionAnualCronicos» a «ObjetivoTAAlcanzado»",
+   "Define dos regiones: una de la cita demorada a la educación diabetológica y otra de la revisión anual de crónicos al objetivo de tensión arterial alcanzado.",
+   "¿Podrías definir dos regiones, una que vaya de la cita demorada hasta la educación diabetológica y otra de la revisión anual de crónicos hasta el objetivo de tensión arterial alcanzado?",
+   "Define dos regiones: de la cita a la educación diabetológica y de la revisión anual a la tensión arterial alcanzada."
+  ],
+  "ambiguity": "«la cita» and «la tensión arterial alcanzada» are shortened forms that could match several appointment- or blood-pressure-related activities."
+ },
+ "atencion_primaria-R06": {
+  "texts": [
+   "Define una región desde «AplazaDecisionTratamiento» hasta «EvaluacionAnualIndicadores» cuando pasan menos de 30 días entre ambos",
+   "Define una región desde el aplazamiento de la decisión de tratamiento hasta la evaluación anual de indicadores, cuando pasan menos de 30 días entre ambas.",
+   "Sería interesante que definieras una región que vaya del aplazamiento de la decisión de tratamiento a la evaluación anual de indicadores, pero solo cuando el tiempo entre ambas sea inferior a 30 días.",
+   "Define una región desde el aplazamiento hasta la evaluación anual, cuando pasan menos de 30 días."
+  ],
+  "ambiguity": "«el aplazamiento» and «la evaluación anual» are shortened and could refer to different postponement or annual-evaluation activities in the model."
+ },
+ "atencion_primaria-R07": {
+  "texts": [
+   "Define una sección crítica desde «ExploracionPie» hasta «ConsultaMedicaResultados» cuando transcurren más de 30 días",
+   "Define una sección crítica desde la exploración del pie hasta la consulta médica de resultados, cuando transcurren más de 30 días.",
+   "¿Podrías marcar una sección crítica que vaya de la exploración del pie a la consulta médica de resultados, en los casos donde pasen más de 30 días?",
+   "Define una sección crítica desde la exploración hasta la consulta de resultados, cuando pasan más de 30 días."
+  ],
+  "ambiguity": "«la exploración» could refer to several examination activities, and «la consulta de resultados» is a shortened form that might match other consultation activities."
+ },
+ "atencion_primaria-R10": {
+  "texts": [
+   "Define una sección crítica desde «RevisionAnualCronicos» hasta «ObjetivoTAAlcanzado» solo en los casos con Adherencia igual a «buena»",
+   "Define una sección crítica desde la revisión anual de crónicos hasta el objetivo de tensión arterial alcanzado, solo en los casos donde la adherencia sea buena.",
+   "¿Podrías definir una sección crítica entre la revisión anual de crónicos y el objetivo de tensión arterial alcanzado, limitándola a los casos con adherencia buena?",
+   "Define una sección crítica desde la revisión anual hasta el objetivo de tensión arterial, solo en los casos con adherencia buena."
+  ],
+  "ambiguity": "«la revisión anual» is shortened and could refer to different annual review activities, and «el objetivo de tensión arterial» omits the word «alcanzado»."
+ },
+ "atencion_primaria-M01": {
+  "texts": [
+   "Define «SolicitudCitaApp» como hito",
+   "Define la solicitud de cita por aplicación como hito.",
+   "¿Podrías marcar la solicitud de cita por aplicación como hito en el modelo?",
+   "Define la solicitud de cita como hito."
+  ],
+  "ambiguity": "«la solicitud de cita» without «por aplicación» could refer to a general appointment-request activity rather than the app-specific one."
+ },
+ "atencion_primaria-R08": {
+  "texts": [
+   "Define una sección crítica desde «CribadoRenal» hasta «IntensificacionHipolipemiantes» cuando transcurren más de 30 días",
+   "Define una sección crítica desde cribado renal hasta intensificación de hipolipemiantes cuando han transcurrido más de 30 días.",
+   "¿Podrías definir una sección crítica que vaya desde cribado renal hasta intensificación de hipolipemiantes, considerando únicamente los casos en los que han pasado más de 30 días?",
+   "Marca una región desde cribado hasta intensificación de hipolipemiantes si pasan más de 30 días."
+  ],
+  "ambiguity": "The activity is shortened to just 'cribado' without 'renal', which could match other screening activities in the model."
+ },
+ "atencion_primaria-R09": {
+  "texts": [
+   "Define una región desde «CitaDemorada» hasta «EducacionDiabetologica» en los casos con AccesoDigital igual a «si»",
+   "Define una región desde cita demorada hasta educación diabetológica en los casos donde el acceso digital es sí.",
+   "Me gustaría que definieras una región desde cita demorada hasta educación diabetológica, pero solo para los casos en los que el acceso digital sea sí.",
+   "Crea una región desde la cita hasta la educación diabetológica cuando el acceso digital es sí."
+  ],
+  "ambiguity": "The activity is shortened to 'la cita' without 'demorada', which could refer to any appointment-related activity in the process."
+ },
+ "atencion_primaria-M02": {
+  "texts": [
+   "Marca «EvaluacionAnualIndicadores» y «EducacionDiabetologica» como hitos",
+   "Marca la evaluación anual de indicadores y la educación diabetológica como hitos del proceso.",
+   "¿Podrías marcar la evaluación anual de indicadores y la educación diabetológica como hitos, por favor?",
+   "Marca la evaluación anual y la educación diabetológica como hitos."
+  ],
+  "ambiguity": "The shortened name 'evaluación anual' could refer to 'evaluación anual de indicadores' or to another annual evaluation activity."
+ },
+ "atencion_primaria-M03": {
+  "texts": [
+   "Usa «AtencionUrgenciasNoUrgente» como hito",
+   "Usa la atención de urgencias no urgente como hito.",
+   "¿Podrías definir la atención de urgencias no urgente como hito del proceso?",
+   "Marca urgencias no urgente como hito."
+  ],
+  "ambiguity": "The activity name is shortened to just 'urgencias no urgente', dropping 'atención de', which could match a different urgencias-related activity."
+ },
+ "atencion_primaria-M04": {
+  "texts": [
+   "Define «AltaUrgenciasNoUrgente» como hito",
+   "Define el alta de urgencias no urgente como hito.",
+   "Me gustaría que marcaras el alta de urgencias no urgente como hito.",
+   "Usa el alta de urgencias como hito."
+  ],
+  "ambiguity": "The qualifier 'no urgente' is omitted, so it could refer to a different alta activity in the urgencias area."
+ },
+ "atencion_primaria-M06": {
+  "texts": [
+   "Marca «CitaPostAltaOrdinaria», «AtencionUrgenteCentroSalud» y «AnaliticaRepetida» como hitos",
+   "Marca la cita post alta ordinaria, la atención urgente en centro de salud y la analítica repetida como hitos.",
+   "¿Podrías definir la cita post alta ordinaria, la atención urgente en centro de salud y la analítica repetida como hitos?",
+   "Define la cita post alta, la atención urgente y la analítica repetida como hitos."
+  ],
+  "ambiguity": "The qualifiers 'ordinaria' and 'en centro de salud' are omitted, so the first two activities could match other cita or atención urgente variants."
+ },
+ "atencion_primaria-M07": {
+  "texts": [
+   "Define «IntensificacionAntihipertensivos» como hito",
+   "Define la intensificación de antihipertensivos como hito.",
+   "Me gustaría que marcaras la intensificación de antihipertensivos como hito.",
+   "Usa la intensificación como hito."
+  ],
+  "ambiguity": "The specific drug class 'antihipertensivos' is omitted, so 'intensificación' alone could refer to intensification of antidiabetics, hypolipemiants, or other medications."
+ },
+ "atencion_primaria-M08": {
+  "texts": [
+   "Marca «ExacerbacionEPOC» y «IntensificacionHipolipemiantes» como hitos",
+   "Marca la exacerbación de EPOC y la intensificación de hipolipemiantes como hitos.",
+   "¿Podrías definir la exacerbación de EPOC y la intensificación de hipolipemiantes como hitos?",
+   "Define la exacerbación y la intensificación de hipolipemiantes como hitos."
+  ],
+  "ambiguity": "The disease qualifier 'EPOC' is dropped, so 'exacerbación' alone could refer to an exacerbation of another chronic condition."
+ },
+ "atencion_primaria-M10": {
+  "texts": [
+   "Define «Retinografia» como hito",
+   "Define la retinografía como hito.",
+   "¿Podrías usar la retinografía como hito del proceso?",
+   "Marca la retina como hito."
+  ],
+  "ambiguity": "The activity name is shortened to 'retina' instead of 'retinografía', which could be confused with a different ophthalmological activity."
+ },
+ "atencion_primaria-M05": {
+  "texts": [
+   "Define «ComplementaDocumentacion» y «VisitaPostAlta» como hitos",
+   "Marca como hitos la complementación de documentación y la visita posterior al alta.",
+   "Me gustaría que definieras como hitos la complementación de documentación y la visita posterior al alta, si te parece bien.",
+   "Define como hitos la documentación y la visita post alta."
+  ],
+  "ambiguity": "la documentación is a shortened name that could refer to other documentation-related activities, and post alta is a truncated form."
+ },
+ "atencion_primaria-M09": {
+  "texts": [
+   "Define «IntensificacionAntidiabeticos», «IntensificacionHipolipemiantes» y «DescompensacionGlucemica» como hitos",
+   "Establece como hitos la intensificación de antidiabéticos, la intensificación de hipolipemiantes y la descompensación glucémica.",
+   "¿Podrías marcar como hitos la intensificación de antidiabéticos, la intensificación de hipolipemiantes y la descompensación glucémica?",
+   "Define como hitos la intensificación de antidiabéticos, la de hipolipemiantes y la descompensación."
+  ],
+  "ambiguity": "la de hipolipemiantes is a shortened reference and descompensación without the qualifier glucémica could fit other decompensation activities."
+ }
+}

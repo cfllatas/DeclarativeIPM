@@ -1,0 +1,860 @@
+{
+ "log": "bpic2020_international_declarations",
+ "lang": "en",
+ "cases": 6449,
+ "version": "v2",
+ "note": "orders only; no clarification items; one wording per item",
+ "filters": [
+  {
+   "id": "bpic2020_international_declarations-F01",
+   "family": "exists",
+   "cls": "act",
+   "text": "Limit the cases to: cases in which 'Declaration APPROVED by PRE_APPROVER' occurs",
+   "expr": "'Declaration APPROVED by PRE_APPROVER'",
+   "count": 558,
+   "pct": 8.7,
+   "case_hash": "17ac9a4667a4a15f",
+   "texts": [
+    "Limit the cases to: cases in which 'Declaration APPROVED by PRE_APPROVER' occurs",
+    "Filter the cases to only those where the declaration is approved by the pre-approver.",
+    "Could you limit the cases to those in which the declaration gets approved by the pre-approver?",
+    "Filter the cases to those where the declaration is approved by the approver."
+   ],
+   "ambiguity": "The word approver does not specify which role (pre-approver, supervisor, or budget owner) performed the approval."
+  },
+  {
+   "id": "bpic2020_international_declarations-F02",
+   "family": "exists",
+   "cls": "act",
+   "text": "Limit the cases to: cases that went through 'Permit APPROVED by SUPERVISOR'",
+   "expr": "'Permit APPROVED by SUPERVISOR'",
+   "count": 637,
+   "pct": 9.9,
+   "case_hash": "cf50b2fb17275d46",
+   "texts": [
+    "Limit the cases to: cases that went through 'Permit APPROVED by SUPERVISOR'",
+    "Filter the cases to only those that went through the permit approval by the supervisor.",
+    "I would like you to limit the cases to those where the permit is approved by the supervisor.",
+    "Filter the cases to those that went through the permit approval."
+   ],
+   "ambiguity": "The approving role is omitted, so it is unclear whether the permit was approved by the supervisor, the budget owner, or another role."
+  },
+  {
+   "id": "bpic2020_international_declarations-F33",
+   "family": "var_range",
+   "cls": "var",
+   "text": "Limit the cases to: cases with Permit RequestedBudget between 658.5 and 1429.8",
+   "expr": "['Permit RequestedBudget' >= 658.5, 'Permit RequestedBudget' <= 1429.8]",
+   "count": 2258,
+   "pct": 35.0,
+   "case_hash": "32141ccce7e86b33",
+   "texts": [
+    "Limit the cases to: cases with Permit RequestedBudget between 658.5 and 1429.8",
+    "Filter the cases to those where the permit requested budget is between 658.5 and 1429.8.",
+    "It would be great if you could limit the cases to those with a permit requested budget between 658.5 and 1429.8.",
+    "Filter the cases to those where the requested budget is between 658.5 and 1429.8."
+   ],
+   "ambiguity": "The word budget without the permit qualifier could refer to a different budget variable in the model."
+  },
+  {
+   "id": "bpic2020_international_declarations-F34",
+   "family": "var_cat",
+   "cls": "var",
+   "text": "Limit the cases to: cases with Permit TaskNumber equal to 'task 427'",
+   "expr": "['Permit TaskNumber' == 'task 427']",
+   "count": 4068,
+   "pct": 63.1,
+   "case_hash": "0b8e7d6d07693b6a",
+   "texts": [
+    "Limit the cases to: cases with Permit TaskNumber equal to 'task 427'",
+    "Filter the cases to those where the permit task number is task 427.",
+    "Could you limit the cases to those with a permit task number of task 427?",
+    "Filter the cases to those where the task number is 427."
+   ],
+   "ambiguity": "The word task number without the permit qualifier could match a different task-number variable in the model."
+  },
+  {
+   "id": "bpic2020_international_declarations-F35",
+   "family": "time_lt",
+   "cls": "time",
+   "text": "Limit the cases to: cases with 'Permit APPROVED by BUDGET OWNER' and, later, 'Permit FINAL_APPROVED by SUPERVISOR' in less than 2 days",
+   "expr": "('Permit APPROVED by BUDGET OWNER' >> 'Permit FINAL_APPROVED by SUPERVISOR')[-2d]",
+   "count": 705,
+   "pct": 10.9,
+   "case_hash": "3f9551490721c749",
+   "texts": [
+    "Limit the cases to: cases with 'Permit APPROVED by BUDGET OWNER' and, later, 'Permit FINAL_APPROVED by SUPERVISOR' in less than 2 days",
+    "Filter the cases to those where the permit is approved by the budget owner and then finally approved by the supervisor in less than 2 days.",
+    "I would like you to limit the cases to those in which the permit is approved by the budget owner and then finally approved by the supervisor within less than 2 days.",
+    "Filter the cases to those where the permit is approved by the budget owner and then approved by the supervisor in less than 2 days."
+   ],
+   "ambiguity": "The second approval by the supervisor could be the regular permit approval or the final approval, since the word finally is missing."
+  },
+  {
+   "id": "bpic2020_international_declarations-F36",
+   "family": "time_gt",
+   "cls": "time",
+   "text": "Limit the cases to: cases with 'Permit SUBMITTED by EMPLOYEE' and, later, 'Declaration APPROVED by BUDGET OWNER' more than 30 days apart",
+   "expr": "('Permit SUBMITTED by EMPLOYEE' >> 'Declaration APPROVED by BUDGET OWNER')[30d-]",
+   "count": 1240,
+   "pct": 19.2,
+   "case_hash": "9f3038fb5d886b1f",
+   "texts": [
+    "Limit the cases to: cases with 'Permit SUBMITTED by EMPLOYEE' and, later, 'Declaration APPROVED by BUDGET OWNER' more than 30 days apart",
+    "Filter the cases to those where the permit is submitted by the employee and then the declaration is approved by the budget owner more than 30 days later.",
+    "Could you limit the cases to those in which the permit is submitted by the employee and the declaration is approved by the budget owner more than 30 days after?",
+    "Filter the cases to those where the permit is submitted by the employee and then the declaration is approved more than 30 days later."
+   ],
+   "ambiguity": "The approving role for the declaration is omitted, so it is unclear whether it was the budget owner, the pre-approver, or another role."
+  },
+  {
+   "id": "bpic2020_international_declarations-F38",
+   "family": "time_var",
+   "cls": "mixed",
+   "text": "Limit the cases to: cases with Permit RequestedBudget greater than 765.1 and 'Request Payment' less than 7 days after 'Declaration REJECTED by EMPLOYEE'",
+   "expr": "('Declaration REJECTED by EMPLOYEE' >> 'Request Payment')['Permit RequestedBudget' > 765.1, -7d]",
+   "count": 470,
+   "pct": 7.3,
+   "case_hash": "fe9cf89c62b6b470",
+   "texts": [
+    "Limit the cases to: cases with Permit RequestedBudget greater than 765.1 and 'Request Payment' less than 7 days after 'Declaration REJECTED by EMPLOYEE'",
+    "Filter the cases to those where the permit requested budget is greater than 765.1 and the request for payment comes less than 7 days after the declaration is rejected by the employee.",
+    "I would like you to limit the cases to those with a permit requested budget above 765.1 where the request for payment follows the declaration rejection by the employee in less than 7 days.",
+    "Filter the cases to those where the permit requested budget is greater than 765.1 and the payment request comes less than 7 days after the declaration is rejected by the employee."
+   ],
+   "ambiguity": "The shortened phrase payment request could refer to the activity Request Payment or to a different payment-related activity in the model."
+  },
+  {
+   "id": "bpic2020_international_declarations-F37",
+   "family": "time_range",
+   "cls": "time",
+   "text": "Limit the cases to: cases with 'Declaration REJECTED by ADMINISTRATION' and, later, 'Request Payment' between 6 days and 20 days after",
+   "expr": "('Declaration REJECTED by ADMINISTRATION' >> 'Request Payment')[6d-20d]",
+   "count": 652,
+   "pct": 10.1,
+   "case_hash": "fb9a09a2cedc78b4",
+   "texts": [
+    "Limit the cases to: cases with 'Declaration REJECTED by ADMINISTRATION' and, later, 'Request Payment' between 6 days and 20 days after",
+    "Filter the cases to those where the declaration is rejected by the administration and then the request for payment comes between 6 and 20 days later.",
+    "Could you limit the cases to those in which the declaration is rejected by the administration and the request for payment follows between 6 and 20 days after?",
+    "Filter the cases to those where the declaration is rejected and then the request for payment comes between 6 and 20 days later."
+   ],
+   "ambiguity": "The rejecting role is omitted, so it is unclear whether the declaration was rejected by the administration, the employee, or another role."
+  }
+ ],
+ "circuits": [
+  {
+   "id": "bpic2020_international_declarations-C01",
+   "text": "Create circuits for this: separate the trips by how they end: payment handled, end of the trip, rejected by the employee or saved by the employee",
+   "cls": "act",
+   "circuits": [
+    {
+     "name": "ends_0",
+     "expr": "'Payment Handled'$"
+    },
+    {
+     "name": "ends_1",
+     "expr": "'End trip'$"
+    },
+    {
+     "name": "ends_2",
+     "expr": "'Declaration REJECTED by EMPLOYEE'$"
+    },
+    {
+     "name": "ends_3",
+     "expr": "'Declaration SAVED by EMPLOYEE'$"
+    }
+   ],
+   "gold_counts": {
+    "ends_0": 5646,
+    "ends_1": 593,
+    "ends_3": 54,
+    "UNK": 26,
+    "ends_2": 130
+   },
+   "texts": [
+    "Create circuits for this: separate the trips by how they end: payment handled, end of the trip, rejected by the employee or saved by the employee",
+    "Create circuits that separate the trips by how they end: payment handled, end of the trip, declaration rejected by the employee, or declaration saved by the employee.",
+    "Could you create circuits to split the trips according to their ending—payment handled, end of the trip, declaration rejected by the employee, or declaration saved by the employee?",
+    "Create circuits to group the trips by their final step: payment, end of the trip, declaration rejected by the employee, or declaration saved by the employee."
+   ],
+   "ambiguity": "The word payment is a shortened form that could refer to payment handled or to another payment-related activity in the model."
+  },
+  {
+   "id": "bpic2020_international_declarations-C02",
+   "text": "Create circuits for this: classify the trips by whether the pre-approver approved the declaration, the supervisor approved the permit or the director gave final approval (first match wins)",
+   "cls": "act",
+   "circuits": [
+    {
+     "name": "with_0",
+     "expr": "'Declaration APPROVED by PRE_APPROVER'"
+    },
+    {
+     "name": "with_1",
+     "expr": "'Permit APPROVED by SUPERVISOR'"
+    },
+    {
+     "name": "with_2",
+     "expr": "'Permit FINAL_APPROVED by DIRECTOR'"
+    }
+   ],
+   "gold_counts": {
+    "UNK": 5290,
+    "with_0": 558,
+    "with_1": 601
+   },
+   "texts": [
+    "Create circuits for this: classify the trips by whether the pre-approver approved the declaration, the supervisor approved the permit or the director gave final approval (first match wins)",
+    "Create circuits to classify the trips by whether the declaration was approved by the pre-approver, the permit was approved by the supervisor, or the permit was final approved by the director, with first match winning.",
+    "I would like you to create circuits that classify the trips based on whether the declaration was approved by the pre-approver, the permit was approved by the supervisor, or the permit received final approval from the director, keeping the priority order.",
+    "Create circuits to group the trips by approval: declaration approved, permit approved, or permit final approved, first match wins."
+   ],
+   "ambiguity": "The approver roles (pre-approver, supervisor, director) are omitted, so it is unclear which specific approval activity each group refers to."
+  },
+  {
+   "id": "bpic2020_international_declarations-C03",
+   "text": "Create circuits for this: separate the trips with a reminder followed by payment, those with only a reminder, and the rest",
+   "cls": "act",
+   "circuits": [
+    {
+     "name": "a_then_b",
+     "expr": "('Send Reminder' >> 'Payment Handled')"
+    },
+    {
+     "name": "has_a",
+     "expr": "'Send Reminder'"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "rest": 6043,
+    "a_then_b": 377,
+    "has_a": 29
+   },
+   "texts": [
+    "Create circuits for this: separate the trips with a reminder followed by payment, those with only a reminder, and the rest",
+    "Create circuits to separate the trips into those where a reminder is followed by payment handled, those with only a reminder, and the rest.",
+    "It would be helpful if you could create circuits splitting the trips into three groups: a reminder followed by payment handled, only a reminder, and everything else.",
+    "Create circuits to group the trips by reminder and payment: reminder then payment, just a reminder, and the rest."
+   ],
+   "ambiguity": "The word payment is a shortened form that could refer to payment handled or to another payment-related activity in the model."
+  },
+  {
+   "id": "bpic2020_international_declarations-C04",
+   "text": "Create circuits for this: separate the cases by how they end: 'Payment Handled' or 'End trip'",
+   "cls": "act",
+   "circuits": [
+    {
+     "name": "ends_Payment_Handled",
+     "expr": "'Payment Handled'$"
+    },
+    {
+     "name": "ends_End_trip",
+     "expr": "'End trip'$"
+    }
+   ],
+   "gold_counts": {
+    "ends_Payment_Handled": 5646,
+    "ends_End_trip": 593,
+    "UNK": 210
+   },
+   "texts": [
+    "Create circuits for this: separate the cases by how they end: 'Payment Handled' or 'End trip'",
+    "Create circuits to separate the cases by their ending: payment handled or end of the trip.",
+    "Would you mind creating circuits that split the cases according to how they end—either payment handled or end of the trip?",
+    "Create circuits to group the cases by their final activity: payment or end of trip."
+   ],
+   "ambiguity": "The word payment is a shortened form that could refer to payment handled or to another payment-related activity in the model."
+  },
+  {
+   "id": "bpic2020_international_declarations-C05",
+   "text": "Create circuits for this: separate the trips charged to task 427 from those with an unknown task",
+   "cls": "var",
+   "circuits": [
+    {
+     "name": "Permit_TaskNumber_task_427",
+     "expr": "['Permit TaskNumber' == 'task 427']"
+    },
+    {
+     "name": "Permit_TaskNumber_UNKNOWN",
+     "expr": "['Permit TaskNumber' == 'UNKNOWN']"
+    }
+   ],
+   "gold_counts": {
+    "Permit_TaskNumber_UNKNOWN": 2340,
+    "Permit_TaskNumber_task_427": 4068,
+    "UNK": 41
+   },
+   "texts": [
+    "Create circuits for this: separate the trips charged to task 427 from those with an unknown task",
+    "Create circuits to separate the trips charged to task 427 from those with an unknown permit task number.",
+    "I would like you to create circuits splitting the trips into those whose permit task number is task 427 and those where the permit task number is unknown.",
+    "Create circuits to group the trips by task: task 427 and unknown."
+   ],
+   "ambiguity": "The variable permit task number is not named, so it is unclear which task-related field is being checked."
+  },
+  {
+   "id": "bpic2020_international_declarations-C06",
+   "text": "Create circuits for this: separate the cases by AdjustedAmount: up to 509.1 and above 509.1",
+   "cls": "var",
+   "circuits": [
+    {
+     "name": "AdjustedAmount_low",
+     "expr": "[AdjustedAmount <= 509.1]"
+    },
+    {
+     "name": "AdjustedAmount_high",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "AdjustedAmount_low": 3226,
+    "AdjustedAmount_high": 3223
+   },
+   "texts": [
+    "Create circuits for this: separate the cases by AdjustedAmount: up to 509.1 and above 509.1",
+    "Create circuits to separate the cases by adjusted amount: up to 509.1 and above 509.1.",
+    "Could you create circuits that split the cases based on the adjusted amount, with one group at or below 509.1 and the other above 509.1?",
+    "Create circuits to group the cases by amount: up to 509.1 and the rest."
+   ],
+   "ambiguity": "The word amount is generic and could refer to the adjusted amount, the amount, or the original amount variable."
+  },
+  {
+   "id": "bpic2020_international_declarations-C07",
+   "text": "Create circuits for this: split the cases in two groups by Amount: up to 509.1 and more than 509.1",
+   "cls": "var",
+   "circuits": [
+    {
+     "name": "Amount_low",
+     "expr": "[Amount <= 509.1]"
+    },
+    {
+     "name": "Amount_high",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "Amount_low": 3226,
+    "Amount_high": 3223
+   },
+   "texts": [
+    "Create circuits for this: split the cases in two groups by Amount: up to 509.1 and more than 509.1",
+    "Create circuits to split the cases into two groups by amount: up to 509.1 and more than 509.1.",
+    "It would be great if you could create circuits dividing the cases by amount, one group at or below 509.1 and the other above 509.1.",
+    "Create circuits to group the cases by the figure: up to 509.1 and the rest."
+   ],
+   "ambiguity": "The word figure is a loose substitute for the specific variable name amount and could be confused with adjusted amount or original amount."
+  },
+  {
+   "id": "bpic2020_international_declarations-C08",
+   "text": "Create circuits for this: separate the cases by OriginalAmount: up to 509.1 and above 509.1",
+   "cls": "var",
+   "circuits": [
+    {
+     "name": "OriginalAmount_low",
+     "expr": "[OriginalAmount <= 509.1]"
+    },
+    {
+     "name": "OriginalAmount_high",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "OriginalAmount_low": 3226,
+    "OriginalAmount_high": 3223
+   },
+   "texts": [
+    "Create circuits for this: separate the cases by OriginalAmount: up to 509.1 and above 509.1",
+    "Create circuits to separate the cases by original amount: up to 509.1 and above 509.1.",
+    "Would you mind creating circuits that split the cases based on the original amount, with one group at or below 509.1 and the other above 509.1?",
+    "Create circuits to group the cases by the original figure: up to 509.1 and the rest."
+   ],
+   "ambiguity": "The phrase original figure is a loose name for the original amount variable and could be confused with other amount-related fields."
+  },
+  {
+   "id": "bpic2020_international_declarations-C09",
+   "text": "Create three circuits: 'Permit APPROVED by BUDGET OWNER' then 'Permit FINAL_APPROVED by SUPERVISOR' in less than 2 days, the rest of those with 'Permit APPROVED by BUDGET OWNER' then 'Permit FINAL_APPROVED by SUPERVISOR', and all the others",
+   "cls": "time",
+   "circuits": [
+    {
+     "name": "Permit_APPROVED_by_BUDGET_OWNER_to_Permit_FINAL_APPROVED_by_SUPERVISOR_fast",
+     "expr": "('Permit APPROVED by BUDGET OWNER' >> 'Permit FINAL_APPROVED by SUPERVISOR')[-2d]"
+    },
+    {
+     "name": "Permit_APPROVED_by_BUDGET_OWNER_to_Permit_FINAL_APPROVED_by_SUPERVISOR_slow",
+     "expr": "('Permit APPROVED by BUDGET OWNER' >> 'Permit FINAL_APPROVED by SUPERVISOR')"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "rest": 4904,
+    "Permit_APPROVED_by_BUDGET_OWNER_to_Permit_FINAL_APPROVED_by_SUPERVISOR_slow": 840,
+    "Permit_APPROVED_by_BUDGET_OWNER_to_Permit_FINAL_APPROVED_by_SUPERVISOR_fast": 705
+   },
+   "texts": [
+    "Create three circuits: 'Permit APPROVED by BUDGET OWNER' then 'Permit FINAL_APPROVED by SUPERVISOR' in less than 2 days, the rest of those with 'Permit APPROVED by BUDGET OWNER' then 'Permit FINAL_APPROVED by SUPERVISOR', and all the others",
+    "Create three circuits: first, cases where permit approved by budget owner is followed by permit final approved by supervisor in less than two days; second, the remaining cases that have both permit approved by budget owner and permit final approved by supervisor; and third, all the other cases.",
+    "Could you create three circuits for me? I would like the first to capture cases where permit approved by budget owner leads to permit final approved by supervisor in under two days, the second to cover the rest of those with both activities, and the third to include everything else.",
+    "Make three circuits: the fast ones where the budget owner approves the permit and then the supervisor gives final approval in under two days, the slower ones with both those approvals, and everything else."
+   ],
+   "ambiguity": "The phrase 'both those approvals' is a loose reference that could be mistaken for any two approval activities in the process rather than specifically the two named permit activities."
+  },
+  {
+   "id": "bpic2020_international_declarations-C10",
+   "text": "Make three circuits by the time between 'Declaration APPROVED by ADMINISTRATION' and 'Declaration FINAL_APPROVED by SUPERVISOR': less than 2 days, longer, and those without that stretch",
+   "cls": "time",
+   "circuits": [
+    {
+     "name": "Declaration_APPROVED_by_ADMINISTRATION_to_Declaration_FINAL_APPROVED_by_SUPERVISOR_fast",
+     "expr": "('Declaration APPROVED by ADMINISTRATION' >> 'Declaration FINAL_APPROVED by SUPERVISOR')[-2d]"
+    },
+    {
+     "name": "Declaration_APPROVED_by_ADMINISTRATION_to_Declaration_FINAL_APPROVED_by_SUPERVISOR_slow",
+     "expr": "('Declaration APPROVED by ADMINISTRATION' >> 'Declaration FINAL_APPROVED by SUPERVISOR')"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "rest": 1704,
+    "Declaration_APPROVED_by_ADMINISTRATION_to_Declaration_FINAL_APPROVED_by_SUPERVISOR_slow": 2521,
+    "Declaration_APPROVED_by_ADMINISTRATION_to_Declaration_FINAL_APPROVED_by_SUPERVISOR_fast": 2224
+   },
+   "texts": [
+    "Make three circuits by the time between 'Declaration APPROVED by ADMINISTRATION' and 'Declaration FINAL_APPROVED by SUPERVISOR': less than 2 days, longer, and those without that stretch",
+    "Create three circuits based on the time between declaration approved by administration and declaration final approved by supervisor: one for cases where it takes less than two days, one for the rest where it takes longer, and one for cases that do not have that sequence at all.",
+    "I would like you to make three circuits splitting cases by how long it takes between declaration approved by administration and declaration final approved by supervisor: under two days, over two days, and those without that stretch.",
+    "Make three circuits by the gap between the administration approving the declaration and the supervisor giving final approval: the short ones under two days, the longer ones, and those without that part."
+   ],
+   "ambiguity": "'The administration approving the declaration' and 'the supervisor giving final approval' are loose verbal descriptions that could be confused with other administration- or supervisor-related activities in the model."
+  },
+  {
+   "id": "bpic2020_international_declarations-C11",
+   "text": "Create three circuits: cases with Permit TaskNumber equal to 'task 427' that go through 'Permit FINAL_APPROVED by SUPERVISOR', the rest of the cases with Permit TaskNumber equal to 'task 427', and all the others",
+   "cls": "mixed",
+   "circuits": [
+    {
+     "name": "Permit_TaskNumber_task_427_Permit_FINAL_APPROVED_by_SUPERVISOR",
+     "expr": "'Permit FINAL_APPROVED by SUPERVISOR' & ['Permit TaskNumber' == 'task 427']"
+    },
+    {
+     "name": "Permit_TaskNumber_task_427",
+     "expr": "['Permit TaskNumber' == 'task 427']"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "rest": 2381,
+    "Permit_TaskNumber_task_427_Permit_FINAL_APPROVED_by_SUPERVISOR": 3258,
+    "Permit_TaskNumber_task_427": 810
+   },
+   "texts": [
+    "Create three circuits: cases with Permit TaskNumber equal to 'task 427' that go through 'Permit FINAL_APPROVED by SUPERVISOR', the rest of the cases with Permit TaskNumber equal to 'task 427', and all the others",
+    "Create three circuits: first, cases where the permit task number is task 427 and the case goes through permit final approved by supervisor; second, the remaining cases with permit task number task 427; and third, all the other cases.",
+    "Could you create three circuits for me? I would like one for cases with permit task number task 427 that include permit final approved by supervisor, another for the rest of the task 427 cases, and a third for everything else.",
+    "Make three circuits: the task 427 ones that have the final supervisor approval, the other task 427 ones, and the rest."
+   ],
+   "ambiguity": "'The final supervisor approval' is a shortened name that could fit any supervisor final-approval activity in the model, not necessarily the one specific to permits."
+  },
+  {
+   "id": "bpic2020_international_declarations-C12",
+   "text": "Create three circuits: 'Declaration APPROVED by SUPERVISOR' then 'Request Payment' in less than 3 days, the rest of those with 'Declaration APPROVED by SUPERVISOR' then 'Request Payment', and all the others",
+   "cls": "time",
+   "circuits": [
+    {
+     "name": "Declaration_APPROVED_by_SUPERVISOR_to_Request_Payment_fast",
+     "expr": "('Declaration APPROVED by SUPERVISOR' >> 'Request Payment')[-3d]"
+    },
+    {
+     "name": "Declaration_APPROVED_by_SUPERVISOR_to_Request_Payment_slow",
+     "expr": "('Declaration APPROVED by SUPERVISOR' >> 'Request Payment')"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "rest": 6204,
+    "Declaration_APPROVED_by_SUPERVISOR_to_Request_Payment_slow": 125,
+    "Declaration_APPROVED_by_SUPERVISOR_to_Request_Payment_fast": 120
+   },
+   "texts": [
+    "Create three circuits: 'Declaration APPROVED by SUPERVISOR' then 'Request Payment' in less than 3 days, the rest of those with 'Declaration APPROVED by SUPERVISOR' then 'Request Payment', and all the others",
+    "Create three circuits: cases where declaration approved by supervisor is followed by request payment in less than three days, the remaining cases that have both declaration approved by supervisor and request payment, and all the other cases.",
+    "It would be great if you could create three circuits: one for cases where declaration approved by supervisor leads to request payment in under three days, one for the rest with both those activities, and one for everything else.",
+    "Make three circuits: the ones where the supervisor approves the declaration and then payment is requested in under three days, the slower ones with both steps, and the rest."
+   ],
+   "ambiguity": "'Payment is requested' is a vague verbal phrase that could refer to different payment-related activities rather than specifically the request payment activity."
+  }
+ ],
+ "regions": [
+  {
+   "id": "bpic2020_international_declarations-R01",
+   "text": "Define a region from 'Send Reminder' to 'Payment Handled'",
+   "cls": "act",
+   "regions": [
+    {
+     "name": "Send_Reminder_to_Payment_Handled",
+     "expr": "('Send Reminder' >> 'Payment Handled')",
+     "traces": 377
+    }
+   ],
+   "texts": [
+    "Define a region from 'Send Reminder' to 'Payment Handled'",
+    "Define a region from send reminder to payment handled.",
+    "Could you define a region for me, from send reminder to payment handled?",
+    "Define a region from the reminder to the payment."
+   ],
+   "ambiguity": "'The reminder' and 'the payment' are shortened, generic references that could match several reminder- or payment-related activities in the model."
+  },
+  {
+   "id": "bpic2020_international_declarations-R02",
+   "text": "Define a critical section from 'Permit APPROVED by BUDGET OWNER' to 'Declaration APPROVED by BUDGET OWNER'",
+   "cls": "act",
+   "regions": [
+    {
+     "name": "Permit_APPROVED_by_BUDGET_OWNER_to_Declaration_APPROVED_by_BUDGET_OWNER",
+     "expr": "('Permit APPROVED by BUDGET OWNER' >> 'Declaration APPROVED by BUDGET OWNER')",
+     "traces": 1591
+    }
+   ],
+   "texts": [
+    "Define a critical section from 'Permit APPROVED by BUDGET OWNER' to 'Declaration APPROVED by BUDGET OWNER'",
+    "Define a critical section from permit approved by budget owner to declaration approved by budget owner.",
+    "I would like you to define a critical section, from permit approved by budget owner to declaration approved by budget owner.",
+    "Define a critical section from the budget owner approving the permit to the budget owner approving the declaration."
+   ],
+   "ambiguity": "The possessive phrasing 'the budget owner approving' makes it sound like the budget owner is the actor, which could be confused with other budget-owner-related activities in the process."
+  },
+  {
+   "id": "bpic2020_international_declarations-R03",
+   "text": "Define a region from 'Permit APPROVED by BUDGET OWNER' to 'Declaration FINAL_APPROVED by SUPERVISOR'",
+   "cls": "act",
+   "regions": [
+    {
+     "name": "Permit_APPROVED_by_BUDGET_OWNER_to_Declaration_FINAL_APPROVED_by_SUPERVISOR",
+     "expr": "('Permit APPROVED by BUDGET OWNER' >> 'Declaration FINAL_APPROVED by SUPERVISOR')",
+     "traces": 1626
+    }
+   ],
+   "texts": [
+    "Define a region from 'Permit APPROVED by BUDGET OWNER' to 'Declaration FINAL_APPROVED by SUPERVISOR'",
+    "Define a region from permit approved by budget owner to declaration final approved by supervisor.",
+    "Could you define a region for me, from permit approved by budget owner to declaration final approved by supervisor?",
+    "Define a region from the budget owner's permit approval to the supervisor's final declaration approval."
+   ],
+   "ambiguity": "The possessive constructions 'the budget owner's permit approval' and 'the supervisor's final declaration approval' could be mistaken for other approval activities involving those roles."
+  },
+  {
+   "id": "bpic2020_international_declarations-R04",
+   "text": "Define two critical sections: from 'Permit APPROVED by ADMINISTRATION' to 'Permit APPROVED by SUPERVISOR' and from 'Declaration SUBMITTED by EMPLOYEE' to 'Start trip'",
+   "cls": "act",
+   "regions": [
+    {
+     "name": "Permit_APPROVED_by_ADMINISTRATION_to_Permit_APPROVED_by_SUPERVISOR",
+     "expr": "('Permit APPROVED by ADMINISTRATION' >> 'Permit APPROVED by SUPERVISOR')",
+     "traces": 449
+    },
+    {
+     "name": "Declaration_SUBMITTED_by_EMPLOYEE_to_Start_trip",
+     "expr": "('Declaration SUBMITTED by EMPLOYEE' >> 'Start trip')",
+     "traces": 564
+    }
+   ],
+   "texts": [
+    "Define two critical sections: from 'Permit APPROVED by ADMINISTRATION' to 'Permit APPROVED by SUPERVISOR' and from 'Declaration SUBMITTED by EMPLOYEE' to 'Start trip'",
+    "Define two critical sections: one from permit approved by administration to permit approved by supervisor, and another from declaration submitted by employee to start trip.",
+    "I would like you to define two critical sections: the first from permit approved by administration to permit approved by supervisor, and the second from declaration submitted by employee to start trip.",
+    "Define two critical sections: from the administration approving the permit to the supervisor approving it, and from the employee submitting the declaration to starting the trip."
+   ],
+   "ambiguity": "The pronoun 'it' in 'the supervisor approving it' could refer to either the permit or the declaration, and 'starting the trip' is a loose verbal form that could match a different activity name."
+  },
+  {
+   "id": "bpic2020_international_declarations-R05",
+   "text": "Define two regions: from 'Permit APPROVED by BUDGET OWNER' to 'Declaration FINAL_APPROVED by SUPERVISOR' and from 'Declaration REJECTED by EMPLOYEE' to 'Declaration FINAL_APPROVED by SUPERVISOR'",
+   "cls": "act",
+   "regions": [
+    {
+     "name": "Permit_APPROVED_by_BUDGET_OWNER_to_Declaration_FINAL_APPROVED_by_SUPERVISOR",
+     "expr": "('Permit APPROVED by BUDGET OWNER' >> 'Declaration FINAL_APPROVED by SUPERVISOR')",
+     "traces": 1626
+    },
+    {
+     "name": "Declaration_REJECTED_by_EMPLOYEE_to_Declaration_FINAL_APPROVED_by_SUPERVISOR",
+     "expr": "('Declaration REJECTED by EMPLOYEE' >> 'Declaration FINAL_APPROVED by SUPERVISOR')",
+     "traces": 1243
+    }
+   ],
+   "texts": [
+    "Define two regions: from 'Permit APPROVED by BUDGET OWNER' to 'Declaration FINAL_APPROVED by SUPERVISOR' and from 'Declaration REJECTED by EMPLOYEE' to 'Declaration FINAL_APPROVED by SUPERVISOR'",
+    "Define two regions: one from permit approved by budget owner to declaration final approved by supervisor, and another from declaration rejected by employee to declaration final approved by supervisor.",
+    "I would like you to define two regions, please: the first from permit approved by budget owner to declaration final approved by supervisor, and the second from declaration rejected by employee to declaration final approved by supervisor.",
+    "Define two regions: from permit approved by budget owner to the final approval by supervisor, and from declaration rejected by employee to the final approval by supervisor."
+   ],
+   "ambiguity": "The phrase 'the final approval by supervisor' does not specify whether it refers to the permit or the declaration final approved by supervisor."
+  },
+  {
+   "id": "bpic2020_international_declarations-R06",
+   "text": "Define a region from 'Permit APPROVED by BUDGET OWNER' to 'Permit FINAL_APPROVED by SUPERVISOR' when less than 2 days pass between them",
+   "cls": "time",
+   "regions": [
+    {
+     "name": "Permit_APPROVED_by_BUDGET_OWNER_to_Permit_FINAL_APPROVED_by_SUPERVISOR_fast",
+     "expr": "('Permit APPROVED by BUDGET OWNER' >> 'Permit FINAL_APPROVED by SUPERVISOR')[-2d]",
+     "traces": 705
+    }
+   ],
+   "texts": [
+    "Define a region from 'Permit APPROVED by BUDGET OWNER' to 'Permit FINAL_APPROVED by SUPERVISOR' when less than 2 days pass between them",
+    "Define a region from permit approved by budget owner to permit final approved by supervisor for cases where less than two days pass between them.",
+    "Could you define a region from permit approved by budget owner to permit final approved by supervisor, limited to cases where less than two days elapse between the two activities?",
+    "Define a region from permit approved by budget owner to the final approval when less than two days pass."
+   ],
+   "ambiguity": "The shortened phrase 'the final approval' does not make clear whether it refers to the permit final approved by supervisor or the declaration final approved by supervisor."
+  },
+  {
+   "id": "bpic2020_international_declarations-R07",
+   "text": "Define a critical section from 'Declaration APPROVED by ADMINISTRATION' to 'Declaration FINAL_APPROVED by SUPERVISOR' when more than 3 days elapse",
+   "cls": "time",
+   "regions": [
+    {
+     "name": "Declaration_APPROVED_by_ADMINISTRATION_to_Declaration_FINAL_APPROVED_by_SUPERVISOR_slow",
+     "expr": "('Declaration APPROVED by ADMINISTRATION' >> 'Declaration FINAL_APPROVED by SUPERVISOR')[3d-]",
+     "traces": 2206
+    }
+   ],
+   "texts": [
+    "Define a critical section from 'Declaration APPROVED by ADMINISTRATION' to 'Declaration FINAL_APPROVED by SUPERVISOR' when more than 3 days elapse",
+    "Define a critical section from declaration approved by administration to declaration final approved by supervisor for cases where more than three days elapse.",
+    "It would be interesting if you could define a critical section from declaration approved by administration to declaration final approved by supervisor, considering only cases where more than three days pass between them.",
+    "Define a critical section from declaration approved by administration to the final approval by supervisor when more than three days elapse."
+   ],
+   "ambiguity": "The phrase 'the final approval by supervisor' could refer to different final-approval activities in the model."
+  },
+  {
+   "id": "bpic2020_international_declarations-R08",
+   "text": "Define a region from 'Declaration APPROVED by SUPERVISOR' to 'Request Payment' when less than 3 days pass between them",
+   "cls": "time",
+   "regions": [
+    {
+     "name": "Declaration_APPROVED_by_SUPERVISOR_to_Request_Payment_fast",
+     "expr": "('Declaration APPROVED by SUPERVISOR' >> 'Request Payment')[-3d]",
+     "traces": 120
+    }
+   ],
+   "texts": [
+    "Define a region from 'Declaration APPROVED by SUPERVISOR' to 'Request Payment' when less than 3 days pass between them",
+    "Define a region from declaration approved by supervisor to request payment for cases where less than three days pass between them.",
+    "Would you mind defining a region from declaration approved by supervisor to request payment, restricted to cases where less than three days elapse between the two?",
+    "Define a region from declaration approved by supervisor to the payment request when less than three days pass."
+   ],
+   "ambiguity": "The shortened name 'the payment request' could fit more than one payment-related activity in the process."
+  },
+  {
+   "id": "bpic2020_international_declarations-R09",
+   "text": "Define a region from 'Permit APPROVED by BUDGET OWNER' to 'Declaration FINAL_APPROVED by SUPERVISOR' in the cases with Permit TaskNumber equal to 'task 427'",
+   "cls": "mixed",
+   "regions": [
+    {
+     "name": "Permit_APPROVED_by_BUDGET_OWNER_to_Declaration_FINAL_APPROVED_by_SUPERVISOR_Permit_TaskNumber_task_427",
+     "expr": "('Permit APPROVED by BUDGET OWNER' >> 'Declaration FINAL_APPROVED by SUPERVISOR')['Permit TaskNumber' == 'task 427']",
+     "traces": 908
+    }
+   ],
+   "texts": [
+    "Define a region from 'Permit APPROVED by BUDGET OWNER' to 'Declaration FINAL_APPROVED by SUPERVISOR' in the cases with Permit TaskNumber equal to 'task 427'",
+    "Define a region from permit approved by budget owner to declaration final approved by supervisor, but only in the cases where the permit task number is task 427.",
+    "I would like you to define a region from permit approved by budget owner to declaration final approved by supervisor, limited to cases where the permit task number equals task 427.",
+    "Define a region from permit approved by budget owner to declaration final approved by supervisor for the cases with task number 427."
+   ],
+   "ambiguity": "The phrase 'task number 427' does not specify that it is the permit task number, so it could refer to a different task-number variable."
+  },
+  {
+   "id": "bpic2020_international_declarations-R10",
+   "text": "Define a critical section from 'Declaration SUBMITTED by EMPLOYEE' to 'Declaration FINAL_APPROVED by DIRECTOR' when more than 6 days elapse",
+   "cls": "time",
+   "regions": [
+    {
+     "name": "Declaration_SUBMITTED_by_EMPLOYEE_to_Declaration_FINAL_APPROVED_by_DIRECTOR_slow",
+     "expr": "('Declaration SUBMITTED by EMPLOYEE' >> 'Declaration FINAL_APPROVED by DIRECTOR')[6d-]",
+     "traces": 138
+    }
+   ],
+   "texts": [
+    "Define a critical section from 'Declaration SUBMITTED by EMPLOYEE' to 'Declaration FINAL_APPROVED by DIRECTOR' when more than 6 days elapse",
+    "Define a critical section from declaration submitted by employee to declaration final approved by director for cases where more than six days elapse.",
+    "Could you please define a critical section from declaration submitted by employee to declaration final approved by director, considering only cases where more than six days pass between them?",
+    "Define a critical section from the declaration submission to the final approval by director when more than six days elapse."
+   ],
+   "ambiguity": "The shortened phrase 'the declaration submission' does not make clear which specific submission activity is meant."
+  }
+ ],
+ "milestones": [
+  {
+   "id": "bpic2020_international_declarations-M01",
+   "text": "Define 'Permit APPROVED by SUPERVISOR' as a milestone",
+   "nodes": [
+    "Permit APPROVED by SUPERVISOR"
+   ],
+   "texts": [
+    "Define 'Permit APPROVED by SUPERVISOR' as a milestone",
+    "Define permit approved by supervisor as a milestone.",
+    "I would like you to mark permit approved by supervisor as a milestone, please.",
+    "Define the supervisor's approval on the permit as a milestone."
+   ],
+   "ambiguity": "The rephrased name 'the supervisor's approval on the permit' could be confused with a different approval activity involving permits and supervisors."
+  },
+  {
+   "id": "bpic2020_international_declarations-M02",
+   "text": "Mark 'Declaration APPROVED by SUPERVISOR' and 'Send Reminder' as milestones",
+   "nodes": [
+    "Declaration APPROVED by SUPERVISOR",
+    "Send Reminder"
+   ],
+   "texts": [
+    "Mark 'Declaration APPROVED by SUPERVISOR' and 'Send Reminder' as milestones",
+    "Mark declaration approved by supervisor and send reminder as milestones.",
+    "Could you please mark both declaration approved by supervisor and send reminder as milestones?",
+    "Mark the supervisor's declaration approval and the reminder as milestones."
+   ],
+   "ambiguity": "The shortened name 'the reminder' could fit more than one reminder-related activity in the process."
+  },
+  {
+   "id": "bpic2020_international_declarations-M03",
+   "text": "Use 'Permit FINAL_APPROVED by SUPERVISOR' as a milestone",
+   "nodes": [
+    "Permit FINAL_APPROVED by SUPERVISOR"
+   ],
+   "texts": [
+    "Use 'Permit FINAL_APPROVED by SUPERVISOR' as a milestone",
+    "Make the permit final approval by supervisor a milestone.",
+    "Could you please set the permit final approval by supervisor as a milestone?",
+    "Mark the final approval by supervisor as a milestone."
+   ],
+   "ambiguity": "It is unclear whether the final approval by supervisor refers to the permit or the declaration."
+  },
+  {
+   "id": "bpic2020_international_declarations-M04",
+   "text": "Define 'Declaration FINAL_APPROVED by DIRECTOR' as a milestone",
+   "nodes": [
+    "Declaration FINAL_APPROVED by DIRECTOR"
+   ],
+   "texts": [
+    "Define 'Declaration FINAL_APPROVED by DIRECTOR' as a milestone",
+    "Set the declaration final approval by director as a milestone.",
+    "I would like you to define the declaration final approval by director as a milestone.",
+    "Make the final approval by director a milestone."
+   ],
+   "ambiguity": "It is not specified whether the final approval by director applies to the permit or the declaration."
+  },
+  {
+   "id": "bpic2020_international_declarations-M05",
+   "text": "Define 'Permit REJECTED by EMPLOYEE' and 'Send Reminder' as milestones",
+   "nodes": [
+    "Permit REJECTED by EMPLOYEE",
+    "Send Reminder"
+   ],
+   "texts": [
+    "Define 'Permit REJECTED by EMPLOYEE' and 'Send Reminder' as milestones",
+    "Mark the permit rejection by employee and the send reminder as milestones.",
+    "Would you mind setting the permit rejection by employee and sending a reminder as milestones?",
+    "Define the rejection by employee and the reminder as milestones."
+   ],
+   "ambiguity": "The rejection by employee could refer to either the permit or the declaration, and the reminder is loosely named."
+  },
+  {
+   "id": "bpic2020_international_declarations-M06",
+   "text": "Mark 'Permit APPROVED by ADMINISTRATION', 'Declaration REJECTED by EMPLOYEE' and 'Permit APPROVED by PRE_APPROVER' as milestones",
+   "nodes": [
+    "Permit APPROVED by ADMINISTRATION",
+    "Declaration REJECTED by EMPLOYEE",
+    "Permit APPROVED by PRE_APPROVER"
+   ],
+   "texts": [
+    "Mark 'Permit APPROVED by ADMINISTRATION', 'Declaration REJECTED by EMPLOYEE' and 'Permit APPROVED by PRE_APPROVER' as milestones",
+    "Set the permit approval by administration, the declaration rejection by employee, and the permit approval by pre-approver as milestones.",
+    "It would be great if you could mark the permit approval by administration, the declaration rejection by employee, and the permit approval by pre-approver as milestones.",
+    "Mark the approval by administration, the rejection by employee, and the approval by pre-approver as milestones."
+   ],
+   "ambiguity": "It is not clear which of the three activities refer to the permit and which to the declaration."
+  },
+  {
+   "id": "bpic2020_international_declarations-M07",
+   "text": "Define 'Declaration APPROVED by PRE_APPROVER' as a milestone",
+   "nodes": [
+    "Declaration APPROVED by PRE_APPROVER"
+   ],
+   "texts": [
+    "Define 'Declaration APPROVED by PRE_APPROVER' as a milestone",
+    "Make the declaration approval by pre-approver a milestone.",
+    "Could you please define the declaration approval by pre-approver as a milestone?",
+    "Set the approval by pre-approver as a milestone."
+   ],
+   "ambiguity": "It is unclear whether the approval by pre-approver refers to the permit or the declaration."
+  },
+  {
+   "id": "bpic2020_international_declarations-M08",
+   "text": "Mark 'Send Reminder' and 'Permit APPROVED by PRE_APPROVER' as milestones",
+   "nodes": [
+    "Send Reminder",
+    "Permit APPROVED by PRE_APPROVER"
+   ],
+   "texts": [
+    "Mark 'Send Reminder' and 'Permit APPROVED by PRE_APPROVER' as milestones",
+    "Mark sending a reminder and the permit approval by pre-approver as milestones.",
+    "I would like you to set the send reminder and the permit approval by pre-approver as milestones.",
+    "Define the reminder and the approval by pre-approver as milestones."
+   ],
+   "ambiguity": "The reminder is vaguely named and the approval by pre-approver does not specify whether it is the permit or the declaration."
+  },
+  {
+   "id": "bpic2020_international_declarations-M09",
+   "text": "Define 'Declaration FINAL_APPROVED by DIRECTOR', 'Declaration APPROVED by BUDGET OWNER' and 'Permit APPROVED by ADMINISTRATION' as milestones",
+   "nodes": [
+    "Declaration FINAL_APPROVED by DIRECTOR",
+    "Declaration APPROVED by BUDGET OWNER",
+    "Permit APPROVED by ADMINISTRATION"
+   ],
+   "texts": [
+    "Define 'Declaration FINAL_APPROVED by DIRECTOR', 'Declaration APPROVED by BUDGET OWNER' and 'Permit APPROVED by ADMINISTRATION' as milestones",
+    "Set the declaration final approval by director, the declaration approval by budget owner, and the permit approval by administration as milestones.",
+    "Would you be so kind as to define the declaration final approval by director, the declaration approval by budget owner, and the permit approval by administration as milestones?",
+    "Mark the final approval by director, the approval by budget owner, and the approval by administration as milestones."
+   ],
+   "ambiguity": "It is not specified which activities refer to the permit and which to the declaration."
+  },
+  {
+   "id": "bpic2020_international_declarations-M10",
+   "text": "Define 'Permit APPROVED by BUDGET OWNER' as a milestone",
+   "nodes": [
+    "Permit APPROVED by BUDGET OWNER"
+   ],
+   "texts": [
+    "Define 'Permit APPROVED by BUDGET OWNER' as a milestone",
+    "Make the permit approval by budget owner a milestone.",
+    "Could you define the permit approval by budget owner as a milestone?",
+    "Set the approval by budget owner as a milestone."
+   ],
+   "ambiguity": "It is unclear whether the approval by budget owner refers to the permit or the declaration."
+  }
+ ],
+ "asks": [],
+ "levels": [
+  "order (robotic, exact names)",
+  "natural",
+  "polite",
+  "ambiguous"
+ ]
+}

@@ -1,0 +1,72 @@
+{
+  "stage": 2,
+  "log": "dolor_toracico_urgencias",
+  "language": "es",
+  "runId": "20261109-165228",
+  "startedAt": "2026-11-09T16:52:28.2842103+01:00",
+  "machine": "<machine>",
+  "command": "--stage1 <SVELTA>/DeclarativeIPM/bank_v2/dolor_toracico_urgencias.json <tmp>/logs/dolor_toracico_urgencias_2000/MetaInfo/__ModelInfo --stage 2 --phrasings 0,1,2,3 --models L2-qwen3.5-27b --ctx 16384",
+  "settings": {
+    "temperature": 0,
+    "seed": 1,
+    "numCtx": 16384,
+    "numPredict": 4096,
+    "phrasing": "phrasings 0,1,2,3 (0 = first), in the language of the log",
+    "retries": 0,
+    "poligptMinIntervalSeconds": 15,
+    "warmup": "one call per model with the first question (warmup=true, excluded from statistics) + one validation and two engine executions before measuring"
+  },
+  "cases": 2000,
+  "questions": 40,
+  "files": {
+    "bank": {
+      "path": "<SVELTA>/DeclarativeIPM/bank_v2/dolor_toracico_urgencias.json",
+      "sha256": "18a9564c67c23adf389e6c1c9a42cefd595c7e5b1681c4a188b839693ddacdd2"
+    },
+    "log": {
+      "path": "<tmp>/logs/dolor_toracico_urgencias_2000/Resources/log.jsonl",
+      "sha256": "9c21f71ddf459528adfd3d2cd8a169669d3e5c7de0a5de071307af01b6ed120b"
+    },
+    "modelInfo": {
+      "path": "<tmp>/logs/dolor_toracico_urgencias_2000/MetaInfo/__ModelInfo",
+      "sha256": "00ee74f606228dd9579bef898b3ef71d12d6cff82ffc45f8da0c0cc8721556fa"
+    },
+    "models": {
+      "path": "<SVELTA>\\tools\\declarative-ipm-eval\\models-stage1.json",
+      "sha256": "c7347dde0620c89b0b18379d5a0d3ad202f6e093a550bb3387338cacb90e772e"
+    }
+  },
+  "prompt": {
+    "sha256": "a53ade5753c33636fead4819c098fc56c30da56a4414da293d289e970dd2791a",
+    "characters": 19047
+  },
+  "models": [
+    {
+      "Id": "L2-qwen3.5-27b",
+      "Backend": "ollama",
+      "Model": "qwen3.5:27b",
+      "Think": "false"
+    }
+  ],
+  "git": {
+    "svelta": {
+      "commit": "7aced9e496738b1b3ae4f70d6650565004c128e8",
+      "dirty": true
+    },
+    "engine_pm4hResearch": {
+      "commit": "b01406ac9bd016e990d720eafbb3fdfbc6c40d78",
+      "dirty": true
+    }
+  },
+  "notes": "The Declare engine is compiled from source: the engine commit above plus the uncommitted fixes of 2026-11-07 (wildcard, numeric ==) define the semantics used to execute the answers.",
+  "ollama": {
+    "version": "0.32.0",
+    "models": {
+      "qwen3.5:27b": {
+        "digest": "7653528ba5cba4dd8e19da24aaddc7f4d0b5ecd93571c0825dfd4137958ec06e",
+        "sizeBytes": 17420432728,
+        "modifiedAt": "2026-07-16T19:23:25.627290342Z"
+      }
+    }
+  }
+}

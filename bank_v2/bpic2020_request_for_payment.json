@@ -1,0 +1,874 @@
+{
+ "log": "bpic2020_request_for_payment",
+ "lang": "en",
+ "cases": 6886,
+ "version": "v2",
+ "note": "orders only; no clarification items; one wording per item",
+ "filters": [
+  {
+   "id": "bpic2020_request_for_payment-F01",
+   "family": "exists",
+   "cls": "act",
+   "text": "Limit the cases to: cases in which 'Request For Payment REJECTED by EMPLOYEE' occurs",
+   "expr": "'Request For Payment REJECTED by EMPLOYEE'",
+   "count": 999,
+   "pct": 14.5,
+   "case_hash": "6c40a794f62e5873",
+   "texts": [
+    "Limit the cases to: cases in which 'Request For Payment REJECTED by EMPLOYEE' occurs",
+    "Filter the cases to only those where the request for payment was rejected by the employee.",
+    "Could you please limit the cases to those in which the request for payment was rejected by the employee?",
+    "Limit the cases to those where the payment was rejected by the employee."
+   ],
+   "ambiguity": "Payment is a shortened name that could refer to several activities in the process."
+  },
+  {
+   "id": "bpic2020_request_for_payment-F02",
+   "family": "exists",
+   "cls": "act",
+   "text": "Limit the cases to: cases that went through 'Request For Payment APPROVED by PRE_APPROVER'",
+   "expr": "'Request For Payment APPROVED by PRE_APPROVER'",
+   "count": 406,
+   "pct": 5.9,
+   "case_hash": "5a396915d120f74e",
+   "texts": [
+    "Limit the cases to: cases that went through 'Request For Payment APPROVED by PRE_APPROVER'",
+    "Filter the cases to only those that went through the request for payment approved by the pre-approver.",
+    "I would like you to limit the cases to those that passed through the request for payment approved by the pre-approver.",
+    "Limit the cases to those where the payment was approved by the pre-approver."
+   ],
+   "ambiguity": "Payment is a shortened name that could fit multiple activities in the model."
+  },
+  {
+   "id": "bpic2020_request_for_payment-F32",
+   "family": "var_range",
+   "cls": "var",
+   "text": "Limit the cases to: cases with RequestedAmount between 53.5 and 200.7",
+   "expr": "[RequestedAmount >= 53.5, RequestedAmount <= 200.7]",
+   "count": 2411,
+   "pct": 35.0,
+   "case_hash": "88774f476b5ab2f3",
+   "texts": [
+    "Limit the cases to: cases with RequestedAmount between 53.5 and 200.7",
+    "Filter the cases to those where the requested amount is between 53.5 and 200.7.",
+    "It would be helpful if you could limit the cases to those with a requested amount between 53.5 and 200.7.",
+    "Limit the cases to those where the amount is between 53.5 and 200.7."
+   ],
+   "ambiguity": "Amount is a generic term that could refer to different variables in the process."
+  },
+  {
+   "id": "bpic2020_request_for_payment-F33",
+   "family": "var_cat",
+   "cls": "var",
+   "text": "Limit the cases to: cases with Activity equal to 'activity 505'",
+   "expr": "[Activity == 'activity 505']",
+   "count": 1837,
+   "pct": 26.7,
+   "case_hash": "a890aa6a4623300a",
+   "texts": [
+    "Limit the cases to: cases with Activity equal to 'activity 505'",
+    "Filter the cases to those where the activity is activity 505.",
+    "Could you limit the cases to those in which the activity equals activity 505?",
+    "Limit the cases to those with activity 505."
+   ],
+   "ambiguity": "It is unclear whether activity 505 is the value of the Activity variable or the name of a specific activity."
+  },
+  {
+   "id": "bpic2020_request_for_payment-F35",
+   "family": "time_lt",
+   "cls": "time",
+   "text": "Limit the cases to: cases with 'Request For Payment APPROVED by BUDGET OWNER' and, later, 'Payment Handled' in less than 7 days",
+   "expr": "('Request For Payment APPROVED by BUDGET OWNER' >> 'Payment Handled')[-7d]",
+   "count": 568,
+   "pct": 8.2,
+   "case_hash": "de03f8a7d25575ac",
+   "texts": [
+    "Limit the cases to: cases with 'Request For Payment APPROVED by BUDGET OWNER' and, later, 'Payment Handled' in less than 7 days",
+    "Filter the cases to those where the request for payment was approved by the budget owner and then the payment was handled within less than 7 days.",
+    "I would like you to limit the cases to those in which the request for payment was approved by the budget owner followed by the payment being handled in less than 7 days.",
+    "Limit the cases to those where the request for payment was approved by the budget owner and then the payment was handled in under 7 days."
+   ],
+   "ambiguity": "Payment is a shortened name that could refer to multiple activities in the process."
+  },
+  {
+   "id": "bpic2020_request_for_payment-F36",
+   "family": "time_gt",
+   "cls": "time",
+   "text": "Limit the cases to: cases with 'Request For Payment APPROVED by ADMINISTRATION' and, later, 'Request For Payment APPROVED by BUDGET OWNER' more than 1 day apart",
+   "expr": "('Request For Payment APPROVED by ADMINISTRATION' >> 'Request For Payment APPROVED by BUDGET OWNER')[1d-]",
+   "count": 1086,
+   "pct": 15.8,
+   "case_hash": "67c8d2123af24436",
+   "texts": [
+    "Limit the cases to: cases with 'Request For Payment APPROVED by ADMINISTRATION' and, later, 'Request For Payment APPROVED by BUDGET OWNER' more than 1 day apart",
+    "Filter the cases to those where the request for payment was approved by administration and then approved by the budget owner more than 1 day later.",
+    "Could you limit the cases to those in which the request for payment was approved by administration followed by approval by the budget owner at least 1 day apart?",
+    "Limit the cases to those where the payment was approved by administration and then by the budget owner more than a day apart."
+   ],
+   "ambiguity": "Payment is a shortened name that could fit several activities in the model."
+  },
+  {
+   "id": "bpic2020_request_for_payment-F34",
+   "family": "var_act",
+   "cls": "mixed",
+   "text": "Limit the cases to: cases with 'Request For Payment REJECTED by EMPLOYEE' and RequestedAmount greater than 94.3",
+   "expr": "'Request For Payment REJECTED by EMPLOYEE' & [RequestedAmount > 94.3]",
+   "count": 585,
+   "pct": 8.5,
+   "case_hash": "85de225b7ccf227b",
+   "texts": [
+    "Limit the cases to: cases with 'Request For Payment REJECTED by EMPLOYEE' and RequestedAmount greater than 94.3",
+    "Filter the cases to those where the request for payment was rejected by the employee and the requested amount is greater than 94.3.",
+    "It would be great if you could limit the cases to those in which the request for payment was rejected by the employee and the requested amount exceeds 94.3.",
+    "Limit the cases to those where the payment was rejected by the employee and the requested amount is greater than 94.3."
+   ],
+   "ambiguity": "Payment is a shortened name that could refer to multiple activities in the process."
+  },
+  {
+   "id": "bpic2020_request_for_payment-F38",
+   "family": "time_var",
+   "cls": "mixed",
+   "text": "Limit the cases to: cases with RequestedAmount greater than 64.4 and 'Request For Payment FINAL_APPROVED by SUPERVISOR' less than 3 days after 'Request For Payment APPROVED by BUDGET OWNER'",
+   "expr": "('Request For Payment APPROVED by BUDGET OWNER' >> 'Request For Payment FINAL_APPROVED by SUPERVISOR')[RequestedAmount > 64.4, -3d]",
+   "count": 650,
+   "pct": 9.4,
+   "case_hash": "1dec6dd4c2a0f48f",
+   "texts": [
+    "Limit the cases to: cases with RequestedAmount greater than 64.4 and 'Request For Payment FINAL_APPROVED by SUPERVISOR' less than 3 days after 'Request For Payment APPROVED by BUDGET OWNER'",
+    "Filter the cases to those where the requested amount is greater than 64.4 and the request for payment was finally approved by the supervisor less than 3 days after being approved by the budget owner.",
+    "I would like you to limit the cases to those with a requested amount above 64.4 in which the request for payment was finally approved by the supervisor within less than 3 days of the budget owner's approval.",
+    "Limit the cases to those where the amount is over 64.4 and the payment was finally approved by the supervisor less than 3 days after the budget owner approved it."
+   ],
+   "ambiguity": "Payment is a shortened name that could refer to multiple activities in the process."
+  }
+ ],
+ "circuits": [
+  {
+   "id": "bpic2020_request_for_payment-C01",
+   "text": "Create circuits for this: separate the requests by how they end: payment handled, rejected by the employee, saved by the employee or rejected by an unknown role",
+   "cls": "act",
+   "circuits": [
+    {
+     "name": "ends_0",
+     "expr": "'Payment Handled'$"
+    },
+    {
+     "name": "ends_1",
+     "expr": "'Request For Payment REJECTED by EMPLOYEE'$"
+    },
+    {
+     "name": "ends_2",
+     "expr": "'Request For Payment SAVED by EMPLOYEE'$"
+    },
+    {
+     "name": "ends_3",
+     "expr": "'Request For Payment REJECTED by MISSING'$"
+    }
+   ],
+   "gold_counts": {
+    "ends_0": 6305,
+    "ends_3": 41,
+    "ends_1": 448,
+    "UNK": 18,
+    "ends_2": 74
+   },
+   "texts": [
+    "Create circuits for this: separate the requests by how they end: payment handled, rejected by the employee, saved by the employee or rejected by an unknown role",
+    "Create circuits that separate the requests by how they end: payment handled, rejected by the employee, saved by the employee, or rejected by a missing role.",
+    "Could you create circuits that split the requests according to their ending: payment handled, rejected by the employee, saved by the employee, or rejected by a missing role?",
+    "Create circuits to separate the requests by how they finish: payment handled, rejected by the employee, saved by the employee, or rejected by someone missing."
+   ],
+   "ambiguity": "Someone missing could be read as a person who is absent rather than the specific role name missing."
+  },
+  {
+   "id": "bpic2020_request_for_payment-C02",
+   "text": "Create circuits for this: classify the requests by whether the employee rejected, the pre-approver approved or the budget owner approved (first match wins)",
+   "cls": "act",
+   "circuits": [
+    {
+     "name": "with_0",
+     "expr": "'Request For Payment REJECTED by EMPLOYEE'"
+    },
+    {
+     "name": "with_1",
+     "expr": "'Request For Payment APPROVED by PRE_APPROVER'"
+    },
+    {
+     "name": "with_2",
+     "expr": "'Request For Payment APPROVED by BUDGET OWNER'"
+    }
+   ],
+   "gold_counts": {
+    "with_1": 372,
+    "UNK": 3740,
+    "with_0": 999,
+    "with_2": 1775
+   },
+   "texts": [
+    "Create circuits for this: classify the requests by whether the employee rejected, the pre-approver approved or the budget owner approved (first match wins)",
+    "Create circuits that classify the requests by whether the employee rejected, the pre-approver approved, or the budget owner approved, with the first match winning.",
+    "I would like you to create circuits that classify the requests by whether the employee rejected, the pre-approver approved, or the budget owner approved, keeping the first match.",
+    "Create circuits to classify the requests by whether the employee rejected, the pre-approver approved, or the budget owner approved, with priority to the first one."
+   ],
+   "ambiguity": "The first one could mean the first item in the listed order or the first event that occurs chronologically in the process."
+  },
+  {
+   "id": "bpic2020_request_for_payment-C03",
+   "text": "Create circuits for this: separate the requests rejected by the administration and later approved by it, those only rejected by the administration, and the rest",
+   "cls": "act",
+   "circuits": [
+    {
+     "name": "a_then_b",
+     "expr": "('Request For Payment REJECTED by ADMINISTRATION' >> 'Request For Payment APPROVED by ADMINISTRATION')"
+    },
+    {
+     "name": "has_a",
+     "expr": "'Request For Payment REJECTED by ADMINISTRATION'"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "rest": 6131,
+    "a_then_b": 379,
+    "has_a": 376
+   },
+   "texts": [
+    "Create circuits for this: separate the requests rejected by the administration and later approved by it, those only rejected by the administration, and the rest",
+    "Create circuits to separate the requests that were rejected by the administration and later approved by it, those that were only rejected by the administration, and the rest.",
+    "It would be helpful if you could create circuits separating the requests rejected by the administration and subsequently approved by it, those merely rejected by the administration, and all the others.",
+    "Create circuits to separate the requests rejected by the administration and later approved, those only rejected by the administration, and the rest."
+   ],
+   "ambiguity": "Later approved does not specify by whom, so it could be read as approved by any role rather than specifically by the administration."
+  },
+  {
+   "id": "bpic2020_request_for_payment-C04",
+   "text": "Create circuits for this: separate the cases by how they end: 'Payment Handled' or 'Request For Payment REJECTED by EMPLOYEE'",
+   "cls": "act",
+   "circuits": [
+    {
+     "name": "ends_Payment_Handled",
+     "expr": "'Payment Handled'$"
+    },
+    {
+     "name": "ends_Request_For_Payment_REJECTED_by_EMPLOYEE",
+     "expr": "'Request For Payment REJECTED by EMPLOYEE'$"
+    }
+   ],
+   "gold_counts": {
+    "ends_Payment_Handled": 6305,
+    "UNK": 133,
+    "ends_Request_For_Payment_REJECTED_by_EMPLOYEE": 448
+   },
+   "texts": [
+    "Create circuits for this: separate the cases by how they end: 'Payment Handled' or 'Request For Payment REJECTED by EMPLOYEE'",
+    "Create circuits that separate the cases by how they end: payment handled or rejected by the employee.",
+    "I would like you to create circuits that split the cases by their ending: payment handled or rejected by the employee.",
+    "Create circuits to separate the cases by their final step: payment handled or the employee rejected."
+   ],
+   "ambiguity": "The employee rejected could be read as the employee performing a rejection in active voice rather than the request being rejected by the employee."
+  },
+  {
+   "id": "bpic2020_request_for_payment-C05",
+   "text": "Create one circuit for each value of Activity: 'UNKNOWN' or 'activity 505'",
+   "cls": "var",
+   "circuits": [
+    {
+     "name": "Activity_UNKNOWN",
+     "expr": "[Activity == 'UNKNOWN']"
+    },
+    {
+     "name": "Activity_activity_505",
+     "expr": "[Activity == 'activity 505']"
+    }
+   ],
+   "gold_counts": {
+    "Activity_UNKNOWN": 5040,
+    "Activity_activity_505": 1837,
+    "UNK": 9
+   },
+   "texts": [
+    "Create one circuit for each value of Activity: 'UNKNOWN' or 'activity 505'",
+    "Create one circuit for each value of the Activity variable: unknown or activity 505.",
+    "Could you create one circuit for each value of the Activity variable, namely unknown and activity 505?",
+    "Create one circuit for each value of Activity: unknown or activity 505."
+   ],
+   "ambiguity": "Activity without the word variable could be confused with an activity name in the process rather than a data attribute."
+  },
+  {
+   "id": "bpic2020_request_for_payment-C06",
+   "text": "Create circuits for this: separate the cases by RequestedAmount: up to 94.3 and above 94.3",
+   "cls": "var",
+   "circuits": [
+    {
+     "name": "RequestedAmount_low",
+     "expr": "[RequestedAmount <= 94.3]"
+    },
+    {
+     "name": "RequestedAmount_high",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "RequestedAmount_low": 3444,
+    "RequestedAmount_high": 3442
+   },
+   "texts": [
+    "Create circuits for this: separate the cases by RequestedAmount: up to 94.3 and above 94.3",
+    "Create circuits that separate the cases by the requested amount: up to 94.3 and above 94.3.",
+    "I would like you to create circuits that split the cases by the requested amount: up to 94.3 and above 94.3.",
+    "Create circuits to separate the cases by the requested amount: up to 94.3 and above."
+   ],
+   "ambiguity": "Above without repeating the threshold 94.3 leaves the exact boundary slightly unclear."
+  },
+  {
+   "id": "bpic2020_request_for_payment-C07",
+   "text": "Create three circuits: 'Request For Payment REJECTED by EMPLOYEE' then 'Request For Payment FINAL_APPROVED by SUPERVISOR' in less than 5 days, the rest of those with 'Request For Payment REJECTED by EMPLOYEE' then 'Request For Payment FINAL_APPROVED by SUPERVISOR', and all the others",
+   "cls": "time",
+   "circuits": [
+    {
+     "name": "Request_For_Payment_REJECTED_by_EMPLOYEE_to_Request_For_Payment_FINAL_APPROVED_by_SUPERVISOR_fast",
+     "expr": "('Request For Payment REJECTED by EMPLOYEE' >> 'Request For Payment FINAL_APPROVED by SUPERVISOR')[-5d]"
+    },
+    {
+     "name": "Request_For_Payment_REJECTED_by_EMPLOYEE_to_Request_For_Payment_FINAL_APPROVED_by_SUPERVISOR_slow",
+     "expr": "('Request For Payment REJECTED by EMPLOYEE' >> 'Request For Payment FINAL_APPROVED by SUPERVISOR')"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "rest": 6342,
+    "Request_For_Payment_REJECTED_by_EMPLOYEE_to_Request_For_Payment_FINAL_APPROVED_by_SUPERVISOR_fast": 259,
+    "Request_For_Payment_REJECTED_by_EMPLOYEE_to_Request_For_Payment_FINAL_APPROVED_by_SUPERVISOR_slow": 285
+   },
+   "texts": [
+    "Create three circuits: 'Request For Payment REJECTED by EMPLOYEE' then 'Request For Payment FINAL_APPROVED by SUPERVISOR' in less than 5 days, the rest of those with 'Request For Payment REJECTED by EMPLOYEE' then 'Request For Payment FINAL_APPROVED by SUPERVISOR', and all the others",
+    "Create three circuits: the ones where the employee rejected and then the supervisor final-approved in less than 5 days, the rest where the employee rejected and then the supervisor final-approved, and all the others.",
+    "Could you create three circuits: those where the employee rejected and the supervisor then final-approved within 5 days, the remaining ones where the employee rejected and the supervisor final-approved, and everything else?",
+    "Create three circuits: rejected by the employee then final-approved by the supervisor in under 5 days, the rest of those with that sequence, and all the others."
+   ],
+   "ambiguity": "That sequence is a vague reference that does not explicitly restate which two activities are involved."
+  },
+  {
+   "id": "bpic2020_request_for_payment-C08",
+   "text": "Make three circuits by the time between 'Request For Payment SUBMITTED by EMPLOYEE' and 'Request For Payment REJECTED by EMPLOYEE': less than 1 day, longer, and those without that stretch",
+   "cls": "time",
+   "circuits": [
+    {
+     "name": "Request_For_Payment_SUBMITTED_by_EMPLOYEE_to_Request_For_Payment_REJECTED_by_EMPLOYEE_fast",
+     "expr": "('Request For Payment SUBMITTED by EMPLOYEE' >> 'Request For Payment REJECTED by EMPLOYEE')[-1d]"
+    },
+    {
+     "name": "Request_For_Payment_SUBMITTED_by_EMPLOYEE_to_Request_For_Payment_REJECTED_by_EMPLOYEE_slow",
+     "expr": "('Request For Payment SUBMITTED by EMPLOYEE' >> 'Request For Payment REJECTED by EMPLOYEE')"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "rest": 5887,
+    "Request_For_Payment_SUBMITTED_by_EMPLOYEE_to_Request_For_Payment_REJECTED_by_EMPLOYEE_fast": 382,
+    "Request_For_Payment_SUBMITTED_by_EMPLOYEE_to_Request_For_Payment_REJECTED_by_EMPLOYEE_slow": 617
+   },
+   "texts": [
+    "Make three circuits by the time between 'Request For Payment SUBMITTED by EMPLOYEE' and 'Request For Payment REJECTED by EMPLOYEE': less than 1 day, longer, and those without that stretch",
+    "Make three circuits based on the time between the employee submitting and the employee rejecting: less than 1 day, longer, and those without that stretch.",
+    "I would like you to make three circuits based on the time between the employee submitting and the employee rejecting: less than 1 day, longer, and those without that stretch.",
+    "Make three circuits by the time between submitting and rejecting: less than 1 day, longer, and those without that stretch."
+   ],
+   "ambiguity": "Submitting and rejecting do not specify by whom, so it could be confused with any role performing those actions."
+  },
+  {
+   "id": "bpic2020_request_for_payment-C09",
+   "text": "Create three circuits: cases with Activity equal to 'UNKNOWN' that go through 'Request For Payment APPROVED by BUDGET OWNER', the rest of the cases with Activity equal to 'UNKNOWN', and all the others",
+   "cls": "mixed",
+   "circuits": [
+    {
+     "name": "Activity_UNKNOWN_Request_For_Payment_APPROVED_by_BUDGET_OWNER",
+     "expr": "'Request For Payment APPROVED by BUDGET OWNER' & [Activity == 'UNKNOWN']"
+    },
+    {
+     "name": "Activity_UNKNOWN",
+     "expr": "[Activity == 'UNKNOWN']"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "Activity_UNKNOWN": 3543,
+    "rest": 1846,
+    "Activity_UNKNOWN_Request_For_Payment_APPROVED_by_BUDGET_OWNER": 1497
+   },
+   "texts": [
+    "Create three circuits: cases with Activity equal to 'UNKNOWN' that go through 'Request For Payment APPROVED by BUDGET OWNER', the rest of the cases with Activity equal to 'UNKNOWN', and all the others",
+    "Create three circuits: first, cases where the activity is unknown and they pass through request for payment approved by budget owner; second, the remaining cases where the activity is unknown; and third, all the other cases.",
+    "Could you set up three circuits for me? I would like the first to capture unknown-activity cases that go through the budget owner approval of the payment request, the second to pick up the rest of the unknown-activity cases, and the third to cover everything else.",
+    "Make three circuits: the unknown ones that hit the budget owner approval, the other unknown ones, and the rest."
+   ],
+   "ambiguity": "The phrase 'the budget owner approval' is a shortened name that could be confused with other approval activities in the model."
+  },
+  {
+   "id": "bpic2020_request_for_payment-C10",
+   "text": "Create three circuits: 'Request For Payment REJECTED by ADMINISTRATION' then 'Request For Payment REJECTED by EMPLOYEE' in less than 1 day, the rest of those with 'Request For Payment REJECTED by ADMINISTRATION' then 'Request For Payment REJECTED by EMPLOYEE', and all the others",
+   "cls": "time",
+   "circuits": [
+    {
+     "name": "Request_For_Payment_REJECTED_by_ADMINISTRATION_to_Request_For_Payment_REJECTED_by_EMPLOYEE_fast",
+     "expr": "('Request For Payment REJECTED by ADMINISTRATION' >> 'Request For Payment REJECTED by EMPLOYEE')[-1d]"
+    },
+    {
+     "name": "Request_For_Payment_REJECTED_by_ADMINISTRATION_to_Request_For_Payment_REJECTED_by_EMPLOYEE_slow",
+     "expr": "('Request For Payment REJECTED by ADMINISTRATION' >> 'Request For Payment REJECTED by EMPLOYEE')"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "rest": 6139,
+    "Request_For_Payment_REJECTED_by_ADMINISTRATION_to_Request_For_Payment_REJECTED_by_EMPLOYEE_slow": 411,
+    "Request_For_Payment_REJECTED_by_ADMINISTRATION_to_Request_For_Payment_REJECTED_by_EMPLOYEE_fast": 336
+   },
+   "texts": [
+    "Create three circuits: 'Request For Payment REJECTED by ADMINISTRATION' then 'Request For Payment REJECTED by EMPLOYEE' in less than 1 day, the rest of those with 'Request For Payment REJECTED by ADMINISTRATION' then 'Request For Payment REJECTED by EMPLOYEE', and all the others",
+    "Create three circuits: first, cases where request for payment rejected by administration is followed by request for payment rejected by employee in less than one day; second, the remaining cases with that same sequence; and third, all other cases.",
+    "I would like you to define three circuits. The first should capture cases where the administration rejects the payment and then the employee rejects it within a day, the second should catch the rest of that same pair, and the third should cover all remaining cases.",
+    "Make three circuits: the fast ones where the admin rejection leads to the employee rejection, the slower ones with the same pair, and the rest."
+   ],
+   "ambiguity": "'The admin rejection' and 'the employee rejection' are shortened names that could each match more than one rejection activity in the model."
+  },
+  {
+   "id": "bpic2020_request_for_payment-C11",
+   "text": "Make three circuits by the time between 'Request For Payment SUBMITTED by EMPLOYEE' and 'Request For Payment REJECTED by ADMINISTRATION': less than 1 minute, longer, and those without that stretch",
+   "cls": "time",
+   "circuits": [
+    {
+     "name": "Request_For_Payment_SUBMITTED_by_EMPLOYEE_to_Request_For_Payment_REJECTED_by_ADMINISTRATION_fast",
+     "expr": "('Request For Payment SUBMITTED by EMPLOYEE' >> 'Request For Payment REJECTED by ADMINISTRATION')[-1m]"
+    },
+    {
+     "name": "Request_For_Payment_SUBMITTED_by_EMPLOYEE_to_Request_For_Payment_REJECTED_by_ADMINISTRATION_slow",
+     "expr": "('Request For Payment SUBMITTED by EMPLOYEE' >> 'Request For Payment REJECTED by ADMINISTRATION')"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "rest": 6131,
+    "Request_For_Payment_SUBMITTED_by_EMPLOYEE_to_Request_For_Payment_REJECTED_by_ADMINISTRATION_slow": 268,
+    "Request_For_Payment_SUBMITTED_by_EMPLOYEE_to_Request_For_Payment_REJECTED_by_ADMINISTRATION_fast": 487
+   },
+   "texts": [
+    "Make three circuits by the time between 'Request For Payment SUBMITTED by EMPLOYEE' and 'Request For Payment REJECTED by ADMINISTRATION': less than 1 minute, longer, and those without that stretch",
+    "Create three circuits based on the time between request for payment submitted by employee and request for payment rejected by administration: one for less than one minute, one for longer, and one for cases without that stretch.",
+    "It would be great if you could define three circuits splitting the time between the employee submitting the payment request and the administration rejecting it: under a minute, over a minute, and cases where that sequence does not occur.",
+    "Make three circuits by how long it takes from the employee submission to the admin rejection: fast, slow, and the ones without it."
+   ],
+   "ambiguity": "'The employee submission' and 'the admin rejection' are loosely named and could refer to different activities in the model."
+  },
+  {
+   "id": "bpic2020_request_for_payment-C12",
+   "text": "Create three circuits: 'Request For Payment REJECTED by EMPLOYEE' then 'Request For Payment SUBMITTED by EMPLOYEE' in less than 10 hours, the rest of those with 'Request For Payment REJECTED by EMPLOYEE' then 'Request For Payment SUBMITTED by EMPLOYEE', and all the others",
+   "cls": "time",
+   "circuits": [
+    {
+     "name": "Request_For_Payment_REJECTED_by_EMPLOYEE_to_Request_For_Payment_SUBMITTED_by_EMPLOYEE_fast",
+     "expr": "('Request For Payment REJECTED by EMPLOYEE' >> 'Request For Payment SUBMITTED by EMPLOYEE')[-10h]"
+    },
+    {
+     "name": "Request_For_Payment_REJECTED_by_EMPLOYEE_to_Request_For_Payment_SUBMITTED_by_EMPLOYEE_slow",
+     "expr": "('Request For Payment REJECTED by EMPLOYEE' >> 'Request For Payment SUBMITTED by EMPLOYEE')"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "rest": 6312,
+    "Request_For_Payment_REJECTED_by_EMPLOYEE_to_Request_For_Payment_SUBMITTED_by_EMPLOYEE_slow": 289,
+    "Request_For_Payment_REJECTED_by_EMPLOYEE_to_Request_For_Payment_SUBMITTED_by_EMPLOYEE_fast": 285
+   },
+   "texts": [
+    "Create three circuits: 'Request For Payment REJECTED by EMPLOYEE' then 'Request For Payment SUBMITTED by EMPLOYEE' in less than 10 hours, the rest of those with 'Request For Payment REJECTED by EMPLOYEE' then 'Request For Payment SUBMITTED by EMPLOYEE', and all the others",
+    "Create three circuits: first, cases where request for payment rejected by employee is followed by request for payment submitted by employee in under ten hours; second, the remaining cases with that same sequence; and third, all other cases.",
+    "Could you please set up three circuits? I would like the first to capture cases where the employee rejects the payment and then resubmits it within ten hours, the second to catch the rest of that pattern, and the third to cover everything else.",
+    "Make three circuits: the quick resubmissions after an employee rejection, the slower ones with the same pair, and the rest."
+   ],
+   "ambiguity": "'An employee rejection' and 'resubmissions' are loosely named and could be confused with other rejection or submission activities."
+  }
+ ],
+ "regions": [
+  {
+   "id": "bpic2020_request_for_payment-R01",
+   "text": "Define a region from 'Request For Payment REJECTED by ADMINISTRATION' to 'Request For Payment APPROVED by ADMINISTRATION'",
+   "cls": "act",
+   "regions": [
+    {
+     "name": "Request_For_Payment_REJECTED_by_ADMINISTRATION_to_Request_For_Payment_APPROVED_by_ADMINISTRATION",
+     "expr": "('Request For Payment REJECTED by ADMINISTRATION' >> 'Request For Payment APPROVED by ADMINISTRATION')",
+     "traces": 379
+    }
+   ],
+   "texts": [
+    "Define a region from 'Request For Payment REJECTED by ADMINISTRATION' to 'Request For Payment APPROVED by ADMINISTRATION'",
+    "Define a region from request for payment rejected by administration to request for payment approved by administration.",
+    "I would like you to define a region starting at the administration rejection of the payment request and ending at the administration approval of the payment request.",
+    "Set up a region from the admin rejection to the admin approval."
+   ],
+   "ambiguity": "'The admin rejection' and 'the admin approval' are shortened names that could each match more than one activity in the model."
+  },
+  {
+   "id": "bpic2020_request_for_payment-R02",
+   "text": "Define a critical section from 'Request For Payment APPROVED by BUDGET OWNER' to 'Payment Handled'",
+   "cls": "act",
+   "regions": [
+    {
+     "name": "Request_For_Payment_APPROVED_by_BUDGET_OWNER_to_Payment_Handled",
+     "expr": "('Request For Payment APPROVED by BUDGET OWNER' >> 'Payment Handled')",
+     "traces": 1984
+    }
+   ],
+   "texts": [
+    "Define a critical section from 'Request For Payment APPROVED by BUDGET OWNER' to 'Payment Handled'",
+    "Define a critical section from request for payment approved by budget owner to payment handled.",
+    "Could you define a critical section that starts when the budget owner approves the payment request and ends when the payment is handled?",
+    "Set up a critical section from the budget owner approval to when the payment is done."
+   ],
+   "ambiguity": "'When the payment is done' is a loose paraphrase that could be confused with other payment-related activities."
+  },
+  {
+   "id": "bpic2020_request_for_payment-R03",
+   "text": "Define a region from 'Request For Payment REJECTED by ADMINISTRATION' to 'Request For Payment SUBMITTED by EMPLOYEE'",
+   "cls": "act",
+   "regions": [
+    {
+     "name": "Request_For_Payment_REJECTED_by_ADMINISTRATION_to_Request_For_Payment_SUBMITTED_by_EMPLOYEE",
+     "expr": "('Request For Payment REJECTED by ADMINISTRATION' >> 'Request For Payment SUBMITTED by EMPLOYEE')",
+     "traces": 406
+    }
+   ],
+   "texts": [
+    "Define a region from 'Request For Payment REJECTED by ADMINISTRATION' to 'Request For Payment SUBMITTED by EMPLOYEE'",
+    "Define a region from request for payment rejected by administration to request for payment submitted by employee.",
+    "It would be helpful if you could define a region from the administration's rejection of the payment request to the employee's submission of the payment request.",
+    "Make a region from the admin rejection to the employee submission."
+   ],
+   "ambiguity": "'The admin rejection' and 'the employee submission' are shortened names that could each fit multiple activities in the model."
+  },
+  {
+   "id": "bpic2020_request_for_payment-R04",
+   "text": "Define two critical sections: from 'Request For Payment REJECTED by EMPLOYEE' to 'Request For Payment FINAL_APPROVED by SUPERVISOR' and from 'Request For Payment SUBMITTED by EMPLOYEE' to 'Request For Payment APPROVED by PRE_APPROVER'",
+   "cls": "act",
+   "regions": [
+    {
+     "name": "Request_For_Payment_REJECTED_by_EMPLOYEE_to_Request_For_Payment_FINAL_APPROVED_by_SUPERVISOR",
+     "expr": "('Request For Payment REJECTED by EMPLOYEE' >> 'Request For Payment FINAL_APPROVED by SUPERVISOR')",
+     "traces": 544
+    },
+    {
+     "name": "Request_For_Payment_SUBMITTED_by_EMPLOYEE_to_Request_For_Payment_APPROVED_by_PRE_APPROVER",
+     "expr": "('Request For Payment SUBMITTED by EMPLOYEE' >> 'Request For Payment APPROVED by PRE_APPROVER')",
+     "traces": 406
+    }
+   ],
+   "texts": [
+    "Define two critical sections: from 'Request For Payment REJECTED by EMPLOYEE' to 'Request For Payment FINAL_APPROVED by SUPERVISOR' and from 'Request For Payment SUBMITTED by EMPLOYEE' to 'Request For Payment APPROVED by PRE_APPROVER'",
+    "Define two critical sections: one from request for payment rejected by employee to request for payment final approved by supervisor, and another from request for payment submitted by employee to request for payment approved by pre-approver.",
+    "I would like you to set up two critical sections. The first should go from the employee's rejection of the payment to the supervisor's final approval, and the second from the employee's submission to the pre-approver's approval.",
+    "Create two critical sections: from the employee rejection to the supervisor approval, and from the employee submission to the pre-approver approval."
+   ],
+   "ambiguity": "'The supervisor approval' and 'the employee rejection' are shortened names that could be confused with other approval or rejection activities in the model."
+  },
+  {
+   "id": "bpic2020_request_for_payment-R05",
+   "text": "Define two regions: from 'Request For Payment REJECTED by ADMINISTRATION' to 'Request For Payment SUBMITTED by EMPLOYEE' and from 'Request For Payment SUBMITTED by EMPLOYEE' to 'Request For Payment APPROVED by BUDGET OWNER'",
+   "cls": "act",
+   "regions": [
+    {
+     "name": "Request_For_Payment_REJECTED_by_ADMINISTRATION_to_Request_For_Payment_SUBMITTED_by_EMPLOYEE",
+     "expr": "('Request For Payment REJECTED by ADMINISTRATION' >> 'Request For Payment SUBMITTED by EMPLOYEE')",
+     "traces": 406
+    },
+    {
+     "name": "Request_For_Payment_SUBMITTED_by_EMPLOYEE_to_Request_For_Payment_APPROVED_by_BUDGET_OWNER",
+     "expr": "('Request For Payment SUBMITTED by EMPLOYEE' >> 'Request For Payment APPROVED by BUDGET OWNER')",
+     "traces": 1992
+    }
+   ],
+   "texts": [
+    "Define two regions: from 'Request For Payment REJECTED by ADMINISTRATION' to 'Request For Payment SUBMITTED by EMPLOYEE' and from 'Request For Payment SUBMITTED by EMPLOYEE' to 'Request For Payment APPROVED by BUDGET OWNER'",
+    "Define two regions: one from request for payment rejected by administration to request for payment submitted by employee, and another from request for payment submitted by employee to request for payment approved by budget owner.",
+    "Could you please define two regions for me: the first from request for payment rejected by administration to request for payment submitted by employee, and the second from request for payment submitted by employee to request for payment approved by budget owner?",
+    "Define two regions: from the rejected payment by administration to the submitted payment by employee, and from the submitted payment by employee to the approved payment by budget owner."
+   ],
+   "ambiguity": "The shortened forms 'rejected payment', 'submitted payment', and 'approved payment' drop the 'request for' prefix, so they could potentially match other payment-related activities in the model."
+  },
+  {
+   "id": "bpic2020_request_for_payment-R06",
+   "text": "Define a region from 'Request For Payment REJECTED by EMPLOYEE' to 'Request For Payment FINAL_APPROVED by SUPERVISOR' when less than 5 days pass between them",
+   "cls": "time",
+   "regions": [
+    {
+     "name": "Request_For_Payment_REJECTED_by_EMPLOYEE_to_Request_For_Payment_FINAL_APPROVED_by_SUPERVISOR_fast",
+     "expr": "('Request For Payment REJECTED by EMPLOYEE' >> 'Request For Payment FINAL_APPROVED by SUPERVISOR')[-5d]",
+     "traces": 259
+    }
+   ],
+   "texts": [
+    "Define a region from 'Request For Payment REJECTED by EMPLOYEE' to 'Request For Payment FINAL_APPROVED by SUPERVISOR' when less than 5 days pass between them",
+    "Define a region from request for payment rejected by employee to request for payment final approved by supervisor, limited to cases where less than 5 days pass between them.",
+    "I would like you to define a region from request for payment rejected by employee to request for payment final approved by supervisor, considering only cases where less than 5 days elapse between the two activities.",
+    "Define a region from the rejection by employee to the final approval by supervisor for cases under 5 days."
+   ],
+   "ambiguity": "'Under 5 days' does not explicitly state that the time constraint applies between the two boundary activities rather than to the overall case duration."
+  },
+  {
+   "id": "bpic2020_request_for_payment-R07",
+   "text": "Define a critical section from 'Request For Payment SUBMITTED by EMPLOYEE' to 'Request For Payment REJECTED by EMPLOYEE' when more than 2 days elapse",
+   "cls": "time",
+   "regions": [
+    {
+     "name": "Request_For_Payment_SUBMITTED_by_EMPLOYEE_to_Request_For_Payment_REJECTED_by_EMPLOYEE_slow",
+     "expr": "('Request For Payment SUBMITTED by EMPLOYEE' >> 'Request For Payment REJECTED by EMPLOYEE')[2d-]",
+     "traces": 523
+    }
+   ],
+   "texts": [
+    "Define a critical section from 'Request For Payment SUBMITTED by EMPLOYEE' to 'Request For Payment REJECTED by EMPLOYEE' when more than 2 days elapse",
+    "Define a critical section from request for payment submitted by employee to request for payment rejected by employee, for cases where more than 2 days elapse between them.",
+    "It would be helpful if you could define a critical section from request for payment submitted by employee to request for payment rejected by employee, restricted to cases where more than 2 days pass between the two.",
+    "Define a critical section from the employee submission to the employee rejection when more than 2 days go by."
+   ],
+   "ambiguity": "'Employee submission' and 'employee rejection' are shortened forms that omit 'request for payment', making it unclear which specific activities are meant."
+  },
+  {
+   "id": "bpic2020_request_for_payment-R08",
+   "text": "Define a region from 'Request For Payment REJECTED by ADMINISTRATION' to 'Request For Payment REJECTED by EMPLOYEE' when less than 1 day pass between them",
+   "cls": "time",
+   "regions": [
+    {
+     "name": "Request_For_Payment_REJECTED_by_ADMINISTRATION_to_Request_For_Payment_REJECTED_by_EMPLOYEE_fast",
+     "expr": "('Request For Payment REJECTED by ADMINISTRATION' >> 'Request For Payment REJECTED by EMPLOYEE')[-1d]",
+     "traces": 336
+    }
+   ],
+   "texts": [
+    "Define a region from 'Request For Payment REJECTED by ADMINISTRATION' to 'Request For Payment REJECTED by EMPLOYEE' when less than 1 day pass between them",
+    "Define a region from request for payment rejected by administration to request for payment rejected by employee, for cases where less than 1 day passes between them.",
+    "Would you mind defining a region from request for payment rejected by administration to request for payment rejected by employee, limited to cases where less than 1 day elapses between the two?",
+    "Define a region from the administration rejection to the employee rejection when less than a day passes."
+   ],
+   "ambiguity": "'Administration rejection' and 'employee rejection' are shortened and could be confused with other rejection activities in the process."
+  },
+  {
+   "id": "bpic2020_request_for_payment-R09",
+   "text": "Define a region from 'Request For Payment REJECTED by ADMINISTRATION' to 'Request For Payment SUBMITTED by EMPLOYEE' in the cases with Activity equal to 'UNKNOWN'",
+   "cls": "mixed",
+   "regions": [
+    {
+     "name": "Request_For_Payment_REJECTED_by_ADMINISTRATION_to_Request_For_Payment_SUBMITTED_by_EMPLOYEE_Activity_UNKNOWN",
+     "expr": "('Request For Payment REJECTED by ADMINISTRATION' >> 'Request For Payment SUBMITTED by EMPLOYEE')[Activity == 'UNKNOWN']",
+     "traces": 297
+    }
+   ],
+   "texts": [
+    "Define a region from 'Request For Payment REJECTED by ADMINISTRATION' to 'Request For Payment SUBMITTED by EMPLOYEE' in the cases with Activity equal to 'UNKNOWN'",
+    "Define a region from request for payment rejected by administration to request for payment submitted by employee, only in the cases where the activity is unknown.",
+    "Could you define a region from request for payment rejected by administration to request for payment submitted by employee, restricted to the cases where the activity variable equals unknown?",
+    "Define a region from the rejection by administration to the submission by employee for the unknown cases."
+   ],
+   "ambiguity": "'The unknown cases' is vague about whether it refers to cases where the activity attribute is unknown or to cases that are generally unclear or unclassified."
+  },
+  {
+   "id": "bpic2020_request_for_payment-R10",
+   "text": "Define a critical section from 'Request For Payment SUBMITTED by EMPLOYEE' to 'Request For Payment REJECTED by ADMINISTRATION' when more than 1 minute elapse",
+   "cls": "time",
+   "regions": [
+    {
+     "name": "Request_For_Payment_SUBMITTED_by_EMPLOYEE_to_Request_For_Payment_REJECTED_by_ADMINISTRATION_slow",
+     "expr": "('Request For Payment SUBMITTED by EMPLOYEE' >> 'Request For Payment REJECTED by ADMINISTRATION')[1m-]",
+     "traces": 336
+    }
+   ],
+   "texts": [
+    "Define a critical section from 'Request For Payment SUBMITTED by EMPLOYEE' to 'Request For Payment REJECTED by ADMINISTRATION' when more than 1 minute elapse",
+    "Define a critical section from request for payment submitted by employee to request for payment rejected by administration, for cases where more than 1 minute elapses between them.",
+    "I would like you to define a critical section from request for payment submitted by employee to request for payment rejected by administration, considering only cases where more than 1 minute passes between the two.",
+    "Define a critical section from the submission by employee to the rejection by administration when more than a minute goes by."
+   ],
+   "ambiguity": "'The submission' and 'the rejection' are generic references that do not specify 'request for payment', so a reader might wonder which submission or rejection is intended."
+  }
+ ],
+ "milestones": [
+  {
+   "id": "bpic2020_request_for_payment-M01",
+   "text": "Define 'Request For Payment REJECTED by SUPERVISOR' as a milestone",
+   "nodes": [
+    "Request For Payment REJECTED by SUPERVISOR"
+   ],
+   "texts": [
+    "Define 'Request For Payment REJECTED by SUPERVISOR' as a milestone",
+    "Define request for payment rejected by supervisor as a milestone.",
+    "Could you please mark request for payment rejected by supervisor as a milestone?",
+    "Mark the supervisor rejection as a milestone."
+   ],
+   "ambiguity": "'Supervisor rejection' is a shortened form that omits 'request for payment', so it could potentially refer to a different rejection activity involving a supervisor."
+  },
+  {
+   "id": "bpic2020_request_for_payment-M02",
+   "text": "Mark 'Request For Payment APPROVED by ADMINISTRATION' and 'Request For Payment APPROVED by PRE_APPROVER' as milestones",
+   "nodes": [
+    "Request For Payment APPROVED by ADMINISTRATION",
+    "Request For Payment APPROVED by PRE_APPROVER"
+   ],
+   "texts": [
+    "Mark 'Request For Payment APPROVED by ADMINISTRATION' and 'Request For Payment APPROVED by PRE_APPROVER' as milestones",
+    "Mark request for payment approved by administration and request for payment approved by pre-approver as milestones.",
+    "I would like you to define request for payment approved by administration and request for payment approved by pre-approver as milestones.",
+    "Mark the two approvals as milestones: the one by administration and the one by pre-approver."
+   ],
+   "ambiguity": "'The two approvals' is a loose reference that does not specify 'request for payment', and 'the one by' is an indirect way of naming the activities."
+  },
+  {
+   "id": "bpic2020_request_for_payment-M03",
+   "text": "Use 'Request For Payment REJECTED by ADMINISTRATION' as a milestone",
+   "nodes": [
+    "Request For Payment REJECTED by ADMINISTRATION"
+   ],
+   "texts": [
+    "Use 'Request For Payment REJECTED by ADMINISTRATION' as a milestone",
+    "Make the request for payment rejected by administration a milestone.",
+    "Could you please mark the request for payment rejected by administration as a milestone?",
+    "Set the payment rejected by administration as a milestone."
+   ],
+   "ambiguity": "Dropping 'request for' from the activity name could make it unclear which specific rejection activity is meant."
+  },
+  {
+   "id": "bpic2020_request_for_payment-M04",
+   "text": "Define 'Request For Payment APPROVED by BUDGET OWNER' as a milestone",
+   "nodes": [
+    "Request For Payment APPROVED by BUDGET OWNER"
+   ],
+   "texts": [
+    "Define 'Request For Payment APPROVED by BUDGET OWNER' as a milestone",
+    "Define the request for payment approved by budget owner as a milestone.",
+    "I would like you to set the request for payment approved by budget owner as a milestone.",
+    "Mark the approval by budget owner as a milestone."
+   ],
+   "ambiguity": "The shortened name 'approval by budget owner' could fit another approval activity in the process."
+  },
+  {
+   "id": "bpic2020_request_for_payment-M05",
+   "text": "Define 'Request For Payment REJECTED by ADMINISTRATION' and 'Request For Payment APPROVED by ADMINISTRATION' as milestones",
+   "nodes": [
+    "Request For Payment REJECTED by ADMINISTRATION",
+    "Request For Payment APPROVED by ADMINISTRATION"
+   ],
+   "texts": [
+    "Define 'Request For Payment REJECTED by ADMINISTRATION' and 'Request For Payment APPROVED by ADMINISTRATION' as milestones",
+    "Define the request for payment rejected by administration and the request for payment approved by administration as milestones.",
+    "It would be great if you could mark both the request for payment rejected by administration and the request for payment approved by administration as milestones.",
+    "Set the rejection and the approval by administration as milestones."
+   ],
+   "ambiguity": "The phrasing 'rejection and approval by administration' could be misread as a single combined step rather than two separate activities."
+  },
+  {
+   "id": "bpic2020_request_for_payment-M06",
+   "text": "Mark 'Request For Payment APPROVED by BUDGET OWNER', 'Request For Payment REJECTED by EMPLOYEE' and 'Request For Payment APPROVED by PRE_APPROVER' as milestones",
+   "nodes": [
+    "Request For Payment APPROVED by BUDGET OWNER",
+    "Request For Payment REJECTED by EMPLOYEE",
+    "Request For Payment APPROVED by PRE_APPROVER"
+   ],
+   "texts": [
+    "Mark 'Request For Payment APPROVED by BUDGET OWNER', 'Request For Payment REJECTED by EMPLOYEE' and 'Request For Payment APPROVED by PRE_APPROVER' as milestones",
+    "Mark the request for payment approved by budget owner, the request for payment rejected by employee, and the request for payment approved by pre-approver as milestones.",
+    "Could you please define the request for payment approved by budget owner, the request for payment rejected by employee, and the request for payment approved by pre-approver as milestones?",
+    "Make the approval by budget owner, the rejection by employee, and the approval by pre-approver into milestones."
+   ],
+   "ambiguity": "All three activity names are shortened by dropping 'request for payment', so they could match other approval or rejection activities."
+  },
+  {
+   "id": "bpic2020_request_for_payment-M07",
+   "text": "Define 'Request For Payment APPROVED by ADMINISTRATION' and 'Request For Payment APPROVED by BUDGET OWNER' as milestones",
+   "nodes": [
+    "Request For Payment APPROVED by ADMINISTRATION",
+    "Request For Payment APPROVED by BUDGET OWNER"
+   ],
+   "texts": [
+    "Define 'Request For Payment APPROVED by ADMINISTRATION' and 'Request For Payment APPROVED by BUDGET OWNER' as milestones",
+    "Define the request for payment approved by administration and the request for payment approved by budget owner as milestones.",
+    "I would like you to mark the request for payment approved by administration and the request for payment approved by budget owner as milestones.",
+    "Set the approval by administration and the approval by budget owner as milestones."
+   ],
+   "ambiguity": "The shortened names 'approval by administration' and 'approval by budget owner' could refer to other approval steps in the process."
+  },
+  {
+   "id": "bpic2020_request_for_payment-M08",
+   "text": "Mark 'Request For Payment APPROVED by ADMINISTRATION', 'Request For Payment REJECTED by EMPLOYEE' and 'Request For Payment REJECTED by SUPERVISOR' as milestones",
+   "nodes": [
+    "Request For Payment APPROVED by ADMINISTRATION",
+    "Request For Payment REJECTED by EMPLOYEE",
+    "Request For Payment REJECTED by SUPERVISOR"
+   ],
+   "texts": [
+    "Mark 'Request For Payment APPROVED by ADMINISTRATION', 'Request For Payment REJECTED by EMPLOYEE' and 'Request For Payment REJECTED by SUPERVISOR' as milestones",
+    "Mark the request for payment approved by administration, the request for payment rejected by employee, and the request for payment rejected by supervisor as milestones.",
+    "Could you please define the request for payment approved by administration, the request for payment rejected by employee, and the request for payment rejected by supervisor as milestones?",
+    "Set the approval by administration, the rejection by employee, and the rejection by supervisor as milestones."
+   ],
+   "ambiguity": "The shortened activity names drop 'request for payment' and could refer to other similar approval or rejection activities."
+  },
+  {
+   "id": "bpic2020_request_for_payment-M09",
+   "text": "Define 'Request For Payment APPROVED by ADMINISTRATION' and 'Request For Payment REJECTED by SUPERVISOR' as milestones",
+   "nodes": [
+    "Request For Payment APPROVED by ADMINISTRATION",
+    "Request For Payment REJECTED by SUPERVISOR"
+   ],
+   "texts": [
+    "Define 'Request For Payment APPROVED by ADMINISTRATION' and 'Request For Payment REJECTED by SUPERVISOR' as milestones",
+    "Define the request for payment approved by administration and the request for payment rejected by supervisor as milestones.",
+    "It would be helpful if you could mark the request for payment approved by administration and the request for payment rejected by supervisor as milestones.",
+    "Make the approval by administration and the rejection by supervisor into milestones."
+   ],
+   "ambiguity": "The shortened names 'approval by administration' and 'rejection by supervisor' could match other activities with similar roles."
+  },
+  {
+   "id": "bpic2020_request_for_payment-M10",
+   "text": "Mark 'Request For Payment REJECTED by EMPLOYEE', 'Request For Payment REJECTED by SUPERVISOR' and 'Request For Payment REJECTED by ADMINISTRATION' as milestones",
+   "nodes": [
+    "Request For Payment REJECTED by EMPLOYEE",
+    "Request For Payment REJECTED by SUPERVISOR",
+    "Request For Payment REJECTED by ADMINISTRATION"
+   ],
+   "texts": [
+    "Mark 'Request For Payment REJECTED by EMPLOYEE', 'Request For Payment REJECTED by SUPERVISOR' and 'Request For Payment REJECTED by ADMINISTRATION' as milestones",
+    "Mark the request for payment rejected by employee, the request for payment rejected by supervisor, and the request for payment rejected by administration as milestones.",
+    "I would like you to set the request for payment rejected by employee, the request for payment rejected by supervisor, and the request for payment rejected by administration as milestones.",
+    "Mark the rejection by employee, the rejection by supervisor, and the rejection by administration as milestones."
+   ],
+   "ambiguity": "The shortened 'rejection by…' names drop 'request for payment' and could refer to other rejection activities in the process."
+  }
+ ],
+ "asks": [],
+ "levels": [
+  "order (robotic, exact names)",
+  "natural",
+  "polite",
+  "ambiguous"
+ ]
+}

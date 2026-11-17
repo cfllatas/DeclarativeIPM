@@ -1,0 +1,362 @@
+{
+ "bpic2017-F01": {
+  "texts": [
+   "Limit the cases to: cases in which 'A_Pending' occurs",
+   "Filter the cases to only those in which A pending occurs.",
+   "Could you limit the cases to those where A pending takes place?",
+   "Filter the cases to those with pending."
+  ],
+  "ambiguity": "It is unclear whether the activity is A pending or some other pending-related activity."
+ },
+ "bpic2017-F02": {
+  "texts": [
+   "Limit the cases to: cases that went through 'W_Complete application'",
+   "Limit the cases to those that went through W complete application.",
+   "I would like you to filter the cases down to only those that passed through W complete application.",
+   "Limit the cases to those that went through complete application."
+  ],
+  "ambiguity": "Without the W prefix, it is unclear whether the activity is W complete application or a different complete application step."
+ },
+ "bpic2017-F33": {
+  "texts": [
+   "Limit the cases to: cases with RequestedAmount greater than 8600.0",
+   "Filter the cases to those where the requested amount is greater than 8600.",
+   "It would be useful if you could limit the cases to those with a requested amount above 8600.",
+   "Filter the cases to those where the amount is greater than 8600."
+  ],
+  "ambiguity": "Without the word requested, it is unclear which amount variable is meant."
+ },
+ "bpic2017-F34": {
+  "texts": [
+   "Limit the cases to: cases with RequestedAmount between 8600.0 and 20000.0",
+   "Limit the cases to those where the requested amount is between 8600 and 20000.",
+   "Could you filter the cases to only those with a requested amount between 8600 and 20000?",
+   "Limit the cases to those where the amount falls between 8600 and 20000."
+  ],
+  "ambiguity": "The word requested is missing, so it is unclear which amount variable the range applies to."
+ },
+ "bpic2017-F39": {
+  "texts": [
+   "Limit the cases to: cases with 'O_Returned' and, later, 'A_Pending' in less than 4 days",
+   "Filter the cases to those where O returned happens and then A pending follows within less than 4 days.",
+   "I would like you to limit the cases to those in which O returned occurs and A pending comes after it in under 4 days.",
+   "Filter the cases to those where O returned happens and then pending follows in less than 4 days."
+  ],
+  "ambiguity": "The A prefix is missing from the second activity, so it is unclear whether it refers to A pending or another pending activity."
+ },
+ "bpic2017-F40": {
+  "texts": [
+   "Limit the cases to: cases with 'O_Returned' and, later, 'O_Accepted' more than 5 days apart",
+   "Limit the cases to those where O returned occurs and O accepted comes more than 5 days later.",
+   "Could you filter the cases to those in which O returned and O accepted are more than 5 days apart?",
+   "Limit the cases to those where O returned and accepted are more than 5 days apart."
+  ],
+  "ambiguity": "The O prefix is missing from the second activity, making it unclear whether it is O accepted or a different accepted step."
+ },
+ "bpic2017-F38": {
+  "texts": [
+   "Limit the cases to: cases with 'A_Pending' and RequestedAmount greater than 12500.0",
+   "Filter the cases to those where A pending occurs and the requested amount is greater than 12500.",
+   "It would be helpful if you could limit the cases to those that include A pending and have a requested amount above 12500.",
+   "Filter the cases to those with pending and a requested amount over 12500."
+  ],
+  "ambiguity": "The A prefix is dropped, so it is unclear whether the activity is A pending or another pending-related activity."
+ },
+ "bpic2017-F42": {
+  "texts": [
+   "Limit the cases to: cases with RequestedAmount greater than 10000.0 and 'A_Incomplete' less than 10 days after 'O_Sent (mail and online)'",
+   "Limit the cases to those where the requested amount is greater than 10000 and A incomplete happens less than 10 days after O sent mail and online.",
+   "I would like you to filter the cases to those with a requested amount above 10000 in which A incomplete occurs within 10 days after O sent mail and online.",
+   "Limit the cases to those where the requested amount is over 10000 and incomplete happens less than 10 days after O sent mail and online."
+  ],
+  "ambiguity": "The A prefix is missing from the second activity, so it is unclear whether it refers to A incomplete or another incomplete-related step."
+ },
+ "bpic2017-C01": {
+  "texts": [
+   "Create circuits for this: separate the applications by how they end: offer cancelled, pending, validation work or offer refused",
+   "Create circuits that separate the applications by how they end: offer cancelled, pending, validation work, or offer refused.",
+   "Could you create circuits to split the applications according to how they end—offer cancelled, pending, validation work, or offer refused?",
+   "Create circuits to separate the applications by how they end: cancelled, pending, validation, or refused."
+  ],
+  "ambiguity": "The shortened names 'cancelled' and 'validation' drop the words 'offer' and 'work', so a reader might wonder which specific activities are meant."
+ },
+ "bpic2017-C02": {
+  "texts": [
+   "Create circuits for this: classify the applications by whether they became pending, had completion work or had validation work (first match wins)",
+   "Create circuits to classify the applications by whether they became pending, had completion work, or had validation work, with first match winning.",
+   "I would like you to create circuits that classify the applications by whether they became pending, had completion work, or had validation work, keeping the groups in that priority order.",
+   "Create circuits to classify the applications by whether they became pending, had completion work, or had the other work, with first match winning."
+  ],
+  "ambiguity": "The phrase 'the other work' does not name the activity explicitly, so a reader must infer it refers to validation work."
+ },
+ "bpic2017-C03": {
+  "texts": [
+   "Create circuits for this: separate the applications where an offer was created and then denied, those with only an offer created, and the rest",
+   "Create circuits to separate the applications where an offer was created and then denied, those with only an offer created, and the rest.",
+   "It would be interesting if you could create circuits separating the applications into those where an offer was created and then denied, those with only an offer created, and the rest.",
+   "Create circuits to separate the applications where an offer was created and then denied, those with only an offer, and the rest."
+  ],
+  "ambiguity": "The second group says 'only an offer' instead of 'only an offer created', leaving it unclear whether the activity 'offer created' is required or any mention of an offer suffices."
+ },
+ "bpic2017-C04": {
+  "texts": [
+   "Create circuits for this: separate the cases by how they end: 'O_Cancelled' or 'A_Pending'",
+   "Create circuits to separate the cases by how they end: offer cancelled or pending.",
+   "Could you create circuits that separate the cases by their ending—offer cancelled or pending?",
+   "Create circuits to separate the cases by how they end: cancelled or pending."
+  ],
+  "ambiguity": "The word 'cancelled' without the qualifier 'offer' could refer to a different cancellation activity in the model."
+ },
+ "bpic2017-C05": {
+  "texts": [
+   "Create circuits for this: separate the cases by ApplicationType: 'New credit' or 'Limit raise'",
+   "Create circuits to separate the cases by application type: new credit or limit raise.",
+   "I would like you to create circuits that separate the cases by application type, splitting them into new credit and limit raise.",
+   "Create circuits to separate the cases by type: new credit or limit raise."
+  ],
+  "ambiguity": "The word 'type' without 'application' could refer to a different categorical variable in the model."
+ },
+ "bpic2017-C06": {
+  "texts": [
+   "Create circuits for this: group the cases by LoanGoal: 'Car' or 'Home improvement'",
+   "Create circuits to group the cases by loan goal: car or home improvement.",
+   "Could you create circuits that group the cases by loan goal, splitting them into car and home improvement?",
+   "Create circuits to group the cases by goal: car or home improvement."
+  ],
+  "ambiguity": "The word 'goal' without 'loan' could refer to a different goal variable in the model."
+ },
+ "bpic2017-C07": {
+  "texts": [
+   "Create circuits for this: split the cases in two groups by RequestedAmount: up to 12500.0 and more than 12500.0",
+   "Create circuits to split the cases into two groups by requested amount: up to 12500 and more than 12500.",
+   "I would like you to create circuits that split the cases into two groups by requested amount—up to 12500 and more than 12500.",
+   "Create circuits to split the cases into two groups by amount: up to 12500 and more than 12500."
+  ],
+  "ambiguity": "The word 'amount' without 'requested' could refer to a different monetary variable in the model."
+ },
+ "bpic2017-C08": {
+  "texts": [
+   "Create three circuits: 'O_Returned' then 'A_Pending' in less than 4 days, the rest of those with 'O_Returned' then 'A_Pending', and all the others",
+   "Create three circuits: offer returned then pending in less than four days, the rest of those with offer returned then pending, and all the others.",
+   "Could you create three circuits: one for offer returned then pending in less than four days, one for the rest of those with offer returned then pending, and one for all the others?",
+   "Create three circuits: returned then pending in less than four days, the rest of those with returned then pending, and all the others."
+  ],
+  "ambiguity": "The word 'returned' without 'offer' could refer to a different return activity in the model."
+ },
+ "bpic2017-C09": {
+  "texts": [
+   "Make three circuits by the time between 'O_Create Offer' and 'A_Cancelled': less than 30 days, longer, and those without that stretch",
+   "Split the cases into three circuits by the time between create offer and cancelled: under 30 days, over 30 days, and those without that stretch.",
+   "I would like you to create three circuits based on the duration between create offer and cancelled: less than 30 days, longer than that, and cases where that sequence simply does not occur.",
+   "Make three circuits: the ones where create offer leads to cancelled in under 30 days, the rest of the create-offer-to-cancelled cases, and everything else."
+  ],
+  "ambiguity": "The phrase 'the rest of the create-offer-to-cancelled cases' could be misread as including the fast ones rather than only the slow ones."
+ },
+ "bpic2017-C10": {
+  "texts": [
+   "Create three circuits: cases with ApplicationType equal to 'New credit' that go through 'A_Pending', the rest of the cases with ApplicationType equal to 'New credit', and all the others",
+   "Create three circuits: new credit cases that go through pending, the remaining new credit cases, and all the others.",
+   "Could you please set up three circuits separating new credit applications that pass through pending, the rest of the new credit ones, and everything else?",
+   "Make three circuits: the new credit ones with pending, the other new credit ones, and the rest."
+  ],
+  "ambiguity": "The phrase 'with pending' is loosely phrased and could be read as a general state rather than the specific activity pending."
+ },
+ "bpic2017-C11": {
+  "texts": [
+   "Make three circuits: LoanGoal equal to 'Car' and 'A_Cancelled', only LoanGoal equal to 'Car', and the rest",
+   "Make three circuits: car loan cases that go through cancelled, the other car loan cases, and everything else.",
+   "I would like you to create three circuits: those with loan goal car that include cancelled, the remaining car loan cases, and all the rest.",
+   "Create three circuits: the car ones with cancelled, the other car ones, and the rest."
+  ],
+  "ambiguity": "The phrase 'the car ones with cancelled' is vague about whether cancelled is an activity in the path or a final outcome state."
+ },
+ "bpic2017-C12": {
+  "texts": [
+   "Create three circuits: 'A_Submitted' then 'W_Handle leads' in less than 1 hour, the rest of those with 'A_Submitted' then 'W_Handle leads', and all the others",
+   "Split into three circuits: submitted followed by handle leads in under an hour, the rest of those submitted-to-handle-leads cases, and everything else.",
+   "Could you create three circuits separating cases where submitted leads to handle leads in less than one hour, the remaining submitted-to-handle-leads cases, and all the others?",
+   "Make three circuits: the fast submitted-to-handle-leads ones under an hour, the slow ones, and the rest."
+  ],
+  "ambiguity": "The phrase 'the slow ones' does not explicitly state that they still contain the submitted-to-handle-leads sequence."
+ },
+ "bpic2017-R01": {
+  "texts": [
+   "Define a region from 'O_Create Offer' to 'A_Denied'",
+   "Define a region from create offer to denied.",
+   "I would like you to define a critical section from create offer to denied.",
+   "Set up a region from create offer to the denial."
+  ],
+  "ambiguity": "The phrase 'the denial' is a loose reference that could point to a different activity or a variable value rather than the specific activity denied."
+ },
+ "bpic2017-R02": {
+  "texts": [
+   "Define a critical section from 'W_Complete application' to 'O_Sent (mail and online)'",
+   "Define a critical section from complete application to sent mail and online.",
+   "Could you please define a region from complete application to sent mail and online?",
+   "Set up a region from completing the application to the sent step."
+  ],
+  "ambiguity": "The phrase 'the sent step' is vague and could refer to any activity involving sending rather than the specific one."
+ },
+ "bpic2017-R03": {
+  "texts": [
+   "Define a region from 'A_Incomplete' to 'A_Pending'",
+   "Define a region from incomplete to pending.",
+   "I would like you to set up a critical section from incomplete to pending.",
+   "Create a region from the incomplete state to pending."
+  ],
+  "ambiguity": "The phrase 'the incomplete state' could be misread as a variable value rather than the activity incomplete."
+ },
+ "bpic2017-R04": {
+  "texts": [
+   "Define two critical sections: from 'W_Handle leads' to 'A_Accepted' and from 'A_Concept' to 'A_Cancelled'",
+   "Define two critical sections: from handle leads to accepted, and from concept to cancelled.",
+   "Could you please define two regions: one from handle leads to accepted, and another from concept to cancelled?",
+   "Set up two regions: from handle leads to the acceptance, and from concept to the cancellation."
+  ],
+  "ambiguity": "The phrases 'the acceptance' and 'the cancellation' are loosely named and could refer to different activities than the intended ones."
+ },
+ "bpic2017-R05": {
+  "texts": [
+   "Define two regions: from 'A_Incomplete' to 'A_Pending' and from 'O_Sent (mail and online)' to 'A_Incomplete'",
+   "Define two regions: one from incomplete to pending, and another from sent by mail and online to incomplete.",
+   "I would like you to define two regions for me: the first going from incomplete to pending, and the second from sent by mail and online to incomplete.",
+   "Define two regions: from incomplete to pending, and from sent to incomplete."
+  ],
+  "ambiguity": "The word sent could refer to several sent-related activities in the model, not just the one combining mail and online."
+ },
+ "bpic2017-R06": {
+  "texts": [
+   "Define a region from 'O_Returned' to 'A_Pending' when less than 4 days pass between them",
+   "Define a region from returned to pending, but only when less than 4 days pass between the two activities.",
+   "Could you define a region from returned to pending, restricted to cases where less than 4 days elapse between them?",
+   "Define a region from returned to pending if it takes less than 4 days."
+  ],
+  "ambiguity": "The pronoun it does not clearly indicate that the 4-day limit refers to the time elapsed between the two activities."
+ },
+ "bpic2017-R07": {
+  "texts": [
+   "Define a critical section from 'O_Create Offer' to 'A_Cancelled' when more than 30 days elapse",
+   "Define a critical section from create offer to cancelled, but only when more than 30 days elapse between them.",
+   "It would be interesting if you could define a critical section from create offer to cancelled, limited to cases where more than 30 days pass.",
+   "Define a critical section from create offer to cancelled if it takes more than 30 days."
+  ],
+  "ambiguity": "The vague it leaves unclear whether the 30-day threshold applies to the gap between the two activities or to some other duration."
+ },
+ "bpic2017-R08": {
+  "texts": [
+   "Define a region from 'A_Submitted' to 'W_Handle leads' when less than 1 hour pass between them",
+   "Define a region from submitted to handle leads, but only when less than 1 hour passes between them.",
+   "Could you please define a region from submitted to handle leads, limited to cases where less than 1 hour elapses between the two?",
+   "Define a region from submitted to handle leads if it is under an hour."
+  ],
+  "ambiguity": "The phrase it is under an hour does not make explicit that the one-hour limit concerns the time between the two activities."
+ },
+ "bpic2017-R09": {
+  "texts": [
+   "Define a region from 'A_Incomplete' to 'A_Pending' in the cases with ApplicationType equal to 'New credit'",
+   "Define a region from incomplete to pending, but only in the cases where the application type is new credit.",
+   "I would like you to define a region from incomplete to pending, restricted to cases with application type set to new credit.",
+   "Define a region from incomplete to pending for new credit cases."
+  ],
+  "ambiguity": "The phrase new credit cases could be read as new cases of credit rather than cases whose application type equals new credit."
+ },
+ "bpic2017-R10": {
+  "texts": [
+   "Define a critical section from 'O_Sent (mail and online)' to 'A_Incomplete' only in the cases with LoanGoal equal to 'Car'",
+   "Define a critical section from sent by mail and online to incomplete, but only in the cases where the loan goal is car.",
+   "Could you define a critical section from sent by mail and online to incomplete, limited to cases with loan goal set to car?",
+   "Define a critical section from sent to incomplete for car cases."
+  ],
+  "ambiguity": "The shortened word sent could match several sent-related activities, and car cases is a loose way to refer to the loan goal variable."
+ },
+ "bpic2017-M01": {
+  "texts": [
+   "Define 'A_Incomplete' as a milestone",
+   "Mark incomplete as a milestone.",
+   "I would like you to mark incomplete as a milestone.",
+   "Mark the incomplete one as a milestone."
+  ],
+  "ambiguity": "The loose reference the incomplete one could fit more than one activity whose name contains incomplete."
+ },
+ "bpic2017-M02": {
+  "texts": [
+   "Mark 'A_Pending' and 'W_Validate application' as milestones",
+   "Mark pending and validate application as milestones.",
+   "Could you please mark pending and validate application as milestones?",
+   "Mark pending and the validation as milestones."
+  ],
+  "ambiguity": "The vague phrase the validation could refer to several validation-related activities rather than specifically validate application."
+ },
+ "bpic2017-M03": {
+  "texts": [
+   "Use 'A_Cancelled' as a milestone",
+   "Make cancelled a milestone.",
+   "I would like you to mark cancelled as a milestone.",
+   "Set the cancelled one as a milestone."
+  ],
+  "ambiguity": "The phrase 'the cancelled one' does not clearly identify the activity and could refer to a case rather than the activity itself."
+ },
+ "bpic2017-M04": {
+  "texts": [
+   "Define 'A_Validating' as a milestone",
+   "Define validating as a milestone.",
+   "Could you please set validating as a milestone?",
+   "Mark the validating step as a milestone."
+  ],
+  "ambiguity": "The word 'step' is vague and 'validating' could be confused with the activity validate application."
+ },
+ "bpic2017-M05": {
+  "texts": [
+   "Define 'A_Incomplete' and 'O_Accepted' as milestones",
+   "Define incomplete and accepted as milestones.",
+   "It would be great if you could mark incomplete and accepted as milestones.",
+   "Set incomplete and the accepted one as milestones."
+  ],
+  "ambiguity": "The phrase 'the accepted one' is loosely named and could be mistaken for a different outcome activity."
+ },
+ "bpic2017-M06": {
+  "texts": [
+   "Mark 'A_Submitted', 'A_Denied' and 'W_Call incomplete files' as milestones",
+   "Mark submitted, denied and call incomplete files as milestones.",
+   "Would you mind marking submitted, denied and call incomplete files as milestones?",
+   "Set submitted, denied and the incomplete files call as milestones."
+  ],
+  "ambiguity": "The rewording 'the incomplete files call' could be misread as a single compound activity rather than the exact activity name."
+ },
+ "bpic2017-M07": {
+  "texts": [
+   "Define 'O_Refused' as a milestone",
+   "Define refused as a milestone.",
+   "I would like you to mark refused as a milestone.",
+   "Set the refused outcome as a milestone."
+  ],
+  "ambiguity": "The word 'outcome' is generic and 'refused' could be confused with the similar activity denied."
+ },
+ "bpic2017-M08": {
+  "texts": [
+   "Mark 'O_Refused' and 'W_Validate application' as milestones",
+   "Mark refused and validate application as milestones.",
+   "Could you please define refused and validate application as milestones?",
+   "Set refused and the application validation as milestones."
+  ],
+  "ambiguity": "The phrase 'the application validation' is a shortened form that could be confused with the activity validating."
+ },
+ "bpic2017-M09": {
+  "texts": [
+   "Define 'W_Complete application', 'O_Accepted' and 'O_Refused' as milestones",
+   "Define complete application, accepted and refused as milestones.",
+   "It would be interesting if you could mark complete application, accepted and refused as milestones.",
+   "Set the application completion, accepted and refused as milestones."
+  ],
+  "ambiguity": "The phrase 'the application completion' is a paraphrase that could be mistaken for a different activity than complete application."
+ },
+ "bpic2017-M10": {
+  "texts": [
+   "Define 'O_Returned' as a milestone",
+   "Define returned as a milestone.",
+   "Could you mark returned as a milestone, please?",
+   "Set the returned one as a milestone."
+  ],
+  "ambiguity": "The phrase 'the returned one' is vague and does not clearly identify which activity is meant."
+ }
+}

@@ -1,0 +1,860 @@
+{
+ "log": "gestion_citas",
+ "lang": "es",
+ "cases": 2000,
+ "version": "v2",
+ "note": "orders only; no clarification items; one wording per item",
+ "filters": [
+  {
+   "id": "gestion_citas-F01",
+   "family": "exists",
+   "cls": "act",
+   "text": "Limita los casos a: casos en los que ocurre «CitaPreferente»",
+   "expr": "'CitaPreferente'",
+   "count": 213,
+   "pct": 10.7,
+   "case_hash": "496b1c8a4038a69e",
+   "texts": [
+    "Limita los casos a: casos en los que ocurre «CitaPreferente»",
+    "Filtra los casos a aquellos en los que se produce una cita preferente.",
+    "¿Podrías limitar los casos a los que incluyen una cita preferente?",
+    "Limita los casos a los que tienen una cita."
+   ],
+   "ambiguity": "una cita is too generic and could refer to any type of appointment, not specifically a preferential one."
+  },
+  {
+   "id": "gestion_citas-F02",
+   "family": "exists",
+   "cls": "act",
+   "text": "Limita los casos a: pacientes/casos que pasaron por «RecordatorioCita»",
+   "expr": "'RecordatorioCita'",
+   "count": 1165,
+   "pct": 58.2,
+   "case_hash": "52d41d49d9141c48",
+   "texts": [
+    "Limita los casos a: pacientes/casos que pasaron por «RecordatorioCita»",
+    "Limita los casos a los pacientes que pasaron por un recordatorio de cita.",
+    "Me gustaría que filtraras los casos a aquellos en los que se envió un recordatorio de cita.",
+    "Filtra los casos a los que recibieron un recordatorio."
+   ],
+   "ambiguity": "un recordatorio is unspecific and could refer to any kind of reminder, not necessarily one about an appointment."
+  },
+  {
+   "id": "gestion_citas-F33",
+   "family": "var_num",
+   "cls": "var",
+   "text": "Limita los casos a: casos con Edad mayor que 44",
+   "expr": "[Edad > 44]",
+   "count": 1295,
+   "pct": 64.8,
+   "case_hash": "4e54451e7615a4c0",
+   "texts": [
+    "Limita los casos a: casos con Edad mayor que 44",
+    "Filtra los casos a aquellos con edad mayor que 44.",
+    "¿Podrías limitar los casos a los que tengan una edad superior a 44?",
+    "Limita los casos a los de edad 44."
+   ],
+   "ambiguity": "de edad 44 is unclear whether it means exactly 44, 44 or more, or approximately 44."
+  },
+  {
+   "id": "gestion_citas-F34",
+   "family": "var_range",
+   "cls": "var",
+   "text": "Limita los casos a: casos con Edad entre 44 y 61",
+   "expr": "[Edad >= 44, Edad <= 61]",
+   "count": 727,
+   "pct": 36.4,
+   "case_hash": "82dfced729cee17c",
+   "texts": [
+    "Limita los casos a: casos con Edad entre 44 y 61",
+    "Filtra los casos a los que tengan una edad entre 44 y 61 años.",
+    "¿Podrías limitarme los casos a aquellos cuya edad esté entre 44 y 61 años, por favor?",
+    "Limita los casos a los de 44 a 61."
+   ],
+   "ambiguity": "It is not explicit that 44 and 61 refer to the age variable; they could be read as case identifiers or another numeric field."
+  },
+  {
+   "id": "gestion_citas-F40",
+   "family": "time_lt",
+   "cls": "time",
+   "text": "Limita los casos a: casos con «TriajeAdministrativo» y, más tarde, «NoPresentado» en menos de 5 días",
+   "expr": "('TriajeAdministrativo' >> 'NoPresentado')[-5d]",
+   "count": 101,
+   "pct": 5.0,
+   "case_hash": "31c2d4a970d1369a",
+   "texts": [
+    "Limita los casos a: casos con «TriajeAdministrativo» y, más tarde, «NoPresentado» en menos de 5 días",
+    "Limita los casos a aquellos en los que hay un triaje administrativo seguido de un no presentado en menos de 5 días.",
+    "¿Podrías filtrar los casos a los que incluyen un triaje administrativo y después un no presentado, con un intervalo inferior a 5 días?",
+    "Filtra los casos a los que tienen un triaje y luego un no presentado en menos de 5 días."
+   ],
+   "ambiguity": "un triaje is not qualified as administrative, so it could match any triage activity in the process."
+  },
+  {
+   "id": "gestion_citas-F41",
+   "family": "time_gt",
+   "cls": "time",
+   "text": "Limita los casos a: casos con «SolicitudCita» y, más tarde, «ConsultaTramite» con más de 7 días entre ambos",
+   "expr": "('SolicitudCita' >> 'ConsultaTramite')[7d-]",
+   "count": 242,
+   "pct": 12.1,
+   "case_hash": "bd8882cb005417fe",
+   "texts": [
+    "Limita los casos a: casos con «SolicitudCita» y, más tarde, «ConsultaTramite» con más de 7 días entre ambos",
+    "Limita los casos a aquellos con una solicitud de cita y, más tarde, una consulta de trámite, con más de 7 días entre ambas.",
+    "Me gustaría que limitaras los casos a los que tengan una solicitud de cita seguida de una consulta de trámite, separadas por más de 7 días.",
+    "Filtra los casos a los que hay una solicitud y después una consulta con más de 7 días de diferencia."
+   ],
+   "ambiguity": "una solicitud and una consulta are too generic and could refer to any request or consultation in the process."
+  },
+  {
+   "id": "gestion_citas-F39",
+   "family": "var_seq",
+   "cls": "mixed",
+   "text": "Limita los casos a: casos con «TriajeAdministrativo» y, más tarde, «SolicitudReconsulta», con CosteTramo igual a «medio»",
+   "expr": "('TriajeAdministrativo' >> 'SolicitudReconsulta')[CosteTramo == 'medio']",
+   "count": 167,
+   "pct": 8.3,
+   "case_hash": "73e8bc74ce836eea",
+   "texts": [
+    "Limita los casos a: casos con «TriajeAdministrativo» y, más tarde, «SolicitudReconsulta», con CosteTramo igual a «medio»",
+    "Limita los casos a aquellos con un triaje administrativo y, más tarde, una solicitud de reconsulta, con el coste de tramo igual a medio.",
+    "¿Podrías filtrar los casos a los que incluyen un triaje administrativo seguido de una solicitud de reconsulta, donde el coste de tramo sea medio?",
+    "Filtra los casos a los que hay un triaje y luego una reconsulta, con el tramo en medio."
+   ],
+   "ambiguity": "en medio could be read as a spatial or temporal position rather than the value medio for the cost variable, and un triaje lacks the administrative qualifier."
+  },
+  {
+   "id": "gestion_citas-F43",
+   "family": "time_var",
+   "cls": "mixed",
+   "text": "Limita los casos a: casos con Edad mayor que 47 y «ConsultaTramite» en menos de 6 días desde «TriajeAdministrativo»",
+   "expr": "('TriajeAdministrativo' >> 'ConsultaTramite')[Edad > 47, -6d]",
+   "count": 116,
+   "pct": 5.8,
+   "case_hash": "030af0dc60ea1bfa",
+   "texts": [
+    "Limita los casos a: casos con Edad mayor que 47 y «ConsultaTramite» en menos de 6 días desde «TriajeAdministrativo»",
+    "Filtra los casos a los que tengan edad mayor que 47 y donde la consulta de trámite se realice en menos de 6 días desde el triaje administrativo.",
+    "Me gustaría que limitaras los casos a los de edad superior a 47 y en los que la consulta de trámite ocurra en menos de 6 días desde el triaje administrativo, si te parece bien.",
+    "Filtra los casos a los de más de 47 con la consulta en menos de 6 días desde el triaje."
+   ],
+   "ambiguity": "The shortened 'la consulta' and 'el triaje' could refer to different activities in the process, making it unclear which specific pair is intended."
+  }
+ ],
+ "circuits": [
+  {
+   "id": "gestion_citas-C01",
+   "text": "Crea circuitos para esto: separa las solicitudes según cómo terminan: resueltas, abandonadas, derivadas o con urgencias no urgentes",
+   "cls": "act",
+   "circuits": [
+    {
+     "name": "ends_0",
+     "expr": "'CierreResuelto'$"
+    },
+    {
+     "name": "ends_1",
+     "expr": "'AbandonoSolicitud'$"
+    },
+    {
+     "name": "ends_2",
+     "expr": "'CierreDerivado'$"
+    },
+    {
+     "name": "ends_3",
+     "expr": "'AtencionUrgenciasNoUrgente'$"
+    }
+   ],
+   "gold_counts": {
+    "ends_0": 1684,
+    "ends_1": 133,
+    "ends_2": 110,
+    "ends_3": 73
+   },
+   "texts": [
+    "Crea circuitos para esto: separa las solicitudes según cómo terminan: resueltas, abandonadas, derivadas o con urgencias no urgentes",
+    "Crea circuitos que separen las solicitudes según cómo terminan: cierre resuelto, abandono de solicitud, cierre derivado o atención de urgencias no urgente.",
+    "¿Podrías crear circuitos que separen las solicitudes según su final: cierre resuelto, abandono de solicitud, cierre derivado o atención de urgencias no urgente?",
+    "Crea circuitos que separen las solicitudes según cómo terminan: cierre resuelto, abandono, derivado o atención de urgencias no urgente."
+   ],
+   "ambiguity": "The shortened 'derivado' without the preceding 'cierre' could refer to a different activity or simply mean 'derived' in a general sense."
+  },
+  {
+   "id": "gestion_citas-C02",
+   "text": "Crea circuitos para esto: clasifica a los pacientes según hayan tenido cita preferente, recordatorio o trámite resuelto en administración (el primero que cumpla)",
+   "cls": "act",
+   "circuits": [
+    {
+     "name": "with_0",
+     "expr": "'CitaPreferente'"
+    },
+    {
+     "name": "with_1",
+     "expr": "'RecordatorioCita'"
+    },
+    {
+     "name": "with_2",
+     "expr": "'TramiteResueltoAdministrativo'"
+    }
+   ],
+   "gold_counts": {
+    "UNK": 510,
+    "with_1": 1139,
+    "with_0": 213,
+    "with_2": 138
+   },
+   "texts": [
+    "Crea circuitos para esto: clasifica a los pacientes según hayan tenido cita preferente, recordatorio o trámite resuelto en administración (el primero que cumpla)",
+    "Crea circuitos que clasifiquen a los pacientes según hayan tenido cita preferente, recordatorio de cita o trámite resuelto en administración, tomando el primero que cumpla.",
+    "¿Podrías crear circuitos para clasificar a los pacientes según si han tenido cita preferente, recordatorio de cita o trámite resuelto en administración, priorizando el primero que se cumpla?",
+    "Crea circuitos que separen a los pacientes según hayan tenido cita preferente, un recordatorio o un trámite resuelto, el primero que cumpla."
+   ],
+   "ambiguity": "'Un recordatorio' is a shortened form of 'recordatorio de cita' and could refer to any type of reminder in the process."
+  },
+  {
+   "id": "gestion_citas-C03",
+   "text": "Crea circuitos para esto: separa los pacientes que pasaron del triaje administrativo a una reconsulta, los que solo pasaron por el triaje y el resto",
+   "cls": "act",
+   "circuits": [
+    {
+     "name": "a_then_b",
+     "expr": "('TriajeAdministrativo' >> 'SolicitudReconsulta')"
+    },
+    {
+     "name": "has_a",
+     "expr": "'TriajeAdministrativo'"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "has_a": 1723,
+    "a_then_b": 277
+   },
+   "texts": [
+    "Crea circuitos para esto: separa los pacientes que pasaron del triaje administrativo a una reconsulta, los que solo pasaron por el triaje y el resto",
+    "Crea circuitos que separen a los pacientes que pasaron del triaje administrativo a una solicitud de reconsulta, los que solo pasaron por el triaje administrativo y el resto.",
+    "¿Podrías crear circuitos para separar a los pacientes que fueron del triaje administrativo a una solicitud de reconsulta, los que únicamente pasaron por el triaje y el resto?",
+    "Crea circuitos que separen a los pacientes que pasaron del triaje a una solicitud de reconsulta, los que solo pasaron por el triaje y el resto."
+   ],
+   "ambiguity": "'Triaje' without the qualifier 'administrativo' could refer to other types of triage in the process."
+  },
+  {
+   "id": "gestion_citas-C04",
+   "text": "Crea circuitos para esto: separa los casos según cómo terminan: «CierreResuelto» o «AbandonoSolicitud»",
+   "cls": "act",
+   "circuits": [
+    {
+     "name": "ends_CierreResuelto",
+     "expr": "'CierreResuelto'$"
+    },
+    {
+     "name": "ends_AbandonoSolicitud",
+     "expr": "'AbandonoSolicitud'$"
+    }
+   ],
+   "gold_counts": {
+    "ends_CierreResuelto": 1684,
+    "ends_AbandonoSolicitud": 133,
+    "UNK": 183
+   },
+   "texts": [
+    "Crea circuitos para esto: separa los casos según cómo terminan: «CierreResuelto» o «AbandonoSolicitud»",
+    "Crea circuitos que separen los casos según cómo terminan: con cierre resuelto o con abandono de solicitud.",
+    "¿Podrías crear circuitos para separar los casos según su finalización: cierre resuelto o abandono de solicitud?",
+    "Crea circuitos que separen los casos según cómo acaban: resueltos o con abandono de solicitud."
+   ],
+   "ambiguity": "'Resueltos' is a generic adjective that could refer to other resolution activities beyond 'cierre resuelto'."
+  },
+  {
+   "id": "gestion_citas-C05",
+   "text": "Crea circuitos para esto: separa los casos según AccesoDigital: «si» o «no»",
+   "cls": "var",
+   "circuits": [
+    {
+     "name": "AccesoDigital_si",
+     "expr": "[AccesoDigital == 'si']"
+    },
+    {
+     "name": "AccesoDigital_no",
+     "expr": "[AccesoDigital == 'no']"
+    }
+   ],
+   "gold_counts": {
+    "AccesoDigital_no": 658,
+    "AccesoDigital_si": 1342
+   },
+   "texts": [
+    "Crea circuitos para esto: separa los casos según AccesoDigital: «si» o «no»",
+    "Crea circuitos que separen los casos según el acceso digital: si o no.",
+    "¿Podrías crear circuitos para agrupar los casos según el acceso digital, en dos grupos: si y no?",
+    "Crea circuitos que separen los casos según el acceso: si o no."
+   ],
+   "ambiguity": "'Acceso' is a shortened form of 'acceso digital' and could refer to other access-related variables in the process."
+  },
+  {
+   "id": "gestion_citas-C06",
+   "text": "Crea circuitos para esto: agrupa los casos por BurnoutMedico: «bajo» o «alto»",
+   "cls": "var",
+   "circuits": [
+    {
+     "name": "BurnoutMedico_bajo",
+     "expr": "[BurnoutMedico == 'bajo']"
+    },
+    {
+     "name": "BurnoutMedico_alto",
+     "expr": "[BurnoutMedico == 'alto']"
+    }
+   ],
+   "gold_counts": {
+    "BurnoutMedico_bajo": 851,
+    "BurnoutMedico_alto": 711,
+    "UNK": 438
+   },
+   "texts": [
+    "Crea circuitos para esto: agrupa los casos por BurnoutMedico: «bajo» o «alto»",
+    "Crea circuitos que agrupen los casos según el burnout médico: bajo o alto.",
+    "¿Podrías crear circuitos para agrupar los casos según el burnout médico, en dos grupos: bajo y alto?",
+    "Crea circuitos que agrupen los casos según el burnout: bajo o alto."
+   ],
+   "ambiguity": "'Burnout' without the qualifier 'médico' could refer to other burnout-related variables in the process."
+  },
+  {
+   "id": "gestion_citas-C07",
+   "text": "Crea un circuito por cada valor de CosteTramo: «bajo» o «medio»",
+   "cls": "var",
+   "circuits": [
+    {
+     "name": "CosteTramo_bajo",
+     "expr": "[CosteTramo == 'bajo']"
+    },
+    {
+     "name": "CosteTramo_medio",
+     "expr": "[CosteTramo == 'medio']"
+    }
+   ],
+   "gold_counts": {
+    "CosteTramo_medio": 310,
+    "CosteTramo_bajo": 1451,
+    "UNK": 239
+   },
+   "texts": [
+    "Crea un circuito por cada valor de CosteTramo: «bajo» o «medio»",
+    "Crea un circuito por cada valor del coste del tramo: bajo o medio.",
+    "¿Podrías crear un circuito para cada valor del coste del tramo, es decir, bajo y medio?",
+    "Crea un circuito por cada valor del coste: bajo o medio."
+   ],
+   "ambiguity": "'Coste' without 'del tramo' could refer to other cost variables in the process."
+  },
+  {
+   "id": "gestion_citas-C08",
+   "text": "Crea circuitos para esto: separa los casos según Cupo: «CupoB» o «CupoA»",
+   "cls": "var",
+   "circuits": [
+    {
+     "name": "Cupo_CupoB",
+     "expr": "[Cupo == 'CupoB']"
+    },
+    {
+     "name": "Cupo_CupoA",
+     "expr": "[Cupo == 'CupoA']"
+    }
+   ],
+   "gold_counts": {
+    "Cupo_CupoA": 955,
+    "Cupo_CupoB": 1045
+   },
+   "texts": [
+    "Crea circuitos para esto: separa los casos según Cupo: «CupoB» o «CupoA»",
+    "Crea circuitos que separen los casos según el cupo: cupo B o cupo A.",
+    "¿Podrías crear circuitos para separar los casos según el cupo, en dos grupos: cupo B y cupo A?",
+    "Crea circuitos que separen los casos según el cupo: B o A."
+   ],
+   "ambiguity": "'B' and 'A' without the 'cupo' prefix could refer to other B/A classifications in the process."
+  },
+  {
+   "id": "gestion_citas-C09",
+   "text": "Crea tres circuitos: «NoPresentado» y luego «RecordatorioCita» en menos de 10 días, el resto de los que tienen «NoPresentado» y luego «RecordatorioCita», y los demás",
+   "cls": "time",
+   "circuits": [
+    {
+     "name": "NoPresentado_to_RecordatorioCita_fast",
+     "expr": "('NoPresentado' >> 'RecordatorioCita')[-10d]"
+    },
+    {
+     "name": "NoPresentado_to_RecordatorioCita_slow",
+     "expr": "('NoPresentado' >> 'RecordatorioCita')"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "rest": 1919,
+    "NoPresentado_to_RecordatorioCita_fast": 39,
+    "NoPresentado_to_RecordatorioCita_slow": 42
+   },
+   "texts": [
+    "Crea tres circuitos: «NoPresentado» y luego «RecordatorioCita» en menos de 10 días, el resto de los que tienen «NoPresentado» y luego «RecordatorioCita», y los demás",
+    "Crea tres circuitos: el primero para los casos donde no presentado va seguido de recordatorio de cita en menos de diez días, el segundo para los que tienen esa secuencia pero tardan más, y el tercero para el resto.",
+    "¿Podrías crear tres circuitos, por favor? Uno para los casos en que no presentado se sigue de recordatorio de cita en menos de diez días, otro para los que sí tienen esa secuencia pero con más tiempo, y un último para los demás.",
+    "Haz tres circuitos: no presentado y luego recordatorio en menos de diez días, los que tienen esa secuencia pero más lentos, y el resto."
+   ],
+   "ambiguity": "recordatorio is a shortened name that could refer to a different reminder activity."
+  },
+  {
+   "id": "gestion_citas-C10",
+   "text": "Haz tres circuitos según el tiempo entre «ConsultaMedica» y «CierreResuelto»: menos de 14 minutoes, más tiempo, y los que no tienen ese tramo",
+   "cls": "time",
+   "circuits": [
+    {
+     "name": "ConsultaMedica_to_CierreResuelto_fast",
+     "expr": "('ConsultaMedica' >> 'CierreResuelto')[-14m]"
+    },
+    {
+     "name": "ConsultaMedica_to_CierreResuelto_slow",
+     "expr": "('ConsultaMedica' >> 'CierreResuelto')"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "ConsultaMedica_to_CierreResuelto_slow": 763,
+    "rest": 937,
+    "ConsultaMedica_to_CierreResuelto_fast": 300
+   },
+   "texts": [
+    "Haz tres circuitos según el tiempo entre «ConsultaMedica» y «CierreResuelto»: menos de 14 minutoes, más tiempo, y los que no tienen ese tramo",
+    "Haz tres circuitos según el tiempo entre la consulta médica y el cierre resuelto: los de menos de catorce minutos, los de más tiempo y los que no tienen ese tramo.",
+    "¿Podrías crear tres circuitos según el tiempo entre la consulta médica y el cierre resuelto, separando los de menos de catorce minutos, los de más tiempo y los que no tienen ese tramo?",
+    "Haz tres circuitos según el tiempo entre la consulta y el cierre: menos de catorce minutos, más, y el resto."
+   ],
+   "ambiguity": "la consulta and el cierre are shortened names that could match different activities in the model."
+  },
+  {
+   "id": "gestion_citas-C11",
+   "text": "Crea tres circuitos: casos con AccesoDigital igual a «si» que pasan por «TramiteResueltoAdministrativo», el resto de casos con AccesoDigital igual a «si», y los demás",
+   "cls": "mixed",
+   "circuits": [
+    {
+     "name": "AccesoDigital_si_TramiteResueltoAdministrativo",
+     "expr": "'TramiteResueltoAdministrativo' & [AccesoDigital == 'si']"
+    },
+    {
+     "name": "AccesoDigital_si",
+     "expr": "[AccesoDigital == 'si']"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "rest": 658,
+    "AccesoDigital_si": 1250,
+    "AccesoDigital_si_TramiteResueltoAdministrativo": 92
+   },
+   "texts": [
+    "Crea tres circuitos: casos con AccesoDigital igual a «si» que pasan por «TramiteResueltoAdministrativo», el resto de casos con AccesoDigital igual a «si», y los demás",
+    "Crea tres circuitos: los casos con acceso digital igual a sí que pasan por el trámite resuelto administrativo, el resto con acceso digital igual a sí, y los demás.",
+    "Me gustaría que crearas tres circuitos: los casos con acceso digital igual a sí que pasan por el trámite resuelto administrativo, el resto con acceso digital igual a sí, y los demás.",
+    "Crea tres circuitos: los que tienen acceso digital en sí y pasan por el trámite resuelto, el resto con acceso digital en sí, y los demás."
+   ],
+   "ambiguity": "el trámite resuelto is a shortened name that could fit multiple activities in the model."
+  },
+  {
+   "id": "gestion_citas-C12",
+   "text": "Haz tres circuitos: BurnoutMedico igual a «bajo» y «DerivacionEspecialista», solo BurnoutMedico igual a «bajo», y el resto",
+   "cls": "mixed",
+   "circuits": [
+    {
+     "name": "BurnoutMedico_bajo_DerivacionEspecialista",
+     "expr": "'DerivacionEspecialista' & [BurnoutMedico == 'bajo']"
+    },
+    {
+     "name": "BurnoutMedico_bajo",
+     "expr": "[BurnoutMedico == 'bajo']"
+    },
+    {
+     "name": "rest",
+     "expr": "."
+    }
+   ],
+   "gold_counts": {
+    "BurnoutMedico_bajo": 814,
+    "rest": 1149,
+    "BurnoutMedico_bajo_DerivacionEspecialista": 37
+   },
+   "texts": [
+    "Haz tres circuitos: BurnoutMedico igual a «bajo» y «DerivacionEspecialista», solo BurnoutMedico igual a «bajo», y el resto",
+    "Crea tres circuitos: los casos con burnout médico bajo que tienen derivación a especialista, los que solo tienen burnout médico bajo, y el resto.",
+    "¿Podrías crear tres circuitos, por favor? Uno para los casos donde burnout médico es bajo y hay derivación a especialista, otro para los que solo tienen burnout médico bajo, y un último para el resto.",
+    "Haz tres circuitos: burnout médico bajo con derivación, solo burnout médico bajo, y el resto."
+   ],
+   "ambiguity": "derivación is a shortened name that could refer to a different referral activity."
+  }
+ ],
+ "regions": [
+  {
+   "id": "gestion_citas-R01",
+   "text": "Define una región desde «TriajeAdministrativo» hasta «SolicitudReconsulta»",
+   "cls": "act",
+   "regions": [
+    {
+     "name": "TriajeAdministrativo_to_SolicitudReconsulta",
+     "expr": "('TriajeAdministrativo' >> 'SolicitudReconsulta')",
+     "traces": 277
+    }
+   ],
+   "texts": [
+    "Define una región desde «TriajeAdministrativo» hasta «SolicitudReconsulta»",
+    "Define una región desde triaje administrativo hasta solicitud de reconsulta.",
+    "¿Podrías definir una región, por favor, que vaya desde triaje administrativo hasta solicitud de reconsulta?",
+    "Define una región desde triaje hasta solicitud de reconsulta."
+   ],
+   "ambiguity": "triaje is a shortened name that could refer to a different triage activity."
+  },
+  {
+   "id": "gestion_citas-R02",
+   "text": "Define una sección crítica desde «CitaDemorada» hasta «ConsultaMedica»",
+   "cls": "act",
+   "regions": [
+    {
+     "name": "CitaDemorada_to_ConsultaMedica",
+     "expr": "('CitaDemorada' >> 'ConsultaMedica')",
+     "traces": 145
+    }
+   ],
+   "texts": [
+    "Define una sección crítica desde «CitaDemorada» hasta «ConsultaMedica»",
+    "Define una región desde la cita demorada hasta la consulta médica.",
+    "¿Podrías definir una sección crítica que abarque desde la cita demorada hasta la consulta médica?",
+    "Define una región desde la demora hasta la consulta médica."
+   ],
+   "ambiguity": "La demora is a loose shortened name that could refer to any delay-related activity, not specifically CitaDemorada."
+  },
+  {
+   "id": "gestion_citas-R03",
+   "text": "Define una región desde «TriajeAdministrativo» hasta «ConsultaMedica»",
+   "cls": "act",
+   "regions": [
+    {
+     "name": "TriajeAdministrativo_to_ConsultaMedica",
+     "expr": "('TriajeAdministrativo' >> 'ConsultaMedica')",
+     "traces": 1183
+    }
+   ],
+   "texts": [
+    "Define una región desde «TriajeAdministrativo» hasta «ConsultaMedica»",
+    "Define una región desde el triaje administrativo hasta la consulta médica.",
+    "¿Podrías definir una región desde el triaje administrativo hasta la consulta médica?",
+    "Define una región desde el triaje hasta la consulta."
+   ],
+   "ambiguity": "el triaje and la consulta are shortened names that could match different activities in the model."
+  },
+  {
+   "id": "gestion_citas-R04",
+   "text": "Define dos secciones críticas: de «CitaProgramada» a «RecordatorioCita» y de «SolicitudCita» a «TramiteResueltoAdministrativo»",
+   "cls": "act",
+   "regions": [
+    {
+     "name": "CitaProgramada_to_RecordatorioCita",
+     "expr": "('CitaProgramada' >> 'RecordatorioCita')",
+     "traces": 1059
+    },
+    {
+     "name": "SolicitudCita_to_TramiteResueltoAdministrativo",
+     "expr": "('SolicitudCita' >> 'TramiteResueltoAdministrativo')",
+     "traces": 144
+    }
+   ],
+   "texts": [
+    "Define dos secciones críticas: de «CitaProgramada» a «RecordatorioCita» y de «SolicitudCita» a «TramiteResueltoAdministrativo»",
+    "Define dos secciones críticas: una de cita programada a recordatorio de cita y otra de solicitud de cita a trámite resuelto administrativo.",
+    "¿Podrías definir dos secciones críticas, por favor? Una que vaya desde cita programada hasta recordatorio de cita, y otra desde solicitud de cita hasta trámite resuelto administrativo.",
+    "Define dos secciones críticas: de cita programada a recordatorio y de solicitud de cita a trámite resuelto."
+   ],
+   "ambiguity": "recordatorio is a shortened name that could refer to a different reminder activity."
+  },
+  {
+   "id": "gestion_citas-R05",
+   "text": "Define dos regiones: de «TriajeAdministrativo» a «ConsultaMedica» y de «SolicitudCita» a «AbandonoSolicitud»",
+   "cls": "act",
+   "regions": [
+    {
+     "name": "TriajeAdministrativo_to_ConsultaMedica",
+     "expr": "('TriajeAdministrativo' >> 'ConsultaMedica')",
+     "traces": 1183
+    },
+    {
+     "name": "SolicitudCita_to_AbandonoSolicitud",
+     "expr": "('SolicitudCita' >> 'AbandonoSolicitud')",
+     "traces": 133
+    }
+   ],
+   "texts": [
+    "Define dos regiones: de «TriajeAdministrativo» a «ConsultaMedica» y de «SolicitudCita» a «AbandonoSolicitud»",
+    "Define dos regiones: una que vaya del triaje administrativo a la consulta médica y otra de la solicitud de cita al abandono de solicitud.",
+    "¿Podrías definir dos regiones, una del triaje administrativo hasta la consulta médica y otra de la solicitud de cita hasta el abandono de solicitud?",
+    "Define dos regiones: de triaje a consulta médica y de solicitud a abandono."
+   ],
+   "ambiguity": "The activity names are shortened (triaje, solicitud, abandono) and could match other activities in the model."
+  },
+  {
+   "id": "gestion_citas-R06",
+   "text": "Define una región desde «NoPresentado» hasta «RecordatorioCita» cuando pasan menos de 10 días entre ambos",
+   "cls": "time",
+   "regions": [
+    {
+     "name": "NoPresentado_to_RecordatorioCita_fast",
+     "expr": "('NoPresentado' >> 'RecordatorioCita')[-10d]",
+     "traces": 39
+    }
+   ],
+   "texts": [
+    "Define una región desde «NoPresentado» hasta «RecordatorioCita» cuando pasan menos de 10 días entre ambos",
+    "Define una región desde no presentado hasta recordatorio de cita cuando pasan menos de diez días entre ambos.",
+    "Sería interesante que definieras una región que vaya de no presentado al recordatorio de cita, siempre que el intervalo entre ambos sea inferior a diez días.",
+    "Define una región desde no presentado hasta el recordatorio cuando pasan menos de diez días."
+   ],
+   "ambiguity": "Recordatorio without 'de cita' could refer to a different reminder activity in the model."
+  },
+  {
+   "id": "gestion_citas-R07",
+   "text": "Define una sección crítica desde «ConsultaMedica» hasta «CierreResuelto» cuando transcurren más de 14 minutoes",
+   "cls": "time",
+   "regions": [
+    {
+     "name": "ConsultaMedica_to_CierreResuelto_slow",
+     "expr": "('ConsultaMedica' >> 'CierreResuelto')[14m-]",
+     "traces": 779
+    }
+   ],
+   "texts": [
+    "Define una sección crítica desde «ConsultaMedica» hasta «CierreResuelto» cuando transcurren más de 14 minutoes",
+    "Define una sección crítica desde consulta médica hasta cierre resuelto cuando transcurren más de catorce minutos.",
+    "¿Podrías marcar una sección crítica que vaya de la consulta médica al cierre resuelto, únicamente cuando el tiempo superé los catorce minutos?",
+    "Define una sección crítica desde consulta hasta cierre cuando pasan más de catorce minutos."
+   ],
+   "ambiguity": "Consulta and cierre are shortened and could match other activities in the model."
+  },
+  {
+   "id": "gestion_citas-R08",
+   "text": "Define una región desde «CitaProgramada» hasta «NoPresentado» cuando pasan menos de 5 días entre ambos",
+   "cls": "time",
+   "regions": [
+    {
+     "name": "CitaProgramada_to_NoPresentado_fast",
+     "expr": "('CitaProgramada' >> 'NoPresentado')[-5d]",
+     "traces": 91
+    }
+   ],
+   "texts": [
+    "Define una región desde «CitaProgramada» hasta «NoPresentado» cuando pasan menos de 5 días entre ambos",
+    "Define una región desde cita programada hasta no presentado cuando pasan menos de cinco días entre ambos.",
+    "Me gustaría que definieras una región de la cita programada al no presentado, pero solo cuando el tiempo entre ambas actividades sea inferior a cinco días.",
+    "Define una región desde la cita hasta no presentado cuando pasan menos de cinco días."
+   ],
+   "ambiguity": "Cita without 'programada' could refer to a different appointment-related activity."
+  },
+  {
+   "id": "gestion_citas-R09",
+   "text": "Define una región desde «TriajeAdministrativo» hasta «ConsultaMedica» en los casos con AccesoDigital igual a «si»",
+   "cls": "mixed",
+   "regions": [
+    {
+     "name": "TriajeAdministrativo_to_ConsultaMedica_AccesoDigital_si",
+     "expr": "('TriajeAdministrativo' >> 'ConsultaMedica')[AccesoDigital == 'si']",
+     "traces": 800
+    }
+   ],
+   "texts": [
+    "Define una región desde «TriajeAdministrativo» hasta «ConsultaMedica» en los casos con AccesoDigital igual a «si»",
+    "Define una región desde triaje administrativo hasta consulta médica en los casos con acceso digital igual a sí.",
+    "¿Podrías definir una región del triaje administrativo a la consulta médica, pero únicamente en los casos donde el acceso digital sea sí?",
+    "Define una región desde triaje hasta consulta médica solo en los casos con acceso digital en sí."
+   ],
+   "ambiguity": "Triaje is shortened and the phrasing 'en sí' could be misread as a different value or a different condition."
+  },
+  {
+   "id": "gestion_citas-R10",
+   "text": "Define una sección crítica desde «SolicitudCita» hasta «AbandonoSolicitud» solo en los casos con BurnoutMedico igual a «bajo»",
+   "cls": "mixed",
+   "regions": [
+    {
+     "name": "SolicitudCita_to_AbandonoSolicitud_BurnoutMedico_bajo",
+     "expr": "('SolicitudCita' >> 'AbandonoSolicitud')[BurnoutMedico == 'bajo']",
+     "traces": 33
+    }
+   ],
+   "texts": [
+    "Define una sección crítica desde «SolicitudCita» hasta «AbandonoSolicitud» solo en los casos con BurnoutMedico igual a «bajo»",
+    "Define una región desde solicitud de cita hasta abandono de solicitud, solo en los casos donde el burnout médico es bajo.",
+    "¿Podrías definir una sección crítica que vaya desde la solicitud de cita hasta el abandono de solicitud, limitándola únicamente a los casos con burnout médico bajo?",
+    "Define una región desde la solicitud hasta el abandono de solicitud, solo para los casos con burnout bajo."
+   ],
+   "ambiguity": "solicitud without de cita could refer to a different solicitud activity."
+  }
+ ],
+ "milestones": [
+  {
+   "id": "gestion_citas-M01",
+   "text": "Define «CierreResuelto» como hito",
+   "nodes": [
+    "CierreResuelto"
+   ],
+   "texts": [
+    "Define «CierreResuelto» como hito",
+    "Define cierre resuelto como hito.",
+    "¿Podrías marcar cierre resuelto como hito en el modelo?",
+    "Define cierre como hito."
+   ],
+   "ambiguity": "Cierre is shortened and could refer to a different closing activity in the model."
+  },
+  {
+   "id": "gestion_citas-M02",
+   "text": "Marca «CitaProgramada» y «ConsultaTramite» como hitos",
+   "nodes": [
+    "CitaProgramada",
+    "ConsultaTramite"
+   ],
+   "texts": [
+    "Marca «CitaProgramada» y «ConsultaTramite» como hitos",
+    "Marca cita programada y consulta de trámite como hitos.",
+    "Me gustaría que marcaras cita programada y consulta de trámite como hitos del proceso.",
+    "Marca cita y consulta como hitos."
+   ],
+   "ambiguity": "Cita and consulta are shortened and could match other activities in the model."
+  },
+  {
+   "id": "gestion_citas-M03",
+   "text": "Usa «TramiteResueltoAdministrativo» como hito",
+   "nodes": [
+    "TramiteResueltoAdministrativo"
+   ],
+   "texts": [
+    "Usa «TramiteResueltoAdministrativo» como hito",
+    "Marca el trámite resuelto administrativo como hito.",
+    "¿Podrías definir el trámite resuelto administrativo como hito, por favor?",
+    "Usa el trámite resuelto como hito."
+   ],
+   "ambiguity": "The qualifier 'administrativo' is dropped, so it could refer to any resolved procedure."
+  },
+  {
+   "id": "gestion_citas-M04",
+   "text": "Define «ConsultaResultados» como hito",
+   "nodes": [
+    "ConsultaResultados"
+   ],
+   "texts": [
+    "Define «ConsultaResultados» como hito",
+    "Define la consulta de resultados como hito.",
+    "Me gustaría que marcaras la consulta de resultados como hito.",
+    "Define la consulta como hito."
+   ],
+   "ambiguity": "The qualifier 'de resultados' is omitted, so it could refer to any consultation activity."
+  },
+  {
+   "id": "gestion_citas-M05",
+   "text": "Define «RecordatorioCita» y «ConsultaMedica» como hitos",
+   "nodes": [
+    "RecordatorioCita",
+    "ConsultaMedica"
+   ],
+   "texts": [
+    "Define «RecordatorioCita» y «ConsultaMedica» como hitos",
+    "Marca recordatorio de cita y consulta médica como hitos del proceso.",
+    "Me gustaría que definieras recordatorio de cita y consulta médica como hitos del modelo.",
+    "Define recordatorio y consulta como hitos."
+   ],
+   "ambiguity": "The activities are shortened to 'recordatorio' and 'consulta', which could refer to other activities in the process."
+  },
+  {
+   "id": "gestion_citas-M06",
+   "text": "Marca «PruebaComplementaria», «RecordatorioCita» y «AtencionUrgenciasNoUrgente» como hitos",
+   "nodes": [
+    "PruebaComplementaria",
+    "RecordatorioCita",
+    "AtencionUrgenciasNoUrgente"
+   ],
+   "texts": [
+    "Marca «PruebaComplementaria», «RecordatorioCita» y «AtencionUrgenciasNoUrgente» como hitos",
+    "Marca la prueba complementaria, el recordatorio de cita y la atención de urgencias no urgente como hitos.",
+    "¿Podrías definir la prueba complementaria, el recordatorio de cita y la atención de urgencias no urgente como hitos?",
+    "Marca la prueba, el recordatorio y la atención de urgencias como hitos."
+   ],
+   "ambiguity": "The qualifiers 'complementaria', 'de cita' and 'no urgente' are all omitted, making each activity name generic."
+  },
+  {
+   "id": "gestion_citas-M07",
+   "text": "Define «CitaDemorada» como hito",
+   "nodes": [
+    "CitaDemorada"
+   ],
+   "texts": [
+    "Define «CitaDemorada» como hito",
+    "Define la cita demorada como hito.",
+    "Me gustaría que marcaras la cita demorada como hito.",
+    "Define la cita como hito."
+   ],
+   "ambiguity": "The qualifier 'demorada' is dropped, so it could refer to any appointment-related activity."
+  },
+  {
+   "id": "gestion_citas-M08",
+   "text": "Marca «CierreDerivado» y «ConsultaTramite» como hitos",
+   "nodes": [
+    "CierreDerivado",
+    "ConsultaTramite"
+   ],
+   "texts": [
+    "Marca «CierreDerivado» y «ConsultaTramite» como hitos",
+    "Marca el cierre derivado y la consulta de trámite como hitos.",
+    "¿Podrías definir el cierre derivado y la consulta de trámite como hitos?",
+    "Marca el cierre y la consulta como hitos."
+   ],
+   "ambiguity": "The qualifiers 'derivado' and 'de trámite' are omitted, so both names could match other closing or consultation activities."
+  },
+  {
+   "id": "gestion_citas-M09",
+   "text": "Define «ConsultaTramite», «CitaProgramada» y «DerivacionEspecialista» como hitos",
+   "nodes": [
+    "ConsultaTramite",
+    "CitaProgramada",
+    "DerivacionEspecialista"
+   ],
+   "texts": [
+    "Define «ConsultaTramite», «CitaProgramada» y «DerivacionEspecialista» como hitos",
+    "Establece consulta de trámite, cita programada y derivación a especialista como hitos.",
+    "¿Podrías marcar consulta de trámite, cita programada y derivación a especialista como hitos del proceso, por favor?",
+    "Define consulta, cita y derivación como hitos."
+   ],
+   "ambiguity": "The activities are shortened to 'consulta', 'cita' and 'derivación', which could match other activities in the model."
+  },
+  {
+   "id": "gestion_citas-M10",
+   "text": "Define «AbandonoSolicitud» como hito",
+   "nodes": [
+    "AbandonoSolicitud"
+   ],
+   "texts": [
+    "Define «AbandonoSolicitud» como hito",
+    "Define el abandono de solicitud como hito.",
+    "¿Podrías marcar el abandono de solicitud como hito?",
+    "Define el abandono como hito."
+   ],
+   "ambiguity": "The qualifier 'de solicitud' is omitted, so it could refer to the abandonment of any process element."
+  }
+ ],
+ "asks": [],
+ "levels": [
+  "order (robotic, exact names)",
+  "natural",
+  "polite",
+  "ambiguous"
+ ]
+}

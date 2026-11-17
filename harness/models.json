@@ -1,0 +1,10 @@
+[
+  { "label": "gemma4-26b-n27",  "backend": "ollama",  "model": "n27/gemma-4-26B-A4B-it-UD-Q4_K_M-32k" },
+  { "label": "gemma4-31b",      "backend": "ollama",  "model": "gemma4:31b" },
+  { "label": "qwen3.5-27b",     "backend": "ollama",  "model": "qwen3.5:27b" },
+  { "label": "qwen3.5-9b",      "backend": "ollama",  "model": "qwen3.5:9b" },
+  { "label": "pg-llama3.3-70b", "backend": "poligpt", "model": "llama3.3:70b" },
+  { "label": "pg-qwen3.8-27b",  "backend": "poligpt", "model": "Qwen3.8-27B" },
+  { "label": "pg-gemma4-e4b",   "backend": "poligpt", "model": "gemma-4-E4B-it" },
+  { "label": "pg-poligpt",      "backend": "poligpt", "model": "poligpt" }
+]
